@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VILLA SOLSTICE | Monolithic Cliffside Architectural Residence — Côte d'Azur</title>
+  <meta name="description" content="A monumental coastal masterpiece carved into the limestone cliffs of Cap d'Antibes. 14,200 sq ft, 28m cantilevered infinity pool, private helipad, and panoramic Mediterranean horizon.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://solstice-residences.com">
+
+  <!-- Google Fonts: Cormorant Garamond (Timeless Haute Luxury) + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Architectural Light Glows -->
+  <div class="ambient-glow glow-azure" aria-hidden="true"></div>
+  <div class="ambient-glow glow-sunset" id="ambientSunsetGlow" aria-hidden="true"></div>
+
+  <!-- Top Private Client Ribbon -->
+  <div class="top-client-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="ribbon-badge">DISCRETIONARY LISTING</span>
+        <span class="text-sub hide-mobile">Cap d'Antibes, French Riviera • Off-Market Private Treaty</span>
+      </div>
+      <div class="flex-align gap-4">
+        <span>Helipad: 43°33'12"N 7°07'45"E</span>
+        <span class="divider">|</span>
+        <span class="text-gold font-semibold">Acquisition Guide: $28,500,000 USD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimalist Architectural Header -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="VILLA SOLSTICE Home">
+        <div class="brand-crest">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="3" y1="9" x2="21" y2="9" />
+            <line x1="9" y1="21" x2="9" y2="9" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">VILLA SOLSTICE</span>
+          <span class="brand-sub">CAP D'ANTIBES • CÔTE D'AZUR</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#hero-stage" class="nav-link">Daylight Simulator</a>
+        <a href="#blueprints" class="nav-link">Floor Plans</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#gallery" class="nav-link">Sanctuary Gallery</a>
+        <a href="#wealth-calculator" class="nav-link">Acquisition Analysis</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="btn btn-outline-gold hide-mobile" id="btnHeaderBook">
+          <i data-lucide="calendar" class="icon-xs" aria-hidden="true"></i>
+          <span>Confidential Viewing</span>
+        </button>
+
+        <a href="#wealth-calculator" class="btn btn-gold hide-mobile">
+          <span>Acquisition Terms</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <span class="brand-name">VILLA SOLSTICE</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#hero-stage" class="mobile-nav-link">Daylight Lighting Simulator</a>
+      <a href="#blueprints" class="mobile-nav-link">Interactive Floor Plans</a>
+      <a href="#architecture" class="mobile-nav-link">Materials & Structural Design</a>
+      <a href="#gallery" class="mobile-nav-link">Estate Gallery & Suites</a>
+      <a href="#wealth-calculator" class="mobile-nav-link">Private Wealth Calculator</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-gold full-width mb-3" id="btnMobileBook">Request Confidential Viewing</button>
+      <div class="text-xs text-muted text-center">Strict NDA & Discretionary Security</div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Hero Stage: Interactive Daylight-to-Dusk Lighting Simulator -->
+    <section class="section hero-viewport-stage" id="hero-stage">
+      <div class="container">
+        <!-- Main Architectural Viewport Canvas -->
+        <div class="lighting-simulator-frame" id="lightingFrame">
+          <!-- Ambient Lighting Layer -->
+          <div class="lighting-overlay" id="lightingOverlay"></div>
+
+          <!-- Exterior Villa Imagery with Crossfade -->
+          <div class="villa-image-layer">
+            <img src="assets/villa-exterior-day.jpg" alt="Villa Solstice Daytime" class="villa-hero-img active" id="villaDayImg">
+            <img src="assets/villa-exterior-dusk.jpg" alt="Villa Solstice Dusk" class="villa-hero-img" id="villaDuskImg">
+          </div>
+
+          <!-- Floating Horizon Badges -->
+          <div class="villa-floating-badge top-left">
+            <span class="location-dot"></span>
+            <span>Mediterranean Cliffside • 68m Above Sea Level</span>
+          </div>
+
+          <div class="villa-floating-badge bottom-right font-mono" id="solarTelemetryBadge">
+            <span>SUN ELEVATION: 48° • COLOR TEMP: 5600K DAYLIGHT</span>
+          </div>
+        </div>
+
+        <!-- Interactive Lighting Controller Slider -->
+        <div class="lighting-control-card">
+          <div class="flex-between mb-3">
+            <div>
+              <span class="text-xs text-gold uppercase tracking-wider block font-bold">Interactive Solar Simulator:</span>
+              <h3 class="solar-time-heading" id="solarTimeText">14:00 — Mediterranean High Noon (Full Daylight)</h3>
+            </div>
+            <div class="time-presets-row flex-align gap-2">
+              <button class="time-preset-btn" data-time="07" data-val="15">07:30 Dawn</button>
+              <button class="time-preset-btn active" data-time="14" data-val="50">14:00 Noon</button>
+              <button class="time-preset-btn" data-time="19" data-val="82">19:00 Sunset</button>
+              <button class="time-preset-btn" data-time="23" data-val="100">23:00 Midnight</button>
+            </div>
+          </div>
+
+          <!-- Sun Time Scrub Slider -->
+          <div class="time-slider-wrapper">
+            <div class="slider-track-labels flex-between text-xs text-muted mb-1 font-mono">
+              <span>06:00 Dawn Mist</span>
+              <span>12:00 Radiant Sun</span>
+              <span>18:45 Golden Hour</span>
+              <span>24:00 Moonlit Horizon</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="time-range-slider" id="timeSlider" aria-label="Solar illumination time slider">
+          </div>
+        </div>
+
+        <!-- Key Metrics Strip -->
+        <div class="hero-specs-ribbon" data-gsap="fade-up">
+          <div class="spec-tile">
+            <span class="spec-tile-num font-serif">14,200</span>
+            <span class="spec-tile-unit">SQ FT</span>
+            <span class="spec-tile-label">Conditioned Living Space</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-tile-num font-serif">6</span>
+            <span class="spec-tile-unit">SUITES</span>
+            <span class="spec-tile-label">Private En-Suite Sanctuaries</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-tile-num font-serif">28</span>
+            <span class="spec-tile-unit">METRES</span>
+            <span class="spec-tile-label">Heated Cantilevered Pool</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-tile-num font-serif">4</span>
+            <span class="spec-tile-unit">VEHICLES</span>
+            <span class="spec-tile-label">Subterranean Gallery & Turntable</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-tile-num font-serif">360°</span>
+            <span class="spec-tile-unit">HORIZON</span>
+            <span class="spec-tile-label">Unobstructed Sea Panorama</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Architectural Blueprints & Dimension Explorer -->
+    <section class="section bg-surface" id="blueprints">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Spatial Architecture</span>
+          <h2 class="section-title">Explore the Three Monolithic Tiers</h2>
+          <p class="section-subtitle">
+            Carved directly into the coastal cliffside, each level cascades naturally toward the Mediterranean with seamless transitions between indoor living and cantilevered stone loggias.
+          </p>
+        </div>
+
+        <div class="blueprint-explorer-board">
+          <!-- Level Selector Tabs -->
+          <div class="level-tabs-bar flex-between mb-4">
+            <div class="flex-align gap-2">
+              <button class="level-tab-btn active" data-level="1">
+                <span class="level-tag font-mono">TIER 01</span>
+                <strong>Grand Salon & Ocean Loggia (6,400 sq ft)</strong>
+              </button>
+              <button class="level-tab-btn" data-level="2">
+                <span class="level-tag font-mono">TIER 02</span>
+                <strong>Primary Sanctuary & Private Spa (4,800 sq ft)</strong>
+              </button>
+              <button class="level-tab-btn" data-level="3">
+                <span class="level-tag font-mono">TIER 03</span>
+                <strong>Rooftop Sky Lounge & Helipad (3,000 sq ft)</strong>
+              </button>
+            </div>
+            <div class="text-xs font-mono text-gold hide-mobile" id="activeLevelArea">
+              TOTAL FLOOR AREA: 6,400 SQ FT • 11.2M CEILINGS
+            </div>
+          </div>
+
+          <div class="blueprint-grid">
+            <!-- Left: Interactive Vector Blueprint Graphic with Hotspots -->
+            <div class="blueprint-stage">
+              <div class="blueprint-canvas-wrap">
+                <svg class="blueprint-svg" viewBox="0 0 760 480" id="blueprintSvg">
+                  <!-- Blueprint Grid Background -->
+                  <defs>
+                    <pattern id="blueprintGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(245, 158, 11, 0.08)" stroke-width="0.8"/>
+                    </pattern>
+                  </defs>
+                  <rect width="760" height="480" fill="#090c13" />
+                  <rect width="760" height="480" fill="url(#blueprintGrid)" />
+
+                  <!-- Architectural Exterior Boundaries (Tier 1 Default) -->
+                  <g id="blueprintFloorPlan">
+                    <!-- Grand Salon Perimeter -->
+                    <rect x="60" y="80" width="420" height="280" fill="rgba(245, 158, 11, 0.04)" stroke="#f59e0b" stroke-width="2" />
+                    <!-- Ocean Terrace -->
+                    <rect x="480" y="80" width="220" height="280" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" />
+                    <!-- Cantilevered Pool -->
+                    <rect x="520" y="140" width="160" height="160" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="2" />
+                    <!-- Kitchen / Service Core -->
+                    <rect x="80" y="100" width="130" height="120" fill="rgba(255, 255, 255, 0.03)" stroke="#475569" stroke-width="1.5" />
+                    <!-- Dining Loggia -->
+                    <rect x="230" y="100" width="220" height="120" fill="rgba(255, 255, 255, 0.03)" stroke="#475569" stroke-width="1.5" />
+                    <!-- Living Hearth Lounge -->
+                    <rect x="80" y="240" width="370" height="100" fill="rgba(255, 255, 255, 0.03)" stroke="#475569" stroke-width="1.5" />
+
+                    <!-- Wall Dimensions -->
+                    <text x="210" y="68" fill="#94a3b8" font-size="11" font-family="Space Mono">WALL SPAN: 32.4 METRES</text>
+                    <text x="540" y="125" fill="#38bdf8" font-size="11" font-family="Space Mono">28M INFINITY POOL</text>
+                  </g>
+
+                  <!-- Interactive Glowing Inspection Hotspots -->
+                  <g class="hotspot-group" data-spot="salon" transform="translate(240, 290)">
+                    <circle r="18" fill="rgba(245, 158, 11, 0.2)" class="pulse-ring" />
+                    <circle r="8" fill="#f59e0b" />
+                    <text x="14" y="4" fill="#ffffff" font-size="12" font-family="Space Mono" font-weight="bold">01 Grand Salon</text>
+                  </g>
+
+                  <g class="hotspot-group" data-spot="pool" transform="translate(600, 220)">
+                    <circle r="18" fill="rgba(56, 189, 248, 0.2)" class="pulse-ring" />
+                    <circle r="8" fill="#38bdf8" />
+                    <text x="14" y="4" fill="#ffffff" font-size="12" font-family="Space Mono" font-weight="bold">02 Cantilevered Pool</text>
+                  </g>
+
+                  <g class="hotspot-group" data-spot="dining" transform="translate(330, 160)">
+                    <circle r="18" fill="rgba(245, 158, 11, 0.2)" class="pulse-ring" />
+                    <circle r="8" fill="#f59e0b" />
+                    <text x="14" y="4" fill="#ffffff" font-size="12" font-family="Space Mono" font-weight="bold">03 Dining Loggia</text>
+                  </g>
+
+                  <g class="hotspot-group" data-spot="kitchen" transform="translate(130, 160)">
+                    <circle r="18" fill="rgba(245, 158, 11, 0.2)" class="pulse-ring" />
+                    <circle r="8" fill="#f59e0b" />
+                    <text x="14" y="4" fill="#ffffff" font-size="12" font-family="Space Mono" font-weight="bold">04 Chef Catering</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Room Inspector Card -->
+            <div class="blueprint-inspector-card" id="inspectorCard">
+              <div class="inspector-media">
+                <img src="assets/grand-salon.jpg" alt="Grand Salon" id="inspectorImg" class="inspector-img">
+                <span class="inspector-badge" id="inspectorBadge">TIER 01 • SPATIAL NODE 01</span>
+              </div>
+              <div class="inspector-details">
+                <div class="flex-between mb-1">
+                  <h3 class="inspector-title font-serif" id="inspectorTitle">The Double-Height Grand Salon</h3>
+                  <span class="inspector-sqft font-mono text-gold" id="inspectorSqft">2,450 SQ FT</span>
+                </div>
+                <p class="inspector-desc" id="inspectorDesc">
+                  Frameless floor-to-ceiling Schuco structural motorized glass panels slide flush into recessed travertine walls, dissolving all boundaries between the vast hearth salon and the sea-breeze terrace.
+                </p>
+                <div class="inspector-specs-list">
+                  <div class="spec-row">
+                    <span class="text-muted">Ceiling Height:</span>
+                    <strong class="text-white font-mono" id="inspectorCeiling">11.2 Metres (Double-Height)</strong>
+                  </div>
+                  <div class="spec-row">
+                    <span class="text-muted">Primary Finishes:</span>
+                    <strong class="text-white font-mono" id="inspectorFinishes">Bookmatched Navona Travertine, Burnt Cedar</strong>
+                  </div>
+                  <div class="spec-row">
+                    <span class="text-muted">Glazing Specification:</span>
+                    <strong class="text-white font-mono" id="inspectorGlazing">Acoustic Laminated Triple-Glazed Solar Low-E</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monolithic Architecture & Materials Supremacy -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Materiality & Craft</span>
+          <h2 class="section-title">An Engineered Monolith in Stone and Glass</h2>
+          <p class="section-subtitle">
+            Villa Solstice is not merely constructed upon the terrain; it is structurally anchored into the subterranean limestone strata of the Côte d'Azur.
+          </p>
+        </div>
+
+        <div class="architecture-grid">
+          <article class="arch-card" data-gsap="fade-up">
+            <div class="arch-icon-box"><i data-lucide="layers" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">EXTERIOR FAÇADE</div>
+            <h3 class="arch-title font-serif">Hand-Split Roman Travertine</h3>
+            <p class="arch-desc">
+              Over 1,800 tons of Roman Navona travertine, quarry-selected and bookmatched to create continuous horizontal grain flows across interior living chambers and ocean terraces.
+            </p>
+            <div class="arch-spec-pill font-mono">Salt-Mist & Thermal Shock Resistant</div>
+          </article>
+
+          <article class="arch-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="arch-icon-box"><i data-lucide="maximize-2" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">STRUCTURAL GLAZING</div>
+            <h3 class="arch-title font-serif">Motorized Schuco Glass Walls</h3>
+            <p class="arch-desc">
+              Custom-engineered automated 6-metre high glass curtain walls with concealed subterranean tracks. Glides silently at the touch of a button to transform the entire salon into an open-air loggia.
+            </p>
+            <div class="arch-spec-pill font-mono">Hurricane Wind & Marine Corrosion Class 4</div>
+          </article>
+
+          <article class="arch-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="arch-icon-box"><i data-lucide="droplets" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">HYDROLOGY</div>
+            <h3 class="arch-title font-serif">28m Cantilevered Infinity Pool</h3>
+            <p class="arch-desc">
+              Cantilevered 12 metres out over the cliff face, the dual-zone zero-edge pool features integrated submerged volcanic sunbeds, ozone-purified heating, and glass underwater viewing portals into the subterranean wellness spa.
+            </p>
+            <div class="arch-spec-pill font-mono">Geothermal In-Ground Thermal Regulation</div>
+          </article>
+
+          <article class="arch-card" data-gsap="fade-up">
+            <div class="arch-icon-box"><i data-lucide="wine" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">EPICUREAN</div>
+            <h3 class="arch-title font-serif">Subterranean 1,200-Bottle Wine Vault</h3>
+            <p class="arch-desc">
+              Excavated directly into living bedrock, providing natural geothermal humidity stabilization. Enclosed by frameless insulated glass with bespoke sommelier presentation station and argon tasting dispenser.
+            </p>
+            <div class="arch-spec-pill font-mono">Precision Climate: 12.5°C • 70% Relative Humidity</div>
+          </article>
+
+          <article class="arch-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="arch-icon-box"><i data-lucide="shield" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">DISCRETION & SECURITY</div>
+            <h3 class="arch-title font-serif">Biometric Security & Panic Enclave</h3>
+            <p class="arch-desc">
+              Subterranean reinforced safe room with independent satellite communications, 72-hour air-scrubbing filtration, and perimeter thermal infrared tripwires managed via discreet Crestron military-grade automation.
+            </p>
+            <div class="arch-spec-pill font-mono">Bank-Vault Grade Biometric Access Control</div>
+          </article>
+
+          <article class="arch-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="arch-icon-box"><i data-lucide="plane" aria-hidden="true"></i></div>
+            <div class="arch-tag font-mono">AVIATION & MARITIME</div>
+            <h3 class="arch-title font-serif">Private Helipad & Deep-Water Mooring</h3>
+            <p class="arch-desc">
+              Certified rooftop pad accommodating twin-engine aircraft (e.g. Airbus H145 / AW109). A funicular private incline elevator descends directly from the terrace to the private dock capable of berthing a 120ft yacht.
+            </p>
+            <div class="arch-spec-pill font-mono">Nice Airport (NCE) Transfer: 7 Minutes Airborne</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sanctuary Gallery & Spaces -->
+    <section class="section bg-surface" id="gallery">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Sanctuary Portfolio</span>
+          <h2 class="section-title">A Symphony of Ocean and Travertine</h2>
+          <p class="section-subtitle">
+            Curated photographic survey of the primary suite, cliffside wellness spa, wine vault, and evening entertaining terraces.
+          </p>
+        </div>
+
+        <div class="gallery-masonry-grid">
+          <div class="gallery-tile tile-wide" data-gsap="fade-up">
+            <img src="assets/infinity-pool.jpg" alt="Cantilevered Infinity Pool" class="gallery-img" loading="lazy">
+            <div class="gallery-caption">
+              <span class="gallery-cat font-mono text-gold">EXTERIOR LOGGIA</span>
+              <h3 class="gallery-heading font-serif">28-Metre Heated Infinity Horizon Pool</h3>
+            </div>
+          </div>
+
+          <div class="gallery-tile" data-gsap="fade-up" data-delay="0.1">
+            <img src="assets/master-sanctuary.jpg" alt="Primary Master Sanctuary" class="gallery-img" loading="lazy">
+            <div class="gallery-caption">
+              <span class="gallery-cat font-mono text-gold">TIER 02 MASTER</span>
+              <h3 class="gallery-heading font-serif">The Owner's Horizon Sanctuary</h3>
+            </div>
+          </div>
+
+          <div class="gallery-tile" data-gsap="fade-up" data-delay="0.2">
+            <img src="assets/marble-spa.jpg" alt="Monolithic Roman Spa" class="gallery-img" loading="lazy">
+            <div class="gallery-caption">
+              <span class="gallery-cat font-mono text-gold">WELLNESS WING</span>
+              <h3 class="gallery-heading font-serif">Carved Roman Travertine Bath Suite</h3>
+            </div>
+          </div>
+
+          <div class="gallery-tile" data-gsap="fade-up">
+            <img src="assets/wine-vault.jpg" alt="Subterranean Wine Vault" class="gallery-img" loading="lazy">
+            <div class="gallery-caption">
+              <span class="gallery-cat font-mono text-gold">SUBTERRANEAN WING</span>
+              <h3 class="gallery-heading font-serif">1,200-Bottle Geothermal Cellar</h3>
+            </div>
+          </div>
+
+          <div class="gallery-tile tile-wide" data-gsap="fade-up" data-delay="0.1">
+            <img src="assets/architectural-detail.jpg" alt="Architectural Metallurgy & Concrete" class="gallery-img" loading="lazy">
+            <div class="gallery-caption">
+              <span class="gallery-cat font-mono text-gold">MATERIAL FINISHES</span>
+              <h3 class="gallery-heading font-serif">Fluted Patinated Bronze & Board-Formed Concrete</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Wealth Acquisition & Investment Analysis Calculator -->
+    <section class="section" id="wealth-calculator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Private Wealth Architecture</span>
+          <h2 class="section-title">Acquisition Structuring & Financial Projections</h2>
+          <p class="section-subtitle">
+            Model international private bank financing structures, asset-backed lombard facilities, and 10-year capital appreciation forecasts.
+          </p>
+        </div>
+
+        <div class="wealth-calculator-card">
+          <div class="wealth-grid">
+            <!-- Inputs Column -->
+            <div class="wealth-inputs-col">
+              <h3 class="wealth-col-title font-serif">1. Financing & Capital Allocation</h3>
+
+              <!-- Price Base (Fixed Guide) -->
+              <div class="calc-group mb-4">
+                <div class="flex-between text-xs mb-1">
+                  <span class="text-muted">Target Asset Purchase Price:</span>
+                  <span class="text-gold font-mono font-bold">$28,500,000 USD (€26,200,000 EUR)</span>
+                </div>
+              </div>
+
+              <!-- Down Payment Slider -->
+              <div class="calc-group mb-4">
+                <div class="flex-between text-xs mb-2">
+                  <span class="font-bold uppercase tracking-wider text-muted">Equity Deposit / Down Payment:</span>
+                  <span class="text-white font-mono font-bold" id="downPaymentText">30% ($8,550,000 USD)</span>
+                </div>
+                <input type="range" min="20" max="100" step="5" value="30" class="wealth-slider" id="downPaymentSlider" aria-label="Down payment percentage">
+                <div class="flex-between text-xs text-faint mt-1 font-mono">
+                  <span>20% Minimum</span>
+                  <span>50% Balanced</span>
+                  <span>100% Cash Settlement</span>
+                </div>
+              </div>
+
+              <!-- Private Banking Rate Slider -->
+              <div class="calc-group mb-4">
+                <div class="flex-between text-xs mb-2">
+                  <span class="font-bold uppercase tracking-wider text-muted">Lombard / Mortgage Interest Facility:</span>
+                  <span class="text-gold font-mono font-bold" id="interestRateText">4.25% p.a.</span>
+                </div>
+                <input type="range" min="3.0" max="7.0" step="0.25" value="4.25" class="wealth-slider" id="interestSlider" aria-label="Interest rate slider">
+                <div class="flex-between text-xs text-faint mt-1 font-mono">
+                  <span>3.0% (Prime Swiss/Monaco)</span>
+                  <span>7.0%</span>
+                </div>
+              </div>
+
+              <!-- Loan Duration Toggle -->
+              <div class="calc-group mb-4">
+                <span class="font-bold uppercase tracking-wider text-xs text-muted block mb-2">Facility Term:</span>
+                <div class="facility-term-pills flex-align gap-2">
+                  <button class="term-pill" data-years="10">10-Year Fixed</button>
+                  <button class="term-pill active" data-years="20">20-Year Amortizing</button>
+                  <button class="term-pill" data-years="30">30-Year Portfolio Loan</button>
+                </div>
+              </div>
+
+              <div class="p-3 bg-surface rounded border border-gold text-xs text-sub">
+                <i data-lucide="info" class="icon-xs text-gold inline" aria-hidden="true"></i>
+                <span>Financing models are indicative. Structured corporate ownership (Société Civile Immobilière / SCI) supported.</span>
+              </div>
+            </div>
+
+            <!-- Analysis Results Column -->
+            <div class="wealth-results-col">
+              <h3 class="wealth-col-title font-serif">2. Cash Flow & Wealth Forecast</h3>
+
+              <div class="results-board">
+                <div class="result-row primary-row">
+                  <div>
+                    <span class="text-xs text-muted uppercase block">Estimated Monthly Outlay:</span>
+                    <strong class="monthly-figure font-mono text-gold" id="monthlyOutlayFigure">$121,450 / mo</strong>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xs text-muted block">Loan Principal:</span>
+                    <span class="font-mono text-white text-sm" id="loanPrincipalFigure">$19,950,000 USD</span>
+                  </div>
+                </div>
+
+                <div class="metrics-sub-grid mt-4">
+                  <div class="metric-box">
+                    <span class="text-xs text-muted block">Est. 10-Yr Capital Appreciation:</span>
+                    <strong class="font-mono text-emerald text-lg" id="appreciationTenYears">+$14,250,000 USD</strong>
+                    <small class="text-faint text-xs block">+50% Horizon Growth (Côte d'Azur Premium)</small>
+                  </div>
+
+                  <div class="metric-box">
+                    <span class="text-xs text-muted block">Estimated Estate Operational Cost:</span>
+                    <strong class="font-mono text-white text-lg">$14,500 / mo</strong>
+                    <small class="text-faint text-xs block">Concierge, 24/7 Security & Groundskeeper</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="viewing-cta-box mt-6">
+                <button class="btn btn-gold btn-lg full-width" id="btnRequestViewing">
+                  <i data-lucide="shield-check" class="icon-sm" aria-hidden="true"></i>
+                  <span>Schedule Private Viewing & Prospectus</span>
+                </button>
+                <small class="text-xs text-muted block text-center mt-2">
+                  Strictly confidential. Proof of funds or private banker introduction required.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Haute Luxury Callout -->
+    <section class="section bottom-cta-section">
+      <div class="container text-center">
+        <span class="section-tag">A Rare Legacy Acquisition</span>
+        <h2 class="bottom-cta-heading font-serif">Possess the Horizon of Cap d'Antibes.</h2>
+        <p class="bottom-cta-sub">
+          Offered fully furnished with custom Minotti furnishings, curated museum sculptures, and full staff transition protocol.
+        </p>
+        <div class="flex-align justify-center gap-4 flex-wrap">
+          <button class="btn btn-gold btn-lg" id="btnBottomViewing">
+            <i data-lucide="key" class="icon-sm" aria-hidden="true"></i>
+            <span>Request Private Client Dossier</span>
+          </button>
+          <a href="#blueprints" class="btn btn-glass btn-lg">
+            <i data-lucide="compass" class="icon-sm" aria-hidden="true"></i>
+            <span>Examine Architectural Blueprints</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-crest">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="9" y1="21" x2="9" y2="9" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">VILLA SOLSTICE</span>
+              <span class="brand-sub">HAUTE LIVING RESIDENCES</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Represented exclusively by Sotheby's International Realty & Knight Frank Private Client Advisory. Licensed in Monaco, France and the United Kingdom.
+          </p>
+          <div class="footer-address mt-3 text-xs text-muted">
+            <span>Boulevard de la Croisette 85, Cannes, France</span>
+            <span class="divider">•</span>
+            <span>Avenue Princesse Grace, Monte Carlo, Monaco</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">The Residence</h4>
+          <ul class="footer-links">
+            <li><a href="#hero-stage">Daylight Simulator</a></li>
+            <li><a href="#blueprints">Tier 01: Grand Salon</a></li>
+            <li><a href="#blueprints">Tier 02: Primary Sanctuary</a></li>
+            <li><a href="#blueprints">Tier 03: Sky Helipad</a></li>
+            <li><a href="#gallery">Private Cellar & Spa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Discretionary Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Private Aviation Coordination</a></li>
+            <li><a href="#">Yacht Mooring & Tender Transfers</a></li>
+            <li><a href="#">SCI Corporate Structuring</a></li>
+            <li><a href="#">Security Protocol Documentation</a></li>
+            <li><a href="#">Escrow & Title Guarantee</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Private Client Desk</h4>
+          <p class="footer-text-sm mb-3">
+            Direct communication for principals, family offices, and authorized wealth advisors.
+          </p>
+          <div class="text-xs text-gold font-mono">advisory@solstice-residences.com</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Villa Solstice Estate Holding S.A. All Rights Reserved.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Confidentiality Agreement</a>
+          <a href="#">Anti-Money Laundering (AML) Compliance</a>
+          <a href="#">French Real Estate Mandate #9821-AZUR</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Private Viewing & Prospectus Modal (<dialog id="viewingModal">) -->
+  <dialog class="viewing-modal-dialog" id="viewingModal" aria-label="Private Viewing Request">
+    <div class="viewing-modal-inner">
+      <button class="modal-close-btn" id="btnCloseViewingModal" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-header">
+        <span class="section-tag">Strictly Confidential</span>
+        <h3 class="modal-title font-serif">Request Discretionary Private Viewing</h3>
+        <p class="modal-desc">
+          To maintain utmost privacy, all private viewings require advance principal registration. Helicopter arrival directly to the Villa Solstice helipad can be coordinated.
+        </p>
+      </div>
+
+      <form id="viewingForm">
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="vName">Principal Full Legal Name *</label>
+            <input type="text" id="vName" class="form-input" placeholder="e.g. Lord Alistair Vance" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vEntity">Representing Entity / Family Office</label>
+            <input type="text" id="vEntity" class="form-input" placeholder="e.g. Vance Capital Trust">
+          </div>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="vEmail">Confidential Email *</label>
+            <input type="email" id="vEmail" class="form-input" placeholder="principal@vance-trust.ch" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vPhone">Direct Telephone / Signal *</label>
+            <input type="tel" id="vPhone" class="form-input" placeholder="+41 22 819 0000" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2 mb-4">
+          <div class="form-group">
+            <label class="form-label" for="vArrival">Arrival Method *</label>
+            <select id="vArrival" class="form-input" required>
+              <option value="Helicopter to Villa Helipad">Private Helicopter (Nice NCE -> Villa Helipad)</option>
+              <option value="Chauffeur from Cannes/Monaco">Executive Chauffeur (Cannes or Monaco)</option>
+              <option value="Tender / Private Yacht">Private Yacht Tender (Direct Mooring)</option>
+              <option value="Commercial Arrival">Self-Arranged Commercial Transfer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vDate">Preferred Viewing Date *</label>
+            <input type="date" id="vDate" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="nda-checkbox-box mb-4">
+          <label class="flex-align gap-2 text-xs text-sub cursor-pointer">
+            <input type="checkbox" id="vNdaCheck" required>
+            <span>I acknowledge that all floor plans, security specifications, and structural data are protected under international mutual non-disclosure.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-gold full-width btn-lg">
+          <i data-lucide="lock" class="icon-sm" aria-hidden="true"></i>
+          <span>Submit Confidential Inspection Request</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Viewing Confirmation Modal (<dialog id="confirmedModal">) -->
+  <dialog class="confirmed-dialog" id="confirmedModal">
+    <div class="confirmed-content text-center">
+      <div class="confirmed-icon-badge">
+        <i data-lucide="check" class="icon-lg text-emerald" aria-hidden="true"></i>
+      </div>
+      <span class="section-tag">Viewing Protocol Initiated • Ref #VS-892</span>
+      <h3 class="confirmed-title font-serif">Dossier Dispatched Under Seal.</h3>
+      <p class="confirmed-desc">
+        Your private client registration has been received. Managing Partner Henri de Montmirail will make direct contact within 4 hours to verify flight manifests and helipad clearance.
+      </p>
+
+      <div class="receipt-box text-left mb-4 font-mono text-xs">
+        <div class="flex-between mb-1">
+          <span class="text-muted">Principal:</span>
+          <strong class="text-white" id="confirmPrincipalName">Lord Alistair Vance</strong>
+        </div>
+        <div class="flex-between mb-1">
+          <span class="text-muted">Helipad Coordinates:</span>
+          <span class="text-gold">43°33'12"N 7°07'45"E</span>
+        </div>
+        <div class="flex-between">
+          <span class="text-muted">Security Clearance:</span>
+          <span class="text-emerald">LEVEL 1 AUTHORIZED</span>
+        </div>
+      </div>
+
+      <button class="btn btn-gold full-width" id="btnCloseConfirmed">Conclude</button>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

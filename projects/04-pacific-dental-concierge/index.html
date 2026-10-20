@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aussie Smile Holidays | All-Inclusive Dental Holidays & Concierge Care</title>
+  <meta name="description" content="Save up to 70% on premium dental implants, veneers & full mouth restorations. Full concierge packages including return Australian flights, 5-star luxury resort, VIP transfers and Aussie aftercare warranty.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aussiesmileholidays.com.au">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Crisp Modern Australian Healthcare) + Outfit (Bold Tropical Luxury) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Modern Web Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Tropical Cyan & Pacific Navy Backdrops -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
+
+  <!-- Top Australian Trust & Hotline Ribbon -->
+  <div class="top-hotline-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="aussie-badge">
+          <span class="flag-icon" aria-hidden="true">🇦🇺</span>
+          <span>Australian Patient Concierge Desk</span>
+        </span>
+        <span class="divider">|</span>
+        <span class="text-muted hide-mobile">Sydney • Melbourne • Brisbane • Perth Partner Clinics & Aftercare</span>
+      </div>
+      <div class="flex-align gap-4">
+        <a href="tel:1300000287" class="hotline-phone flex-align gap-1">
+          <i data-lucide="phone-call" class="icon-xs text-cyan" aria-hidden="true"></i>
+          <span>Freecall AU: 1300 000 AUS (1300 000 287)</span>
+        </a>
+        <span class="divider">|</span>
+        <span class="text-gold font-semibold">Save $15,000–$40,000 AUD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="Aussie Smile Holidays Home">
+        <div class="brand-crest">
+          <i data-lucide="sparkles" class="crest-icon" aria-hidden="true"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">AUSSIE SMILE <span class="text-cyan">HOLIDAYS</span></span>
+          <span class="brand-sub">ALL-INCLUSIVE LUXURY DENTAL CONCIERGE</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#calculator" class="nav-link">Savings Calculator</a>
+        <a href="#package" class="nav-link">What's Included</a>
+        <a href="#itinerary" class="nav-link">7-Day Itinerary</a>
+        <a href="#transformations" class="nav-link">Before & After</a>
+        <a href="#warranty" class="nav-link">Aussie Guarantee</a>
+        <a href="#reviews" class="nav-link">Patient Stories</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="btn btn-outline-cyan" id="btnOpenPlanModal">
+          <i data-lucide="file-text" class="icon-sm" aria-hidden="true"></i>
+          <span>Free Smile Assessment</span>
+        </button>
+        <a href="#calculator" class="btn btn-cyan">
+          <span>Calculate My Savings</span>
+          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <div class="brand-crest"><i data-lucide="sparkles" class="crest-icon" aria-hidden="true"></i></div>
+        <span class="brand-name">Aussie Smile Holidays</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#calculator" class="mobile-nav-link">AUD Savings Calculator</a>
+      <a href="#package" class="mobile-nav-link">All-Inclusive Inclusions</a>
+      <a href="#itinerary" class="mobile-nav-link">7-Day Smile Holiday Itinerary</a>
+      <a href="#transformations" class="mobile-nav-link">Before & After Results</a>
+      <a href="#warranty" class="mobile-nav-link">Australian Aftercare & Warranty</a>
+      <a href="#reviews" class="mobile-nav-link">Aussie Patient Stories</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="tel:1300000287" class="btn btn-cyan full-width mb-3">Call Free: 1300 000 AUS</a>
+      <button class="btn btn-outline-cyan full-width" id="btnMobileQuote">Get Free Quote & Flight Itinerary</button>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge" data-gsap="fade-up">
+          <i data-lucide="plane-takeoff" class="icon-cyan" aria-hidden="true"></i>
+          <span>Full Concierge Packages • Return Flights + 5★ Resort + VIP Care + Full Treatment</span>
+        </div>
+
+        <h1 class="hero-title" data-gsap="fade-up" data-delay="0.1">
+          Fix Your Teeth. <br>
+          <span class="cyan-gradient-text">Take the Holiday of a Lifetime.</span> <br>
+          Save Up to $35,000 AUD.
+        </h1>
+
+        <p class="hero-subtitle" data-gsap="fade-up" data-delay="0.2">
+          Why spend $40,000–$60,000 at an Australian dental clinic? Fly from Sydney, Melbourne, Brisbane or Perth to our internationally accredited surgical centres in Bali or Phuket. Recover in a 5-star luxury beachfront resort with 24/7 Aussie concierge support and a 10-year local warranty.
+        </p>
+
+        <div class="hero-cta-group flex-align gap-4" data-gsap="fade-up" data-delay="0.3">
+          <a href="#calculator" class="btn btn-cyan btn-lg">
+            <span>Calculate Your Savings (AUD)</span>
+            <i data-lucide="calculator" class="icon-sm" aria-hidden="true"></i>
+          </a>
+          <button class="btn btn-glass btn-lg" id="btnHeroFreePlan">
+            <i data-lucide="calendar" class="icon-sm" aria-hidden="true"></i>
+            <span>Get Free Quote & Flight Package</span>
+          </button>
+        </div>
+
+        <!-- Trust Stats Ribbon -->
+        <div class="hero-stats-ribbon" data-gsap="fade-up" data-delay="0.4">
+          <div class="ribbon-card">
+            <div class="ribbon-number"><span class="counter" data-target="4200">0</span>+</div>
+            <div class="ribbon-label">Aussie Smiles Restored</div>
+            <p class="ribbon-sub">Patients from NSW, VIC, QLD & WA</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">70%</div>
+            <div class="ribbon-label">Average Cost Savings</div>
+            <p class="ribbon-sub">Compared to standard Australian dental fees</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">10 Yrs</div>
+            <div class="ribbon-label">Aussie Peace-of-Mind Warranty</div>
+            <p class="ribbon-sub">Backed by Australian partner clinics</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">JCI • ISO</div>
+            <div class="ribbon-label">Gold-Standard Hospitals</div>
+            <p class="ribbon-sub">Surpassing Australian safety benchmarks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive AUD Savings & Package Calculator (Lead Magnet #1) -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Cost Comparison</span>
+          <h2 class="section-title">See How Much You Save vs Australian Dentists</h2>
+          <p class="section-subtitle">
+            Compare real Australian clinic pricing against our all-inclusive concierge holiday packages. Flights, 5-star accommodation, transfers and treatments all included in one transparent price.
+          </p>
+        </div>
+
+        <div class="calc-card" id="aussieCalc">
+          <div class="calc-grid">
+            <div class="calc-inputs-side">
+              <h3 class="calc-side-title">1. Select Your Dental Treatment & Departure</h3>
+
+              <div class="form-group mb-4">
+                <label class="form-label" for="calcTreatment">Treatment You Require:</label>
+                <select id="calcTreatment" class="calc-select">
+                  <option value="allon4" selected>All-on-4® Dental Implants (Full Arch Fixed Teeth)</option>
+                  <option value="allon6">All-on-6® Dental Implants (Both Arches Full Mouth Reconstruction)</option>
+                  <option value="veneers">Full Set Porcelain Veneers (16–20 Teeth Smile Makeover)</option>
+                  <option value="crowns">Multiple Zirconia Crowns & Bridges (6–10 Teeth)</option>
+                  <option value="single">Single / Double Titanium Implant with Crown</option>
+                </select>
+              </div>
+
+              <div class="form-grid-2 mb-4">
+                <div class="form-group">
+                  <label class="form-label" for="calcDeparture">Your Departure City (AU):</label>
+                  <select id="calcDeparture" class="calc-select">
+                    <option value="SYD">Sydney (SYD)</option>
+                    <option value="MEL" selected>Melbourne (MEL)</option>
+                    <option value="BNE">Brisbane (BNE)</option>
+                    <option value="PER">Perth (PER)</option>
+                    <option value="ADL">Adelaide (ADL)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="calcDestination">Holiday Destination:</label>
+                  <select id="calcDestination" class="calc-select">
+                    <option value="bali" selected>Bali (Seminyak Luxury Resort)</option>
+                    <option value="phuket">Phuket (Laguna Beachfront Retreat)</option>
+                    <option value="bangkok">Bangkok (5-Star Executive Medical City)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="inclusions-checklist">
+                <span class="text-xs uppercase text-cyan font-bold tracking-wider block mb-2">Everything Included in Your Quote:</span>
+                <div class="check-item"><i data-lucide="check" class="icon-xs text-cyan" aria-hidden="true"></i> Return Qantas / Virgin / Jetstar flights included</div>
+                <div class="check-item"><i data-lucide="check" class="icon-xs text-cyan" aria-hidden="true"></i> 7 Nights at 5-Star Luxury Beach Resort with breakfast</div>
+                <div class="check-item"><i data-lucide="check" class="icon-xs text-cyan" aria-hidden="true"></i> Private VIP chauffeur for all airport & clinic transfers</div>
+                <div class="check-item"><i data-lucide="check" class="icon-xs text-cyan" aria-hidden="true"></i> Full surgery, implants, abutments & precision teeth</div>
+                <div class="check-item"><i data-lucide="check" class="icon-xs text-cyan" aria-hidden="true"></i> 10-Year Australian Aftercare & Warranty included</div>
+              </div>
+            </div>
+
+            <!-- Results Side -->
+            <div class="calc-results-side">
+              <h3 class="calc-side-title">2. Price Breakdown & Net Savings</h3>
+
+              <div class="comparison-board">
+                <div class="compare-row aussie-cost">
+                  <span class="compare-label">Average Australian Dentist Cost:</span>
+                  <span class="compare-price strikethrough" id="auDentistPrice">$38,000 AUD</span>
+                </div>
+
+                <div class="compare-row all-inclusive-cost">
+                  <div>
+                    <span class="compare-label block text-white font-bold">Aussie Smile Holiday Concierge Package:</span>
+                    <small class="text-cyan text-xs">Flights + 5★ Resort + VIP Chauffeur + Full Treatment</small>
+                  </div>
+                  <span class="package-price" id="packagePrice">$11,900 AUD</span>
+                </div>
+
+                <div class="savings-highlight-box">
+                  <div class="savings-tag">YOUR ESTIMATED SAVINGS</div>
+                  <div class="savings-amount" id="savingsAmount">$26,100 AUD</div>
+                  <p class="savings-note">
+                    You save <strong>68%</strong> and get a 5-star tropical holiday included for free!
+                  </p>
+                </div>
+              </div>
+
+              <div class="calc-cta-wrap mt-4">
+                <button class="btn btn-cyan full-width btn-lg" id="btnClaimQuote">
+                  <i data-lucide="send" class="icon-sm" aria-hidden="true"></i>
+                  <span>Lock In This Price & Get Custom Plan</span>
+                </button>
+                <span class="text-xs text-muted block text-center mt-2">
+                  No payment required. Free confidential dental assessment within 24 hours.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included: The Full Concierge Package -->
+    <section class="section bg-surface" id="package">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Zero Stress • 100% Care</span>
+          <h2 class="section-title">The Complete All-Inclusive Dental Vacation</h2>
+          <p class="section-subtitle">
+            We handle every single detail of your journey so you can focus entirely on relaxing, healing, and getting your dream smile.
+          </p>
+        </div>
+
+        <div class="package-features-grid">
+          <!-- Card 1: Flights -->
+          <div class="feat-card" data-gsap="fade-up">
+            <div class="feat-icon-box"><i data-lucide="plane" aria-hidden="true"></i></div>
+            <h3 class="feat-title">Return Australian Flights</h3>
+            <p class="feat-desc">Scheduled flights departing from Sydney, Melbourne, Brisbane, Perth, or Adelaide. Premium economy or business upgrades available.</p>
+            <div class="feat-meta text-xs text-cyan">Direct or 1-stop routes with top airlines</div>
+          </div>
+
+          <!-- Card 2: 5-Star Resort -->
+          <div class="feat-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="feat-icon-box"><i data-lucide="hotel" aria-hidden="true"></i></div>
+            <h3 class="feat-title">7 Nights in a 5-Star Resort</h3>
+            <p class="feat-desc">Handpicked luxury oceanfront hotels with private pools, 24/7 room service, recovery day beds, and complimentary gourmet breakfasts.</p>
+            <div class="feat-meta text-xs text-cyan">Travel companions stay free in your room</div>
+          </div>
+
+          <!-- Card 3: VIP Chauffeur -->
+          <div class="feat-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="feat-icon-box"><i data-lucide="car" aria-hidden="true"></i></div>
+            <h3 class="feat-title">Private VIP Chauffeur</h3>
+            <p class="feat-desc">Your dedicated driver meets you at the airport arrivals terminal and chauffeurs you comfortably between your resort and clinic.</p>
+            <div class="feat-meta text-xs text-cyan">Air-conditioned luxury executive fleet</div>
+          </div>
+
+          <!-- Card 4: Western-Trained Surgeons -->
+          <div class="feat-card" data-gsap="fade-up">
+            <div class="feat-icon-box"><i data-lucide="stethoscope" aria-hidden="true"></i></div>
+            <h3 class="feat-title">Elite Implantologists</h3>
+            <p class="feat-desc">Surgeons holding fellowships with ICOI, Royal Australasian College of Dental Surgeons, and Harvard/European institutes.</p>
+            <div class="feat-meta text-xs text-cyan">3D CBCT guided computer navigation</div>
+          </div>
+
+          <!-- Card 5: Relaxing Tours & Recovery -->
+          <div class="feat-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="feat-icon-box"><i data-lucide="palmtree" aria-hidden="true"></i></div>
+            <h3 class="feat-title">Gentle Curated Tours</h3>
+            <p class="feat-desc">Post-procedure relaxation: soothing Balinese massages, private sunset catamaran sailings, and peaceful temple botanical walks.</p>
+            <div class="feat-meta text-xs text-cyan">Low-impact leisure designed for recovery</div>
+          </div>
+
+          <!-- Card 6: Australian Guarantee -->
+          <div class="feat-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="feat-icon-box"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+            <h3 class="feat-title">10-Year Aussie Warranty</h3>
+            <p class="feat-desc">Full warranty backed by our network of partner dentists in Sydney, Melbourne, Brisbane and Perth for routine annual checks.</p>
+            <div class="feat-meta text-xs text-cyan">Local emergency coverage across Australia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7-Day Day-by-Day Vacation Itinerary (Lead Magnet #3) -->
+    <section class="section" id="itinerary">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Your Journey</span>
+          <h2 class="section-title">The 7-Day Smile Holiday Experience</h2>
+          <p class="section-subtitle">
+            See exactly how your dream smile and luxury holiday unfold step-by-step.
+          </p>
+        </div>
+
+        <div class="itinerary-timeline">
+          <div class="itinerary-step" data-gsap="fade-up">
+            <div class="day-badge">DAY 1</div>
+            <div class="step-card">
+              <h3 class="step-title">VIP Arrival & Resort Welcome</h3>
+              <p class="step-desc">Depart Australia on your morning flight. Land in paradise where your private concierge and chauffeur await. Check in to your 5-star beachfront suite, unwind by the infinity pool, and enjoy a tropical welcome dinner.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-step" data-gsap="fade-up" data-delay="0.1">
+            <div class="day-badge">DAY 2</div>
+            <div class="step-card">
+              <h3 class="step-title">3D CBCT Scans & Digital Smile Design</h3>
+              <p class="step-desc">Your private driver escorts you to the state-of-the-art dental centre. Undergo high-resolution 3D bone imaging and meet your senior prosthodontist. Preview your new smile on a 3D simulation monitor before any work begins.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-step" data-gsap="fade-up" data-delay="0.2">
+            <div class="day-badge">DAY 3</div>
+            <div class="step-card">
+              <h3 class="step-title">Gentle Procedure Day & Immediate New Teeth</h3>
+              <p class="step-desc">Treatment takes place under twilight sleep sedation or comfortable local anaesthetic. For All-on-4 patients, titanium implants are placed and an immediate fixed aesthetic bridge is secured. Walk out with a functional, beautiful smile on day three.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-step" data-gsap="fade-up">
+            <div class="day-badge">DAYS 4–5</div>
+            <div class="step-card">
+              <h3 class="step-title">Luxury Recovery, Spa & Gentle Excursions</h3>
+              <p class="step-desc">Rest and recharge. Enjoy soothing room-service meals tailored for recovery, relax in shaded poolside cabanas, indulge in gentle organic facial or foot massages, and take private scenic drives through serene rice terraces or ocean lookouts.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-step" data-gsap="fade-up" data-delay="0.1">
+            <div class="day-badge">DAY 6</div>
+            <div class="step-card">
+              <h3 class="step-title">Final Precision Fitting & Bite Calibration</h3>
+              <p class="step-desc">A relaxed review at the clinic to check your bite alignment, speech, and comfort. Receive your official 10-year warranty documentation, maintenance kit, and emergency contact details for our Australian network.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-step" data-gsap="fade-up" data-delay="0.2">
+            <div class="day-badge">DAY 7</div>
+            <div class="step-card">
+              <h3 class="step-title">Farewell Celebration & Flight Home to Australia</h3>
+              <p class="step-desc">A celebratory farewell breakfast showcasing your radiant new smile. Your private chauffeur transfers you to the airport for your return flight home to Sydney, Melbourne, Brisbane or Perth—saving tens of thousands of dollars.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After Transformation Showcase (Lead Magnet #4) -->
+    <section class="section bg-surface" id="transformations">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Proven Results</span>
+          <h2 class="section-title">Life-Changing Australian Transformations</h2>
+          <p class="section-subtitle">
+            Real Aussies who replaced missing teeth, fixed severe wear, and regained full eating confidence.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <!-- Case 1 -->
+          <div class="case-card" data-gsap="fade-up">
+            <div class="case-visual">
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80" alt="All-on-4 Patient Smile Transformation" class="case-img" loading="lazy">
+              <span class="case-badge">Saved $28,400 AUD</span>
+            </div>
+            <div class="case-info">
+              <h3 class="case-title">Mark T., 58 — Gold Coast, QLD</h3>
+              <div class="case-treatment">Treatment: Upper & Lower All-on-4® Implants</div>
+              <p class="case-desc">"I had failing bridges and couldn't chew steak or apples for 6 years. Local quotes in Brisbane were $54,000 AUD. With Aussie Smile Holidays, I paid $16,800 AUD including my flights and 10 nights in Seminyak with my wife. Best decision of my life."</p>
+              <div class="case-stat-bar">
+                <span>AU Quote: $54,000</span>
+                <span>•</span>
+                <span class="text-cyan font-bold">Package: $16,800 AUD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="case-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="case-visual">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80" alt="Porcelain Veneers Transformation" class="case-img" loading="lazy">
+              <span class="case-badge">Saved $18,200 AUD</span>
+            </div>
+            <div class="case-info">
+              <h3 class="case-title">Sarah L., 34 — Manly, NSW</h3>
+              <div class="case-treatment">Treatment: 18 E-Max® Porcelain Veneers</div>
+              <p class="case-desc">"My teeth were badly stained from childhood medication and chipped from grinding. Sydney cosmetic dentists quoted me $32,000 AUD. I had a dream 7-day holiday in Phuket and paid under $9,000 AUD for pure Hollywood-grade porcelain."</p>
+              <div class="case-stat-bar">
+                <span>AU Quote: $32,000</span>
+                <span>•</span>
+                <span class="text-cyan font-bold">Package: $8,900 AUD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="case-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="case-visual">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="Full Mouth Reconstruction" class="case-img" loading="lazy">
+              <span class="case-badge">Saved $33,500 AUD</span>
+            </div>
+            <div class="case-info">
+              <h3 class="case-title">Geoff & Brenda P. — Geelong, VIC</h3>
+              <div class="case-treatment">Treatment: 8 Implants + 14 Zirconia Crowns</div>
+              <p class="case-desc">"We traveled together as a couple. The clinic was cleaner and more technologically advanced than any surgery I've seen in Melbourne. The VIP driver was fantastic and the Australian follow-up clinic in Collins St gave us total peace of mind."</p>
+              <div class="case-stat-bar">
+                <span>AU Quote: $61,000</span>
+                <span>•</span>
+                <span class="text-cyan font-bold">Package: $19,500 AUD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Australian Aftercare Guarantee & Local Partner Clinics (Lead Magnet #5) -->
+    <section class="section" id="warranty">
+      <div class="container">
+        <div class="grid-2-col items-center gap-8">
+          <div class="guarantee-text" data-gsap="fade-up">
+            <span class="section-tag">Total Peace of Mind</span>
+            <h2 class="section-title">Australian Aftercare & 10-Year Local Warranty</h2>
+            <p class="paragraph mb-4">
+              The number one fear Australians have with overseas dentistry is: <em>"What happens if something goes wrong when I get back home?"</em>
+            </p>
+            <p class="paragraph mb-6">
+              With Aussie Smile Holidays, you are completely protected. We partner with established dental practices across Sydney, Melbourne, Brisbane, and Perth. Your pre-trip evaluation, initial OPG scan, and post-trip checkups are backed by our Australian clinical network.
+            </p>
+
+            <div class="city-clinics-grid">
+              <div class="city-pill">
+                <i data-lucide="map-pin" class="icon-xs text-cyan" aria-hidden="true"></i>
+                <div>
+                  <strong>Sydney CBD & Bondi</strong>
+                  <small>Pre-checkups & Warranty Support</small>
+                </div>
+              </div>
+              <div class="city-pill">
+                <i data-lucide="map-pin" class="icon-xs text-cyan" aria-hidden="true"></i>
+                <div>
+                  <strong>Melbourne (Collins St)</strong>
+                  <small>Diagnostic OPGs & Maintenance</small>
+                </div>
+              </div>
+              <div class="city-pill">
+                <i data-lucide="map-pin" class="icon-xs text-cyan" aria-hidden="true"></i>
+                <div>
+                  <strong>Brisbane (Spring Hill)</strong>
+                  <small>Follow-up & Annual Cleans</small>
+                </div>
+              </div>
+              <div class="city-pill">
+                <i data-lucide="map-pin" class="icon-xs text-cyan" aria-hidden="true"></i>
+                <div>
+                  <strong>Perth (St Georges Tce)</strong>
+                  <small>Clinical Review & Aftercare</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guarantee-visual" data-gsap="fade-up" data-delay="0.2">
+            <div class="resort-card">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Luxury 5-Star Resort Pool" class="resort-img" loading="lazy">
+              <div class="resort-floating-badge">
+                <i data-lucide="shield-check" class="badge-gold-icon" aria-hidden="true"></i>
+                <div>
+                  <strong class="text-white block">10-Year Australian Warranty</strong>
+                  <small class="text-cyan">Written legal guarantee on implants & crowns</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient Reviews & Australian Video Case Studies -->
+    <section class="section bg-surface" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Word of Mouth</span>
+          <h2 class="section-title">What Everyday Aussies Say About Us</h2>
+          <p class="section-subtitle">Over 4,200 Australian patients have trusted our all-inclusive concierge packages.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-box" data-gsap="fade-up">
+            <div class="stars-gold">★★★★★</div>
+            <p class="review-text">"I was quoted $48,000 for All-on-4 in Melbourne. I cried in the car on the way home. Then I found Aussie Smile Holidays. They organized my flights, put me in a 5-star beachfront resort in Seminyak, and my total bill was $13,500 AUD. The teeth look completely natural and I can eat steak again!"</p>
+            <div class="review-author">
+              <div class="author-avatar">BR</div>
+              <div>
+                <strong>Brian Roberts</strong>
+                <small>Frankston, VIC • All-on-4® Full Arch</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-box" data-gsap="fade-up" data-delay="0.1">
+            <div class="stars-gold">★★★★★</div>
+            <p class="review-text">"Traveling alone as a 42-year-old woman to get 16 veneers, I was nervous. The VIP chauffeur was waiting with my name on a sign at Denpasar airport, the hotel was gorgeous, and the clinic was cleaner than any private hospital in Sydney. Saved over $22,000 AUD."</p>
+            <div class="review-author">
+              <div class="author-avatar">TC</div>
+              <div>
+                <strong>Tanya Campbell</strong>
+                <small>Cronulla, NSW • 16 Porcelain Veneers</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-box" data-gsap="fade-up" data-delay="0.2">
+            <div class="stars-gold">★★★★★</div>
+            <p class="review-text">"Retired truck driver from Perth. My mouth was in a terrible state. Australian clinics made me feel ashamed and wanted $60k. Aussie Smile Holidays treated me like royalty. The local clinic in Perth did my post-trip checkup with zero issues."</p>
+            <div class="review-author">
+              <div class="author-avatar">KM</div>
+              <div>
+                <strong>Kevin McAllister</strong>
+                <small>Joondalup, WA • All-on-6® Upper & Lower</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Impact Australian Call to Action -->
+    <section class="cta-banner">
+      <div class="container text-center">
+        <h2 class="cta-title">Don't Live With Pain or Pay Outrageous Australian Prices.</h2>
+        <p class="cta-subtitle">Get your free, no-obligation treatment plan and all-inclusive flight quote within 24 hours. Your dream smile and tropical holiday await.</p>
+        <div class="cta-buttons flex-align justify-center gap-4">
+          <button class="btn btn-cyan btn-lg" id="btnCtaGetPlan">
+            <span>Get My Free Assessment & Flight Quote</span>
+            <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+          </button>
+          <a href="tel:1300000287" class="btn btn-glass btn-lg">
+            <i data-lucide="phone-call" class="icon-cyan" aria-hidden="true"></i>
+            <span>Call AU Concierge: 1300 000 287</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-crest"><i data-lucide="sparkles" class="crest-icon" aria-hidden="true"></i></div>
+            <div class="brand-text">
+              <span class="brand-name">AUSSIE SMILE <span class="text-cyan">HOLIDAYS</span></span>
+              <span class="brand-sub">ABN: 48 612 890 231 • AUSTRALIAN CONCIERGE CARE</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Australia's premier all-inclusive dental tourism concierge service. Delivering world-class implantology, cosmetic smile makeovers, luxury 5-star resort recovery, and guaranteed Australian warranty aftercare.
+          </p>
+          <div class="footer-call-box mt-3">
+            <div><i data-lucide="phone" class="icon-xs text-cyan" aria-hidden="true"></i> Toll-Free: <strong>1300 000 AUS (1300 000 287)</strong></div>
+            <div><i data-lucide="mail" class="icon-xs text-cyan" aria-hidden="true"></i> Concierge: <strong>concierge@aussiesmileholidays.com.au</strong></div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Procedures</h4>
+          <ul class="footer-links">
+            <li><a href="#calculator">All-on-4® Dental Implants</a></li>
+            <li><a href="#calculator">All-on-6® Full Mouth Fix</a></li>
+            <li><a href="#calculator">Porcelain & E-Max® Veneers</a></li>
+            <li><a href="#calculator">Zirconia Crowns & Bridges</a></li>
+            <li><a href="#calculator">Full Mouth Smile Makeovers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Australian Network</h4>
+          <ul class="footer-links">
+            <li><strong>Sydney:</strong> Level 14, 175 Pitt Street</li>
+            <li><strong>Melbourne:</strong> Level 9, 350 Collins Street</li>
+            <li><strong>Brisbane:</strong> Level 5, 239 George Street</li>
+            <li><strong>Perth:</strong> Level 8, 225 St Georges Tce</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Accreditations</h4>
+          <p class="footer-text-sm">
+            Hospitals and surgical centres accredited by the Joint Commission International (JCI) and ISO 9001. All materials manufactured by Nobel Biocare®, Straumann®, and Ivoclar Vivadent®.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Aussie Smile Holidays Pty Ltd. All Rights Reserved.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Privacy Policy (Australia)</a>
+          <a href="#">Medical Disclaimer</a>
+          <a href="#">10-Year Warranty Terms</a>
+          <a href="#">Australian Consumer Law Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog: 60-Second Custom Smile Assessment & Flight Quote (<dialog>) -->
+  <dialog class="custom-dialog" id="planModal">
+    <div class="dialog-content">
+      <button class="dialog-close" id="btnClosePlanModal" aria-label="Close dialog">&times;</button>
+      
+      <div class="dialog-header">
+        <span class="section-tag">Free Assessment & Itinerary</span>
+        <h3 class="dialog-title">Get Your Free Australian Dental Holiday Plan</h3>
+        <p class="dialog-desc">Our Australian dental coordinators will review your case and prepare a complete flight, 5★ resort, and treatment quotation within 24 hours.</p>
+      </div>
+
+      <form id="dentalQuoteForm">
+        <div class="form-group mb-3">
+          <label class="form-label" for="qTreatment">What dental treatment do you need? *</label>
+          <select id="qTreatment" class="form-input" required>
+            <option value="All-on-4 Implants">All-on-4® Dental Implants (Full Arch Fixed)</option>
+            <option value="All-on-6 Implants">All-on-6® Implants (Upper & Lower)</option>
+            <option value="Porcelain Veneers">Porcelain Veneers (Full Smile Makeover)</option>
+            <option value="Crowns & Bridges">Zirconia Crowns & Bridges</option>
+            <option value="Single/Multiple Implants">Single or Multiple Titanium Implants</option>
+            <option value="Not sure - need recommendation">Not sure / Need assessment & advice</option>
+          </select>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="qDeparture">Departure Airport *</label>
+            <select id="qDeparture" class="form-input" required>
+              <option value="Sydney (SYD)">Sydney (SYD)</option>
+              <option value="Melbourne (MEL)">Melbourne (MEL)</option>
+              <option value="Brisbane (BNE)">Brisbane (BNE)</option>
+              <option value="Perth (PER)">Perth (PER)</option>
+              <option value="Adelaide (ADL)">Adelaide (ADL)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qDestination">Preferred Holiday Spot</label>
+            <select id="qDestination" class="form-input">
+              <option value="Bali Luxury Resort">Bali (Seminyak Beachfront)</option>
+              <option value="Phuket Island Sanctuary">Phuket (Laguna Resort)</option>
+              <option value="Bangkok Medical Hub">Bangkok (5-Star City Resort)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="qName">Full Legal Name *</label>
+            <input type="text" id="qName" class="form-input" placeholder="e.g. David Morrison" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qPhone">Australian Mobile (for SMS/WhatsApp plan) *</label>
+            <input type="tel" id="qPhone" class="form-input" placeholder="0400 123 456" required>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label class="form-label" for="qEmail">Email Address (where to send your itemised quote) *</label>
+          <input type="email" id="qEmail" class="form-input" placeholder="david@example.com.au" required>
+        </div>
+
+        <div class="p-3 bg-surface rounded border border-cyan mb-4">
+          <div class="flex-align gap-2 text-xs text-cyan">
+            <i data-lucide="lock" class="icon-xs" aria-hidden="true"></i>
+            <span>Privacy Guaranteed. Your information is protected under Australian Privacy Principles (APPs).</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-cyan full-width btn-lg">
+          <i data-lucide="send" class="icon-sm" aria-hidden="true"></i>
+          <span>Send Me My Free Flight & Dental Quote</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="floating-cta-bar">
+    <div class="floating-inner flex-between">
+      <div class="floating-left flex-align gap-2">
+        <span class="live-pulse"></span>
+        <span class="floating-text"><strong>Aussie Coordinators Online:</strong> 1300 000 AUS</span>
+      </div>
+      <div class="floating-right flex-align gap-3">
+        <a href="tel:1300000287" class="btn btn-sm btn-outline-cyan">
+          <i data-lucide="phone" class="icon-xs" aria-hidden="true"></i> Call 1300
+        </a>
+        <button class="btn btn-sm btn-cyan" id="btnFloatingQuote">
+          <span>Get Free Quote</span>
+          <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Application Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

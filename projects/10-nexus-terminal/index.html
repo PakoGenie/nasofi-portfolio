@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS PRIME | Institutional Multi-Asset Algorithmic Trading Terminal</title>
+  <meta name="description" content="Sub-millisecond institutional multi-asset execution terminal. Real-time canvas candlestick charting, live order book DOM depth, algorithmic order routing, and portfolio margin risk telemetry.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nexusprime-terminal.io">
+
+  <!-- Google Fonts: JetBrains Mono (Execution & Numerical Data) + Inter / Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="terminal-body">
+  <!-- Top Institutional Ticker & System Health Header -->
+  <header class="terminal-topbar">
+    <div class="topbar-left flex-align gap-4">
+      <div class="brand-block flex-align gap-2">
+        <div class="terminal-logo-crest">
+          <i data-lucide="zap" class="icon-sm text-cyan" aria-hidden="true"></i>
+        </div>
+        <div>
+          <span class="brand-title">NEXUS <span class="text-cyan">PRIME</span></span>
+          <span class="brand-sub font-mono">v4.8.2 PRO TERMINAL</span>
+        </div>
+      </div>
+
+      <div class="status-indicator-pill flex-align gap-2 font-mono text-xs">
+        <span class="pulse-emerald"></span>
+        <span class="text-emerald font-bold">LD4 DIRECT FIBER</span>
+        <span class="text-muted">•</span>
+        <span class="text-muted" id="latencyDisplay">0.82 ms</span>
+      </div>
+    </div>
+
+    <!-- Live Multi-Asset Ticker Bar -->
+    <div class="topbar-center hide-mobile">
+      <div class="ticker-marquee flex-align gap-6 font-mono text-xs">
+        <div class="ticker-item active" data-symbol="BTC-USD">
+          <span class="ticker-sym">BTC/USD</span>
+          <strong class="ticker-price text-emerald" id="topBtcPrice">$88,450.00</strong>
+          <span class="ticker-chg text-emerald">+3.82%</span>
+        </div>
+        <div class="ticker-item" data-symbol="ETH-USD">
+          <span class="ticker-sym">ETH/USD</span>
+          <strong class="ticker-price text-emerald" id="topEthPrice">$3,485.50</strong>
+          <span class="ticker-chg text-emerald">+2.14%</span>
+        </div>
+        <div class="ticker-item" data-symbol="SOL-USD">
+          <span class="ticker-sym">SOL/USD</span>
+          <strong class="ticker-price text-rose" id="topSolPrice">$182.40</strong>
+          <span class="ticker-chg text-rose">-1.05%</span>
+        </div>
+        <div class="ticker-item" data-symbol="NVDA">
+          <span class="ticker-sym">NVDA</span>
+          <strong class="ticker-price text-emerald">$143.20</strong>
+          <span class="ticker-chg text-emerald">+4.10%</span>
+        </div>
+        <div class="ticker-item" data-symbol="XAU-USD">
+          <span class="ticker-sym">XAU/GOLD</span>
+          <strong class="ticker-price text-gold">$2,748.10</strong>
+          <span class="ticker-chg text-emerald">+0.65%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Account Equity & Trader Profile -->
+    <div class="topbar-right flex-align gap-4 font-mono">
+      <div class="equity-stat-block text-right hide-mobile">
+        <span class="text-xs text-muted block">PORTFOLIO NAV:</span>
+        <strong class="text-emerald text-sm block" id="headerNavVal">$1,248,930.50 USD</strong>
+      </div>
+      <div class="equity-stat-block text-right hide-mobile">
+        <span class="text-xs text-muted block">UNREALIZED P&L:</span>
+        <strong class="text-emerald text-sm block" id="headerPnlVal">+$34,812.40 (+2.86%)</strong>
+      </div>
+      <button class="btn-terminal-icon" id="btnOpenApiKeys" title="API Keys & Hardware Signing">
+        <i data-lucide="key" class="icon-xs" aria-hidden="true"></i>
+      </button>
+      <div class="trader-pill flex-align gap-2">
+        <img src="assets/trader-avatar.jpg" alt="Institutional Trader" class="trader-thumb">
+        <span class="text-xs text-white hide-mobile">ALPHA_DESK_01</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Trading Workbench Grid -->
+  <main class="terminal-workbench">
+    <!-- Column 1: Watchlist & Market Screener (Left Drawer) -->
+    <aside class="workbench-watchlist">
+      <div class="panel-header flex-between">
+        <span class="panel-title font-mono text-xs"><i data-lucide="list" class="icon-xs inline" aria-hidden="true"></i> WATCHLIST</span>
+        <span class="text-xs text-muted font-mono">5 ASSETS</span>
+      </div>
+
+      <div class="watchlist-items" id="watchlistContainer">
+        <div class="watchlist-row active" data-asset="BTC-USD" data-price="88450" data-change="+3.82">
+          <div class="flex-between mb-1">
+            <strong class="asset-name text-white font-mono">BTC / USD</strong>
+            <strong class="asset-price text-emerald font-mono">$88,450.00</strong>
+          </div>
+          <div class="flex-between text-xs text-muted font-mono">
+            <span>Bitcoin Perpetual</span>
+            <span class="text-emerald">+3.82%</span>
+          </div>
+        </div>
+
+        <div class="watchlist-row" data-asset="ETH-USD" data-price="3485" data-change="+2.14">
+          <div class="flex-between mb-1">
+            <strong class="asset-name text-white font-mono">ETH / USD</strong>
+            <strong class="asset-price text-emerald font-mono">$3,485.50</strong>
+          </div>
+          <div class="flex-between text-xs text-muted font-mono">
+            <span>Ethereum Perpetual</span>
+            <span class="text-emerald">+2.14%</span>
+          </div>
+        </div>
+
+        <div class="watchlist-row" data-asset="SOL-USD" data-price="182" data-change="-1.05">
+          <div class="flex-between mb-1">
+            <strong class="asset-name text-white font-mono">SOL / USD</strong>
+            <strong class="asset-price text-rose font-mono">$182.40</strong>
+          </div>
+          <div class="flex-between text-xs text-muted font-mono">
+            <span>Solana Perpetual</span>
+            <span class="text-rose">-1.05%</span>
+          </div>
+        </div>
+
+        <div class="watchlist-row" data-asset="NVDA" data-price="143" data-change="+4.10">
+          <div class="flex-between mb-1">
+            <strong class="asset-name text-white font-mono">NVDA</strong>
+            <strong class="asset-price text-emerald font-mono">$143.20</strong>
+          </div>
+          <div class="flex-between text-xs text-muted font-mono">
+            <span>NVIDIA Equities</span>
+            <span class="text-emerald">+4.10%</span>
+          </div>
+        </div>
+
+        <div class="watchlist-row" data-asset="XAU-USD" data-price="2748" data-change="+0.65">
+          <div class="flex-between mb-1">
+            <strong class="asset-name text-white font-mono">XAU / GOLD</strong>
+            <strong class="asset-price text-gold font-mono">$2,748.10</strong>
+          </div>
+          <div class="flex-between text-xs text-muted font-mono">
+            <span>Spot Physical Gold</span>
+            <span class="text-gold">+0.65%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk Telemetry Card -->
+      <div class="risk-telemetry-box mt-auto p-3 font-mono text-xs">
+        <div class="flex-between mb-2">
+          <span class="text-muted">VaR (99% 1-Day):</span>
+          <strong class="text-rose">$18,420</strong>
+        </div>
+        <div class="flex-between mb-2">
+          <span class="text-muted">Sharpe Ratio:</span>
+          <strong class="text-emerald">2.84</strong>
+        </div>
+        <div class="flex-between mb-2">
+          <span class="text-muted">Max Drawdown:</span>
+          <strong class="text-white">-4.18%</strong>
+        </div>
+        <div class="flex-between">
+          <span class="text-muted">Margin Usage:</span>
+          <strong class="text-cyan">32.7%</strong>
+        </div>
+        <div class="margin-track mt-2"><div class="margin-fill" style="width: 32.7%;"></div></div>
+      </div>
+    </aside>
+
+    <!-- Column 2: Center Primary Stage (Interactive Candlestick Chart & Positions) -->
+    <section class="workbench-center">
+      <!-- Active Ticker Action Bar -->
+      <div class="chart-action-bar flex-between">
+        <div class="flex-align gap-4">
+          <div class="flex-align gap-2">
+            <h1 class="active-symbol-title font-mono" id="activeSymbolDisplay">BTC/USD</h1>
+            <span class="badge-perpetual font-mono">PERPETUAL</span>
+          </div>
+
+          <div class="chart-stat-pill font-mono text-xs hide-mobile">
+            <span class="text-muted">24H HIGH:</span>
+            <strong class="text-white ml-1" id="stat24High">$89,200.00</strong>
+          </div>
+          <div class="chart-stat-pill font-mono text-xs hide-mobile">
+            <span class="text-muted">24H LOW:</span>
+            <strong class="text-white ml-1" id="stat24Low">$85,110.00</strong>
+          </div>
+          <div class="chart-stat-pill font-mono text-xs hide-mobile">
+            <span class="text-muted">24H VOL:</span>
+            <strong class="text-cyan ml-1">$1.42B</strong>
+          </div>
+          <div class="chart-stat-pill font-mono text-xs hide-mobile">
+            <span class="text-muted">FUNDING:</span>
+            <strong class="text-emerald ml-1">+0.0100% in 3h 12m</strong>
+          </div>
+        </div>
+
+        <!-- Timeframe & Indicator Switchers -->
+        <div class="flex-align gap-2">
+          <div class="timeframe-group flex-align gap-1 font-mono text-xs">
+            <button class="tf-btn" data-tf="1m">1m</button>
+            <button class="tf-btn active" data-tf="5m">5m</button>
+            <button class="tf-btn" data-tf="15m">15m</button>
+            <button class="tf-btn" data-tf="1h">1h</button>
+            <button class="tf-btn" data-tf="1D">1D</button>
+          </div>
+
+          <div class="indicator-group flex-align gap-1 font-mono text-xs hide-mobile">
+            <button class="ind-btn active" id="btnToggleEma" title="Toggle EMA 20/50">EMA</button>
+            <button class="ind-btn active" id="btnToggleVol" title="Toggle Volume Histogram">VOL</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Canvas Candlestick Chart Viewport -->
+      <div class="chart-viewport" id="chartViewport">
+        <canvas id="candleCanvas"></canvas>
+        <!-- Overlay Price Tag -->
+        <div class="chart-hover-inspect font-mono text-xs" id="chartInspectPill">
+          <span>O: 88,310</span> • <span>H: 88,520</span> • <span>L: 88,290</span> • <span>C: 88,450</span>
+        </div>
+      </div>
+
+      <!-- Bottom Dock: Active Positions & Order History -->
+      <div class="workbench-bottom-dock">
+        <div class="dock-header flex-between">
+          <div class="flex-align gap-4">
+            <button class="dock-tab-btn active" data-dock="positions">Positions (1)</button>
+            <button class="dock-tab-btn" data-dock="orders">Open Orders (2)</button>
+            <button class="dock-tab-btn" data-dock="history">Order History (48)</button>
+          </div>
+          <div class="font-mono text-xs text-muted">CROSS MARGIN 10X</div>
+        </div>
+
+        <!-- Positions Table -->
+        <div class="dock-table-container">
+          <table class="terminal-table font-mono text-xs">
+            <thead>
+              <tr>
+                <th>Symbol / Type</th>
+                <th>Size</th>
+                <th>Entry Price</th>
+                <th>Mark Price</th>
+                <th>Liq. Price</th>
+                <th>Margin</th>
+                <th>Unrealized P&L</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="positionsTableBody">
+              <tr id="activeBtcPositionRow">
+                <td><strong class="text-emerald">BTC/USD LONG 10x</strong></td>
+                <td>4.50 BTC ($398,025)</td>
+                <td>$86,210.00</td>
+                <td class="text-white" id="posMarkPrice">$88,450.00</td>
+                <td class="text-rose">$78,400.00</td>
+                <td>$39,802.50</td>
+                <td><strong class="text-emerald" id="posPnlVal">+$10,080.00 (+25.32%)</strong></td>
+                <td>
+                  <button class="btn-xs btn-close-pos" id="btnClosePosition">Close Market</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Column 3: Order Book DOM & Quick Execution Panel (Right Drawer) -->
+    <aside class="workbench-execution">
+      <!-- Top Half: Real-Time Order Book DOM -->
+      <div class="orderbook-panel">
+        <div class="panel-header flex-between">
+          <span class="panel-title font-mono text-xs"><i data-lucide="bar-chart-2" class="icon-xs inline" aria-hidden="true"></i> ORDER BOOK</span>
+          <span class="text-xs text-muted font-mono">SPREAD: $0.50</span>
+        </div>
+
+        <div class="orderbook-table-wrap font-mono text-xs">
+          <!-- Asks (Sells) -->
+          <div class="orderbook-asks" id="orderbookAsks">
+            <div class="ob-row ask-row"><span class="price text-rose">88,452.50</span><span class="size">1.428</span><span class="total">126.3k</span><div class="depth-bar ask-bar" style="width: 45%;"></div></div>
+            <div class="ob-row ask-row"><span class="price text-rose">88,452.00</span><span class="size">0.890</span><span class="total">78.7k</span><div class="depth-bar ask-bar" style="width: 28%;"></div></div>
+            <div class="ob-row ask-row"><span class="price text-rose">88,451.50</span><span class="size">2.140</span><span class="total">189.2k</span><div class="depth-bar ask-bar" style="width: 65%;"></div></div>
+            <div class="ob-row ask-row"><span class="price text-rose">88,451.00</span><span class="size">0.450</span><span class="total">39.8k</span><div class="depth-bar ask-bar" style="width: 15%;"></div></div>
+            <div class="ob-row ask-row"><span class="price text-rose">88,450.50</span><span class="size">1.820</span><span class="total">160.9k</span><div class="depth-bar ask-bar" style="width: 55%;"></div></div>
+          </div>
+
+          <!-- Mid Market Spread Indicator -->
+          <div class="orderbook-mid flex-between py-1 px-2 border-y my-1">
+            <strong class="mid-price font-bold text-sm text-emerald" id="obMidPrice">88,450.00 ↑</strong>
+            <span class="text-xs text-muted">Index: 88,449.80</span>
+          </div>
+
+          <!-- Bids (Buys) -->
+          <div class="orderbook-bids" id="orderbookBids">
+            <div class="ob-row bid-row"><span class="price text-emerald">88,449.50</span><span class="size">1.940</span><span class="total">171.5k</span><div class="depth-bar bid-bar" style="width: 60%;"></div></div>
+            <div class="ob-row bid-row"><span class="price text-emerald">88,449.00</span><span class="size">3.210</span><span class="total">283.9k</span><div class="depth-bar bid-bar" style="width: 85%;"></div></div>
+            <div class="ob-row bid-row"><span class="price text-emerald">88,448.50</span><span class="size">0.720</span><span class="total">63.6k</span><div class="depth-bar bid-bar" style="width: 22%;"></div></div>
+            <div class="ob-row bid-row"><span class="price text-emerald">88,448.00</span><span class="size">1.650</span><span class="total">145.9k</span><div class="depth-bar bid-bar" style="width: 50%;"></div></div>
+            <div class="ob-row bid-row"><span class="price text-emerald">88,447.50</span><span class="size">2.880</span><span class="total">254.7k</span><div class="depth-bar bid-bar" style="width: 78%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Half: Order Execution Ticket Form -->
+      <div class="execution-ticket-panel">
+        <div class="panel-header flex-between mb-2">
+          <span class="panel-title font-mono text-xs"><i data-lucide="send" class="icon-xs inline" aria-hidden="true"></i> ORDER TICKET</span>
+          <span class="text-xs text-cyan font-mono">CROSS 10X</span>
+        </div>
+
+        <!-- Buy / Sell Mode Tabs -->
+        <div class="order-side-toggle grid-2 mb-3">
+          <button class="side-btn btn-buy active" id="btnSideBuy">BUY / LONG</button>
+          <button class="side-btn btn-sell" id="btnSideSell">SELL / SHORT</button>
+        </div>
+
+        <!-- Order Type Select -->
+        <div class="order-type-tabs flex-align gap-1 mb-3 font-mono text-xs">
+          <button class="type-btn active" data-type="market">Market</button>
+          <button class="type-btn" data-type="limit">Limit</button>
+          <button class="type-btn" data-type="stop">Stop-Market</button>
+        </div>
+
+        <form id="orderTicketForm">
+          <!-- Limit Price Input (Hidden for Market) -->
+          <div class="form-group mb-2" id="limitPriceGroup" style="display: none;">
+            <label class="form-label font-mono text-xs text-muted" for="inputLimitPrice">LIMIT PRICE (USD)</label>
+            <div class="input-with-addon">
+              <input type="number" id="inputLimitPrice" class="ticket-input" value="88450" step="0.5">
+              <span class="addon font-mono text-xs text-muted">USD</span>
+            </div>
+          </div>
+
+          <!-- Position Size Input -->
+          <div class="form-group mb-2">
+            <div class="flex-between mb-1">
+              <label class="form-label font-mono text-xs text-muted" for="inputOrderSize">ORDER SIZE</label>
+              <span class="text-xs text-muted font-mono" id="sizeUsdEquiv">≈ $88,450 USD</span>
+            </div>
+            <div class="input-with-addon">
+              <input type="number" id="inputOrderSize" class="ticket-input" value="1.0" step="0.1" min="0.01" required>
+              <span class="addon font-mono text-xs text-cyan" id="orderSizeUnit">BTC</span>
+            </div>
+          </div>
+
+          <!-- Leverage Slider (1x to 50x) -->
+          <div class="form-group mb-3">
+            <div class="flex-between mb-1 font-mono text-xs">
+              <span class="text-muted">LEVERAGE:</span>
+              <strong class="text-cyan font-bold" id="leverageValDisplay">10x Isolated</strong>
+            </div>
+            <input type="range" min="1" max="50" value="10" class="leverage-range" id="leverageRange">
+            <div class="flex-between font-mono text-xs text-muted mt-1">
+              <span>1x</span>
+              <span>10x</span>
+              <span>25x</span>
+              <span>50x</span>
+            </div>
+          </div>
+
+          <!-- Execution Summary -->
+          <div class="order-math-summary font-mono text-xs mb-3 p-2 border rounded">
+            <div class="flex-between mb-1">
+              <span class="text-muted">Required Margin:</span>
+              <strong class="text-white" id="reqMarginDisplay">$8,845.00</strong>
+            </div>
+            <div class="flex-between mb-1">
+              <span class="text-muted">Estimated Liq. Price:</span>
+              <strong class="text-rose" id="estLiqDisplay">$79,605.00</strong>
+            </div>
+            <div class="flex-between">
+              <span class="text-muted">Taker Fee (0.02%):</span>
+              <strong class="text-muted">$17.69</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-execute btn-execute-buy full-width" id="btnSubmitOrder">
+            <i data-lucide="arrow-up-right" class="icon-sm" aria-hidden="true"></i>
+            <span id="btnExecuteText">EXECUTE LONG (1.0 BTC)</span>
+          </button>
+        </form>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal 1: Execution Confirmation Dialog (<dialog id="orderConfirmationModal">) -->
+  <dialog class="terminal-modal" id="orderConfirmationModal" aria-label="Confirm Execution Ticket">
+    <div class="modal-inner">
+      <button class="modal-close" id="btnCloseConfirmModal">&times;</button>
+      <div class="modal-header mb-3">
+        <span class="font-mono text-xs text-cyan block mb-1">INSTITUTIONAL EXECUTION ROUTE</span>
+        <h3 class="modal-title font-mono text-lg text-white" id="confirmModalTitle">Confirm Long Execution</h3>
+      </div>
+
+      <div class="confirm-specs font-mono text-xs mb-4">
+        <div class="flex-between py-2 border-b">
+          <span class="text-muted">Symbol:</span>
+          <strong class="text-white" id="confSymbol">BTC/USD Perpetual</strong>
+        </div>
+        <div class="flex-between py-2 border-b">
+          <span class="text-muted">Side / Type:</span>
+          <strong class="text-emerald" id="confSide">BUY / MARKET</strong>
+        </div>
+        <div class="flex-between py-2 border-b">
+          <span class="text-muted">Contract Size:</span>
+          <strong class="text-white" id="confSize">1.0 BTC ($88,450.00)</strong>
+        </div>
+        <div class="flex-between py-2 border-b">
+          <span class="text-muted">Leverage:</span>
+          <strong class="text-cyan" id="confLev">10x Isolated</strong>
+        </div>
+        <div class="flex-between py-2 border-b">
+          <span class="text-muted">Max Slippage:</span>
+          <strong class="text-white">0.05% (5 bps)</strong>
+        </div>
+      </div>
+
+      <div class="flex-align gap-3">
+        <button class="btn btn-outline full-width font-mono" id="btnCancelOrder">Cancel</button>
+        <button class="btn btn-cyan full-width font-mono" id="btnConfirmDispatch">Confirm & Transmit</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: API Keys & Hardware Signing Drawer (<dialog id="apiSecurityModal">) -->
+  <dialog class="terminal-modal" id="apiSecurityModal" aria-label="API Security & Hardware Signing">
+    <div class="modal-inner">
+      <button class="modal-close" id="btnCloseApiModal">&times;</button>
+      <div class="modal-header mb-3">
+        <span class="font-mono text-xs text-gold block mb-1">SECURITY CLEARANCE</span>
+        <h3 class="modal-title font-mono text-lg text-white">Hardware Key & API Subscriptions</h3>
+      </div>
+
+      <div class="hardware-preview mb-4 text-center">
+        <img src="assets/hardware-vault.jpg" alt="Hardware Signing Vault" class="vault-thumb">
+        <div class="font-mono text-xs text-emerald mt-2">
+          <i data-lucide="shield-check" class="icon-xs inline" aria-hidden="true"></i>
+          <span>YUBIKEY FIPS 140-2 LEVEL 3 SIGNED</span>
+        </div>
+      </div>
+
+      <div class="api-token-box font-mono text-xs p-3 border rounded mb-4">
+        <div class="flex-between text-muted mb-1">
+          <span>PUBLIC KEY (HMAC-SHA256):</span>
+          <span class="text-cyan">LIVE</span>
+        </div>
+        <code class="block text-white truncate">np_live_sec_9948a7b1c3e042ef8914bca...</code>
+      </div>
+
+      <button class="btn btn-outline full-width font-mono" id="btnCloseApiDrawer">Close Security Center</button>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

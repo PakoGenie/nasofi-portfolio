@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRADA MONOLITH | Precision Dual-Boiler Commercial-Grade Espresso Machine</title>
+  <meta name="description" content="The definitive benchmark for artisanal espresso. Dual independent boilers, manual gear flow profiling, dual-PID thermal stability, and hand-finished Italian metallurgy.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://strada-monolith.com">
+
+  <!-- Google Fonts: Syne (Architectural Avant-Garde Luxury) + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Design System & Hyperframe Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Copper & Espresso Crema Luminescent Backdrops -->
+  <div class="ambient-glow glow-crema" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bronze" aria-hidden="true"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="ribbon-badge">2026 EDITION</span>
+        <span class="text-sub hide-mobile">Handcrafted in Florence, Italy • Numbered Limited Production</span>
+      </div>
+      <div class="flex-align gap-4">
+        <span>White-Glove In-Home Installation Included</span>
+        <span class="divider">|</span>
+        <span class="text-gold font-semibold">5-Year Commercial Warranty</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="STRADA MONOLITH Home">
+        <div class="brand-crest">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+            <line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">STRADA</span>
+          <span class="brand-sub">MONOLITH PRECISION</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#monolith" class="nav-link">The Monolith</a>
+        <a href="#extraction-sim" class="nav-link">Extraction Simulator</a>
+        <a href="#architecture" class="nav-link">Dual Boilers</a>
+        <a href="#profiling" class="nav-link">Gear Profiling</a>
+        <a href="#barista-kit" class="nav-link">Barista Suite</a>
+        <a href="#reviews" class="nav-link">Roasters' Verdict</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="cart-trigger-btn flex-align gap-2" id="cartTriggerBtn" aria-label="View Order Bag">
+          <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+          <span class="cart-counter-pill" id="cartCount">1</span>
+          <span class="cart-val hide-mobile" id="cartNavTotal">$4,850</span>
+        </button>
+
+        <a href="#monolith" class="btn btn-gold hide-mobile">
+          <span>Reserve Build — $4,850</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <span class="brand-name">STRADA MONOLITH</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#monolith" class="mobile-nav-link">The Monolith Machine</a>
+      <a href="#extraction-sim" class="mobile-nav-link">Interactive 9-Bar Simulator</a>
+      <a href="#architecture" class="mobile-nav-link">Dual-Boiler Thermodynamics</a>
+      <a href="#profiling" class="mobile-nav-link">Manual Flow Profiling</a>
+      <a href="#barista-kit" class="mobile-nav-link">Handcrafted Barista Suite</a>
+      <a href="#reviews" class="mobile-nav-link">Master Roaster Testimonials</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-gold full-width mb-3" id="btnMobileOrder">Reserve Strada Monolith ($4,850)</button>
+      <div class="text-xs text-muted text-center">White-Glove Delivery & Installation</div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Hero Product Showcase (DTC Flagship Configurator) -->
+    <section class="section hero-showcase" id="monolith">
+      <div class="container">
+        <div class="product-stage-grid">
+          <!-- Left: 3D Interactive Parallax Machine Stage -->
+          <div class="product-visual-column">
+            <div class="product-gallery-frame" id="machineGalleryFrame">
+              <!-- Live Status Pill -->
+              <div class="stage-finish-pill" id="machineFinishLabel">
+                <span class="finish-dot finish-stainless"></span>
+                <span>Brushed AISI 304 Stainless Steel • Mirror Polished Group</span>
+              </div>
+
+              <!-- Main Hero Product Viewport -->
+              <div class="product-image-container">
+                <img src="assets/strada-stainless.jpg" alt="STRADA MONOLITH Espresso Machine" class="product-hero-img" id="machineMainImg" loading="eager">
+              </div>
+
+              <!-- Interactive Finish Thumbnails Strip -->
+              <div class="gallery-thumbs-row">
+                <button class="thumb-btn active" data-finish="stainless" data-img="assets/strada-stainless.jpg" aria-label="Brushed Stainless View">
+                  <img src="assets/strada-stainless.jpg" alt="Stainless finish">
+                </button>
+                <button class="thumb-btn" data-finish="black" data-img="assets/strada-black.jpg" aria-label="Cast Iron Black View">
+                  <img src="assets/strada-black.jpg" alt="Cast Iron Black finish">
+                </button>
+                <button class="thumb-btn" data-finish="walnut" data-img="assets/strada-walnut.jpg" aria-label="Tuscan Walnut View">
+                  <img src="assets/strada-walnut.jpg" alt="Walnut finish">
+                </button>
+                <button class="thumb-btn" data-finish="white" data-img="assets/strada-white.jpg" aria-label="Arctic White View">
+                  <img src="assets/strada-white.jpg" alt="White finish">
+                </button>
+              </div>
+            </div>
+
+            <!-- Machine Quick Telemetry Bar -->
+            <div class="quick-telemetry-bar">
+              <div class="q-stat">
+                <span class="q-val font-mono">1.5L + 3.5L</span>
+                <span class="q-lbl">Dual Independent Boilers</span>
+              </div>
+              <div class="q-stat">
+                <span class="q-val font-mono">±0.1°C</span>
+                <span class="q-lbl">Dual-PID Thermal Stability</span>
+              </div>
+              <div class="q-stat">
+                <span class="q-val font-mono">9.0 BAR</span>
+                <span class="q-lbl">Silent Rotary Vane Pump</span>
+              </div>
+              <div class="q-stat">
+                <span class="q-val font-mono">58.5mm</span>
+                <span class="q-lbl">Saturated Brass Group</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: DTC Customizer & Purchasing Engine -->
+          <div class="product-details-column">
+            <div class="release-tag">
+              <i data-lucide="award" class="icon-xs" aria-hidden="true"></i>
+              <span>COMMERCIAL MASTER ARCHITECTURE FOR HOME CONNOISSEURS</span>
+            </div>
+
+            <h1 class="product-heading">STRADA MONOLITH</h1>
+            <p class="product-subheading">Precision Dual-Boiler Manual Flow-Profiling Espresso Machine</p>
+
+            <div class="rating-strip flex-align gap-2 mb-4">
+              <div class="stars-gold">★★★★★</div>
+              <span class="rating-score font-mono">4.99 / 5.0</span>
+              <span class="divider">·</span>
+              <a href="#reviews" class="rating-count">840 Specialty Cafe Roasters</a>
+            </div>
+
+            <p class="product-lead-desc">
+              Forged without compromise in Florence. Featuring an isolated saturated saturated group head, commercial silent fluid rotary pump, independent heavy-gauge stainless boilers, and continuous gear flow-profiling paddle for absolute extraction control.
+            </p>
+
+            <!-- 4-Way Material Finish Selector -->
+            <div class="config-block mb-6">
+              <div class="flex-between mb-2">
+                <span class="config-label">SELECT BESPOKE FINISH:</span>
+                <span class="config-val-label text-gold" id="activeFinishName">Brushed AISI 304 Stainless Steel</span>
+              </div>
+
+              <div class="finish-swatches-grid" role="radiogroup" aria-label="Machine Finish Selection">
+                <!-- Swatch 1: Stainless -->
+                <button class="finish-card active" data-finish="stainless" data-finish-name="Brushed AISI 304 Stainless Steel" data-img="assets/strada-stainless.jpg" role="radio" aria-checked="true">
+                  <span class="swatch-circle swatch-stainless"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Brushed Stainless</strong>
+                    <small class="swatch-desc">Hand-Grained Italian Steel</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 2: Cast Iron Black -->
+                <button class="finish-card" data-finish="black" data-finish-name="Matte Cast Iron Obsidian Black" data-img="assets/strada-black.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-black"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Cast Iron Black</strong>
+                    <small class="swatch-desc">Textured Powder-Coated PVD</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 3: Tuscan Walnut -->
+                <button class="finish-card" data-finish="walnut" data-finish-name="Raw Brass & Tuscan Walnut Accents" data-img="assets/strada-walnut.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-walnut"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Tuscan Walnut</strong>
+                    <small class="swatch-desc">Solid Wood Levers & Accents</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 4: Arctic White -->
+                <button class="finish-card" data-finish="white" data-finish-name="Arctic Matte White & Bleached Oak" data-img="assets/strada-white.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-white"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Arctic White</strong>
+                    <small class="swatch-desc">Matte Finish & Light Wood</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Price & Reservation Terms -->
+            <div class="pricing-card mb-6">
+              <div class="flex-between items-baseline mb-2">
+                <div class="flex-align gap-3">
+                  <span class="hero-price" id="currentPriceDisplay">$4,850 USD</span>
+                  <span class="tax-tag">White-Glove Delivery Included</span>
+                </div>
+                <span class="build-slot-status flex-align gap-1">
+                  <span class="pulse-amber"></span> Production Batch 04 • 6 Builds Left
+                </span>
+              </div>
+              <p class="terms-note text-xs text-muted">
+                Deposit of <strong>$1,200 USD</strong> secures your build serial. Remaining balance charged upon pre-dispatch bench calibration.
+              </p>
+            </div>
+
+            <!-- Primary CTAs -->
+            <div class="cta-action-wrap mb-6">
+              <button class="btn btn-gold btn-lg full-width mb-3" id="btnReserveBuild">
+                <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+                <span id="btnReserveText">Reserve Strada Monolith — $4,850</span>
+              </button>
+
+              <button class="btn btn-glass btn-lg full-width" id="btnInstantApplePay">
+                <span class="apple-pay-text">Pay</span> Express Build Reservation
+              </button>
+            </div>
+
+            <!-- Confidence Highlights -->
+            <div class="trust-grid">
+              <div class="trust-item">
+                <i data-lucide="truck" class="icon-sm text-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>White-Glove Install</strong>
+                  <small>Professional bench setup & calibration</small>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i data-lucide="shield-check" class="icon-sm text-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>5-Year Warranty</strong>
+                  <small>Commercial-certified parts & labor</small>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i data-lucide="wrench" class="icon-sm text-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>Direct Concierge</strong>
+                  <small>Direct access to master technicians</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hyperframe Kinetic Extraction Simulator (Real-Time 9-Bar Fluid & Gauge Engine) -->
+    <section class="section bg-surface" id="extraction-sim">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Physics Simulator</span>
+          <h2 class="section-title">Experience the 9-Bar Extraction Dynamics</h2>
+          <p class="section-subtitle">
+            Pull the manual gear paddle to modulate pre-infusion pressure in real-time. Watch the analog dual-needle gauge and fluid crema stream respond dynamically.
+          </p>
+        </div>
+
+        <div class="extraction-simulator-board">
+          <div class="sim-grid">
+            <!-- Left: Mechanical Dial & Telemetry Readouts -->
+            <div class="sim-controls-side">
+              <div class="sim-header flex-between mb-4">
+                <div>
+                  <span class="text-xs uppercase text-gold font-bold tracking-wider block">Extraction State:</span>
+                  <h3 class="sim-state-heading" id="simExtractionStateText">Ready — Pre-Infusion Standby</h3>
+                </div>
+                <div class="shot-timer-pill font-mono" id="shotTimerDisplay">00:00.0s</div>
+              </div>
+
+              <!-- Interactive Paddle Control -->
+              <div class="paddle-control-box mb-6">
+                <div class="flex-between text-xs mb-2">
+                  <span class="font-bold uppercase tracking-wider text-muted">Flow Profiling Paddle:</span>
+                  <span class="text-gold font-mono font-bold" id="paddleBarReadout">0.0 BAR (Idle)</span>
+                </div>
+                
+                <div class="paddle-presets flex-align gap-2 mb-3">
+                  <button class="preset-pill active" data-bar="0" data-state="Idle Standby">0 Bar (Idle)</button>
+                  <button class="preset-pill" data-bar="3.2" data-state="Gentle Pre-Infusion">3 Bar (Pre-Infusion)</button>
+                  <button class="preset-pill" data-bar="9.0" data-state="Peak 9-Bar Extraction">9 Bar (Golden Ratio)</button>
+                  <button class="preset-pill" data-bar="6.0" data-state="Declining Tail Pressure">6 Bar (Sweet Finish)</button>
+                </div>
+
+                <input type="range" min="0" max="11" step="0.1" value="0" class="paddle-slider" id="paddleSlider" aria-label="Manual extraction paddle">
+              </div>
+
+              <!-- Dual Mechanical Needle Gauges (SVG with Physics) -->
+              <div class="dual-gauges-wrapper">
+                <!-- Gauge 1: Brew Pressure -->
+                <div class="gauge-card">
+                  <div class="gauge-svg-wrap">
+                    <svg class="gauge-svg" viewBox="0 0 200 200">
+                      <!-- Dial Background Arc -->
+                      <circle cx="100" cy="100" r="85" fill="#0e131d" stroke="#263147" stroke-width="6"/>
+                      <path d="M 35 150 A 85 85 0 1 1 165 150" fill="none" stroke="#3b4866" stroke-width="8" stroke-linecap="round"/>
+                      <!-- 9-Bar Sweet Spot Zone -->
+                      <path d="M 85 18 A 85 85 0 0 1 145 45" fill="none" stroke="#d97706" stroke-width="10" stroke-linecap="round"/>
+                      <!-- Dial Markings -->
+                      <text x="32" y="145" fill="#94a3b8" font-size="11" font-family="Space Mono">0</text>
+                      <text x="35" y="75" fill="#94a3b8" font-size="11" font-family="Space Mono">3</text>
+                      <text x="94" y="38" fill="#d97706" font-size="12" font-family="Space Mono" font-weight="bold">9</text>
+                      <text x="155" y="75" fill="#94a3b8" font-size="11" font-family="Space Mono">12</text>
+                      <!-- Dynamic Needle -->
+                      <line id="brewNeedle" x1="100" y1="100" x2="100" y2="28" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" transform="rotate(-120 100 100)" />
+                      <circle cx="100" cy="100" r="8" fill="#f59e0b"/>
+                      <circle cx="100" cy="100" r="3" fill="#07090e"/>
+                    </svg>
+                  </div>
+                  <div class="gauge-telemetry text-center mt-2">
+                    <strong class="gauge-val font-mono" id="brewGaugeValue">0.0 BAR</strong>
+                    <span class="gauge-lbl text-xs block text-muted">Brew Pressure</span>
+                  </div>
+                </div>
+
+                <!-- Gauge 2: Dual Boiler Temp (PID) -->
+                <div class="gauge-card">
+                  <div class="gauge-svg-wrap">
+                    <svg class="gauge-svg" viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="85" fill="#0e131d" stroke="#263147" stroke-width="6"/>
+                      <path d="M 35 150 A 85 85 0 1 1 165 150" fill="none" stroke="#3b4866" stroke-width="8" stroke-linecap="round"/>
+                      <!-- Thermal Target Zone -->
+                      <path d="M 85 18 A 85 85 0 0 1 125 22" fill="none" stroke="#10b981" stroke-width="10" stroke-linecap="round"/>
+                      <text x="30" y="145" fill="#94a3b8" font-size="11" font-family="Space Mono">85°</text>
+                      <text x="90" y="38" fill="#10b981" font-size="12" font-family="Space Mono" font-weight="bold">93°</text>
+                      <text x="145" y="145" fill="#94a3b8" font-size="11" font-family="Space Mono">105°</text>
+                      <!-- Dynamic Needle -->
+                      <line id="tempNeedle" x1="100" y1="100" x2="100" y2="28" stroke="#10b981" stroke-width="3" stroke-linecap="round" transform="rotate(3 100 100)" />
+                      <circle cx="100" cy="100" r="8" fill="#10b981"/>
+                      <circle cx="100" cy="100" r="3" fill="#07090e"/>
+                    </svg>
+                  </div>
+                  <div class="gauge-telemetry text-center mt-2">
+                    <strong class="gauge-val font-mono text-emerald" id="tempGaugeValue">93.4°C</strong>
+                    <span class="gauge-lbl text-xs block text-muted">PID Group Temp (±0.1°C)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shot Action Trigger Button -->
+              <div class="shot-trigger-wrap mt-6">
+                <button class="btn btn-gold full-width btn-lg" id="btnToggleShot">
+                  <i data-lucide="play" class="icon-sm" id="shotIcon" aria-hidden="true"></i>
+                  <span id="shotBtnText">Pull Test Extraction (28s Profile)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Real-Time Fluid Crema Extraction Canvas Viewport -->
+            <div class="sim-viewport-side">
+              <div class="extraction-chamber-card">
+                <div class="chamber-header flex-between text-xs">
+                  <span class="flex-align gap-1 text-gold"><i data-lucide="video" class="icon-xs" aria-hidden="true"></i> High-Speed Macro Chamber</span>
+                  <span class="font-mono text-muted" id="cremaYieldText">Yield: 0.0g</span>
+                </div>
+
+                <!-- Interactive Fluid Canvas -->
+                <div class="canvas-container">
+                  <canvas id="extractionCanvas" width="480" height="380"></canvas>
+                  <div class="canvas-ambient-steam" id="canvasSteam" aria-hidden="true"></div>
+                </div>
+
+                <div class="chamber-footer flex-between text-xs">
+                  <span class="text-muted">Extraction Ratio: <strong>18.0g In / 36.0g Out</strong></span>
+                  <span class="text-gold font-mono" id="flavorProfileText">Flavors: Jasmine, Bergamot, Dark Cacao</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dual-Boiler Architecture & Thermodynamic Hotspots -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Engineering Supremacy</span>
+          <h2 class="section-title">Zero Thermal Variance. Dedicated Dual Boilers.</h2>
+          <p class="section-subtitle">
+            Most home machines suffer from thermal drop during back-to-back shots. Strada Monolith isolates steam and brew circuits with 5mm heavy-gauge stainless steel.
+          </p>
+        </div>
+
+        <div class="engineering-grid">
+          <!-- Architecture Card 1 -->
+          <article class="eng-card" data-gsap="fade-up">
+            <div class="eng-icon-box"><i data-lucide="flame" aria-hidden="true"></i></div>
+            <div class="eng-tag">BREW CIRCUIT</div>
+            <h3 class="eng-title">1.5L Saturated Stainless Brew Boiler</h3>
+            <p class="eng-desc">
+              Welded from AISI 316L medical-grade stainless steel with internal water pre-heating coil. Water reaches the saturated group at an unwavering temperature accurate to 0.1°C across 20 consecutive extractions.
+            </p>
+            <div class="eng-spec-pill">Thermal Stability: ± 0.1°C under continuous duty</div>
+          </article>
+
+          <!-- Architecture Card 2 -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="eng-icon-box"><i data-lucide="wind" aria-hidden="true"></i></div>
+            <div class="eng-tag">STEAM CIRCUIT</div>
+            <h3 class="eng-title">3.5L Dedicated Commercial Steam Boiler</h3>
+            <p class="eng-desc">
+              Produces velvety, micro-textured latte art milk foam in under 12 seconds with dry 2.0 bar steam pressure. Equipped with dual vacuum relief valves and anti-siphon safety systems.
+            </p>
+            <div class="eng-spec-pill">Steam Pressure: Continuous 2.0 Bar High-Velocity</div>
+          </article>
+
+          <!-- Architecture Card 3 -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="eng-icon-box"><i data-lucide="gauge" aria-hidden="true"></i></div>
+            <div class="eng-tag">HYDRAULICS</div>
+            <h3 class="eng-title">Fluid-o-Tech Commercial Rotary Pump</h3>
+            <p class="eng-desc">
+              Unlike buzzing vibratory pumps used in amateur equipment, our commercial rotary vane pump operates at a whisper-quiet 48dB. Capable of being plumbed directly into mains water or run from the internal 3L reservoir.
+            </p>
+            <div class="eng-spec-pill">Noise Rating: 48 dB (Quiet Morning Operation)</div>
+          </article>
+
+          <!-- Architecture Card 4 -->
+          <article class="eng-card" data-gsap="fade-up">
+            <div class="eng-icon-box"><i data-lucide="sliders" aria-hidden="true"></i></div>
+            <div class="eng-tag">MANUAL CONTROL</div>
+            <h3 class="eng-title">Continuous Gear Flow Profiling Paddle</h3>
+            <p class="eng-desc">
+              A conical mechanical valve directly atop the group head gives the barista continuous analog command over the water flow rate from 0 to 12 grams per second. Rescue challenging light roasts with extended pre-infusion.
+            </p>
+            <div class="eng-spec-pill">Flow Modulation: 0 to 12 g/s Conical Valve</div>
+          </article>
+
+          <!-- Architecture Card 5 -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="eng-icon-box"><i data-lucide="shield" aria-hidden="true"></i></div>
+            <div class="eng-tag">GROUP HEAD</div>
+            <h3 class="eng-title">Fully Saturated 58.5mm Brass Group</h3>
+            <p class="eng-desc">
+              The brew boiler and group head share water directly with no narrow copper connecting pipes. Total saturation ensures the coffee bed never experiences a thermal shock when extraction commences.
+            </p>
+            <div class="eng-spec-pill">Standard: 58.5mm Competition Portafilters</div>
+          </article>
+
+          <!-- Architecture Card 6 -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="eng-icon-box"><i data-lucide="thermometer" aria-hidden="true"></i></div>
+            <div class="eng-tag">ELECTRONICS</div>
+            <h3 class="eng-title">OLED Dual-PID Diagnostic Telemetry</h3>
+            <p class="eng-desc">
+              Hidden seamlessly behind mirror-polished stainless panels, the high-contrast white OLED display monitors shot durations, brew water temperature, steam pressure, and maintenance service alerts.
+            </p>
+            <div class="eng-spec-pill">Telemetry: Live Shot Timer & Flow Analytics</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Handcrafted Barista Suite & Precision Tools (High-Converting Add-ons) -->
+    <section class="section bg-surface" id="barista-kit">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Precision Companions</span>
+          <h2 class="section-title">The Master Barista Collection</h2>
+          <p class="section-subtitle">
+            Complement your Strada Monolith with competition-grade accessories machined from solid billets of titanium, American walnut, and surgical steel.
+          </p>
+        </div>
+
+        <div class="accessories-grid">
+          <!-- Item 1: Calibrated Tamper -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/barista-tools.jpg" alt="Calibrated Precision Tamper" class="acc-img" loading="lazy">
+              <span class="acc-badge">Save $40 in Bundle</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">58.5mm Calibrated Walnut Tamper</h3>
+                <span class="acc-price font-mono">$129 USD</span>
+              </div>
+              <p class="acc-desc">Precision spring-loaded mechanism guaranteeing exactly 30 lbs of level tamping force. Stepped rim prevents vacuum suction on withdrawal.</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="tamper" data-price="129" data-name="58.5mm Calibrated Walnut Tamper">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$129 USD)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 2: Bottomless Naked Portafilter -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/bottomless-shot.jpg" alt="Bottomless Naked Portafilter" class="acc-img" loading="lazy">
+              <span class="acc-badge">Competition Grade</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">Bottomless Naked Portafilter</h3>
+                <span class="acc-price font-mono">$149 USD</span>
+              </div>
+              <p class="acc-desc">CNC-machined from solid brass with Tuscan walnut handle. Includes precision-milled 20g competition ridgeless basket with laser-cut holes.</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="portafilter" data-price="149" data-name="Bottomless Portafilter + Basket">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$149 USD)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 3: Smart Bluetooth Brew Scale -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/coffee-beans.jpg" alt="Precision Bluetooth Brew Scale" class="acc-img" loading="lazy">
+              <span class="acc-badge">0.1g Precision</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">Bluetooth Smart Brew Scale</h3>
+                <span class="acc-price font-mono">$189 USD</span>
+              </div>
+              <p class="acc-desc">Waterproof ultra-thin scale that pairs directly with the Strada Monolith display. Automatic tare and real-time flow rate tracking (g/sec).</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="scale" data-price="189" data-name="Bluetooth Smart Brew Scale">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$189 USD)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle Live Total Bar -->
+        <div class="bundle-summary-bar flex-between">
+          <div>
+            <span class="text-xs text-muted uppercase tracking-wider block">Custom Configuration Total:</span>
+            <div class="flex-align gap-2">
+              <strong class="bundle-total-amount text-gold" id="bundleConfigTotal">$4,850 USD</strong>
+              <small class="text-xs text-muted" id="bundleItemsCount">(Strada Monolith Machine)</small>
+            </div>
+          </div>
+          <button class="btn btn-gold btn-lg" id="btnBuyConfiguredBundle">
+            <i data-lucide="check" class="icon-sm" aria-hidden="true"></i>
+            <span>Proceed to Reservation Drawer</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Roasters' Verdict & Accolades -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Tested in Competition</span>
+          <h2 class="section-title">Praised by World Barista Champions</h2>
+          <p class="section-subtitle">
+            From specialty roasters in Tokyo and Melbourne to Michelin-starred dining rooms in London and Milan.
+          </p>
+        </div>
+
+        <div class="reviews-editorial-grid mb-8">
+          <div class="editorial-card" data-gsap="fade-up">
+            <div class="editorial-logo">WORLD COFFEE EVENTS</div>
+            <p class="editorial-quote">"The thermal stability of the Strada Monolith's saturated group sets a new benchmark. Temperature fluctuations during extraction simply do not exist."</p>
+            <div class="editorial-badge">Gold Innovation Award 2026</div>
+          </div>
+
+          <div class="editorial-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="editorial-logo">STANDART MAGAZINE</div>
+            <p class="editorial-quote">"The manual flow paddle turns challenging light-roast washed Ethiopian coffees into sweet, syrup-heavy masterpieces. It's the ultimate home machine."</p>
+            <div class="editorial-badge">Machine of the Year</div>
+          </div>
+
+          <div class="editorial-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="editorial-logo">ROAST MAGAZINE</div>
+            <p class="editorial-quote">"A triumph of Italian metallurgy and commercial engineering. Whisper quiet, devastatingly beautiful, and built to brew for generations."</p>
+            <div class="editorial-badge">Best Commercial Hybrid</div>
+          </div>
+        </div>
+
+        <!-- Verified Roaster User Reviews -->
+        <div class="user-reviews-grid">
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Owner</span>
+            </div>
+            <h3 class="u-review-title">"Commercial cafe quality in my kitchen"</h3>
+            <p class="u-review-text">"I ran a specialty espresso bar in Melbourne for 12 years. I sold my business and wanted the same steam power and extraction control at home. The Monolith's rotary pump and steam boiler produce micro-foam identical to a multi-group commercial machine."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">LG</div>
+              <div>
+                <strong>Luca G.</strong>
+                <small>Former Head Barista, Seven Seeds Melbourne</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Owner</span>
+            </div>
+            <h3 class="u-review-title">"The Tuscan Walnut craftsmanship is breathtaking"</h3>
+            <p class="u-review-text">"The machine arrived in a custom wooden flight crate. The fit and finish of the walnut paddle, portafilter handles, and polished stainless panels are flawless. It is the centerpiece of our home."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">SM</div>
+              <div>
+                <strong>Sophia & David M.</strong>
+                <small>Architectural Studio, San Francisco</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Owner</span>
+            </div>
+            <h3 class="u-review-title">"White-glove installation was incredible"</h3>
+            <p class="u-review-text">"A certified technician plumbed the machine into my BWT water filter, calibrated the rotary pump to 9.0 bar, and spent an hour dialling in my first single-origin bag. Exceptional luxury service."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">KN</div>
+              <div>
+                <strong>Kenjiro N.</strong>
+                <small>Specialty Roaster, Tokyo</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Reservation Banner -->
+    <section class="section bottom-cta-section">
+      <div class="container text-center">
+        <span class="section-tag">Limited Italian Build</span>
+        <h2 class="bottom-cta-heading">Elevate Every Morning to Master Barista Artistry.</h2>
+        <p class="bottom-cta-sub">
+          Production Batch 04 is currently assembling in Florence. Reserve your build slot today with white-glove installation and a 5-year warranty.
+        </p>
+        <div class="flex-align justify-center gap-4 flex-wrap">
+          <button class="btn btn-gold btn-lg" id="btnBottomReserve">
+            <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+            <span>Reserve Strada Monolith — $4,850 USD</span>
+          </button>
+          <a href="#extraction-sim" class="btn btn-glass btn-lg">
+            <i data-lucide="play" class="icon-sm" aria-hidden="true"></i>
+            <span>Audition 9-Bar Simulator</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-crest">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">STRADA</span>
+              <span class="brand-sub">OFFICINE MONOLITH SRL</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Handcrafting commercial-grade dual-boiler espresso machinery, gear flow profiling systems, and precision barista metallurgy in Florence, Italy since 2012.
+          </p>
+          <div class="footer-info-row mt-3 text-xs text-muted">
+            <span>Via dei Serragli 44, Firenze, Italia</span>
+            <span class="divider">•</span>
+            <span>Worldwide White-Glove Logistics</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">The Machine</h4>
+          <ul class="footer-links">
+            <li><a href="#monolith">Strada Monolith</a></li>
+            <li><a href="#extraction-sim">9-Bar Flow Profiling</a></li>
+            <li><a href="#architecture">Dual-Boiler Thermodynamics</a></li>
+            <li><a href="#barista-kit">Walnut & Titanium Tools</a></li>
+            <li><a href="#reviews">Roaster Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">White-Glove Bench Setup</a></li>
+            <li><a href="#">Plumbing Installation Kits</a></li>
+            <li><a href="#">5-Year Commercial Warranty</a></li>
+            <li><a href="#">Annual Preventive Service</a></li>
+            <li><a href="#">BWT Water Treatment Systems</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Concierge Desk</h4>
+          <p class="footer-text-sm mb-3">
+            Speak directly with our Florentine master technicians for water testing and custom wood requests.
+          </p>
+          <div class="text-xs text-gold font-mono">concierge@strada-monolith.com</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Officine Strada Monolith Srl. All Rights Reserved.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Privacy Notice</a>
+          <a href="#">Terms of Sale</a>
+          <a href="#">Warranty Specifications</a>
+          <a href="#">CE & UL Commercial Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Express Pre-Order & Checkout Drawer (<dialog id="cartDrawer">) -->
+  <dialog class="cart-drawer-dialog" id="cartDrawer" aria-label="Reservation Cart">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer-header flex-between">
+        <div class="flex-align gap-2">
+          <i data-lucide="shopping-bag" class="icon-sm text-gold" aria-hidden="true"></i>
+          <h3 class="cart-title">Your Build Reservation (<span id="cartDrawerItemCount">1</span>)</h3>
+        </div>
+        <button class="cart-close-btn" id="btnCloseCart" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Shipping / Installation Meter -->
+      <div class="shipping-threshold-box">
+        <div class="flex-between text-xs mb-1">
+          <span class="text-white font-semibold flex-align gap-1">
+            <i data-lucide="sparkles" class="icon-xs text-gold" aria-hidden="true"></i>
+            <span>Complimentary White-Glove Installation</span>
+          </span>
+          <span class="text-emerald font-bold">INCLUDED</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-scroll">
+        <div class="cart-item-card" id="cartMachineItem">
+          <div class="cart-item-thumb">
+            <img src="assets/strada-stainless.jpg" alt="Strada Monolith" id="cartItemThumbnail">
+          </div>
+          <div class="cart-item-info">
+            <div class="flex-between">
+              <h4 class="cart-item-name">Strada Monolith Machine</h4>
+              <button class="cart-remove-btn" id="btnRemoveMachine" aria-label="Remove item">&times;</button>
+            </div>
+            <div class="cart-item-variant" id="cartItemVariantLabel">Finish: Brushed AISI 304 Stainless Steel</div>
+            <div class="flex-between items-center mt-2">
+              <div class="qty-stepper flex-align">
+                <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">-</button>
+                <span class="qty-num" id="machineQty">1</span>
+                <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+              </div>
+              <strong class="cart-item-price font-mono" id="cartMachinePrice">$4,850 USD</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-on Accessories List in Cart -->
+        <div class="cart-addon-container" id="cartAddonsContainer"></div>
+
+        <!-- In-Cart Upsell -->
+        <div class="cart-upsell-box">
+          <span class="text-xs uppercase text-gold font-bold tracking-wider block mb-2">Recommended Companion:</span>
+          <div class="flex-between items-center">
+            <div class="flex-align gap-2">
+              <img src="assets/barista-tools.jpg" alt="Tamper" class="upsell-mini-thumb">
+              <div>
+                <strong class="text-xs block text-white">58.5mm Walnut Tamper</strong>
+                <small class="text-xs text-muted">+$129 (Save $40)</small>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline-gold" id="btnQuickAddTamper">Add +$129</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="cart-drawer-footer">
+        <div class="cart-summary-lines mb-3">
+          <div class="flex-between text-xs text-muted mb-1">
+            <span>Machine & Accessories:</span>
+            <span class="text-white font-mono" id="cartSubtotal">$4,850 USD</span>
+          </div>
+          <div class="flex-between text-xs text-muted mb-1">
+            <span>White-Glove Flight Freight & Install:</span>
+            <span class="text-emerald font-semibold">FREE</span>
+          </div>
+          <div class="flex-between text-base text-white font-bold pt-2 border-t">
+            <span>Total Build Value:</span>
+            <span class="text-gold font-mono text-xl" id="cartFinalTotal">$4,850 USD</span>
+          </div>
+        </div>
+
+        <button class="btn btn-apple-pay full-width mb-2" id="btnApplePayExpress">
+          <span class="apple-pay-logo">Pay</span> Reserve with 1-Click
+        </button>
+
+        <button class="btn btn-gold full-width btn-lg" id="btnStandardCheckout">
+          <span>Lock In Build Slot — <span id="btnPayTotalText">$4,850 USD</span></span>
+          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        </button>
+
+        <div class="cart-guarantee-row flex-align justify-center gap-3 mt-3 text-xs text-muted">
+          <span class="flex-align gap-1"><i data-lucide="lock" class="icon-xs text-gold" aria-hidden="true"></i> Secure Florentine Deposit</span>
+          <span>•</span>
+          <span>5-Year Warranty</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Reservation Confirmation Modal (<dialog id="successModal">) -->
+  <dialog class="success-dialog" id="successModal">
+    <div class="success-content text-center">
+      <div class="success-icon-badge">
+        <i data-lucide="check" class="icon-lg text-emerald" aria-hidden="true"></i>
+      </div>
+      <span class="section-tag">Build Slot Confirmed • Batch #04-FL-891</span>
+      <h3 class="success-title">Benvenuto nella Famiglia Strada.</h3>
+      <p class="success-desc">
+        Your handcrafted <strong>Strada Monolith</strong> has been assigned to Master Bench Artisan Marco V. in Florence.
+      </p>
+
+      <div class="receipt-box text-left mb-4">
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Instrument:</span>
+          <strong class="text-white" id="receiptItemName">Strada Monolith (Brushed Stainless)</strong>
+        </div>
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Assigned Serial:</span>
+          <span class="text-gold font-mono">STM-2026-0489</span>
+        </div>
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Delivery:</span>
+          <span class="text-white">White-Glove In-Home Installation</span>
+        </div>
+        <div class="flex-between text-sm pt-2 border-t mt-2">
+          <strong>Total Reserved:</strong>
+          <strong class="text-gold font-mono" id="receiptTotal">$4,850 USD</strong>
+        </div>
+      </div>
+
+      <button class="btn btn-gold full-width" id="btnCloseSuccess">Done</button>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

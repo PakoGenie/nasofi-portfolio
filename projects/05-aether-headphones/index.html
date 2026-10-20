@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER 01 TITANIUM | Ultra-Luxury Wireless Audiophile Headphones</title>
+  <meta name="description" content="Experience sound in its purest form. Handcrafted aerospace-grade titanium, custom 40mm beryllium drivers, active noise cancellation, and 55-hour battery life.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aether-audio.com">
+
+  <!-- Google Fonts: Space Grotesk (Precision Industrial Tech) + Plus Jakarta Sans (Clean Minimalist Luxury) + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Modern Web Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Audio Luminescent Backdrops -->
+  <div class="ambient-glow glow-titanium" aria-hidden="true"></div>
+  <div class="ambient-glow glow-amber" aria-hidden="true"></div>
+
+  <!-- Announcement Ribbon -->
+  <div class="top-announcement-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="ribbon-badge">GEN. 2 RELEASE</span>
+        <span class="text-sub hide-mobile">Complimentary DHL Express Worldwide Delivery • Dispatches in 24h</span>
+      </div>
+      <div class="flex-align gap-4">
+        <span>60-Day In-Home Audition</span>
+        <span class="divider">|</span>
+        <span class="text-titanium font-semibold">3-Year Titanium Warranty</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="AETHER Home">
+        <div class="brand-crest">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 10v4" />
+            <path d="M6 6v12" />
+            <path d="M10 3v18" />
+            <path d="M14 7v10" />
+            <path d="M18 5v14" />
+            <path d="M22 10v4" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">AETHER</span>
+          <span class="brand-sub">ACOUSTIC LABORATORIES</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#flagship" class="nav-link">The 01 Titanium</a>
+        <a href="#soundstage" class="nav-link">Acoustic EQ</a>
+        <a href="#engineering" class="nav-link">Architecture</a>
+        <a href="#accessories" class="nav-link">Accessories</a>
+        <a href="#unboxing" class="nav-link">What's in the Box</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="cart-trigger-btn flex-align gap-2" id="cartTriggerBtn" aria-label="Open Cart">
+          <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+          <span class="cart-counter-pill" id="cartCount">0</span>
+          <span class="cart-val hide-mobile" id="cartNavTotal">$0</span>
+        </button>
+
+        <a href="#flagship" class="btn btn-titanium hide-mobile">
+          <span>Order Now — $499</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <span class="brand-name">AETHER</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#flagship" class="mobile-nav-link">The 01 Titanium Flagship</a>
+      <a href="#soundstage" class="mobile-nav-link">Acoustic EQ & Soundstage</a>
+      <a href="#engineering" class="mobile-nav-link">Beryllium Architecture</a>
+      <a href="#accessories" class="mobile-nav-link">Studio Accessories</a>
+      <a href="#unboxing" class="mobile-nav-link">Included in the Box</a>
+      <a href="#reviews" class="mobile-nav-link">Audiophile Reviews</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-titanium full-width mb-3" id="btnMobileOrder">Order Aether 01 ($499)</button>
+      <div class="text-xs text-muted text-center">Free Worldwide Express Delivery</div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Flagship Product Customizer Showcase (DTC Hero) -->
+    <section class="section hero-showcase" id="flagship">
+      <div class="container">
+        <div class="product-stage-grid">
+          <!-- Left: High-Def Interactive Product Display -->
+          <div class="product-visual-column">
+            <div class="product-gallery-frame" id="productGalleryFrame">
+              <div class="stage-finish-pill" id="stageFinishLabel">
+                <span class="finish-dot finish-black"></span>
+                <span>Matte Obsidian Black — PVD Grade 5 Titanium</span>
+              </div>
+
+              <!-- Main Interactive Product Image -->
+              <div class="product-image-container">
+                <img src="assets/headphone-black.jpg" alt="AETHER 01 Titanium Headphones" class="product-hero-img" id="productMainImg" loading="eager">
+              </div>
+
+              <!-- Interactive 360° / Detail Thumbnail Strips -->
+              <div class="gallery-thumbs-row">
+                <button class="thumb-btn active" data-img="assets/headphone-black.jpg" data-finish="black" aria-label="Obsidian Black View">
+                  <img src="assets/headphone-black.jpg" alt="Black Finish View">
+                </button>
+                <button class="thumb-btn" data-img="assets/headphone-silver.jpg" data-finish="silver" aria-label="Raw Titanium View">
+                  <img src="assets/headphone-silver.jpg" alt="Silver Finish View">
+                </button>
+                <button class="thumb-btn" data-img="assets/headphone-cognac.jpg" data-finish="cognac" aria-label="Heritage Cognac View">
+                  <img src="assets/headphone-cognac.jpg" alt="Cognac Finish View">
+                </button>
+                <button class="thumb-btn" data-img="assets/headphone-white.jpg" data-finish="white" aria-label="Alpine Frost View">
+                  <img src="assets/headphone-white.jpg" alt="Alpine Frost View">
+                </button>
+              </div>
+            </div>
+
+            <!-- Lifestyle Preview Badges -->
+            <div class="quick-specs-bar">
+              <div class="q-spec">
+                <i data-lucide="disc" class="icon-xs text-titanium" aria-hidden="true"></i>
+                <span>40mm Beryllium Driver</span>
+              </div>
+              <div class="q-spec">
+                <i data-lucide="shield-minus" class="icon-xs text-titanium" aria-hidden="true"></i>
+                <span>-42dB Hybrid ANC</span>
+              </div>
+              <div class="q-spec">
+                <i data-lucide="battery-charging" class="icon-xs text-titanium" aria-hidden="true"></i>
+                <span>55h Playback / Fast Fuel</span>
+              </div>
+              <div class="q-spec">
+                <i data-lucide="bluetooth" class="icon-xs text-titanium" aria-hidden="true"></i>
+                <span>Lossless LDAC & 3.5mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: DTC Purchasing Engine & Finish Configurator -->
+          <div class="product-details-column">
+            <div class="release-tag">
+              <i data-lucide="sparkles" class="icon-xs" aria-hidden="true"></i>
+              <span>FLAGSHIP MASTER SERIES</span>
+            </div>
+
+            <h1 class="product-heading">AETHER 01 TITANIUM</h1>
+            <p class="product-subheading">Wireless Studio-Reference Active Noise-Cancelling Headphones</p>
+
+            <div class="rating-strip flex-align gap-2 mb-4">
+              <div class="stars-gold">★★★★★</div>
+              <span class="rating-score">4.98 / 5.0</span>
+              <span class="divider">·</span>
+              <a href="#reviews" class="rating-count">1,248 Verified Audiophiles</a>
+            </div>
+
+            <p class="product-lead-desc">
+              Engineered with zero acoustic compromise. Custom vapor-deposited 40mm pure Beryllium diaphragms provide micro-detail previously confined to open-back wired reference monitors. Encased in CNC-milled Grade 5 aerospace titanium with memory-foam magnetic lambskin pads.
+            </p>
+
+            <!-- Colorway Finish Selector -->
+            <div class="config-block mb-6">
+              <div class="flex-between mb-2">
+                <span class="config-label">SELECT FINISH & MATERIAL:</span>
+                <span class="config-val-label text-titanium" id="activeFinishName">Matte Obsidian Black</span>
+              </div>
+
+              <div class="color-swatches-grid" role="radiogroup" aria-label="Headphone Finish Selection">
+                <!-- Swatch 1: Obsidian Black -->
+                <button class="swatch-card active" data-finish="black" data-finish-name="Matte Obsidian Black" data-img="assets/headphone-black.jpg" role="radio" aria-checked="true">
+                  <span class="swatch-circle swatch-black"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Obsidian Black</strong>
+                    <small class="swatch-desc">PVD Grade 5 Titanium</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 2: Raw Beryllium Titanium -->
+                <button class="swatch-card" data-finish="silver" data-finish-name="Raw Beryllium Titanium" data-img="assets/headphone-silver.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-silver"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Raw Titanium</strong>
+                    <small class="swatch-desc">Brushed Aerospace Finish</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 3: Cognac Heritage -->
+                <button class="swatch-card" data-finish="cognac" data-finish-name="Heritage Cognac Leather" data-img="assets/headphone-cognac.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-cognac"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Heritage Cognac</strong>
+                    <small class="swatch-desc">Tuscan Lambskin & Bronze</small>
+                  </div>
+                </button>
+
+                <!-- Swatch 4: Alpine Frost -->
+                <button class="swatch-card" data-finish="white" data-finish-name="Alpine Frost Silver" data-img="assets/headphone-white.jpg" role="radio" aria-checked="false">
+                  <span class="swatch-circle swatch-white"></span>
+                  <div class="swatch-info">
+                    <strong class="swatch-title">Alpine Frost</strong>
+                    <small class="swatch-desc">Bead-Blasted Aluminum</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Price & Payment Terms -->
+            <div class="pricing-card mb-6">
+              <div class="flex-between items-baseline mb-2">
+                <div class="flex-align gap-3">
+                  <span class="hero-price" id="currentPriceDisplay">$499 USD</span>
+                  <span class="tax-tag">VAT Included • Free Express DHL</span>
+                </div>
+                <span class="stock-status flex-align gap-1">
+                  <span class="pulse-dot"></span> In Stock & Ready to Ship
+                </span>
+              </div>
+              <p class="klarna-note text-xs text-muted">
+                Or 4 interest-free payments of <strong>$124.75</strong> with <span class="text-white font-semibold">Klarna</span> or <span class="text-white font-semibold">Afterpay</span>.
+              </p>
+            </div>
+
+            <!-- Primary Purchase Action Group -->
+            <div class="cta-action-wrap mb-6">
+              <button class="btn btn-titanium btn-lg full-width mb-3" id="btnAddToCart">
+                <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+                <span id="btnAddToCartText">Order Aether 01 Titanium — $499</span>
+              </button>
+
+              <button class="btn btn-glass btn-lg full-width" id="btnInstantCheckout">
+                <i data-lucide="zap" class="icon-sm text-amber" aria-hidden="true"></i>
+                <span>Express 1-Click Checkout (Apple Pay / G Pay)</span>
+              </button>
+            </div>
+
+            <!-- Trust Features Bar -->
+            <div class="trust-grid">
+              <div class="trust-item">
+                <i data-lucide="rotate-ccw" class="icon-sm text-titanium" aria-hidden="true"></i>
+                <div>
+                  <strong>60-Day Trial</strong>
+                  <small>Full refund, we cover return freight</small>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i data-lucide="shield-check" class="icon-sm text-titanium" aria-hidden="true"></i>
+                <div>
+                  <strong>3-Year Warranty</strong>
+                  <small>Titanium chassis & driver guarantee</small>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i data-lucide="plane" class="icon-sm text-titanium" aria-hidden="true"></i>
+                <div>
+                  <strong>Express Delivery</strong>
+                  <small>Ships in 24h via DHL worldwide</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Soundstage & Real-Time Acoustic EQ Simulator -->
+    <section class="section bg-surface" id="soundstage">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Acoustic Engineering</span>
+          <h2 class="section-title">Shape Your Soundstage in Real-Time</h2>
+          <p class="section-subtitle">
+            Customise your listening signature through Aether's dedicated dual-DSP engine. Experience the difference between flat studio reference curves, dynamic bass impact, and wide holographic vocal staging.
+          </p>
+        </div>
+
+        <div class="soundstage-card">
+          <!-- Frequency Response Visualization Canvas & SVG Curve -->
+          <div class="soundstage-header flex-between mb-4">
+            <div>
+              <span class="text-xs uppercase text-titanium font-bold tracking-wider block">Real-Time DSP Curve:</span>
+              <h3 class="curve-mode-title" id="activeCurveTitle">Studio Flat Reference (Harman Target ±0.5dB)</h3>
+            </div>
+            <div class="sound-mode-pills" role="tablist" aria-label="Acoustic EQ Presets">
+              <button class="mode-pill active" data-mode="studio" role="tab" aria-selected="true">
+                <i data-lucide="sliders" class="icon-xs" aria-hidden="true"></i>
+                <span>Studio Reference</span>
+              </button>
+              <button class="mode-pill" data-mode="bass" role="tab" aria-selected="false">
+                <i data-lucide="volume-2" class="icon-xs" aria-hidden="true"></i>
+                <span>Bass Dimension (+6dB)</span>
+              </button>
+              <button class="mode-pill" data-mode="vocal" role="tab" aria-selected="false">
+                <i data-lucide="mic" class="icon-xs" aria-hidden="true"></i>
+                <span>Acoustic Air & Vocals</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive SVG Curve Graph -->
+          <div class="eq-graph-container">
+            <svg class="eq-svg" viewBox="0 0 900 320" preserveAspectRatio="none">
+              <!-- Grid lines -->
+              <line x1="0" y1="80" x2="900" y2="80" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+              <line x1="0" y1="160" x2="900" y2="160" stroke="rgba(255,255,255,0.1)" />
+              <line x1="0" y1="240" x2="900" y2="240" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" />
+
+              <!-- Frequency Band Divisions -->
+              <line x1="225" y1="0" x2="225" y2="320" stroke="rgba(255,255,255,0.04)" />
+              <line x1="450" y1="0" x2="450" y2="320" stroke="rgba(255,255,255,0.04)" />
+              <line x1="675" y1="0" x2="675" y2="320" stroke="rgba(255,255,255,0.04)" />
+
+              <!-- Frequency Labels -->
+              <text x="30" y="305" fill="#64748b" font-size="12" font-family="JetBrains Mono">20 Hz (Sub)</text>
+              <text x="240" y="305" fill="#64748b" font-size="12" font-family="JetBrains Mono">250 Hz (Low-Mid)</text>
+              <text x="465" y="305" fill="#64748b" font-size="12" font-family="JetBrains Mono">2.5 kHz (Presence)</text>
+              <text x="760" y="305" fill="#64748b" font-size="12" font-family="JetBrains Mono">20 kHz (Air)</text>
+
+              <!-- Decibel Labels -->
+              <text x="15" y="85" fill="#64748b" font-size="11" font-family="JetBrains Mono">+12 dB</text>
+              <text x="15" y="165" fill="#64748b" font-size="11" font-family="JetBrains Mono">0 dB</text>
+              <text x="15" y="245" fill="#64748b" font-size="11" font-family="JetBrains Mono">-12 dB</text>
+
+              <!-- Gradient Defs -->
+              <defs>
+                <linearGradient id="curveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0" />
+                </linearGradient>
+              </defs>
+
+              <!-- Dynamic Area & Curve Paths -->
+              <path id="eqAreaPath" d="M 0,160 Q 225,160 450,158 T 900,160 L 900,320 L 0,320 Z" fill="url(#curveGradient)" />
+              <path id="eqLinePath" d="M 0,160 Q 225,160 450,158 T 900,160" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <!-- Interactive Sound Simulation & Ambient Noise Control -->
+          <div class="eq-control-bar">
+            <div class="sound-playback-demo flex-align gap-3">
+              <button class="audio-demo-btn" id="btnToggleAudio" aria-label="Play acoustic audio sample">
+                <i data-lucide="play" class="icon-sm" id="audioPlayIcon" aria-hidden="true"></i>
+              </button>
+              <div>
+                <strong class="block text-sm" id="audioTrackName">Norah Jones — Don't Know Why (24-bit / 96kHz FLAC)</strong>
+                <span class="text-xs text-muted" id="audioPlaybackStatus">Click to audition simulated sound profile</span>
+              </div>
+            </div>
+
+            <!-- ANC / Transparency Slider -->
+            <div class="anc-slider-wrap">
+              <div class="flex-between text-xs mb-1">
+                <span class="text-muted">Active Noise Control:</span>
+                <span class="text-titanium font-semibold" id="ancModeLabel">Max Isolation (-42dB)</span>
+              </div>
+              <input type="range" min="0" max="100" value="100" class="anc-range-input" id="ancSlider" aria-label="Active Noise Control Level">
+              <div class="flex-between text-xs text-faint mt-1">
+                <span>Natural Transparency</span>
+                <span>Hybrid ANC Max</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exploded Driver Architecture & Engineering Hotspots -->
+    <section class="section" id="engineering">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Acoustic Architecture</span>
+          <h2 class="section-title">Zero Distortion. Grade 5 Aerospace Titanium.</h2>
+          <p class="section-subtitle">
+            Every component is machined to micron tolerances to eliminate internal resonance and deliver razor-sharp transient response.
+          </p>
+        </div>
+
+        <div class="engineering-grid">
+          <!-- Architecture Feature 1: Beryllium Driver -->
+          <article class="eng-card" data-gsap="fade-up">
+            <div class="eng-icon-box"><i data-lucide="disc" aria-hidden="true"></i></div>
+            <div class="eng-tag">ACOUSTIC CORE</div>
+            <h3 class="eng-title">40mm Vapor-Deposited Beryllium Driver</h3>
+            <p class="eng-desc">
+              Beryllium possesses a stiffness-to-weight ratio far surpassing titanium or aluminum. Our custom vapor deposition process creates an ultra-rigid diaphragm that moves like a perfect piston, eliminating cone breakup up to 45kHz.
+            </p>
+            <div class="eng-spec-pill">Total Harmonic Distortion: &lt; 0.02% @ 1kHz, 100dB</div>
+          </article>
+
+          <!-- Architecture Feature 2: Titanium Gimbals -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="eng-icon-box"><i data-lucide="feather" aria-hidden="true"></i></div>
+            <div class="eng-tag">METALLURGY</div>
+            <h3 class="eng-title">CNC-Machined Grade 5 Titanium</h3>
+            <p class="eng-desc">
+              The headband yoke and rotating ear-cup gimbals are CNC-milled from solid billets of Ti-6Al-4V titanium. Incredibly lightweight, resistant to skin acidity, and tuned with micro-ball-bearing hinges for silent articulation.
+            </p>
+            <div class="eng-spec-pill">Total Headphone Weight: 310g (Ultra Fatigue-Free)</div>
+          </article>
+
+          <!-- Architecture Feature 3: Quad-Mic Hybrid ANC -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="eng-icon-box"><i data-lucide="shield-minus" aria-hidden="true"></i></div>
+            <div class="eng-tag">SIGNAL PROCESSING</div>
+            <h3 class="eng-title">Quad-Microphone Hybrid ANC (-42dB)</h3>
+            <p class="eng-desc">
+              Four low-noise beamforming microphones measure external environmental noise and internal ear-canal reflection 10,000 times per second, generating an inverted anti-noise wave that erases jet engine and office hum.
+            </p>
+            <div class="eng-spec-pill">Sub-bass Noise Reduction: -42dB Active Damping</div>
+          </article>
+
+          <!-- Architecture Feature 4: Lossless DAC & Bluetooth 5.4 -->
+          <article class="eng-card" data-gsap="fade-up">
+            <div class="eng-icon-box"><i data-lucide="cpu" aria-hidden="true"></i></div>
+            <div class="eng-tag">ELECTRONICS</div>
+            <h3 class="eng-title">Lossless LDAC, aptX & 3.5mm Analog Bypass</h3>
+            <p class="eng-desc">
+              Powered by high-bandwidth Bluetooth 5.4 with native Sony LDAC and Qualcomm aptX Lossless transmission. When battery is depleted, the internal passive analog crossover allows true unamplified 3.5mm wired operation.
+            </p>
+            <div class="eng-spec-pill">Supports up to 24-bit / 96kHz High-Resolution Audio</div>
+          </article>
+
+          <!-- Architecture Feature 5: Memory Foam Cushions -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="eng-icon-box"><i data-lucide="layers" aria-hidden="true"></i></div>
+            <div class="eng-tag">ERGONOMICS</div>
+            <h3 class="eng-title">Magnetic Tuscan Lambskin Ear Pads</h3>
+            <p class="eng-desc">
+              Wrapped in ultra-supple full-grain Italian lambskin leather, filled with heat-activated slow-recovery viscoelastic memory foam that contours seamlessly around eyeglasses and ear geometry for a flawless acoustic seal.
+            </p>
+            <div class="eng-spec-pill">Snap-On Magnetic Interchangeable System</div>
+          </article>
+
+          <!-- Architecture Feature 6: 55-Hour Continuous Battery -->
+          <article class="eng-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="eng-icon-box"><i data-lucide="battery-charging" aria-hidden="true"></i></div>
+            <div class="eng-tag">POWER SYSTEM</div>
+            <h3 class="eng-title">55-Hour Playback with Fast Fuel USB-C</h3>
+            <p class="eng-desc">
+              An aerospace-grade solid-state dual cell delivers 55 continuous hours with ANC enabled. Forgot to charge before an international flight? 15 minutes of USB-C fast charging yields a full 8 hours of playback time.
+            </p>
+            <div class="eng-spec-pill">Charge Time: 15 Min Fast Fuel = 8 Hours Play</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Accessory Bundle Configurator (High-Converting DTC Upsell) -->
+    <section class="section bg-surface" id="accessories">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Curated Studio Ecosystem</span>
+          <h2 class="section-title">Complete Your Audiophile Setup</h2>
+          <p class="section-subtitle">
+            Handcrafted accessories designed to elevate your workspace and preserve your Aether headphones for decades.
+          </p>
+        </div>
+
+        <div class="accessories-grid">
+          <!-- Accessory 1: Walnut & Aluminum Headphone Stand -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/headphone-stand.jpg" alt="Solid Walnut & Aluminum Headphone Stand" class="acc-img" loading="lazy">
+              <span class="acc-badge">Save $30 in Bundle</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">Solid Walnut & Titanium Stand</h3>
+                <span class="acc-price">$79 USD</span>
+              </div>
+              <p class="acc-desc">Solid American walnut crown matched to a heavy die-cast weighted aluminum base. Maintains ear-pad shape and preserves headband curvature.</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="stand" data-price="79" data-name="Solid Walnut Headphone Stand">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$79 USD)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Accessory 2: Silver-Plated 4.4mm Balanced Cable -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/acoustic-driver.jpg" alt="Braided Silver Balanced Cable" class="acc-img" loading="lazy">
+              <span class="acc-badge">Studio Grade</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">Braided Silver 4.4mm Balanced Cable</h3>
+                <span class="acc-price">$59 USD</span>
+              </div>
+              <p class="acc-desc">8-core monocrystalline silver-plated copper with gold-plated 4.4mm Pentaconn termination for high-end dedicated DAC amplifiers.</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="cable" data-price="59" data-name="4.4mm Silver Balanced Cable">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$59 USD)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Accessory 3: Saffiano Hard Travel Case -->
+          <div class="acc-card">
+            <div class="acc-media">
+              <img src="assets/studio-producer.jpg" alt="Saffiano Leather Travel Hardcase" class="acc-img" loading="lazy">
+              <span class="acc-badge">Water-Resistant</span>
+            </div>
+            <div class="acc-body">
+              <div class="flex-between mb-1">
+                <h3 class="acc-title">Saffiano Leather Hard Travel Case</h3>
+                <span class="acc-price">$69 USD</span>
+              </div>
+              <p class="acc-desc">Crush-proof polycarbonate internal shell wrapped in scratch-resistant Italian Saffiano leather with magnetic cable organizer compartment.</p>
+              <label class="bundle-checkbox-wrap">
+                <input type="checkbox" class="bundle-check" data-item="case" data-price="69" data-name="Saffiano Leather Travel Hardcase">
+                <span class="custom-check-box"></span>
+                <span class="bundle-check-text">Add to Order (+$69 USD)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle Live Total Bar -->
+        <div class="bundle-summary-bar flex-between">
+          <div>
+            <span class="text-xs text-muted uppercase tracking-wider block">Configured System Price:</span>
+            <div class="flex-align gap-2">
+              <strong class="bundle-total-amount text-titanium" id="bundleConfigTotal">$499 USD</strong>
+              <small class="text-xs text-muted" id="bundleItemsCount">(Aether 01 Headphones)</small>
+            </div>
+          </div>
+          <button class="btn btn-titanium btn-lg" id="btnBuyConfiguredBundle">
+            <i data-lucide="check" class="icon-sm" aria-hidden="true"></i>
+            <span>Proceed with Selection</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's in the Box (Tactile Unboxing Experience) -->
+    <section class="section" id="unboxing">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Uncompromising Inclusions</span>
+          <h2 class="section-title">Everything Included in the Box</h2>
+          <p class="section-subtitle">
+            Premium accessories precision-cut into custom high-density foam packaging. Ready for global studio production and travel out of the box.
+          </p>
+        </div>
+
+        <div class="unboxing-grid">
+          <div class="unbox-item" data-gsap="fade-up">
+            <div class="unbox-num">01</div>
+            <h3 class="unbox-name">Aether 01 Titanium Headphones</h3>
+            <p class="unbox-desc">In your chosen finish with pre-fitted magnetic lambskin pads.</p>
+          </div>
+
+          <div class="unbox-item" data-gsap="fade-up" data-delay="0.1">
+            <div class="unbox-num">02</div>
+            <h3 class="unbox-name">Magnetic Hard Travel Flight Case</h3>
+            <p class="unbox-desc">Slim-profile ballistic nylon case with internal cable dock.</p>
+          </div>
+
+          <div class="unbox-item" data-gsap="fade-up" data-delay="0.2">
+            <div class="unbox-num">03</div>
+            <h3 class="unbox-name">1.5m Braided 3.5mm Audio Cable</h3>
+            <p class="unbox-desc">Oxygen-free copper with custom machined aluminum jacks.</p>
+          </div>
+
+          <div class="unbox-item" data-gsap="fade-up">
+            <div class="unbox-num">04</div>
+            <h3 class="unbox-name">USB-C to USB-C Lossless Audio Cable</h3>
+            <p class="unbox-desc">Enables direct 24-bit / 96kHz digital DAC streaming from Mac/PC.</p>
+          </div>
+
+          <div class="unbox-item" data-gsap="fade-up" data-delay="0.1">
+            <div class="unbox-num">05</div>
+            <h3 class="unbox-name">Gold-Plated 6.35mm Studio Adapter</h3>
+            <p class="unbox-desc">Screw-on 1/4" plug for professional audio interfaces and mixing consoles.</p>
+          </div>
+
+          <div class="unbox-item" data-gsap="fade-up" data-delay="0.2">
+            <div class="unbox-num">06</div>
+            <h3 class="unbox-name">Numbered Certificate of Authenticity</h3>
+            <p class="unbox-desc">Serialized laser-engraved titanium card with individual acoustic test graph.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Audiophile Reviews & Critical Acclaim -->
+    <section class="section bg-surface" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Critical Acclaim</span>
+          <h2 class="section-title">Tested by Engineers. Loved by Purists.</h2>
+          <p class="section-subtitle">
+            See what mastering engineers, recording artists, and audiophile publications say about Aether 01.
+          </p>
+        </div>
+
+        <div class="reviews-editorial-grid mb-8">
+          <div class="editorial-card" data-gsap="fade-up">
+            <div class="editorial-logo">SOUND ON SOUND</div>
+            <p class="editorial-quote">"The Aether 01 Titanium achieves something extraordinary: the pristine transient speed of electrostatics combined with the punch and weight of pure beryllium."</p>
+            <div class="editorial-badge">Editor's Choice Award 2026</div>
+          </div>
+
+          <div class="editorial-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="editorial-logo">WIRED</div>
+            <p class="editorial-quote">"9.5/10. Easily the best-built luxury wireless headphones on the market today. Titanium construction means these will survive decades of daily abuse."</p>
+            <div class="editorial-badge">Best Audio Gear of the Year</div>
+          </div>
+
+          <div class="editorial-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="editorial-logo">PITCHFORK</div>
+            <p class="editorial-quote">"A revelation for critical listening on long flights. The active noise reduction is completely silent with zero cabin pressure feeling or high-end roll-off."</p>
+            <div class="editorial-badge">Best New Headphone</div>
+          </div>
+        </div>
+
+        <!-- Verified User Review Cards -->
+        <div class="user-reviews-grid">
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Purchaser</span>
+            </div>
+            <h3 class="u-review-title">"Replaced my Sennheiser HD800S for daily listening"</h3>
+            <p class="u-review-text">"I was skeptical about a wireless headphone competing with my open-back reference rig. The beryllium driver is insanely fast. You can hear the singer's intake of breath and the reverberation tail of the recording room with surgical clarity."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">MT</div>
+              <div>
+                <strong>Marcus T.</strong>
+                <small>Mixing Engineer, Abbey Road Studios</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Purchaser</span>
+            </div>
+            <h3 class="u-review-title">"The Raw Titanium finish is an industrial art piece"</h3>
+            <p class="u-review-text">"The build quality puts Apple AirPods Max to shame. It feels like a Leica camera in the hands. The magnetic pads are effortless to wipe down, and the 55-hour battery means I charge it literally twice a month."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">EK</div>
+              <div>
+                <strong>Elena K.</strong>
+                <small>Industrial Product Designer, Zurich</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="u-review-card">
+            <div class="flex-between mb-2">
+              <span class="stars-gold">★★★★★</span>
+              <span class="verified-pill flex-align gap-1"><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> Verified Purchaser</span>
+            </div>
+            <h3 class="u-review-title">"60-day audition sealed the deal within 10 minutes"</h3>
+            <p class="u-review-text">"Took advantage of the 60-day home trial fully intending to return it if it didn't blow me away. Within 10 minutes of listening to Steely Dan on LDAC, I threw the return label away. Exceptional customer care."</p>
+            <div class="u-author flex-align gap-3">
+              <div class="u-avatar">JH</div>
+              <div>
+                <strong>Julian H.</strong>
+                <small>Acoustic Consultant, Melbourne</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom High-Impact DTC Conversion Callout -->
+    <section class="section bottom-cta-section">
+      <div class="container text-center">
+        <span class="section-tag">Experience Pure Sound</span>
+        <h2 class="bottom-cta-heading">Ready to Hear What You've Been Missing?</h2>
+        <p class="bottom-cta-sub">
+          Order today with complimentary DHL Express worldwide delivery, 60-day risk-free audition, and a 3-year titanium hardware warranty.
+        </p>
+        <div class="flex-align justify-center gap-4 flex-wrap">
+          <button class="btn btn-titanium btn-lg" id="btnBottomOrder">
+            <i data-lucide="shopping-bag" class="icon-sm" aria-hidden="true"></i>
+            <span>Order Aether 01 Titanium — $499 USD</span>
+          </button>
+          <a href="#soundstage" class="btn btn-glass btn-lg">
+            <i data-lucide="sliders" class="icon-sm" aria-hidden="true"></i>
+            <span>Audition Soundstage Simulator</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-crest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 10v4M6 6v12M10 3v18M14 7v10M18 5v14M22 10v4" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">AETHER</span>
+              <span class="brand-sub">ACOUSTIC LABORATORIES</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Aether Acoustic Laboratories Inc. Handcrafting studio-grade wireless audio systems, vapor-deposited Beryllium transducers, and aerospace titanium acoustic components.
+          </p>
+          <div class="footer-info-row mt-3 text-xs text-muted">
+            <span>Designed in Copenhagen & San Francisco</span>
+            <span class="divider">•</span>
+            <span>Worldwide DHL Fulfillment</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">The Instrument</h4>
+          <ul class="footer-links">
+            <li><a href="#flagship">Aether 01 Titanium</a></li>
+            <li><a href="#soundstage">Acoustic EQ Engine</a></li>
+            <li><a href="#engineering">Beryllium Transducers</a></li>
+            <li><a href="#accessories">Walnut Stand & Cables</a></li>
+            <li><a href="#unboxing">Packaging & Inclusions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Guarantee & Service</h4>
+          <ul class="footer-links">
+            <li><a href="#">60-Day In-Home Audition</a></li>
+            <li><a href="#">3-Year Titanium Warranty</a></li>
+            <li><a href="#">DHL Express Shipping Rates</a></li>
+            <li><a href="#">Aether Companion App</a></li>
+            <li><a href="#">Firmware & DSP Updates</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Audiophile Support</h4>
+          <p class="footer-text-sm mb-3">
+            Our audio engineers are available via live chat and concierge email to help tune your DSP profile.
+          </p>
+          <div class="text-xs text-titanium font-mono">concierge@aether-audio.com</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Aether Acoustic Laboratories Inc. All Rights Reserved.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Sale</a>
+          <a href="#">Warranty Terms</a>
+          <a href="#">Compliance & CE / FCC</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Express Checkout Drawer (<dialog id="cartDrawer">) -->
+  <dialog class="cart-drawer-dialog" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-inner">
+      <!-- Drawer Header -->
+      <div class="cart-drawer-header flex-between">
+        <div class="flex-align gap-2">
+          <i data-lucide="shopping-bag" class="icon-sm text-titanium" aria-hidden="true"></i>
+          <h3 class="cart-title">Your Studio Bag (<span id="cartDrawerItemCount">1</span>)</h3>
+        </div>
+        <button class="cart-close-btn" id="btnCloseCart" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Threshold Meter -->
+      <div class="shipping-threshold-box">
+        <div class="flex-between text-xs mb-1">
+          <span class="text-white font-semibold flex-align gap-1">
+            <i data-lucide="sparkles" class="icon-xs text-amber" aria-hidden="true"></i>
+            <span>Complimentary Worldwide DHL Express</span>
+          </span>
+          <span class="text-emerald font-bold">UNLOCKED</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Itemized List -->
+      <div class="cart-items-scroll">
+        <!-- Main Headphone Item -->
+        <div class="cart-item-card" id="cartHeadphoneItem">
+          <div class="cart-item-thumb">
+            <img src="assets/headphone-black.jpg" alt="Aether 01 Titanium" id="cartItemThumbnail">
+          </div>
+          <div class="cart-item-info">
+            <div class="flex-between">
+              <h4 class="cart-item-name">Aether 01 Titanium</h4>
+              <button class="cart-remove-btn" id="btnRemoveHeadphone" aria-label="Remove item">&times;</button>
+            </div>
+            <div class="cart-item-variant" id="cartItemVariantLabel">Finish: Matte Obsidian Black</div>
+            <div class="flex-between items-center mt-2">
+              <div class="qty-stepper flex-align">
+                <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">-</button>
+                <span class="qty-num" id="headphoneQty">1</span>
+                <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+              </div>
+              <strong class="cart-item-price" id="cartHeadphonePrice">$499 USD</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Bundle Add-on in Cart -->
+        <div class="cart-addon-container" id="cartAddonsContainer">
+          <!-- Dynamically populated if user selects accessories -->
+        </div>
+
+        <!-- Quick In-Cart Bundle Upsell -->
+        <div class="cart-upsell-box">
+          <span class="text-xs uppercase text-titanium font-bold tracking-wider block mb-2">Recommended Companion:</span>
+          <div class="flex-between items-center">
+            <div class="flex-align gap-2">
+              <img src="assets/headphone-stand.jpg" alt="Stand" class="upsell-mini-thumb">
+              <div>
+                <strong class="text-xs block text-white">Walnut Stand</strong>
+                <small class="text-xs text-muted">+$79 (Save $30)</small>
+              </div>
+            </div>
+            <button class="btn btn-sm btn-outline-titanium" id="btnQuickAddStand">Add +$79</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer Footer & Checkout Actions -->
+      <div class="cart-drawer-footer">
+        <div class="cart-summary-lines mb-3">
+          <div class="flex-between text-xs text-muted mb-1">
+            <span>Subtotal:</span>
+            <span class="text-white font-mono" id="cartSubtotal">$499 USD</span>
+          </div>
+          <div class="flex-between text-xs text-muted mb-1">
+            <span>Worldwide DHL Express Shipping:</span>
+            <span class="text-emerald font-semibold">FREE</span>
+          </div>
+          <div class="flex-between text-base text-white font-bold pt-2 border-t">
+            <span>Total:</span>
+            <span class="text-titanium font-mono text-xl" id="cartFinalTotal">$499 USD</span>
+          </div>
+        </div>
+
+        <!-- 1-Click Apple Pay / Google Pay Simulation -->
+        <button class="btn btn-apple-pay full-width mb-2" id="btnApplePayExpress">
+          <span class="apple-pay-logo">Pay</span> Express Checkout
+        </button>
+
+        <button class="btn btn-titanium full-width btn-lg" id="btnStandardCheckout">
+          <span>Complete Order — <span id="btnPayTotalText">$499 USD</span></span>
+          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        </button>
+
+        <div class="cart-guarantee-row flex-align justify-center gap-3 mt-3 text-xs text-muted">
+          <span class="flex-align gap-1"><i data-lucide="lock" class="icon-xs text-titanium" aria-hidden="true"></i> 256-Bit SSL Encrypted</span>
+          <span>•</span>
+          <span>60-Day Return Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Checkout Success Modal (<dialog id="successModal">) -->
+  <dialog class="success-dialog" id="successModal">
+    <div class="success-content text-center">
+      <div class="success-icon-badge">
+        <i data-lucide="check" class="icon-lg text-emerald" aria-hidden="true"></i>
+      </div>
+      <span class="section-tag">Order Confirmed • Serial #AET-2026-9812</span>
+      <h3 class="success-title">Welcome to Aether.</h3>
+      <p class="success-desc">
+        Your handcrafted <strong>Aether 01 Titanium</strong> is scheduled for priority calibration and dispatch via DHL Express worldwide.
+      </p>
+
+      <div class="receipt-box text-left mb-4">
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Item:</span>
+          <strong class="text-white" id="receiptItemName">Aether 01 (Matte Obsidian Black)</strong>
+        </div>
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Carrier:</span>
+          <span class="text-white">DHL Express Worldwide Air</span>
+        </div>
+        <div class="flex-between text-xs mb-1">
+          <span class="text-muted">Tracking:</span>
+          <span class="text-titanium font-mono">DHL-8921-9481-US</span>
+        </div>
+        <div class="flex-between text-sm pt-2 border-t mt-2">
+          <strong>Total Paid:</strong>
+          <strong class="text-titanium font-mono" id="receiptTotal">$499 USD</strong>
+        </div>
+      </div>
+
+      <button class="btn btn-titanium full-width" id="btnCloseSuccess">Done</button>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

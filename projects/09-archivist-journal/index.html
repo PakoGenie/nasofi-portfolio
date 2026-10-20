@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="paper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARCHIVIST | International Journal of Monolithic Architecture & Spatial Culture</title>
+  <meta name="description" content="A quarterly publication and digital archive exploring monumental architecture, spatial poetics, tactile brutalism, and meditative spaces. Issue No. 18: The Silence of Cast Concrete.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://archivist-journal.org">
+
+  <!-- Google Fonts: Italian-inspired Editorial Serif (Cinzel + Newsreader) + Syne + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-track" aria-hidden="true">
+    <div class="reading-progress-fill" id="readingProgressBar"></div>
+  </div>
+
+  <!-- Top Global Editorial Ticker Bar -->
+  <header class="top-editorial-bar">
+    <div class="container flex-between text-xs font-mono">
+      <div class="flex-align gap-3">
+        <span class="issue-badge">ISSUE № 18</span>
+        <span class="text-muted hide-mobile">AUTUMN / WINTER 2026</span>
+        <span class="ticker-divider hide-mobile">•</span>
+        <span class="text-muted hide-mobile">KYOTO — BASEL — PARIS — NEW YORK</span>
+      </div>
+      <div class="flex-align gap-4">
+        <!-- Theme Switcher -->
+        <div class="theme-picker flex-align gap-1" role="group" aria-label="Reading Mode Theme">
+          <button class="theme-btn active" data-set-theme="paper" title="Paper Cream">Paper</button>
+          <button class="theme-btn" data-set-theme="dark" title="Obsidian Noir">Dark</button>
+          <button class="theme-btn" data-set-theme="sepia" title="Archival Sepia">Sepia</button>
+        </div>
+        <button class="btn btn-xs btn-outline" id="btnOpenSubscribe">Order Print Issue</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Journal Masthead -->
+  <div class="masthead-container">
+    <div class="container text-center">
+      <div class="masthead-pre">QUARTERLY REVIEW OF SPATIAL POETICS & MATERIAL CULTURE</div>
+      <h1 class="journal-logo">ARCHIVIST</h1>
+      <div class="masthead-sub flex-between text-xs font-mono">
+        <span>ISSN 2840-9912</span>
+        <span>FOUNDED IN COPENHAGEN, 2018</span>
+        <span>EDITED BY VALENTINA MORI</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Journal Navigation -->
+  <nav class="journal-nav sticky-nav">
+    <div class="container flex-between">
+      <div class="nav-links flex-align gap-6">
+        <a href="#featured" class="nav-link active">Cover Story</a>
+        <a href="#essays" class="nav-link">Essays & Monologues</a>
+        <a href="#audio" class="nav-link">Audio Archive</a>
+        <a href="#curation" class="nav-link">Spatial Studies</a>
+        <a href="#archive" class="nav-link">Past Issues</a>
+      </div>
+      <div class="flex-align gap-3">
+        <span class="saved-count-pill text-xs font-mono" id="savedCountPill">0 Saved</span>
+        <button class="icon-btn" id="btnOpenSearch" aria-label="Search essays">
+          <i data-lucide="search" class="icon-sm" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Section 1: Hero Featured Cover Essay -->
+    <section class="featured-hero-section section-padding" id="featured">
+      <div class="container">
+        <div class="hero-editorial-grid">
+          <!-- Left Column: Lead Essay Typography -->
+          <div class="hero-essay-meta" data-gsap="fade-right">
+            <div class="essay-kicker flex-align gap-2 mb-3">
+              <span class="kicker-tag">CURATED ESSAY</span>
+              <span class="bullet">•</span>
+              <span class="font-mono text-xs text-muted">14 MIN READ</span>
+              <span class="bullet">•</span>
+              <span class="font-mono text-xs text-muted">AUDIO AVAILABLE</span>
+            </div>
+
+            <h2 class="hero-essay-title">The Silence of Cast Concrete: The Spatial Poetics of Monolithic Enclosure</h2>
+            
+            <p class="hero-essay-dek">
+              When light enters an unadorned concrete chamber at dawn, shadow ceases to be the absence of illumination and becomes a tactile substance. An extensive inquiry into the tactile metaphysics of Tadao Ando, Peter Zumthor, and Álvaro Siza.
+            </p>
+
+            <div class="author-byline-strip flex-align gap-3 mb-6">
+              <img src="assets/editor-portrait.jpg" alt="Prof. Valentina Mori" class="author-avatar">
+              <div>
+                <strong class="author-name block text-sm">Valentina Mori, Ph.D.</strong>
+                <span class="author-role block text-xs text-muted font-mono">Chair of Architectural Theory, ETH Zürich</span>
+              </div>
+            </div>
+
+            <div class="hero-actions flex-align gap-3">
+              <button class="btn btn-primary" id="btnReadCoverStory">
+                <span>Read Full Monologue</span>
+                <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn-outline" id="btnPlayHeroAudio">
+                <i data-lucide="volume-2" class="icon-xs" aria-hidden="true"></i>
+                <span id="heroPlayLabel">Listen to Narration (12:40)</span>
+              </button>
+              <button class="btn-bookmark" data-article-id="cover-concrete" title="Bookmark essay">
+                <i data-lucide="bookmark" class="icon-sm" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Full-Bleed Parallax Architecture Hero Visual -->
+          <div class="hero-visual-frame" data-gsap="fade-left">
+            <div class="visual-wrapper" id="heroImageWrapper">
+              <img src="assets/cover-monolith.jpg" alt="Monolithic Cast Concrete Pavilion" class="hero-cover-img" id="heroCoverImg">
+              <div class="image-spatial-badge">
+                <span class="font-mono text-xs">CHICHU ART MUSEUM, NAOSHIMA • 34.4560° N, 133.9870° E</span>
+              </div>
+            </div>
+            <figcaption class="hero-visual-caption text-xs font-mono text-muted mt-2">
+              Fig. 1.1 — Formwork tie-rod rhythm in high-density self-compacting concrete under perpendicular raking sunlight.
+            </figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Audio Article Narration & Waveform Synthesizer -->
+    <section class="audio-narration-strip" id="audio">
+      <div class="container">
+        <div class="audio-player-card">
+          <div class="player-left flex-align gap-4">
+            <button class="audio-play-toggle" id="btnMainPlayToggle" aria-label="Play or pause audio narration">
+              <i data-lucide="play" class="icon-md" id="playIconSvg" aria-hidden="true"></i>
+            </button>
+            <div>
+              <span class="player-tag font-mono text-xs text-muted block">AUDIO ESSAY ARCHIVE • RECORDED AT BASEL ACOUSTICS LAB</span>
+              <strong class="player-title text-base block" id="currentTrackTitle">Narrated by Dr. Valentina Mori — The Silence of Cast Concrete</strong>
+            </div>
+          </div>
+
+          <!-- Dynamic Audio Canvas Waveform Simulation -->
+          <div class="player-waveform-wrap">
+            <canvas id="waveformCanvas" width="400" height="48"></canvas>
+          </div>
+
+          <div class="player-controls flex-align gap-4">
+            <div class="timecode-display font-mono text-xs" id="timecodeDisplay">02:14 / 12:40</div>
+            <div class="playback-speed-select">
+              <button class="speed-btn active" data-speed="1.0">1.0x</button>
+              <button class="speed-btn" data-speed="1.25">1.25x</button>
+              <button class="speed-btn" data-speed="1.5">1.5x</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Curated Essays & Spatial Studies Directory -->
+    <section class="essays-directory-section section-padding" id="essays">
+      <div class="container">
+        <div class="section-header flex-between mb-8">
+          <div>
+            <span class="section-kicker font-mono text-xs">THE PERMANENT REPOSITORY</span>
+            <h2 class="section-title">Critical Spatial Inquiries</h2>
+          </div>
+
+          <!-- Filter Category Tabs -->
+          <div class="filter-tab-group flex-align gap-2">
+            <button class="filter-btn active" data-category="all">All Essays (18)</button>
+            <button class="filter-btn" data-category="brutalism">Monolithic Brutalism</button>
+            <button class="filter-btn" data-category="japan">Japanese Teahouses</button>
+            <button class="filter-btn" data-category="biophilic">Biophilic Horizons</button>
+            <button class="filter-btn" data-category="materials">Material Studies</button>
+          </div>
+        </div>
+
+        <!-- 3-Column Editorial Grid -->
+        <div class="essays-grid" id="essaysGrid">
+          <!-- Article 1: Brutalism -->
+          <article class="essay-card" data-category="brutalism" data-article-id="brutalism-monument">
+            <div class="essay-card-media">
+              <img src="assets/brutalist-concrete.jpg" alt="Brutalist Concrete Enclosure" class="card-img">
+              <span class="category-pill">Brutalism</span>
+              <button class="card-bookmark-btn" data-article-id="brutalism-monument" title="Bookmark essay">
+                <i data-lucide="bookmark" class="icon-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="essay-card-body">
+              <div class="essay-meta-line font-mono text-xs text-muted mb-2">
+                <span>ESSAY 02</span> • <span>9 MIN READ</span> • <span>PETER ZUMTHOR</span>
+              </div>
+              <h3 class="essay-card-title">Thermæ Vals: Stone, Steam, and the Geology of Memory</h3>
+              <p class="essay-card-excerpt">
+                Carved into the Grisons Alps using 60,000 slabs of Valser quartzite, Zumthor treats water not as a decorative amenity, but as a geologic force.
+              </p>
+              <div class="essay-card-footer flex-between">
+                <span class="font-mono text-xs text-muted">OCT 2026</span>
+                <button class="link-arrow flex-align gap-1 btn-read-article" data-title="Thermæ Vals: Stone, Steam, and the Geology of Memory" data-author="Peter Zumthor & K. Lindqvist">
+                  <span>Read Essay</span>
+                  <i data-lucide="arrow-up-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Japanese Teahouses -->
+          <article class="essay-card" data-category="japan" data-article-id="japan-teahouse">
+            <div class="essay-card-media">
+              <img src="assets/teahouse-interior.jpg" alt="Minimalist Cedar Japanese Teahouse" class="card-img">
+              <span class="category-pill">Japanese Spaces</span>
+              <button class="card-bookmark-btn" data-article-id="japan-teahouse" title="Bookmark essay">
+                <i data-lucide="bookmark" class="icon-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="essay-card-body">
+              <div class="essay-meta-line font-mono text-xs text-muted mb-2">
+                <span>ESSAY 03</span> • <span>11 MIN READ</span> • <span>KENZŌ TANGE & SEN NO RIKYŪ</span>
+              </div>
+              <h3 class="essay-card-title">The Nijiriguchi Portal: Humility, Dimension, and Entry Thresholds</h3>
+              <p class="essay-card-excerpt">
+                Why the 66-centimeter crawl space of a 16th-century Kyoto chashitsu remains the most radical spatial filter in modern architectural history.
+              </p>
+              <div class="essay-card-footer flex-between">
+                <span class="font-mono text-xs text-muted">SEP 2026</span>
+                <button class="link-arrow flex-align gap-1 btn-read-article" data-title="The Nijiriguchi Portal: Humility, Dimension, and Entry Thresholds" data-author="Junichiro Tanizaki & M. Sato">
+                  <span>Read Essay</span>
+                  <i data-lucide="arrow-up-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Biophilic Horizons -->
+          <article class="essay-card" data-category="biophilic" data-article-id="biophilic-pavilion">
+            <div class="essay-card-media">
+              <img src="assets/biophilic-pavilion.jpg" alt="Biophilic Glass and Earth Pavilion" class="card-img">
+              <span class="category-pill">Biophilic Horizons</span>
+              <button class="card-bookmark-btn" data-article-id="biophilic-pavilion" title="Bookmark essay">
+                <i data-lucide="bookmark" class="icon-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="essay-card-body">
+              <div class="essay-meta-line font-mono text-xs text-muted mb-2">
+                <span>ESSAY 04</span> • <span>8 MIN READ</span> • <span>ORGANIC FORMWORK</span>
+              </div>
+              <h3 class="essay-card-title">Living Membranes: Rammed Earth and Mycelium Structural Vaults</h3>
+              <p class="essay-card-excerpt">
+                Transcending post-industrial petrochemical insulation through carbon-sequestering subterranean architectures and earthen passive cooling.
+              </p>
+              <div class="essay-card-footer flex-between">
+                <span class="font-mono text-xs text-muted">AUG 2026</span>
+                <button class="link-arrow flex-align gap-1 btn-read-article" data-title="Living Membranes: Rammed Earth and Mycelium Structural Vaults" data-author="Dr. Aris Thorne">
+                  <span>Read Essay</span>
+                  <i data-lucide="arrow-up-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Print Edition & Hardcover Archival Showcase -->
+    <section class="print-showcase-section section-padding" id="archive">
+      <div class="container">
+        <div class="print-card-grid">
+          <div class="print-image-wrap" data-gsap="fade-up">
+            <img src="assets/print-issue.jpg" alt="Archivist Hardcover Issue 18" class="print-mock-img">
+            <div class="print-spec-pill font-mono text-xs">
+              <span>WEIGHT: 1.4 KG • 280 GSM FEDRIGONI PAPER</span>
+            </div>
+          </div>
+
+          <div class="print-text-wrap" data-gsap="fade-up" data-delay="0.1">
+            <span class="kicker-tag font-mono text-xs">LIMITED ARCHIVAL EDITION</span>
+            <h2 class="print-title">Issue № 18: Monoliths of Silence</h2>
+            <p class="print-description">
+              Printed on heavy Italian tactile uncoated paper with blind-debossed buckram cloth binding. Strictly limited to 500 hand-numbered copies worldwide. Includes unreleased architectural plans and infrared site surveys.
+            </p>
+
+            <div class="print-specs-list font-mono text-xs mb-6">
+              <div class="spec-row flex-between py-2 border-b">
+                <span class="text-muted">Binding:</span>
+                <strong class="text-contrast">Foil-Stamped Belgian Linen Hardcover</strong>
+              </div>
+              <div class="spec-row flex-between py-2 border-b">
+                <span class="text-muted">Pagination:</span>
+                <strong class="text-contrast">324 Pages • 140 Duotone Plates</strong>
+              </div>
+              <div class="spec-row flex-between py-2 border-b">
+                <span class="text-muted">International Shipping:</span>
+                <strong class="text-contrast">Carbon-Neutral DHL Express</strong>
+              </div>
+            </div>
+
+            <div class="print-price-action flex-align gap-4">
+              <div class="price-block">
+                <span class="text-xs font-mono text-muted block">Archival Hardcover:</span>
+                <strong class="price-val font-mono text-2xl" id="editionPrice">$65 USD</strong>
+              </div>
+              <button class="btn btn-primary btn-lg" id="btnOrderArchivalPrint">
+                <i data-lucide="package" class="icon-sm" aria-hidden="true"></i>
+                <span>Reserve Hand-Numbered Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Colophon & Footer -->
+  <footer class="journal-footer section-padding">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-main">
+          <span class="footer-logo">ARCHIVIST</span>
+          <p class="footer-tagline text-xs">
+            Published quarterly under the auspices of the International Architectural Archive Consortium. Printed in Verona, Italy.
+          </p>
+        </div>
+        <div class="footer-col">
+          <span class="footer-header font-mono text-xs">BUREAUS</span>
+          <ul class="footer-links text-xs font-mono">
+            <li>Kyoto: Shimogyō-ku 600-8092</li>
+            <li>Basel: St. Alban-Vorstadt 24</li>
+            <li>Paris: 6 Rue de Furstemberg</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <span class="footer-header font-mono text-xs">ARCHIVE</span>
+          <ul class="footer-links text-xs">
+            <li><a href="#featured">ISSN Directory</a></li>
+            <li><a href="#featured">Ethics & Peer Review</a></li>
+            <li><a href="#featured">Library Institutional Subscriptions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs font-mono text-muted pt-6 border-t mt-8">
+        <span>© 2026 ARCHIVIST PUBLISHING GROUP. ALL RIGHTS RESERVED.</span>
+        <span>SET IN CINZEL, SYNE & NEWSREADER</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal 1: Comprehensive Long-Form Article Reader (<dialog id="articleReaderDialog">) -->
+  <dialog class="article-reader-dialog" id="articleReaderDialog" aria-label="Article Reader View">
+    <div class="reader-shell">
+      <!-- Reader Header Bar -->
+      <header class="reader-topbar flex-between">
+        <div class="flex-align gap-3">
+          <span class="font-mono text-xs issue-badge">ARCHIVIST ESSAY</span>
+          <span class="font-mono text-xs text-muted hide-mobile">14 MIN READ</span>
+        </div>
+        <div class="reader-tools flex-align gap-3">
+          <!-- Text Zoom Controls -->
+          <div class="zoom-controls flex-align gap-1">
+            <button class="zoom-btn" id="btnZoomOut" aria-label="Decrease font size">A-</button>
+            <button class="zoom-btn" id="btnZoomReset" aria-label="Reset font size">A</button>
+            <button class="zoom-btn" id="btnZoomIn" aria-label="Increase font size">A+</button>
+          </div>
+          <button class="reader-close-btn" id="btnCloseReader" aria-label="Close reader">&times;</button>
+        </div>
+      </header>
+
+      <!-- Reader Scrollable Body -->
+      <div class="reader-content-scroll" id="readerContentArea">
+        <article class="reader-article">
+          <header class="reader-article-header text-center mb-8">
+            <span class="font-mono text-xs text-muted block mb-2">AUTUMN / WINTER 2026 • ISSUE № 18</span>
+            <h2 class="reader-article-title" id="readerArticleTitle">The Silence of Cast Concrete: The Spatial Poetics of Monolithic Enclosure</h2>
+            <div class="reader-author font-mono text-xs text-muted mt-3" id="readerArticleAuthor">By Valentina Mori, Ph.D. — Illustrated by H. Richter</div>
+          </header>
+
+          <div class="reader-body-text">
+            <p class="lead-paragraph">
+              To enter Tadao Ando’s Church of the Light in Ibaraki at mid-morning is not to observe an architectural composition, but to be absorbed into a silent dialogue between gravity and sheer radiance. There are no ornamental distractions, no moldings, no polychrome mosaics. There is only the cool gray plane of vibrated concrete, punctuated by a cruciate void through which raw sunlight pierces the gloom.
+            </p>
+
+            <blockquote class="editorial-pullquote">
+              "Architecture is not about creating novel geometries. It is about constructing a sanctuary in which the human consciousness can hear itself breathe."
+            </blockquote>
+
+            <p>
+              When Peter Zumthor cast the Bruder Klaus Field Chapel in Mechernich, Germany, he constructed a conical teepee of 112 tree trunks harvested from local forests, layered concrete over them in twenty-four distinct 50-centimeter pours over twenty-four days, and then set a slow smoldering fire inside the interior for three continuous weeks. The wood burned away, leaving behind charred, soot-blackened flutes in the concrete walls that smell perpetually of cedar smoke and damp limestone.
+            </p>
+
+            <div class="reader-diagram-figure my-6">
+              <img src="assets/brutalist-concrete.jpg" alt="Concrete casting detail" class="reader-fig-img">
+              <figcaption class="font-mono text-xs text-muted mt-2 text-center">
+                Detail of Bruder Klaus Chapel interior striations, Mechernich. Formwork soot patina intact.
+              </figcaption>
+            </div>
+
+            <p>
+              In our contemporary era of ephemeral glass curtain walls and algorithmically modulated LED facades, monolithic mass possesses an almost transgressive stillness. Concrete, in its fluid origin state, is liquid stone. It assumes the texture of whatever timber containment cradles it. When cured, it preserves the grain of the wood long after the tree has decayed into humus. It is a photographic emulsion cast in stone.
+            </p>
+
+            <div class="reader-footnotes border-t pt-4 mt-8 font-mono text-xs text-muted">
+              <strong class="block text-contrast mb-1">NOTES & CITATIONS:</strong>
+              <p>1. Ando, T. (1995). <em>Conversations with Architecture</em>. Phaidon Press, pp. 88–104.</p>
+              <p>2. Zumthor, P. (2006). <em>Atmospheres: Architectural Environments - Surrounding Objects</em>. Birkhäuser, Basel.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <footer class="reader-footer flex-between">
+        <span class="font-mono text-xs text-muted">END OF CURATED ESSAY</span>
+        <button class="btn btn-xs btn-outline" id="btnShareArticle">Copy Citation Link</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Hardcover Archival Order & Subscription (<dialog id="subscriptionDialog">) -->
+  <dialog class="modal-dialog" id="subscriptionDialog" aria-label="Order Archival Print Edition">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="btnCloseSubscribe" aria-label="Close dialog">&times;</button>
+      <div class="modal-header mb-4">
+        <span class="kicker-tag font-mono text-xs">COLLECTOR’S EDITION</span>
+        <h3 class="modal-title font-serif text-xl">Order Issue № 18 Hardcover</h3>
+        <p class="text-xs text-muted">Numbered edition 1–500. Hand-bound in Belgian linen with archival slipcase.</p>
+      </div>
+
+      <form id="orderForm">
+        <div class="form-row flex-between mb-3 p-3 border rounded">
+          <div class="flex-align gap-3">
+            <img src="assets/print-issue.jpg" alt="Print issue" class="cart-thumb">
+            <div>
+              <strong class="text-sm block">ARCHIVIST № 18: Monoliths</strong>
+              <span class="text-xs text-muted font-mono">1.4 kg • Hardcover</span>
+            </div>
+          </div>
+          <strong class="font-mono text-base" id="cartPrice">$65 USD</strong>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="shipName">Recipient Full Name *</label>
+            <input type="text" id="shipName" class="form-input" placeholder="e.g. Elena Rostova" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="shipCountry">Destination Country *</label>
+            <select id="shipCountry" class="form-input" required>
+              <option value="US">United States ($12 DHL Express)</option>
+              <option value="UK">United Kingdom ($9 DHL Express)</option>
+              <option value="EU">European Union ($8 DHL Express)</option>
+              <option value="JP">Japan / Asia ($15 DHL Express)</option>
+              <option value="AU">Australia ($18 DHL Express)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label class="form-label" for="shipAddress">Delivery Address & Postal Code *</label>
+          <input type="text" id="shipAddress" class="form-input" placeholder="Street address, City, Postal Code" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width btn-lg">
+          <i data-lucide="shield-check" class="icon-sm" aria-hidden="true"></i>
+          <span>Confirm Dispatch Order</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

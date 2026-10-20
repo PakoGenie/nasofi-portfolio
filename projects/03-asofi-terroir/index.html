@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASOFI | Huiles d'Olive Vierge Extra, Olives & Terroir Marocain Depuis 1994</title>
+  <meta name="description" content="Maison Asofi (fondée en 1994) : Producteur et exportateur mondial d'huile d'olive vierge extra, olives marinées, citrons confits beldi et harissa artisanale du Maroc.">
+  
+  <link rel="canonical" href="https://asofi.ma">
+
+  <!-- Google Fonts: Cormorant Garamond (Artisanal luxury serif) + Plus Jakarta Sans + Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Modern Web Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Terroir Lighting -->
+  <div class="ambient-glow glow-olive" aria-hidden="true"></div>
+  <div class="ambient-glow glow-terracotta" aria-hidden="true"></div>
+
+  <!-- Top Global Export Hotline -->
+  <div class="top-export-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="heritage-badge">
+          <i data-lucide="award" class="icon-xs" aria-hidden="true"></i>
+          <span>Maison Fondée en 1994 • Terroir Marocain d'Excellence</span>
+        </span>
+        <span class="divider">|</span>
+        <span class="text-muted hide-mobile">Exportation vers l'Europe, Amérique du Nord, Moyen-Orient & Asie</span>
+      </div>
+      <div class="flex-align gap-4">
+        <div class="lang-selector flex-align gap-1" role="group" aria-label="Langues">
+          <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+          <span class="text-muted" aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <span class="text-muted" aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang="ar" aria-pressed="false">عربي</button>
+        </div>
+        <span class="divider">|</span>
+        <a href="mailto:export@asofi.ma" class="export-mail-link flex-align gap-1">
+          <i data-lucide="globe" class="icon-xs" aria-hidden="true"></i>
+          <span>Bureau Export B2B : export@asofi.ma</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="ASOFI Terroir Marocain">
+        <div class="brand-crest">
+          <i data-lucide="sprout" class="crest-icon" aria-hidden="true"></i>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-title">ASOFI</span>
+          <span class="brand-subtitle">TERROIR MAROCAIN • DEPUIS 1994</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#gammes" class="nav-link">Nos Produits</a>
+        <a href="#histoire" class="nav-link">Le Domaine (1994)</a>
+        <a href="#export-calculator" class="nav-link">Simulateur Export B2B</a>
+        <a href="#certifications" class="nav-link">Qualité & Normes</a>
+        <a href="#recettes" class="nav-link">Art Culinaire</a>
+        <a href="#contact" class="nav-link">Contact Export</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="btn btn-outline-olive" id="btnOpenSampleModal">
+          <i data-lucide="package" class="icon-sm" aria-hidden="true"></i>
+          <span>Échantillons B2B</span>
+        </button>
+        <a href="#export-calculator" class="btn btn-gold">
+          <span>Catalogue & Tarifs</span>
+          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <div class="brand-crest"><i data-lucide="sprout" class="crest-icon" aria-hidden="true"></i></div>
+        <span class="brand-title">ASOFI</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Fermer le menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#gammes" class="mobile-nav-link">Nos Produits du Terroir</a>
+      <a href="#histoire" class="mobile-nav-link">L'Histoire d'Asofi (1994)</a>
+      <a href="#export-calculator" class="mobile-nav-link">Simulateur Volumes Export</a>
+      <a href="#certifications" class="mobile-nav-link">Certifications Internationales</a>
+      <a href="#contact" class="mobile-nav-link">Bureau Export & Devis</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-gold full-width mb-3" id="btnMobileSample">Demander un Coffret Échantillon</button>
+      <a href="tel:+212523000000" class="btn btn-outline-olive full-width text-center">+212 (0) 524 00 00 00</a>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge" data-gsap="fade-up">
+          <i data-lucide="check-circle-2" class="icon-gold" aria-hidden="true"></i>
+          <span>30 Ans de Savoir-Faire Ancestral • Récolte Manuelle & Première Pression à Froid</span>
+        </div>
+
+        <h1 class="hero-title" data-gsap="fade-up" data-delay="0.1">
+          L'Élixir du Terroir Marocain, <br>
+          <span class="gold-gradient-text">Exporté aux Quatre Coins du Monde.</span>
+        </h1>
+
+        <p class="hero-subtitle" data-gsap="fade-up" data-delay="0.2">
+          Depuis 1994, la Maison Asofi sublime le patrimoine oléicole du Maroc. Huiles d'olive vierge extra d'exception, variétés d'olives picholine et beldi, citrons confits traditionnels au sel et harissa artisanale fumée, certifiés pour les marchés mondiaux les plus exigeants.
+        </p>
+
+        <div class="hero-cta-group flex-align gap-4" data-gsap="fade-up" data-delay="0.3">
+          <a href="#gammes" class="btn btn-gold btn-lg">
+            <span>Découvrir la Collection Terroir</span>
+            <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+          </a>
+          <a href="#export-calculator" class="btn btn-glass btn-lg">
+            <i data-lucide="calculator" class="icon-sm" aria-hidden="true"></i>
+            <span>Simulateur Export B2B & Palettes</span>
+          </a>
+        </div>
+
+        <!-- Metrics Ribbon -->
+        <div class="hero-stats-ribbon" data-gsap="fade-up" data-delay="0.4">
+          <div class="ribbon-card">
+            <div class="ribbon-number">1994</div>
+            <div class="ribbon-label">Année de Fondation</div>
+            <p class="ribbon-sub">Plus de 3 décennies de tradition oléicole</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">< 0.2%</div>
+            <div class="ribbon-label">Acidité Vierge Extra</div>
+            <p class="ribbon-sub">Extraction à froid dans les 4h post-cueillette</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number"><span class="counter" data-target="48">0</span>+</div>
+            <div class="ribbon-label">Pays d'Exportation</div>
+            <p class="ribbon-sub">Réseaux de distribution en UE, USA & Golfe</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">IFS • BRC • FDA</div>
+            <div class="ribbon-label">Accréditations Mondiales</div>
+            <p class="ribbon-sub">Conformité sanitaire internationale totale</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Terroir (Filterable Product Catalog with Container Queries) -->
+    <section class="section" id="gammes">
+      <div class="container">
+        <div class="flex-between section-header-split">
+          <div>
+            <span class="section-tag">Notre Savoir-Faire</span>
+            <h2 class="section-title">Les Trésors Gourmets de la Maison Asofi</h2>
+            <p class="section-subtitle">
+              Une gamme gastronomique complète conditionnée pour la grande distribution, l'épicerie fine et la restauration haut de gamme (Foodservice).
+            </p>
+          </div>
+          <div class="product-filter-group" id="productFilters" role="tablist">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Toute la Collection</button>
+            <button class="filter-btn" data-filter="oil" role="tab" aria-selected="false">Huiles d'Olive Vierge Extra</button>
+            <button class="filter-btn" data-filter="olives" role="tab" aria-selected="false">Olives & Confits</button>
+            <button class="filter-btn" data-filter="condiments" role="tab" aria-selected="false">Citrons Confits & Harissa</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Product 1: Huile d'Olive Réserve Picholine -->
+          <article class="product-card" data-category="oil" data-gsap="fade-up">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/huile-picholine-marocaine.jpg');"></div>
+              <span class="badge-terroir">Millésime 2026</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Huile d'Olive Vierge Extra</div>
+              <h3 class="product-name">Cuvée Privée — Picholine Marocaine</h3>
+              <p class="product-desc">
+                Arômes intenses d'artichaut frais, d'herbe coupée et ardence équilibrée en fin de bouche. Extraction à froid sous 25°C.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Acidité :</strong> 0.18% max</span>
+                <span class="spec-item"><strong>Conditionnement :</strong> 250ml • 500ml • 750ml • Bidon 5L</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">Origine : Terroir Atlas</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Picholine Marocaine">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2: Olives Vertes Meslala Cassées -->
+          <article class="product-card" data-category="olives" data-gsap="fade-up" data-delay="0.1">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/olives-meslala-vertes.jpg');"></div>
+              <span class="badge-terroir">Recette Beldi</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Olives de Table Traditionnelles</div>
+              <h3 class="product-name">Olives Vertes Meslala Cassées Marinées</h3>
+              <p class="product-desc">
+                Préparées selon la tradition marocaine avec ail pourpre, piment doux, graines de coriandre et huile d'olive vierge.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Calibre :</strong> 180 / 220 gros fruits</span>
+                <span class="spec-item"><strong>Conditionnement :</strong> Bocaux verre 370g • Seaux 5kg • Fûts 150kg</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">Fermentation naturelle au sel</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Meslala Cassées">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3: Citrons Confits Beldi au Sel -->
+          <article class="product-card" data-category="condiments" data-gsap="fade-up" data-delay="0.2">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/citrons-confits-bocaux.jpg');"></div>
+              <span class="badge-terroir">Indispensable Gastronomie</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Condiment Traditionnel</div>
+              <h3 class="product-name">Citrons Confits Beldi de Marrakech au Sel Marin</h3>
+              <p class="product-desc">
+                Petits citrons ronds à peau fine confits lentement en saumure naturelle. Texture fondante et saveur intensément parfumée sans amertume.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Ingrédients :</strong> Citrons Beldi, eau, sel de mer</span>
+                <span class="spec-item"><strong>Conditionnement :</strong> Bocal 500g • Seau Foodservice 10kg</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">Idéal Tagines & Épiceries Fines</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Citrons Confits Beldi">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4: Harissa Artisanale Fumée -->
+          <article class="product-card" data-category="condiments" data-gsap="fade-up">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/harissa-artisanale.jpg');"></div>
+              <span class="badge-terroir">Recette Berbère</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Pâtes de Piments Épicées</div>
+              <h3 class="product-name">Harissa Artisanale Fumée à l'Huile d'Olive</h3>
+              <p class="product-desc">
+                Piments rouges séchés au soleil de l'Atlas, fumés au bois d'olivier et broyés avec carvi, coriandre sauvage et ail confit.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Scoville :</strong> ~25,000 SHU (Piquant Équilibré)</span>
+                <span class="spec-item"><strong>Conditionnement :</strong> Pots 200g • 380g • Seaux 5kg</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">100% Naturel sans conservateur</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Harissa Artisanale">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 5: Olives Noires Beldi Rides Naturelles -->
+          <article class="product-card" data-category="olives" data-gsap="fade-up" data-delay="0.1">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/olives-noires-beldi.jpg');"></div>
+              <span class="badge-terroir">Séchage Naturel</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Olives Noires de Dégustation</div>
+              <h3 class="product-name">Olives Noires Beldi Façon Tradition au Sel Sec</h3>
+              <p class="product-desc">
+                Cueillies à pleine maturité en hiver, égouttées au sel sec sans saumure artificielle. Goût riche et boisé, légèrement froissées.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Process :</strong> Désamérisation artisanale</span>
+                <span class="spec-item"><strong>Format :</strong> Sous-vide 1kg • Seaux 10kg • Fûts vrac</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">Forte teneur en polyphénols</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Olives Noires Beldi">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 6: Huile d'Olive Bio Première Pression -->
+          <article class="product-card" data-category="oil" data-gsap="fade-up" data-delay="0.2">
+            <div class="product-media-wrap">
+              <div class="product-img" style="background-image: url('assets/huile-bio-flacons.jpg');"></div>
+              <span class="badge-terroir">Certifié Bio / Organic</span>
+            </div>
+            <div class="product-details">
+              <div class="product-category">Agriculture Biologique</div>
+              <h3 class="product-name">Huile d'Olive Vierge Extra Bio Certifiée</h3>
+              <p class="product-desc">
+                Oliveraies conduites en biodynamie sans engrais de synthèse. Profil fruité mûr doux, amande douce et notes florales délicates.
+              </p>
+              <div class="product-specs">
+                <span class="spec-item"><strong>Certification :</strong> ECOCERT • USDA Organic</span>
+                <span class="spec-item"><strong>Conditionnement :</strong> Verre UV 500ml • Bag-in-Box 3L</span>
+              </div>
+              <div class="product-action flex-between">
+                <span class="origin-tag">Traçabilité 100% Parcelle</span>
+                <button class="btn btn-sm btn-outline-olive" data-action="quick-spec" data-product="Huile Bio ASOFI">
+                  <span>Fiche Technique B2B</span>
+                  <i data-lucide="chevron-right" class="icon-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Histoire & Terroir (Fondée en 1994) -->
+    <section class="section bg-surface" id="histoire">
+      <div class="container">
+        <div class="grid-2-col items-center gap-8">
+          <div class="story-text" data-gsap="fade-up">
+            <span class="section-tag">Notre Héritage</span>
+            <h2 class="section-title">1994 : Trente Ans de Passion Oléicole au Cœur du Maroc</h2>
+            <p class="paragraph mb-4">
+              Tout a commencé il y a trois décennies sur les terres fertiles bordant les contreforts de l'Atlas. Fondée en 1994, la <strong>Maison Asofi</strong> s'est donné pour mission de faire rayonner le patrimoine culinaire marocain en alliant les gestes millénaires de nos maîtres-mouliniers aux normes agroalimentaires les plus strictes.
+            </p>
+            <p class="paragraph mb-6">
+              Aujourd'hui, nos oliveraies s'étendent sur des centaines d'hectares baignés de soleil, où chaque olive est cueillie à la main à parfaite véraison, puis triturée dans les 4 heures afin d'en préserver les polyphénols antioxydants et la fraîcheur gustative.
+            </p>
+
+            <div class="timeline-features">
+              <div class="timeline-box">
+                <div class="t-year">1994</div>
+                <div class="t-content">
+                  <strong>Création du Domaine</strong>
+                  <p>Plantation des premières variétés Picholine et installation du moulin à meules traditionnelles.</p>
+                </div>
+              </div>
+
+              <div class="timeline-box">
+                <div class="t-year">2008</div>
+                <div class="t-content">
+                  <strong>Certification Internationale & Export</strong>
+                  <p>Premières expéditions en conteneurs vers l'Union Européenne et accréditation HACCP / ISO 22000.</p>
+                </div>
+              </div>
+
+              <div class="timeline-box">
+                <div class="t-year">2026</div>
+                <div class="t-content">
+                  <strong>Rayonnement Mondial sur 4 Continents</strong>
+                  <p>Partenaire privilégié des importateurs, chaînes d'épiceries fines et distributeurs Foodservice mondiaux.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-visual" data-gsap="fade-up" data-delay="0.2">
+            <div class="grove-card">
+              <img src="assets/oliveraies-maroc.jpg" alt="Oliveraies séculaires Asofi au Maroc" class="grove-img" loading="lazy">
+              <div class="grove-overlay-tag">
+                <i data-lucide="sun" class="icon-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>300+ Jours d'Ensoleillement</strong>
+                  <small>Climat idéal pour une concentration d'arômes unique</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive B2B Export & Volume Calculator -->
+    <section class="section" id="export-calculator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Espace Distributeurs & Importateurs</span>
+          <h2 class="section-title">Simulateur de Volume Export & Logistique</h2>
+          <p class="section-subtitle">
+            Estimez le conditionnement, le poids de fret et les incoterms pour vos expéditions maritimes (Conteneurs 20ft / 40ft) ou groupages routiers.
+          </p>
+        </div>
+
+        <div class="calculator-card" id="exportSimApp">
+          <div class="calc-grid">
+            <div class="calc-controls">
+              <h3 class="calc-panel-h">1. Configuration de la Commande</h3>
+              
+              <div class="form-group mb-4">
+                <label class="form-label" for="simProductType">Gamme de Produits Souhaitée :</label>
+                <select id="simProductType" class="calc-select">
+                  <option value="huile">Huile d'Olive Vierge Extra (Bouteilles Verre Marasca)</option>
+                  <option value="olives">Olives Marinées (Bocaux 370g ou Seaux 5kg)</option>
+                  <option value="citrons">Citrons Confits Beldi (Seaux Foodservice 10kg)</option>
+                  <option value="harissa">Harissa Artisanale Fumée (Pots 200g ou Seaux 5kg)</option>
+                  <option value="mixte">Conteneur Mixte Multi-Produits (Terroir Assorti)</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-4">
+                <div class="flex-between mb-2">
+                  <label class="form-label" for="palletRange">Nombre de Palettes Export (80x120cm) :</label>
+                  <span class="calc-val-pill" id="palletCountDisplay">4 Palettes</span>
+                </div>
+                <input type="range" id="palletRange" min="1" max="22" value="4" class="gold-range">
+                <div class="flex-between text-xs text-muted mt-1">
+                  <span>1 Pal. (Groupage LCL)</span>
+                  <span>10 Pal. (20ft FCL)</span>
+                  <span>22 Pal. (40ft FCL Plein)</span>
+                </div>
+              </div>
+
+              <div class="form-grid-2 mb-4">
+                <div class="form-group">
+                  <label class="form-label" for="simIncoterm">Incoterm Souhaité :</label>
+                  <select id="simIncoterm" class="calc-select">
+                    <option value="FOB">FOB Port de Casablanca / Tanger Med</option>
+                    <option value="CIF-EU">CIF Marseille / Gênes / Rotterdam (UE)</option>
+                    <option value="CIF-US">CIF New York / Montréal (Amérique)</option>
+                    <option value="CIF-ME">CIF Dubai / Djeddah (Moyen-Orient)</option>
+                    <option value="EXW">EXW Usine Asofi (Maroc)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="simLabeling">Type d'Étiquetage :</label>
+                  <select id="simLabeling" class="calc-select">
+                    <option value="asofi">Marque ASOFI Gourmet</option>
+                    <option value="pl">Marque Blanche / Private Label</option>
+                    <option value="vrac">Vrac Industriel (Fûts 200L / IBC 1000L)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="p-3 bg-canvas rounded border border-subtle">
+                <div class="flex-align gap-2 text-xs text-gold">
+                  <i data-lucide="shield-check" class="icon-xs" aria-hidden="true"></i>
+                  <span>Traçabilité complète garantie du verger jusqu'au port d'arrivée.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-results-panel">
+              <h3 class="calc-panel-h">2. Estimation Logistique & Fret</h3>
+              
+              <div class="calc-result-box">
+                <div class="res-row">
+                  <span class="res-label">Capacité Unités Estimée :</span>
+                  <span class="res-val" id="unitsEstimate">~3 840 Bouteilles</span>
+                </div>
+                <div class="res-row">
+                  <span class="res-label">Poids Brut Approximatif :</span>
+                  <span class="res-val" id="weightEstimate">~3 200 kg (3.2 T)</span>
+                </div>
+                <div class="res-row">
+                  <span class="res-label">Type de Transport Conseillé :</span>
+                  <span class="res-val text-gold font-bold" id="freightType">Conteneur Groupé LCL ou Camion Frigo</span>
+                </div>
+                <div class="res-row">
+                  <span class="res-label">Délai d'Expédition Moyen :</span>
+                  <span class="res-val" id="leadTime">7 à 12 jours maritimes</span>
+                </div>
+              </div>
+
+              <div class="cta-calc-action mt-4">
+                <button class="btn btn-gold full-width btn-lg" id="btnRequestProforma">
+                  <i data-lucide="file-spreadsheet" class="icon-sm" aria-hidden="true"></i>
+                  <span>Recevoir une Facture Proforma & Tarifs B2B</span>
+                </button>
+                <small class="text-xs text-muted block text-center mt-2">
+                  Devis sans engagement de commande sous 24 heures ouvrées.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Normes Mondiales -->
+    <section class="section bg-surface" id="certifications">
+      <div class="container text-center">
+        <span class="section-tag">Garantie Sanitaire & RSE</span>
+        <h2 class="section-title">Certifié Conforme aux Plus Hauts Standards Mondiaux</h2>
+        <p class="section-subtitle">
+          Chaque lot fait l'objet d'analyses physico-chimiques et organoleptiques par des laboratoires accrédités COFRAC / ONSSA.
+        </p>
+
+        <div class="cert-badges-grid">
+          <div class="cert-card" data-gsap="fade-up">
+            <div class="cert-icon-circle"><i data-lucide="award" aria-hidden="true"></i></div>
+            <h4>IFS Food v8</h4>
+            <p>International Featured Standard certifiant la sécurité alimentaire et l'intégrité de nos lignes d'embouteillage.</p>
+          </div>
+
+          <div class="cert-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="cert-icon-circle"><i data-lucide="shield" aria-hidden="true"></i></div>
+            <h4>BRCGS Global Standard</h4>
+            <p>Accréditation de classe A pour l'approvisionnement des grandes enseignes de distribution européennes et britanniques.</p>
+          </div>
+
+          <div class="cert-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="cert-icon-circle"><i data-lucide="check-circle" aria-hidden="true"></i></div>
+            <h4>FDA Registered (USA)</h4>
+            <p>Enregistrement conforme à la législation américaine Food Safety Modernization Act (FSMA).</p>
+          </div>
+
+          <div class="cert-card" data-gsap="fade-up" data-delay="0.3">
+            <div class="cert-icon-circle"><i data-lucide="leaf" aria-hidden="true"></i></div>
+            <h4>Bio ECOCERT & USDA Organic</h4>
+            <p>Production biologique garantie exempte de pesticides, d'herbicides chimiques ou de colorants de synthèse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Art Culinaire & Utilisations Gastronomiques -->
+    <section class="section" id="recettes">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Inspiration Chef</span>
+          <h2 class="section-title">L'Authenticité Marocaine dans les Cuisines du Monde</h2>
+          <p class="section-subtitle">
+            Comment les plus grands chefs étoilés et traiteurs gastronomiques intègrent nos produits dans leurs créations.
+          </p>
+        </div>
+
+        <div class="recipe-grid">
+          <div class="recipe-card" data-gsap="fade-up">
+            <div class="recipe-img" style="background-image: url('assets/tagine-marocain.jpg');"></div>
+            <div class="recipe-body">
+              <span class="recipe-tag">Classique Marocain</span>
+              <h3 class="recipe-title">Tagine de Poulet Fermier aux Citrons Beldi & Olives Meslala</h3>
+              <p class="recipe-desc">Le fondant acidulé des citrons confits Asofi se marie à la texture charnue des olives vertes cassées pour une sauce onctueuse au safran.</p>
+            </div>
+          </div>
+
+          <div class="recipe-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="recipe-img" style="background-image: url('assets/harissa-artisanale.jpg');"></div>
+            <div class="recipe-body">
+              <span class="recipe-tag">Fusion Moderne</span>
+              <h3 class="recipe-title">Carpaccio de Saint-Jacques, Huile Vierge Extra & Harissa Fumée</h3>
+              <p class="recipe-desc">Un filet d'huile d'olive Picholine Asofi associé à une pointe d'harissa fumée réveille la douceur iodée des coquilles fraîches.</p>
+            </div>
+          </div>
+
+          <div class="recipe-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="recipe-img" style="background-image: url('assets/bread-olive-oil-dip.jpg');"></div>
+            <div class="recipe-body">
+              <span class="recipe-tag">Dégustation Pure</span>
+              <h3 class="recipe-title">Pain Artisanal au Levain Trempé dans l'Huile Bio Millésimée</h3>
+              <p class="recipe-desc">La quintessence du régime méditerranéen : une huile d'olive brute non filtrée aux notes d'amande douce et de fleurs sauvages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Export Desk -->
+    <section class="section bg-surface" id="contact">
+      <div class="container">
+        <div class="export-contact-wrapper">
+          <div class="contact-left">
+            <span class="section-tag">Bureau des Ventes Internationales</span>
+            <h2 class="section-title">Devenez Distributeur ou Importateur Asofi</h2>
+            <p class="paragraph mb-6">
+              Nos équipes commerciales multilingues (Français, Anglais, Arabe, Espagnol) vous accompagnent dans le choix de vos gammes et la formalisation de vos expéditions maritimes ou aériennes.
+            </p>
+
+            <div class="contact-details-box">
+              <div class="contact-row">
+                <i data-lucide="map-pin" class="icon-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>Domaine & Usine d'Embouteillage :</strong>
+                  <p>Maison Asofi, Route de Marrakech, Région Beni Mellal - Khenifra, Maroc</p>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <i data-lucide="phone-call" class="icon-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>Direction Commerciale Export :</strong>
+                  <p><a href="tel:+212524000000" class="text-white hover-underline">+212 (0) 524 40 00 00</a></p>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <i data-lucide="mail" class="icon-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>Courriel Officiel B2B :</strong>
+                  <p><a href="mailto:export@asofi.ma" class="text-gold font-mono hover-underline">export@asofi.ma</a></p>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <i data-lucide="clock" class="icon-gold" aria-hidden="true"></i>
+                <div>
+                  <strong>Horaires Service Clients :</strong>
+                  <p>Lundi au Vendredi : 08h00 - 18h00 (GMT+1)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <h3 class="form-h">Demande d'Offre Commerciale / TDR</h3>
+            <p class="form-sub">Précisez vos volumes prévisionnels pour recevoir notre grille tarifaire FOB / CIF.</p>
+
+            <form id="exportInquiryForm">
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="expName">Nom & Fonction *</label>
+                  <input type="text" id="expName" class="form-input" placeholder="ex: Jean Dupont, Acheteur" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="expCompany">Société Importatrice *</label>
+                  <input type="text" id="expCompany" class="form-input" placeholder="ex: EuroFood Import GmbH" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="expEmail">Courriel Professionnel *</label>
+                  <input type="email" id="expEmail" class="form-input" placeholder="j.dupont@eurofood.de" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="expCountry">Pays de Destination *</label>
+                  <input type="text" id="expCountry" class="form-input" placeholder="ex: Allemagne / Canada / EAU" required>
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="form-label" for="expInterests">Produits Ciblés</label>
+                <select id="expInterests" class="form-input">
+                  <option value="huile">Huile d'Olive Vierge Extra (Marasca / Vrac)</option>
+                  <option value="olives">Olives de Table (Picholine, Meslala, Beldi Noire)</option>
+                  <option value="citrons">Citrons Confits Beldi Traditionnels</option>
+                  <option value="harissa">Harissa Artisanale Fumée</option>
+                  <option value="catalogue-complet">Catalogue Intégral Terroir Asofi</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-4">
+                <label class="form-label" for="expMsg">Message & Exigences Particulières</label>
+                <textarea id="expMsg" rows="3" class="form-input" placeholder="Mentionnez les formats de conditionnement souhaités, marques blanches ou conteneurs complets..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold full-width btn-lg">
+                <i data-lucide="send" class="icon-sm" aria-hidden="true"></i>
+                <span>Transmettre la Demande Export</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-crest"><i data-lucide="sprout" class="crest-icon" aria-hidden="true"></i></div>
+            <div class="brand-title-wrap">
+              <span class="brand-title">ASOFI</span>
+              <span class="brand-subtitle">DEPUIS 1994</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Producteur et exportateur d'huiles d'olive vierge extra de haute qualité, d'olives marinées du terroir, de citrons confits traditionnels et d'harissa artisanale du Maroc.
+          </p>
+          <div class="footer-origin-seal mt-3">
+            <span class="text-xs text-muted">Origine Certifiée : </span>
+            <strong class="text-gold">Royaume du Maroc 🇲🇦</strong>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Collection</h4>
+          <ul class="footer-links">
+            <li><a href="#gammes">Huile d'Olive Picholine</a></li>
+            <li><a href="#gammes">Huile d'Olive Bio ECOCERT</a></li>
+            <li><a href="#gammes">Olives Meslala Cassées</a></li>
+            <li><a href="#gammes">Olives Noires Beldi au Sel</a></li>
+            <li><a href="#gammes">Citrons Confits Beldi</a></li>
+            <li><a href="#gammes">Harissa Artisanale Fumée</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Espace B2B</h4>
+          <ul class="footer-links">
+            <li><a href="#export-calculator">Simulateur de Conteneur</a></li>
+            <li><a href="#certifications">Certificats IFS & BRCGS</a></li>
+            <li><a href="#contact">Marque Blanche (Private Label)</a></li>
+            <li><a href="#contact">Conditionnement Foodservice</a></li>
+            <li><a href="#contact">Conditions Générales d'Export</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Expéditions</h4>
+          <p class="footer-text-sm">
+            Départs réguliers depuis les ports de Casablanca et Tanger Med. Incoterms FOB, CIF, CFR et DDP selon destination.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Maison ASOFI (asofi.ma). Tous droits réservés. Fondée en 1994.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Politique de Confidentialité</a>
+          <a href="#">Mentions Légales</a>
+          <a href="#">Traçabilité Alimentaire</a>
+          <a href="#">Portail B2B</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog: Demande d'Échantillons B2B (Accessible with @starting-style) -->
+  <dialog class="custom-dialog" id="sampleDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="btnCloseSample" aria-label="Fermer">&times;</button>
+      <div class="dialog-header">
+        <span class="section-tag">Dégustation Professionnelle</span>
+        <h3 class="dialog-title">Demande de Coffret Échantillons B2B</h3>
+        <p class="dialog-desc">Réservé aux acheteurs professionnels, importateurs et chefs de cuisine.</p>
+      </div>
+
+      <form id="sampleForm">
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="sName">Nom de l'Acheteur *</label>
+            <input type="text" id="sName" class="form-input" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sCompany">Société / Enseigne *</label>
+            <input type="text" id="sCompany" class="form-input" placeholder="Raison sociale" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="sEmail">Courriel Pro *</label>
+            <input type="email" id="sEmail" class="form-input" placeholder="email@societe.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sAddress">Adresse Complète de Livraison *</label>
+            <input type="text" id="sAddress" class="form-input" placeholder="Rue, Ville, Pays" required>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label class="form-label">Sélectionnez les échantillons souhaités :</label>
+          <div class="sample-checkboxes">
+            <label class="sample-check"><input type="checkbox" checked value="Huile Picholine"> Huile Picholine Vierge Extra (100ml)</label>
+            <label class="sample-check"><input type="checkbox" checked value="Olives Meslala"> Olives Meslala & Beldi (Échantillon sous-vide)</label>
+            <label class="sample-check"><input type="checkbox" checked value="Citron Confit"> Citron Confit Beldi de Marrakech</label>
+            <label class="sample-check"><input type="checkbox" checked value="Harissa"> Harissa Artisanale Fumée</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-gold full-width btn-lg">
+          <i data-lucide="package-check" class="icon-sm" aria-hidden="true"></i>
+          <span>Confirmer l'Envoi du Coffret Échantillon</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Technical Spec Drawer -->
+  <aside class="spec-drawer" id="specDrawer" aria-hidden="true">
+    <div class="drawer-header flex-between">
+      <h3 class="drawer-title" id="specDrawerTitle">Fiche Technique Produit</h3>
+      <button class="btn-close" id="btnCloseSpecDrawer" aria-label="Fermer la fiche">&times;</button>
+    </div>
+    <div class="drawer-body" id="specDrawerBody">
+      <!-- Injected by JavaScript -->
+    </div>
+  </aside>
+
+  <!-- Main JavaScript Application Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McKenzo & Co. | Conseil en Stratégie, Ingénierie & Études d'Impact Environnemental</title>
+  <meta name="description" content="Cabinet de conseil en stratégie, management et bureau d'études générales et d'impact sur l'environnement. Notre engagement, votre réussite.">
+  
+  <!-- Canonical & Domain Target -->
+  <link rel="canonical" href="https://mcknzo.co">
+
+  <!-- Performance & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Modern Web Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Atmospheric Backdrops -->
+  <div class="ambient-glow glow-emerald" aria-hidden="true"></div>
+  <div class="ambient-glow glow-navy" aria-hidden="true"></div>
+
+  <!-- Top Institutional Bar -->
+  <div class="top-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-3">
+        <span class="slogan-badge">
+          <i data-lucide="compass" class="icon-xs" aria-hidden="true"></i>
+          <span>Notre engagement, votre réussite.</span>
+        </span>
+        <span class="divider">|</span>
+        <span class="text-muted hide-mobile">Bureau d'études générales & d'impact sur l'environnement agréé</span>
+      </div>
+      <div class="flex-align gap-4">
+        <div class="lang-selector flex-align gap-1" role="group" aria-label="Choix de langue">
+          <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+          <span class="text-muted" aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <span class="divider">|</span>
+        <a href="mailto:contact@mcknzo.co" class="top-contact-link flex-align gap-1">
+          <i data-lucide="mail" class="icon-xs" aria-hidden="true"></i>
+          <span>contact@mcknzo.co</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo" aria-label="McKenzo & Co. Accueil">
+        <div class="brand-mark">
+          <span class="mark-letter">M</span>
+          <div class="mark-leaf" aria-hidden="true"></div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">McKenzo & Co.</span>
+          <span class="brand-tagline">STRATÉGIE • INGÉNIERIE • ENVIRONNEMENT</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#cabinet" class="nav-link">Le Cabinet</a>
+        <a href="#expertises" class="nav-link">Pôles d'Expertise</a>
+        <a href="#diagnostic" class="nav-link">Diagnostic ESG & EIE</a>
+        <a href="#references" class="nav-link">Projets Phares</a>
+        <a href="#methodologie" class="nav-link">Normes & SFI</a>
+        <a href="#bureaux" class="nav-link">Implantations</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="btn btn-outline-emerald" id="btnOpenRFP" aria-haspopup="dialog">
+          <i data-lucide="file-check" class="icon-sm" aria-hidden="true"></i>
+          <span>Déposer un TDR</span>
+        </button>
+        <a href="#diagnostic" class="btn btn-emerald">
+          <span>Diagnostic Projet</span>
+          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <div class="brand-logo">
+        <div class="brand-mark"><span class="mark-letter">M</span></div>
+        <span class="brand-name">McKenzo & Co.</span>
+      </div>
+      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Fermer le menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#cabinet" class="mobile-nav-link">Le Cabinet</a>
+      <a href="#expertises" class="mobile-nav-link">Pôles d'Expertise</a>
+      <a href="#diagnostic" class="mobile-nav-link">Diagnostic ESG & EIE</a>
+      <a href="#references" class="mobile-nav-link">Projets Phares</a>
+      <a href="#methodologie" class="mobile-nav-link">Normes & SFI</a>
+      <a href="#bureaux" class="mobile-nav-link">Bureaux Maroc & Sénégal</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-emerald full-width mb-3" id="btnMobileAudit">Déposer un Terme de Référence</button>
+      <a href="mailto:contact@mcknzo.co" class="btn btn-outline-emerald full-width text-center">contact@mcknzo.co</a>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-badge" data-gsap="fade-up">
+          <i data-lucide="shield-check" class="icon-emerald" aria-hidden="true"></i>
+          <span>Bureau d'Études Générales Agréé & Conseil Stratégique International</span>
+        </div>
+
+        <h1 class="hero-title" data-gsap="fade-up" data-delay="0.1">
+          Façonner des Projets Durables, <br>
+          <span class="emerald-gradient-text">Piloter l'Excellence Stratégique.</span>
+        </h1>
+
+        <p class="hero-subtitle" data-gsap="fade-up" data-delay="0.2">
+          Cabinet panafricain de référence alliant conseil en stratégie d'entreprise, bureau d'études techniques et évaluations d'impact environnemental et social (EIES) conformes aux standards SFI / Banque Mondiale.
+        </p>
+
+        <div class="hero-cta-group flex-align gap-4" data-gsap="fade-up" data-delay="0.3">
+          <a href="#diagnostic" class="btn btn-emerald btn-lg">
+            <span>Lancer le Diagnostic Interactif</span>
+            <i data-lucide="sparkles" class="icon-sm" aria-hidden="true"></i>
+          </a>
+          <a href="#expertises" class="btn btn-glass btn-lg">
+            <i data-lucide="layers" class="icon-sm" aria-hidden="true"></i>
+            <span>Découvrir Nos 4 Pôles</span>
+          </a>
+        </div>
+
+        <!-- Institutional Metrics Ribbon with Animated Counters -->
+        <div class="hero-stats-ribbon" data-gsap="fade-up" data-delay="0.4">
+          <div class="ribbon-card">
+            <div class="ribbon-number"><span class="counter" data-target="150">0</span>+</div>
+            <div class="ribbon-label">Projets Stratégiques Menés</div>
+            <p class="ribbon-sub">Énergie, mines, ports, BTP & agro-industrie</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number"><span class="counter" data-target="100">0</span>%</div>
+            <div class="ribbon-label">Conformité SFI & ISO 14001</div>
+            <p class="ribbon-sub">Directives environnementales internationales</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number"><span class="counter" data-target="1.8" data-decimal="1">0</span> Md€</div>
+            <div class="ribbon-label">Valeur d'Actifs Analysés</div>
+            <p class="ribbon-sub">Études de faisabilité & schémas directeurs</p>
+          </div>
+          <div class="ribbon-card">
+            <div class="ribbon-number">Maroc • Sénégal</div>
+            <div class="ribbon-label">Ancrage Régional Fort</div>
+            <p class="ribbon-sub">Béni Mellal, Casablanca & Dakar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le Cabinet / Identity -->
+    <section class="section bg-surface" id="cabinet">
+      <div class="container">
+        <div class="grid-2-col items-center gap-8">
+          <div class="cabinet-text" data-gsap="fade-up">
+            <span class="section-tag">Notre Mission</span>
+            <h2 class="section-title">L'Alliance Unique de la Vision C-Level et de la Rigueur d'Ingénierie</h2>
+            <p class="paragraph mb-4">
+              Chez <strong>McKenzo & Co.</strong>, nous comblons le fossé traditionnel entre les cabinets de stratégie abstraits et les bureaux d'études purement techniques. Nous apportons une réponse globale aux investisseurs et aux gouvernements :
+            </p>
+            <p class="paragraph mb-6">
+              De l'audit d'impact environnemental (EIES) requis pour débloquer les financements multilatéraux, à la modélisation hydraulique de pointe, jusqu'à la réorganisation managériale d'opérateurs industriels, notre exigence garantit la viabilité totale de vos actifs.
+            </p>
+
+            <div class="values-grid">
+              <div class="value-item">
+                <div class="value-icon"><i data-lucide="check-circle" class="icon-emerald" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Agréments & Conformité Institutionnelle</strong>
+                  <p>Habilité pour les études d'impact environnemental réglementaires selon les législations nationales et internationales.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon"><i data-lucide="cpu" class="icon-emerald" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Modélisation Technique & Outils Avancés</strong>
+                  <p>Simulation acoustique, SIG cartographique de précision, bilans carbone et modélisation des écoulements fluides.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon"><i data-lucide="globe-2" class="icon-emerald" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Impact Territorial & Acceptabilité Sociale</strong>
+                  <p>Gestion des enquêtes publiques, concertation des populations locales et élaboration des plans de réinstallation (PAR).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cabinet-visual" data-gsap="fade-up" data-delay="0.2">
+            <div class="image-stack">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Siège et salle de conseil stratégique McKenzo" class="img-main" loading="lazy">
+              <div class="image-accent-card">
+                <div class="accent-icon"><i data-lucide="award" aria-hidden="true"></i></div>
+                <div>
+                  <strong class="text-white block font-heading">Cabinet Panafricain Agréé</strong>
+                  <small class="text-emerald">Excellence technique & engagement terrain</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Pôles d'Expertise (Container Queries Enabled) -->
+    <section class="section" id="expertises">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Pôles d'Excellence</span>
+          <h2 class="section-title">Une Offre Intégrée pour Projets à Haute Valeur Ajoutée</h2>
+          <p class="section-subtitle">
+            Chaque pôle est piloté par des experts seniors cumulant plus de 15 ans d'expérience opérationnelle sur le continent africain.
+          </p>
+        </div>
+
+        <div class="practice-cards-grid">
+          <!-- Pôle 1 -->
+          <article class="practice-box" data-gsap="fade-up">
+            <div class="practice-header">
+              <div class="icon-bubble"><i data-lucide="trending-up" aria-hidden="true"></i></div>
+              <span class="p-num">01</span>
+            </div>
+            <h3 class="practice-box-title">Conseil en Stratégie & Management</h3>
+            <p class="practice-box-desc">
+              Accompagnement des directions générales dans la définition de trajectoires de croissance durable, la refonte des organisations et l'optimisation des performances opérationnelles.
+            </p>
+            <ul class="practice-list">
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Schémas directeurs & plans stratégiques</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Restructuration & conduite du changement</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Partenariats Public-Privé (PPP) & Due Diligence</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Tableaux de bord de pilotage exécutif</li>
+            </ul>
+            <button class="btn-text-link" data-action="explore-practice" data-pillar="strat">
+              <span>Consulter le cahier des charges type</span>
+              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            </button>
+          </article>
+
+          <!-- Pôle 2: Featured -->
+          <article class="practice-box featured" data-gsap="fade-up" data-delay="0.1">
+            <div class="practice-badge">Pôle Majeur Agréé</div>
+            <div class="practice-header">
+              <div class="icon-bubble icon-emerald-bg"><i data-lucide="leaf" aria-hidden="true"></i></div>
+              <span class="p-num">02</span>
+            </div>
+            <h3 class="practice-box-title">Études d'Impact Environnemental & RSE</h3>
+            <p class="practice-box-desc">
+              Réalisation certifiée des Études d'Impact Environnemental et Social (EIES), plans de gestion (PGES), bilans carbone et mise en conformité avec les standards de la Banque Mondiale.
+            </p>
+            <ul class="practice-list">
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> EIE réglementaires & audits EIES SFI</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Normes de Performance SFI 1 à 8</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Bilan Carbone & Stratégies Décarbonation</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Plans d'Engagement des Parties Prenantes</li>
+            </ul>
+            <button class="btn-text-link" data-action="explore-practice" data-pillar="env">
+              <span>Consulter le cahier des charges type</span>
+              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            </button>
+          </article>
+
+          <!-- Pôle 3 -->
+          <article class="practice-box" data-gsap="fade-up" data-delay="0.2">
+            <div class="practice-header">
+              <div class="icon-bubble"><i data-lucide="hard-hat" aria-hidden="true"></i></div>
+              <span class="p-num">03</span>
+            </div>
+            <h3 class="practice-box-title">Bureau d'Études Générales & Ingénierie</h3>
+            <p class="practice-box-desc">
+              Conception technique d'infrastructures, modélisation hydraulique, dimensionnement VRD et calculs de structures industrielles et d'énergies renouvelables.
+            </p>
+            <ul class="practice-list">
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Avant-projets sommaires & détaillés (APS / APD)</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Schémas directeurs d'eau potable & STEP</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Infrastructures solaires et parcs éoliens</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Dossiers de consultation (DCE) & métrés</li>
+            </ul>
+            <button class="btn-text-link" data-action="explore-practice" data-pillar="ing">
+              <span>Consulter le cahier des charges type</span>
+              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            </button>
+          </article>
+
+          <!-- Pôle 4 -->
+          <article class="practice-box" data-gsap="fade-up" data-delay="0.3">
+            <div class="practice-header">
+              <div class="icon-bubble"><i data-lucide="check-square" aria-hidden="true"></i></div>
+              <span class="p-num">04</span>
+            </div>
+            <h3 class="practice-box-title">Assistance à Maîtrise d'Ouvrage (AMO)</h3>
+            <p class="practice-box-desc">
+              Supervision indépendante garantissant aux maîtres d'ouvrage publics et privés le strict respect des budgets, des plannings prévisionnels et de la sécurité des chantiers.
+            </p>
+            <ul class="practice-list">
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Direction de programme & PMO dédié</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Contrôle qualité & conformité technique</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Surveillance environnementale de chantier (SEC)</li>
+              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Assistance aux opérations de réception</li>
+            </ul>
+            <button class="btn-text-link" data-action="explore-practice" data-pillar="amo">
+              <span>Consulter le cahier des charges type</span>
+              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tool: Diagnostic ESG & Faisabilité de Projet -->
+    <section class="section diagnostic-section" id="diagnostic">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Outil Décisionnel Propriétaire</span>
+          <h2 class="section-title">Diagnostic d'Impact & Cadrage Réglementaire</h2>
+          <p class="section-subtitle">
+            Configurez les paramètres de votre investissement pour calculer instantanément les exigences réglementaires et estimer le plan d'études approprié.
+          </p>
+        </div>
+
+        <div class="diag-card" id="diagApp">
+          <!-- Stepper Navigation -->
+          <div class="diag-stepper flex-between">
+            <div class="diag-step-node active" data-step="1">
+              <span class="node-num">1</span>
+              <span class="node-title">Typologie & Secteur</span>
+            </div>
+            <div class="diag-bar" id="diagBar1"></div>
+            <div class="diag-step-node" data-step="2">
+              <span class="node-num">2</span>
+              <span class="node-title">Maturité & Échelle</span>
+            </div>
+            <div class="diag-bar" id="diagBar2"></div>
+            <div class="diag-step-node" data-step="3">
+              <span class="node-num">3</span>
+              <span class="node-title">Feuille de Route</span>
+            </div>
+          </div>
+
+          <!-- Step 1: Industry Sector -->
+          <div class="diag-panel active" id="diagStep1">
+            <h3 class="diag-q">1. Quel est le secteur d'activité de votre projet ?</h3>
+            <div class="diag-options-grid">
+              <label class="diag-option">
+                <input type="radio" name="diagSector" value="Énergies Renouvelables" checked>
+                <div class="diag-opt-box">
+                  <i data-lucide="sun-medium" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Énergies Renouvelables & Climat</h4>
+                  <p>Parcs solaires photovoltaïques, éoliens, hydrogène vert, lignes d'évacuation HTA/HTB.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagSector" value="Industrie & Mines">
+                <div class="diag-opt-box">
+                  <i data-lucide="factory" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Industrie Lourde, Mines & Chimie</h4>
+                  <p>Exploitations minières, carrières, usines métallurgiques, cimenteries, plateformes chimiques.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagSector" value="Infrastructures & BTP">
+                <div class="diag-opt-box">
+                  <i data-lucide="building-2" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Infrastructures, Ports & Transports</h4>
+                  <p>Zones logistiques, ports, autoroutes, parcs industriels intégrés, grands ensembles urbains.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagSector" value="Agro-industrie & Eau">
+                <div class="diag-opt-box">
+                  <i data-lucide="droplet" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Agro-industrie & Ressources en Eau</h4>
+                  <p>Stations d'épuration (STEP), dessalement, périmètres irrigués, unités agro-alimentaires.</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="diag-nav-footer flex-between">
+              <span class="text-xs text-muted">Étape 1 sur 3 • Cadrage préliminaire confidentiel</span>
+              <button class="btn btn-emerald" id="btnDiagNext1">
+                <span>Passer au Stade du Projet</span>
+                <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Project Maturity & Scale -->
+          <div class="diag-panel" id="diagStep2">
+            <h3 class="diag-q">2. À quel stade d'avancement se situe votre projet ?</h3>
+            <div class="diag-options-grid">
+              <label class="diag-option">
+                <input type="radio" name="diagStage" value="Préfaisabilité & Choix de Site" checked>
+                <div class="diag-opt-box">
+                  <i data-lucide="compass" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Préfaisabilité & Choix de Site</h4>
+                  <p>Identification des contraintes environnementales, faune/flore et opportunité foncière.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagStage" value="Dossier d'Autorisation EIE">
+                <div class="diag-opt-box">
+                  <i data-lucide="file-text" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Autorisation Réglementaire (EIES)</h4>
+                  <p>Obligation de déposer une étude d'impact pour commission nationale d'évaluation.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagStage" value="Audit Bailleurs SFI / Banque Mondiale">
+                <div class="diag-opt-box">
+                  <i data-lucide="coins" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Financement Multilatéral (SFI / BAD)</h4>
+                  <p>Exigence de conformité aux Normes de Performance IFC et Principes de l'Équateur.</p>
+                </div>
+              </label>
+
+              <label class="diag-option">
+                <input type="radio" name="diagStage" value="Phase Chantier & AMO">
+                <div class="diag-opt-box">
+                  <i data-lucide="hard-hat" class="diag-icon" aria-hidden="true"></i>
+                  <h4>Phase Chantier & AMO</h4>
+                  <p>Mise en œuvre du PGES-Chantier, surveillance environnementale et réception technique.</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="diag-nav-footer flex-between">
+              <button class="btn btn-ghost" id="btnDiagBack2">
+                <i data-lucide="arrow-left" class="icon-xs" aria-hidden="true"></i>
+                <span>Retour</span>
+              </button>
+              <button class="btn btn-emerald" id="btnDiagNext2">
+                <span>Passer aux Coordonnées du Rapport</span>
+                <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact & Report Dispatch -->
+          <div class="diag-panel" id="diagStep3">
+            <h3 class="diag-q">3. Restitution de Votre Note de Cadrage Stratégique</h3>
+            
+            <form id="diagForm">
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="diagName">Nom & Titre de l'Interlocuteur *</label>
+                  <input type="text" id="diagName" class="form-input" placeholder="ex: Ousmane Diop, Directeur de Projet" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="diagCompany">Entité / Maître d'Ouvrage *</label>
+                  <input type="text" id="diagCompany" class="form-input" placeholder="ex: Société d'Énergie Solaire SA" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="diagEmail">Courriel Professionnel *</label>
+                  <input type="email" id="diagEmail" class="form-input" placeholder="o.diop@societe.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="diagPhone">Téléphone Direct *</label>
+                  <input type="tel" id="diagPhone" class="form-input" placeholder="+212 600 00 00 00 / +221 77 000 00 00" required>
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label class="form-label" for="diagNotes">Détails Spécifiques (Zone d'implantation, superficie, délais)</label>
+                <textarea id="diagNotes" rows="2" class="form-input" placeholder="ex: Projet de 80 MW à proximité d'une zone agricole..."></textarea>
+              </div>
+
+              <div class="diag-nav-footer flex-between">
+                <button type="button" class="btn btn-ghost" id="btnDiagBack3">
+                  <i data-lucide="arrow-left" class="icon-xs" aria-hidden="true"></i>
+                  <span>Retour</span>
+                </button>
+                <button type="submit" class="btn btn-emerald btn-lg">
+                  <i data-lucide="file-text" class="icon-xs" aria-hidden="true"></i>
+                  <span>Générer Ma Note de Cadrage Confidentielle</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 4: Success Output Card -->
+          <div class="diag-panel" id="diagStepSuccess">
+            <div class="diag-success-box text-center">
+              <div class="success-seal">
+                <i data-lucide="check" class="icon-lg text-emerald" aria-hidden="true"></i>
+              </div>
+              <h3 class="success-heading">Note de Cadrage Établie avec Succès</h3>
+              <p class="success-text">
+                Votre dossier porte la référence officielle <strong class="text-emerald font-mono" id="diagRefCode">MKZ-2026-4891</strong>. Un associé principal de McKenzo & Co. a été assigné pour analyser l'éligibilité et préparer le Terme de Référence (TDR).
+              </p>
+
+              <div class="roadmap-summary">
+                <div class="roadmap-item">
+                  <span class="label">Pôle Technique Mobilisé :</span>
+                  <span class="val text-emerald font-bold" id="summaryPillar">Études d'Impact Environnemental et Social (EIES)</span>
+                </div>
+                <div class="roadmap-item">
+                  <span class="label">Norme de Référence Recommandée :</span>
+                  <span class="val">Standards SFI / Banque Mondiale + Réglementation Nationale</span>
+                </div>
+                <div class="roadmap-item">
+                  <span class="label">Délai Estimatif d'Instruction :</span>
+                  <span class="val">4 à 6 semaines (enquête d'utilité publique comprise)</span>
+                </div>
+                <div class="roadmap-item">
+                  <span class="label">Bureaux Compétents :</span>
+                  <span class="val text-white">Casablanca / Béni Mellal & Dakar : <a href="mailto:contact@mcknzo.co" class="text-emerald">contact@mcknzo.co</a></span>
+                </div>
+              </div>
+
+              <button class="btn btn-outline-emerald mt-4" id="btnResetDiag">
+                <span>Effectuer un Autre Diagnostic</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References & Projets Phares -->
+    <section class="section bg-surface" id="references">
+      <div class="container">
+        <div class="flex-between section-header-split">
+          <div>
+            <span class="section-tag">Retours d'Expérience</span>
+            <h2 class="section-title">Références Notables & Projets Phares</h2>
+            <p class="section-subtitle">
+              Des interventions menées pour le compte d'investisseurs institutionnels, d'agences étatiques et de consortiums bancaires.
+            </p>
+          </div>
+          <div class="ref-filter-group" id="refFilters" role="tablist">
+            <button class="ref-filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous les Projets</button>
+            <button class="ref-filter-btn" data-filter="environnement" role="tab" aria-selected="false">Environnement & EIE</button>
+            <button class="ref-filter-btn" data-filter="ingenierie" role="tab" aria-selected="false">Ingénierie & VRD</button>
+            <button class="ref-filter-btn" data-filter="strategie" role="tab" aria-selected="false">Stratégie & AMO</button>
+          </div>
+        </div>
+
+        <div class="references-grid" id="refGrid">
+          <!-- Ref 1 -->
+          <article class="ref-card" data-category="environnement" data-gsap="fade-up">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Énergies Renouvelables</span>
+              <h3 class="ref-title">EIES pour un Parc Éolien de 150 MW</h3>
+              <p class="ref-desc">
+                Réalisation de l'EIES intégrale : modélisation acoustique, couloirs migratoires avifaune et plan d'engagement des populations riveraines conforme aux normes SFI.
+              </p>
+              <div class="ref-meta">
+                <span><strong>Résultat :</strong> Acceptabilité sans réserve et validation bailleurs</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ref 2 -->
+          <article class="ref-card" data-category="ingenierie" data-gsap="fade-up" data-delay="0.1">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Ingénierie & Eau</span>
+              <h3 class="ref-title">Schéma Directeur VRD & Hydraulique sur 280 Hectares</h3>
+              <p class="ref-desc">
+                Dimensionnement complet des réseaux d'eaux industrielles, bassins d'orage et station d'épuration pour une zone d'activité économique intégrée.
+              </p>
+              <div class="ref-meta">
+                <span><strong>Livrable :</strong> Dossier APD, DCE d'exécution et cahier des charges</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ref 3 -->
+          <article class="ref-card" data-category="strategie" data-gsap="fade-up" data-delay="0.2">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Stratégie & AMO</span>
+              <h3 class="ref-title">AMO & Décarbonation d'un Groupe Agro-Exportateur</h3>
+              <p class="ref-desc">
+                Restructuration des flux logistiques, audit d'empreinte carbone et mise en conformité ESG pour l'accès aux mécanismes d'ajustement carbone européens.
+              </p>
+              <div class="ref-meta">
+                <span><strong>Gain :</strong> -22% d'émissions et labellisation ESG internationale</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ref 4 -->
+          <article class="ref-card" data-category="environnement" data-gsap="fade-up">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Mines & Carrières</span>
+              <h3 class="ref-title">Plan de Réhabilitation Écologique de Complexe Minier</h3>
+              <p class="ref-desc">
+                Plan de fermeture progressive, revégétalisation par espèces endémiques et réseau de surveillance piézométrique conforme ISO 14001.
+              </p>
+              <div class="ref-meta">
+                <span><strong>Standard :</strong> Principes de l'Équateur & ISO 14001</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ref 5 -->
+          <article class="ref-card" data-category="ingenierie" data-gsap="fade-up" data-delay="0.1">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Énergie Solaire</span>
+              <h3 class="ref-title">Étude Technique & EIE Centrale Solaire de 50 MWc</h3>
+              <p class="ref-desc">
+                Modélisation thermique, calculs d'injection sur poste source et plan de gestion environnementale de chantier (PGES-C) pour consortium international.
+              </p>
+              <div class="ref-meta">
+                <span><strong>Impact :</strong> Centrale raccordée au réseau national</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ref 6 -->
+          <article class="ref-card" data-category="strategie" data-gsap="fade-up" data-delay="0.2">
+            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="ref-body">
+              <span class="ref-tag">Partenariat Public-Privé</span>
+              <h3 class="ref-title">Structuration PPP d'un Pôle Logistique Régional</h3>
+              <p class="ref-desc">
+                Modélisation financière du contrat de concession, étude socio-économique et structuration de la gouvernance mixte public-privé (65 M€ d'investissement).
+              </p>
+              <div class="ref-meta">
+                <span><strong>Bénéficiaire :</strong> Agence étatique & opérateur concessionnaire</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standards & Méthodologie -->
+    <section class="section" id="methodologie">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Rigueur Méthodologique</span>
+          <h2 class="section-title">Nos Standards & Référentiels d'Intervention</h2>
+          <p class="section-subtitle">
+            Une conformité irréprochable avec les normes des bailleurs multilatéraux pour sécuriser les investissements devant la SFI, la BAD, la BEI et la Banque Mondiale.
+          </p>
+        </div>
+
+        <div class="standards-grid">
+          <div class="standard-card" data-gsap="fade-up">
+            <div class="standard-icon"><i data-lucide="shield" aria-hidden="true"></i></div>
+            <h4>Normes de Performance SFI / IFC</h4>
+            <p>Application stricte des 8 normes de performance environnementale et sociale de la Société Financière Internationale.</p>
+          </div>
+
+          <div class="standard-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="standard-icon"><i data-lucide="check-check" aria-hidden="true"></i></div>
+            <h4>Conformité ISO 14001 & ISO 9001</h4>
+            <p>Processus certifiés de management de la qualité et de maîtrise des impacts environnementaux sur chaque phase de mission.</p>
+          </div>
+
+          <div class="standard-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="standard-icon"><i data-lucide="globe" aria-hidden="true"></i></div>
+            <h4>Principes de l'Équateur</h4>
+            <p>Méthodologie standardisée pour l'évaluation et la gestion des risques sociaux et environnementaux dans le financement de projet.</p>
+          </div>
+
+          <div class="standard-card" data-gsap="fade-up" data-delay="0.3">
+            <div class="standard-icon"><i data-lucide="scale" aria-hidden="true"></i></div>
+            <h4>Législations Nationales (MA & SN)</h4>
+            <p>Maîtrise exhaustive des lois environnementales marocaines (Loi 12-03 & 49-17) et sénégalaises (Code de l'Environnement).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panafrican Presence & Bureaux -->
+    <section class="section bg-surface" id="bureaux">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-info-col">
+            <span class="section-tag">Ancrage Panafricain</span>
+            <h2 class="section-title">Nos Bureaux d'Études au Maroc & au Sénégal</h2>
+            <p class="paragraph mb-6">
+              Nos directeurs d'études et experts résidents vous accueillent pour examiner vos Termes de Référence ou convenir d'un atelier de cadrage technique.
+            </p>
+
+            <div class="offices-list">
+              <!-- Office Maroc -->
+              <div class="office-box">
+                <div class="office-flag" aria-hidden="true">🇲🇦</div>
+                <div>
+                  <h4 class="office-city">Béni Mellal & Casablanca, Maroc</h4>
+                  <p class="office-addr">
+                    <strong>Béni Mellal :</strong> 343 bd Mohamed V, 1er étage (23040)<br>
+                    <strong>Casablanca :</strong> Représentation Casablanca Finance City
+                  </p>
+                  <a href="tel:+212523480000" class="office-phone">
+                    <i data-lucide="phone" class="icon-xs icon-emerald" aria-hidden="true"></i>
+                    <span>+212 (0) 523 48 00 00</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Office Sénégal -->
+              <div class="office-box">
+                <div class="office-flag" aria-hidden="true">🇸🇳</div>
+                <div>
+                  <h4 class="office-city">Dakar, Sénégal (Hub Afrique de l'Ouest)</h4>
+                  <p class="office-addr">
+                    <strong>Dakar :</strong> Immeuble Seydou Nourou Tall, Point E<br>
+                    Couverture Sénégal, Côte d'Ivoire, Guinée & Mali
+                  </p>
+                  <a href="tel:+221338250000" class="office-phone">
+                    <i data-lucide="phone" class="icon-xs icon-emerald" aria-hidden="true"></i>
+                    <span>+221 33 825 00 00</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="direct-email-box mt-4">
+              <i data-lucide="mail" class="icon-emerald" aria-hidden="true"></i>
+              <div>
+                <strong>Secrétariat Général & Appels d'Offres :</strong>
+                <a href="mailto:contact@mcknzo.co" class="text-white hover-underline block font-mono">contact@mcknzo.co</a>
+                <span class="text-xs text-muted">Accusé de réception sous 24h ouvrées</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <h3 class="form-title">Solliciter Notre Direction des Études</h3>
+            <p class="form-subtitle">Transmettez vos termes de référence ou planifiez une séance de cadrage préliminaire.</p>
+
+            <form id="contactForm">
+              <div class="form-group mb-3">
+                <label class="form-label" for="contactType">Type de Prestation Souhaitée *</label>
+                <select class="form-input" id="contactType">
+                  <option value="Étude d'Impact Environnemental et Social (EIES)">Étude d'Impact Environnemental et Social (EIES)</option>
+                  <option value="Bureau d'Études VRD & Ingénierie">Bureau d'Études VRD & Ingénierie</option>
+                  <option value="Conseil en Stratégie & Management">Conseil en Stratégie & Management</option>
+                  <option value="Assistance à Maîtrise d'Ouvrage (AMO)">Assistance à Maîtrise d'Ouvrage (AMO)</option>
+                  <option value="Réponse à Appel d'Offres TDR">Réponse à Appel d'Offres TDR</option>
+                </select>
+              </div>
+
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="cName">Votre Nom Complet *</label>
+                  <input type="text" id="cName" class="form-input" placeholder="M. / Mme Nom" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cOrg">Entreprise ou Ministère *</label>
+                  <input type="text" id="cOrg" class="form-input" placeholder="Organisation" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2 mb-3">
+                <div class="form-group">
+                  <label class="form-label" for="cEmail">Courriel Professionnel *</label>
+                  <input type="email" id="cEmail" class="form-input" placeholder="nom@organisation.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cPhone">Téléphone Direct</label>
+                  <input type="tel" id="cPhone" class="form-input" placeholder="+212 / +221 ...">
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label class="form-label" for="cDetails">Présentation Sommaire du Projet</label>
+                <textarea id="cDetails" rows="3" class="form-input" placeholder="Zone géographique, calendrier souhaité, puissance ou superficie..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-emerald full-width btn-lg">
+                <i data-lucide="send" class="icon-sm" aria-hidden="true"></i>
+                <span>Transmettre la Demande Confidentielle</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="brand-mark"><span class="mark-letter">M</span></div>
+            <div class="brand-text">
+              <span class="brand-name">McKenzo & Co.</span>
+              <span class="brand-tagline">NOTRE ENGAGEMENT, VOTRE RÉUSSITE</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Bureau d'études générales & d'impact sur l'environnement. Conseil en stratégie, management et ingénierie au service du développement durable et de l'accélération industrielle panafricaine.
+          </p>
+          <div class="domain-notice mt-3">
+            <span class="text-xs text-muted">Nom de domaine officiel : </span>
+            <strong class="text-emerald font-mono">mcknzo.co</strong>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Pôles d'Excellence</h4>
+          <ul class="footer-links">
+            <li><a href="#expertises">Conseil en Stratégie</a></li>
+            <li><a href="#expertises">Études d'Impact EIES SFI</a></li>
+            <li><a href="#expertises">Ingénierie VRD & Eau</a></li>
+            <li><a href="#expertises">Assistance Maîtrise d'Ouvrage</a></li>
+            <li><a href="#expertises">Audits Décarbonation RSE</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Implantations</h4>
+          <ul class="footer-links">
+            <li><strong>Maroc :</strong> 343 bd Med V, Béni Mellal</li>
+            <li><strong>Maroc :</strong> CFC Hub Casablanca</li>
+            <li><strong>Sénégal :</strong> Point E, Dakar</li>
+            <li><strong>Côte d'Ivoire :</strong> Représentation Abidjan</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-h">Certifications</h4>
+          <p class="footer-text-sm">
+            Agréé bureau d'études d'impact sur l'environnement. Missions conduites selon les directives de la Banque Mondiale, de la SFI et les Principes de l'Équateur.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 McKenzo & Co. (mcknzo.co). Tous droits réservés.</div>
+        <div class="footer-legal flex-align gap-4">
+          <a href="#">Mentions Légales & Agréments</a>
+          <a href="#">Politique de Confidentialité</a>
+          <a href="#">Charte Déontologique</a>
+          <a href="#">Portail Clients</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog: Soumettre un TDR (Modern Top-Layer with @starting-style) -->
+  <dialog class="custom-dialog" id="rfpDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="btnCloseRFP" aria-label="Fermer la boîte de dialogue">&times;</button>
+      <div class="dialog-header">
+        <span class="section-tag">Dépôt de Cahier des Charges</span>
+        <h3 class="dialog-title">Soumettre un Terme de Référence (TDR)</h3>
+        <p class="dialog-desc">Transmettez vos documents d'appel d'offres en toute confidentialité.</p>
+      </div>
+
+      <form id="rfpForm">
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="rfpOrg">Entité Émettrice *</label>
+            <input type="text" id="rfpOrg" class="form-input" placeholder="Société / Organisme" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rfpTitle">Intitulé de la Mission *</label>
+            <input type="text" id="rfpTitle" class="form-input" placeholder="ex: EIES Centrale Éolienne" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label" for="rfpEmail">Courriel de Contact *</label>
+            <input type="email" id="rfpEmail" class="form-input" placeholder="contact@organisme.org" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rfpPhone">Téléphone Direct</label>
+            <input type="tel" id="rfpPhone" class="form-input" placeholder="+212 / +221 ...">
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label" for="rfpDeadline">Date Limite de Remise des Offres</label>
+          <input type="date" class="form-input" id="rfpDeadline">
+        </div>
+
+        <div class="form-group mb-4">
+          <label class="form-label" for="rfpDesc">Description Sommaire ou Lien vers la Plateforme</label>
+          <textarea id="rfpDesc" rows="3" class="form-input" placeholder="Collez l'URL de l'appel d'offres ou précisez les livrables attendus..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-emerald full-width btn-lg">
+          <i data-lucide="upload-cloud" class="icon-sm" aria-hidden="true"></i>
+          <span>Enregistrer le Dossier TDR</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

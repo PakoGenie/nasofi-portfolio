@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUSTIN VANCE | Principal Front-End Architect & Creative Technologist Portfolio</title>
+  <meta name="description" content="10 Production-grade showcase web applications demonstrating modern CSS tokens, container queries, top-layer dialogs, compositor motion, and interactive simulation craft.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="portfolio-body">
+  <!-- Ambient Atmosphere Lighting -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="portfolio-header">
+    <div class="container flex-between">
+      <a href="#" class="brand-crest flex-align gap-3">
+        <div class="crest-mark">AV</div>
+        <div>
+          <strong class="text-white text-base block font-mono">AUSTIN VANCE</strong>
+          <span class="text-xs text-muted font-mono block">FRONT-END ARCHITECT & CREATIVE TECH</span>
+        </div>
+      </a>
+
+      <div class="flex-align gap-4">
+        <div class="live-pill flex-align gap-2 font-mono text-xs hide-mobile">
+          <span class="pulse-emerald"></span>
+          <span class="text-emerald font-bold">10 PRODUCTION SITES ONLINE</span>
+        </div>
+        <a href="#simulator" class="btn btn-sm btn-cyan">
+          <i data-lucide="smartphone" class="icon-xs" aria-hidden="true"></i>
+          <span>Live Device Simulator</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-section">
+    <div class="container text-center">
+      <div class="hero-tag font-mono text-xs mb-3">
+        <span class="text-cyan">◆ PRODUCTION SHOWCASE ECOSYSTEM</span>
+      </div>
+      <h1 class="hero-title mb-4">
+        Engineering the Edge of <br>
+        <span class="text-gradient">Modern Web Performance</span>
+      </h1>
+      <p class="hero-dek mb-6">
+        A master portfolio of 10 complete, production-grade web applications designed and coded from scratch. Zero external framework dependencies, 100% offline verified assets, fluid typography with CSS container queries, and hardware-accelerated 120fps motion craft.
+      </p>
+
+      <!-- Key Engineering Telemetry Badges -->
+      <div class="metrics-strip flex-align justify-center gap-6 font-mono text-xs mb-8">
+        <div class="metric-pill">
+          <strong class="text-white">10 / 10</strong>
+          <span class="text-muted">Distinct Niche Builds</span>
+        </div>
+        <div class="metric-pill">
+          <strong class="text-cyan">100%</strong>
+          <span class="text-muted">Local Verified Assets</span>
+        </div>
+        <div class="metric-pill">
+          <strong class="text-emerald">&lt;15ms</strong>
+          <span class="text-muted">Sub-Millisecond TTFB</span>
+        </div>
+        <div class="metric-pill">
+          <strong class="text-gold">HTML5</strong>
+          <span class="text-muted">Top-Layer &lt;dialog&gt;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive In-Portfolio Live Device Simulator -->
+  <section class="simulator-section section-padding" id="simulator">
+    <div class="container">
+      <div class="section-header flex-between mb-4">
+        <div>
+          <span class="kicker-tag font-mono text-xs text-cyan">INTERACTIVE VIEWPORT BENCH</span>
+          <h2 class="section-title text-white">Live Device Simulator</h2>
+          <p class="section-sub text-xs text-muted">Test-drive all 10 applications live inside responsive desktop, tablet, and mobile viewports without leaving this portfolio.</p>
+        </div>
+
+        <!-- Viewport Controls & Project Selector -->
+        <div class="simulator-controls flex-align gap-3">
+          <!-- Viewport Mode Buttons -->
+          <div class="viewport-buttons flex-align gap-1 font-mono text-xs">
+            <button class="vp-btn active" data-vp="desktop" title="Desktop View (100% Widescreen)">
+              <i data-lucide="monitor" class="icon-xs" aria-hidden="true"></i>
+              <span class="hide-mobile">Desktop</span>
+            </button>
+            <button class="vp-btn" data-vp="tablet" title="Tablet View (768px iPad Pro)">
+              <i data-lucide="tablet" class="icon-xs" aria-hidden="true"></i>
+              <span class="hide-mobile">Tablet</span>
+            </button>
+            <button class="vp-btn" data-vp="mobile" title="Mobile View (390px iPhone 16)">
+              <i data-lucide="smartphone" class="icon-xs" aria-hidden="true"></i>
+              <span class="hide-mobile">Mobile</span>
+            </button>
+          </div>
+
+          <!-- Quick Select Dropdown -->
+          <select id="simProjectSelect" class="sim-dropdown font-mono text-xs">
+            <option value="/projects/08-lumina-dermatology/" selected>08: Lumina Derma-OS (Clinic Intelligence)</option>
+            <option value="/projects/01-lexicon-law/">01: Vanguard & Sterling (Trial & Corporate Law)</option>
+            <option value="/projects/02-mckenzo-consulting/">02: McKenzo & Co. (Pan-African Strategy & ESG)</option>
+            <option value="/projects/03-asofi-terroir/">03: Maison ASOFI (Moroccan Gourmet Terroir)</option>
+            <option value="/projects/04-pacific-dental-concierge/">04: Aussie Smile Holidays (Dental Tourism)</option>
+            <option value="/projects/05-aether-headphones/">05: AETHER 01 Titanium (Audiophile DTC)</option>
+            <option value="/projects/06-strada-espresso/">06: STRADA MONOLITH (Dual-Boiler Espresso)</option>
+            <option value="/projects/07-solstice-real-estate/">07: VILLA SOLSTICE (Architectural Estate)</option>
+            <option value="/projects/09-archivist-journal/">09: ARCHIVIST (Spatial Culture Journal)</option>
+            <option value="/projects/10-nexus-terminal/">10: NEXUS PRIME (Quant Trading Terminal)</option>
+          </select>
+
+          <!-- External Launch Link -->
+          <a href="/projects/08-lumina-dermatology/" target="_blank" id="simExternalLink" class="btn btn-sm btn-outline-cyan" title="Open active site in standalone full tab">
+            <i data-lucide="external-link" class="icon-xs" aria-hidden="true"></i>
+            <span class="hide-mobile">Full Window</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Device Frame Shell -->
+      <div class="device-frame-wrap" id="deviceFrameWrap">
+        <!-- Mock Browser Chrome Bar -->
+        <div class="browser-chrome-bar flex-between font-mono text-xs">
+          <div class="chrome-dots flex-align gap-1">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+
+          <div class="chrome-url-bar flex-align gap-2">
+            <i data-lucide="lock" class="icon-xs text-emerald" aria-hidden="true"></i>
+            <span id="chromeUrlText" class="truncate">http://localhost:3000/projects/08-lumina-dermatology/</span>
+          </div>
+
+          <button class="chrome-reload-btn" id="simReloadBtn" title="Reload active viewport">
+            <i data-lucide="rotate-cw" class="icon-xs" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Embedded Live Viewport Frame -->
+        <div class="iframe-container" id="iframeContainer">
+          <iframe src="/projects/08-lumina-dermatology/" id="simIframe" title="Live Project Simulator" class="sim-iframe" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: All 10 Projects Showcase Directory Grid -->
+  <section class="projects-grid-section section-padding" id="showcase">
+    <div class="container">
+      <div class="section-header flex-between mb-6">
+        <div>
+          <span class="kicker-tag font-mono text-xs text-gold">CURATED CATALOG</span>
+          <h2 class="section-title text-white">The 10 Production Builds</h2>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="project-filter-tabs flex-align gap-2">
+          <button class="filter-chip active" data-filter="all">All Projects (10)</button>
+          <button class="filter-chip" data-filter="healthcare">Clinical & Health (2)</button>
+          <button class="filter-chip" data-filter="luxury">Luxury DTC & Industrial (3)</button>
+          <button class="filter-chip" data-filter="fintech">FinTech & Terminals (2)</button>
+          <button class="filter-chip" data-filter="editorial">Culture & Architecture (3)</button>
+        </div>
+      </div>
+
+      <!-- 10 Projects Cards Grid -->
+      <div class="portfolio-cards-grid" id="portfolioCardsGrid">
+        <!-- Card 8: Lumina Derma-OS -->
+        <article class="project-card" data-category="healthcare" data-project-id="08">
+          <div class="card-media">
+            <img src="/projects/08-lumina-dermatology/assets/clinic-interior.jpg" alt="Lumina Derma-OS" class="card-thumb">
+            <span class="badge-num">08</span>
+            <span class="badge-tag">Clinical Intelligence</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">LUMINA DERMA-OS | Dermatology Practice Platform</h3>
+            <p class="card-desc text-xs text-muted">
+              Next-generation clinical practice intelligence. Real-time laser telemetry, interactive SVG facial mapping (Botox/fillers/rosacea), WhatsApp automated post-care follow-up sequences, and digital informed consent.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">SVG Facial Map</span>
+              <span class="tech-pill">WhatsApp API Bot</span>
+              <span class="tech-pill">Before/After Slider</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/08-lumina-dermatology/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/08-lumina-dermatology/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 1: Vanguard & Sterling -->
+        <article class="project-card" data-category="editorial" data-project-id="01">
+          <div class="card-media">
+            <img src="/projects/08-lumina-dermatology/assets/doctor-consult.jpg" alt="Vanguard & Sterling" class="card-thumb">
+            <span class="badge-num">01</span>
+            <span class="badge-tag">Trial & Corporate Law</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">Vanguard & Sterling | Corporate Advocacy</h3>
+            <p class="card-desc text-xs text-muted">
+              Premier corporate litigation counsel ($950M+ recovered). Features a 3-step dynamic case valuation wizard, precedent filtering, slide-over precedent drawer, and WCAG AAA compliance.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Intake Wizard</span>
+              <span class="tech-pill">Precedent Drawer</span>
+              <span class="tech-pill">Top-Layer &lt;dialog&gt;</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/01-lexicon-law/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/01-lexicon-law/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: McKenzo & Co. -->
+        <article class="project-card" data-category="editorial" data-project-id="02">
+          <div class="card-media">
+            <img src="/projects/03-asofi-terroir/assets/oliveraies-maroc.jpg" alt="McKenzo & Co." class="card-thumb">
+            <span class="badge-num">02</span>
+            <span class="badge-tag">Pan-African Strategy & ESG</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">McKenzo & Co. | Management Consulting</h3>
+            <p class="card-desc text-xs text-muted">
+              Pan-African strategy and Environmental Impact Assessment platform (mcknzo.co). Interactive diagnostic ESG readiness calculator, bilingual EN/FR localization, and practice verticals.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">ESG Diagnostic</span>
+              <span class="tech-pill">Bilingual EN/FR</span>
+              <span class="tech-pill">Fluid Clamp</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/02-mckenzo-consulting/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/02-mckenzo-consulting/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Maison ASOFI -->
+        <article class="project-card" data-category="luxury" data-project-id="03">
+          <div class="card-media">
+            <img src="/projects/03-asofi-terroir/assets/huile-picholine-marocaine.jpg" alt="Maison ASOFI" class="card-thumb">
+            <span class="badge-num">03</span>
+            <span class="badge-tag">Moroccan Terroir & Export</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">Maison ASOFI | Terroir & Huile d'Olive</h3>
+            <p class="card-desc text-xs text-muted">
+              Heritage Moroccan gourmet terroir & olive oil export since 1994. Interactive B2B 20ft/40ft maritime container freight simulator, technical spec drawer, and authentic Atlas terroir photography.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Freight Simulator</span>
+              <span class="tech-pill">Spec Drawer</span>
+              <span class="tech-pill">B2B Wholesale</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/03-asofi-terroir/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/03-asofi-terroir/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Aussie Smile Holidays -->
+        <article class="project-card" data-category="healthcare" data-project-id="04">
+          <div class="card-media">
+            <img src="/projects/08-lumina-dermatology/assets/patient-profile.jpg" alt="Aussie Smile Holidays" class="card-thumb">
+            <span class="badge-num">04</span>
+            <span class="badge-tag">Concierge Dental Tourism</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">Aussie Smile Holidays | Dental Concierge</h3>
+            <p class="card-desc text-xs text-muted">
+              Full-service Australian dental tourism concierge (Bali/Phuket/Bangkok). Dynamic AUD savings comparison ($15k–$40k AUD), 7-day vacation itinerary planner, Australian partner warranty, and instant quote modal.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">AUD Savings Calc</span>
+              <span class="tech-pill">Itinerary Planner</span>
+              <span class="tech-pill">Clinic Warranty</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/04-pacific-dental-concierge/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/04-pacific-dental-concierge/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: AETHER 01 Titanium -->
+        <article class="project-card" data-category="luxury" data-project-id="05">
+          <div class="card-media">
+            <img src="/projects/05-aether-headphones/assets/headphone-silver.jpg" alt="AETHER 01 Titanium" class="card-thumb">
+            <span class="badge-num">05</span>
+            <span class="badge-tag">Audiophile DTC Hardware</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">AETHER 01 | Titanium Planar Headphones</h3>
+            <p class="card-desc text-xs text-muted">
+              Grade-5 titanium planar magnetic audiophile hardware. 3D cursor parallax tilt, 4-finish customizer, SVG EQ acoustic curve morpher, Web Audio tone synthesizer simulation, and express checkout cart drawer.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Web Audio Synth</span>
+              <span class="tech-pill">3D Parallax Tilt</span>
+              <span class="tech-pill">Acoustic EQ Curve</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/05-aether-headphones/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/05-aether-headphones/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: STRADA MONOLITH -->
+        <article class="project-card" data-category="luxury" data-project-id="06">
+          <div class="card-media">
+            <img src="/projects/06-strada-espresso/assets/strada-stainless.jpg" alt="STRADA MONOLITH" class="card-thumb">
+            <span class="badge-num">06</span>
+            <span class="badge-tag">Precision Industrial Machinery</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">STRADA MONOLITH | Dual-Boiler Espresso</h3>
+            <p class="card-desc text-xs text-muted">
+              Artisanal dual-boiler espresso machine. Hyperframe HTML5 canvas golden crema fluid extraction stream, mechanical SVG rotary gauge physics with pump jitter, and 28-second automated shot profiler.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Canvas Fluid Stream</span>
+              <span class="tech-pill">Gauge Needle Physics</span>
+              <span class="tech-pill">Barista Profiler</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/06-strada-espresso/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/06-strada-espresso/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7: VILLA SOLSTICE -->
+        <article class="project-card" data-category="editorial" data-project-id="07">
+          <div class="card-media">
+            <img src="/projects/07-solstice-real-estate/assets/villa-exterior-day.jpg" alt="VILLA SOLSTICE" class="card-thumb">
+            <span class="badge-num">07</span>
+            <span class="badge-tag">Architectural Real Estate</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">VILLA SOLSTICE | French Riviera Monolith</h3>
+            <p class="card-desc text-xs text-muted">
+              Cap d'Antibes architectural cliffside estate. Interactive daylight-to-dusk solar lighting simulation slider (06:00 to 24:00 crossfade), 3-tier vector blueprint explorer with spatial pins, and $28.5M mortgage calculator.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Solar Dusk Slider</span>
+              <span class="tech-pill">Blueprint Explorer</span>
+              <span class="tech-pill">Wealth Calculator</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/07-solstice-real-estate/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/07-solstice-real-estate/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9: ARCHIVIST -->
+        <article class="project-card" data-category="editorial" data-project-id="09">
+          <div class="card-media">
+            <img src="/projects/09-archivist-journal/assets/cover-monolith.jpg" alt="ARCHIVIST Journal" class="card-thumb">
+            <span class="badge-num">09</span>
+            <span class="badge-tag">Editorial Journal & Archive</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">ARCHIVIST | Monolithic Architecture Journal</h3>
+            <p class="card-desc text-xs text-muted">
+              Quarterly review of spatial poetics and tactile brutalism. Real-time audio waveform canvas visualizer, top reading progress bar, 3-mode theme engine (Paper Cream / Dark / Sepia), and long-form reader modal.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Audio Waveform Canvas</span>
+              <span class="tech-pill">Reading Progress</span>
+              <span class="tech-pill">Multi-Theme Engine</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/09-archivist-journal/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/09-archivist-journal/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 10: NEXUS PRIME -->
+        <article class="project-card" data-category="fintech" data-project-id="10">
+          <div class="card-media">
+            <img src="/projects/10-nexus-terminal/assets/hardware-vault.jpg" alt="NEXUS PRIME Terminal" class="card-thumb">
+            <span class="badge-num">10</span>
+            <span class="badge-tag">FinTech & Quant Terminal</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-white">NEXUS PRIME | Multi-Asset Trading Terminal</h3>
+            <p class="card-desc text-xs text-muted">
+              Sub-millisecond institutional execution terminal. Real-time HTML5 canvas candlestick charting with moving averages, live DOM order book with depth bars, leverage execution ticket, and portfolio margin risk telemetry.
+            </p>
+            <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+              <span class="tech-pill">Canvas Candlesticks</span>
+              <span class="tech-pill">Order Book DOM</span>
+              <span class="tech-pill">Margin Risk Engine</span>
+            </div>
+            <div class="card-actions flex-between pt-3 border-t">
+              <button class="btn btn-xs btn-cyan btn-load-sim" data-url="/projects/10-nexus-terminal/">
+                <i data-lucide="play" class="icon-xs" aria-hidden="true"></i>
+                <span>Test in Simulator</span>
+              </button>
+              <a href="/projects/10-nexus-terminal/" target="_blank" class="card-ext-link flex-align gap-1 font-mono text-xs">
+                <span>Launch ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Principles & Colophon -->
+  <footer class="portfolio-footer section-padding border-t">
+    <div class="container text-center">
+      <div class="brand-crest inline-block mb-3">
+        <div class="crest-mark">AV</div>
+      </div>
+      <h3 class="text-white text-lg font-bold mb-2">Austin Vance — Engineering Portfolio</h3>
+      <p class="text-xs text-muted font-mono max-w-md mx-auto mb-6">
+        All 10 applications are standalone zero-install web engines built with modern semantic HTML5, CSS tiered design tokens, and vanilla ES6+ JavaScript.
+      </p>
+
+      <div class="fast-links-bar flex-align justify-center gap-4 font-mono text-xs text-muted">
+        <a href="/projects/01-lexicon-law/" target="_blank" class="hover-white">01: Law</a> •
+        <a href="/projects/02-mckenzo-consulting/" target="_blank" class="hover-white">02: Consulting</a> •
+        <a href="/projects/03-asofi-terroir/" target="_blank" class="hover-white">03: Terroir</a> •
+        <a href="/projects/04-pacific-dental-concierge/" target="_blank" class="hover-white">04: Dental</a> •
+        <a href="/projects/05-aether-headphones/" target="_blank" class="hover-white">05: Audio</a> •
+        <a href="/projects/06-strada-espresso/" target="_blank" class="hover-white">06: Strada</a> •
+        <a href="/projects/07-solstice-real-estate/" target="_blank" class="hover-white">07: Solstice</a> •
+        <a href="/projects/08-lumina-dermatology/" target="_blank" class="hover-white">08: Lumina</a> •
+        <a href="/projects/09-archivist-journal/" target="_blank" class="hover-white">09: Archivist</a> •
+        <a href="/projects/10-nexus-terminal/" target="_blank" class="hover-white">10: Nexus</a>
+      </div>
+
+      <div class="text-xs text-muted font-mono mt-8">
+        © 2026 AUSTIN VANCE. ALL RIGHTS RESERVED. RUNNING LOCALLY ON PORT 3000.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>

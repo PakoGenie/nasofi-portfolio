@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanguard & Sterling | Premier Trial & Corporate Attorneys</title>
+  <meta name="description" content="Elite trial advocates and corporate counsel. Over $950M recovered in high-stakes litigation, commercial disputes, and catastrophic claims.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Top Announcement / Legal Hotline Bar -->
+  <div class="top-legal-bar">
+    <div class="container flex-between text-xs">
+      <div class="flex-align gap-2">
+        <span class="status-indicator"></span>
+        <span class="text-gold uppercase tracking-wider font-semibold">24/7 Immediate Legal Triage</span>
+        <span class="divider">|</span>
+        <span class="text-muted">Strict Attorney-Client Confidentiality Guaranteed</span>
+      </div>
+      <div class="flex-align gap-4">
+        <a href="tel:18005550199" class="hotline-link flex-align gap-1">
+          <i data-lucide="phone-call" class="icon-xs"></i>
+          <span>Direct Line: (800) 555-0199</span>
+        </a>
+        <span class="divider">|</span>
+        <a href="#evaluator" class="text-gold hover-underline">Instant Case Valuation &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <div class="container flex-between">
+      <a href="#" class="brand-logo">
+        <div class="logo-mark">V&S</div>
+        <div class="logo-text">
+          <span class="brand-name">VANGUARD & STERLING</span>
+          <span class="brand-sub">COUNSELORS AT LAW • EST. 1989</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#practice-areas" class="nav-link">Practice Areas</a>
+        <a href="#results" class="nav-link">Notable Results</a>
+        <a href="#attorneys" class="nav-link">Partners</a>
+        <a href="#evaluator" class="nav-link">Case Evaluation</a>
+        <a href="#testimonials" class="nav-link">Client Reviews</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions flex-align gap-3">
+        <button class="btn btn-outline" id="btnOpenConsultation">
+          <i data-lucide="calendar" class="icon-sm"></i>
+          <span>Schedule Consult</span>
+        </button>
+        <a href="#evaluator" class="btn btn-primary">
+          <span>Free Case Review</span>
+          <i data-lucide="arrow-right" class="icon-sm"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header flex-between">
+      <span class="brand-name">VANGUARD & STERLING</span>
+      <button class="btn-close" id="btnCloseMobileDrawer">&times;</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#practice-areas" class="mobile-nav-link">Practice Areas</a>
+      <a href="#results" class="mobile-nav-link">Notable Results</a>
+      <a href="#attorneys" class="mobile-nav-link">Partners</a>
+      <a href="#evaluator" class="mobile-nav-link">Case Evaluation</a>
+      <a href="#testimonials" class="mobile-nav-link">Client Reviews</a>
+      <a href="#faq" class="mobile-nav-link">FAQ</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="tel:18005550199" class="btn btn-outline full-width mb-3">
+        <i data-lucide="phone" class="icon-sm"></i> (800) 555-0199
+      </a>
+      <a href="#evaluator" class="btn btn-primary full-width">Free Case Review</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-pattern"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-badge" data-gsap="fade-up">
+          <i data-lucide="shield-check" class="icon-gold"></i>
+          <span>Nationally Recognized Trial Advocates • $950M+ Verdicts & Settlements</span>
+        </div>
+
+        <h1 class="hero-title" data-gsap="fade-up" data-delay="0.1">
+          When the Stakes Are Highest, <br>
+          <span class="gold-gradient-text">We Deliver Uncompromising Justice.</span>
+        </h1>
+
+        <p class="hero-subtitle" data-gsap="fade-up" data-delay="0.2">
+          From multi-million dollar corporate breaches to complex catastrophic injury litigation, our partners bring unmatched trial mastery, aggressive advocacy, and relentless pursuit of results.
+        </p>
+
+        <div class="hero-cta-group flex-align gap-4" data-gsap="fade-up" data-delay="0.3">
+          <a href="#evaluator" class="btn btn-primary btn-lg">
+            <span>Evaluate Your Case in 60s</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+          <a href="#results" class="btn btn-glass btn-lg">
+            <i data-lucide="award" class="icon-gold"></i>
+            <span>View Landmark Results</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges & Honors -->
+        <div class="hero-trust-bar" data-gsap="fade-up" data-delay="0.4">
+          <div class="trust-item">
+            <i data-lucide="scale" class="trust-icon"></i>
+            <div>
+              <strong>Super Lawyers®</strong>
+              <small>Top 1% in Litigation 2026</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="landmark" class="trust-icon"></i>
+            <div>
+              <strong>National Trial Lawyers</strong>
+              <small>Top 100 Civil Plaintiff</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="check-check" class="trust-icon"></i>
+            <div>
+              <strong>AV Preeminent® Rating</strong>
+              <small>Martindale-Hubbell Highest Peer Honor</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="sparkles" class="trust-icon"></i>
+            <div>
+              <strong>Forbes Legal Council</strong>
+              <small>Featured Senior Contributor</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics / Numbers That Matter -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-gsap="stat-counter">
+            <div class="stat-number-wrapper">
+              <span class="stat-prefix">$</span>
+              <span class="stat-number" data-target="950">0</span>
+              <span class="stat-suffix">M+</span>
+            </div>
+            <div class="stat-label">Total Recovered for Clients</div>
+            <p class="stat-desc">Through fierce courtroom verdicts and aggressive pre-trial settlements.</p>
+          </div>
+
+          <div class="stat-card" data-gsap="stat-counter">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="98">0</span>
+              <span class="stat-suffix">.6%</span>
+            </div>
+            <div class="stat-label">Trial Success Record</div>
+            <p class="stat-desc">Demonstrated triumph across federal and state appellate courts.</p>
+          </div>
+
+          <div class="stat-card" data-gsap="stat-counter">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="35">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">Years of Combined Mastery</div>
+            <p class="stat-desc">Former federal prosecutors and Ivy League-trained litigators.</p>
+          </div>
+
+          <div class="stat-card" data-gsap="stat-counter">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="0">0</span>
+              <span class="stat-suffix">Fee</span>
+            </div>
+            <div class="stat-label">Unless We Win (Contingency)</div>
+            <p class="stat-desc">Zero out-of-pocket costs for injury & tort matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Lead Generation Engine: Interactive Case Evaluation Wizard -->
+    <section class="evaluator-section" id="evaluator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Confidential Case Triage</span>
+          <h2 class="section-title">Instant Case Merit & Valuation Review</h2>
+          <p class="section-subtitle">
+            Answer 3 quick questions. Our senior partners evaluate liability, damages, and legal jurisdiction to give you a definitive assessment within 2 business hours.
+          </p>
+        </div>
+
+        <div class="wizard-container" id="caseWizard">
+          <!-- Wizard Progress Bar -->
+          <div class="wizard-stepper">
+            <div class="step-indicator active" data-step="1">
+              <div class="step-circle">1</div>
+              <span class="step-label">Case Domain</span>
+            </div>
+            <div class="step-line" id="stepLine1"></div>
+            <div class="step-indicator" data-step="2">
+              <div class="step-circle">2</div>
+              <span class="step-label">Claim Scope</span>
+            </div>
+            <div class="step-line" id="stepLine2"></div>
+            <div class="step-indicator" data-step="3">
+              <div class="step-circle">3</div>
+              <span class="step-label">Direct Counsel</span>
+            </div>
+          </div>
+
+          <!-- Step 1: Case Category Selection -->
+          <div class="wizard-step active" id="step1">
+            <h3 class="wizard-question">Select the category that best describes your legal issue:</h3>
+            <div class="category-grid">
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="Commercial Litigation" checked>
+                <div class="card-inner">
+                  <i data-lucide="briefcase" class="category-icon"></i>
+                  <h4>Commercial Litigation</h4>
+                  <p>Breach of contract, partner disputes, fiduciary duty, fraud.</p>
+                </div>
+              </label>
+
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="Catastrophic Injury">
+                <div class="card-inner">
+                  <i data-lucide="activity" class="category-icon"></i>
+                  <h4>Catastrophic Injury</h4>
+                  <p>Aviation, commercial trucking, maritime, defective products.</p>
+                </div>
+              </label>
+
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="Intellectual Property">
+                <div class="card-inner">
+                  <i data-lucide="cpu" class="category-icon"></i>
+                  <h4>Intellectual Property</h4>
+                  <p>Patent infringement, trade secret theft, copyright dispute.</p>
+                </div>
+              </label>
+
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="White-Collar & SEC">
+                <div class="card-inner">
+                  <i data-lucide="shield-alert" class="category-icon"></i>
+                  <h4>White-Collar & SEC</h4>
+                  <p>Federal investigations, regulatory compliance, securities defense.</p>
+                </div>
+              </label>
+
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="Executive Employment">
+                <div class="card-inner">
+                  <i data-lucide="user-check" class="category-icon"></i>
+                  <h4>Executive Employment</h4>
+                  <p>Severance negotiation, whistleblowing, non-compete disputes.</p>
+                </div>
+              </label>
+
+              <label class="category-card">
+                <input type="radio" name="caseCategory" value="Real Estate & Land Use">
+                <div class="card-inner">
+                  <i data-lucide="building" class="category-icon"></i>
+                  <h4>Real Estate & Land Use</h4>
+                  <p>Zoning battles, high-value commercial title & contract disputes.</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="wizard-actions">
+              <span class="confidential-pill">
+                <i data-lucide="lock" class="icon-xs"></i> 256-Bit SSL Encrypted
+              </span>
+              <button type="button" class="btn btn-primary" id="btnNext1">
+                <span>Continue to Claim Scope</span>
+                <i data-lucide="chevron-right" class="icon-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Claim Scope & Damages -->
+          <div class="wizard-step" id="step2">
+            <h3 class="wizard-question">Estimate the scale and timeline of your damages:</h3>
+            
+            <div class="form-group mb-6">
+              <div class="flex-between mb-2">
+                <label for="damagesRange" class="form-label">Estimated Financial Loss or Claim Value:</label>
+                <span class="range-value" id="damagesDisplay">$500,000 - $1,500,000</span>
+              </div>
+              <input type="range" id="damagesRange" min="1" max="5" value="3" class="gold-range">
+              <div class="flex-between text-xs text-muted mt-1">
+                <span><$100K</span>
+                <span>$250K - $500K</span>
+                <span>$1M - $5M</span>
+                <span>$5M - $20M+</span>
+                <span>$50M+ Class/Complex</span>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">When did this matter or incident occur?</label>
+                <select id="incidentTimeline" class="form-control">
+                  <option value="Within the last 30 days">Within the last 30 days (Urgent)</option>
+                  <option value="1 to 6 months ago" selected>1 to 6 months ago</option>
+                  <option value="6 months to 1 year ago">6 months to 1 year ago</option>
+                  <option value="Over 1 year ago">Over 1 year ago (Statute of limitations check)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Have legal filings or demands been made?</label>
+                <select id="legalStatus" class="form-control">
+                  <option value="No filings yet - seeking counsel">No filings yet - seeking counsel</option>
+                  <option value="Demand letter sent / received">Demand letter sent / received</option>
+                  <option value="Lawsuit currently active">Lawsuit currently active</option>
+                  <option value="Subpoena or government inquiry">Subpoena or government inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn btn-ghost" id="btnBack2">
+                <i data-lucide="chevron-left" class="icon-sm"></i>
+                <span>Back</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="btnNext2">
+                <span>Proceed to Direct Counsel</span>
+                <i data-lucide="chevron-right" class="icon-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact & Intake Submission -->
+          <div class="wizard-step" id="step3">
+            <h3 class="wizard-question">Where should our senior partner deliver the confidential analysis?</h3>
+
+            <form id="evaluationForm">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="evalName" class="form-label">Full Legal Name *</label>
+                  <input type="text" id="evalName" class="form-control" placeholder="e.g. Julian Montgomery" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="evalPhone" class="form-label">Direct Phone Number (for confidential SMS/call) *</label>
+                  <input type="tel" id="evalPhone" class="form-control" placeholder="(555) 234-5678" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="evalEmail" class="form-label">Confidential Email Address *</label>
+                <input type="email" id="evalEmail" class="form-control" placeholder="julian@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="evalDetails" class="form-label">Brief Summary of the Dispute / Incident (Privileged)</label>
+                <textarea id="evalDetails" rows="3" class="form-control" placeholder="Outline the opposing party, key dates, and core damages..."></textarea>
+              </div>
+
+              <div class="privilege-box">
+                <i data-lucide="shield" class="icon-gold"></i>
+                <div>
+                  <strong>Protected by Attorney-Client Privilege</strong>
+                  <p>Submitting this form does not create an attorney-client relationship until an engagement agreement is countersigned. All submitted data is encrypted and strictly private.</p>
+                </div>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-ghost" id="btnBack3">
+                  <i data-lucide="chevron-left" class="icon-sm"></i>
+                  <span>Back</span>
+                </button>
+                <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitEval">
+                  <i data-lucide="send" class="icon-sm"></i>
+                  <span>Submit for Priority Partner Review</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 4: Submission Confirmation Card -->
+          <div class="wizard-step" id="stepSuccess">
+            <div class="success-card text-center">
+              <div class="success-icon-wrap">
+                <i data-lucide="check" class="success-icon"></i>
+              </div>
+              <h3 class="success-title">Your Case File Has Been Dispatched</h3>
+              <p class="success-desc">
+                Your file reference is <strong class="text-gold font-mono" id="confirmationCode">VS-2026-8941</strong>. A senior trial partner is currently reviewing liability and conflict of interest clearances.
+              </p>
+              
+              <div class="success-meta-box">
+                <div class="meta-row">
+                  <span class="text-muted">Target Response:</span>
+                  <span class="text-gold font-semibold">Under 120 Minutes</span>
+                </div>
+                <div class="meta-row">
+                  <span class="text-muted">Assigned Office:</span>
+                  <span>New York & San Francisco Litigation Unit</span>
+                </div>
+                <div class="meta-row">
+                  <span class="text-muted">Emergency Direct Contact:</span>
+                  <a href="tel:18005550199" class="text-gold font-semibold">(800) 555-0199</a>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-outline" id="btnResetWizard">
+                <span>Submit Another Inquiry</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice Areas Grid with Interactive Detail Modal Trigger -->
+    <section class="section" id="practice-areas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trial & Advisory Mastery</span>
+          <h2 class="section-title">High-Stakes Practice Areas</h2>
+          <p class="section-subtitle">
+            We focus exclusively on complex, high-exposure disputes where our opponent has substantial resources and the courtroom battle will dictate the future of our clients.
+          </p>
+        </div>
+
+        <div class="practice-grid">
+          <!-- Card 1 -->
+          <article class="practice-card" data-practice="corporate" data-gsap="fade-up">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="landmark"></i>
+              </div>
+              <h3 class="practice-name">Commercial & Corporate Litigation</h3>
+              <p class="practice-desc">High-value breach of contract, shareholder disputes, fraud, and antitrust matters before state and federal benches.</p>
+              <div class="practice-stats">
+                <span><strong>$420M+</strong> Recovered</span>
+                <span class="bullet">•</span>
+                <span>Bench & Jury Trials</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="Commercial & Corporate Litigation">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="practice-card" data-practice="injury" data-gsap="fade-up" data-delay="0.1">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="activity"></i>
+              </div>
+              <h3 class="practice-name">Catastrophic Personal Injury & Mass Tort</h3>
+              <p class="practice-desc">Representing victims of industrial disasters, aviation crashes, commercial carrier negligence, and defective medical devices.</p>
+              <div class="practice-stats">
+                <span><strong>$290M+</strong> Verdicts</span>
+                <span class="bullet">•</span>
+                <span>Zero Cost Unless Won</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="Catastrophic Personal Injury & Mass Tort">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="practice-card" data-practice="ip" data-gsap="fade-up" data-delay="0.2">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="cpu"></i>
+              </div>
+              <h3 class="practice-name">Intellectual Property & Trade Secrets</h3>
+              <p class="practice-desc">Defending patents, semiconductor designs, proprietary algorithms, and trade secrets against competitor misappropriation.</p>
+              <div class="practice-stats">
+                <span><strong>ITC & Federal</strong> Trials</span>
+                <span class="bullet">•</span>
+                <span>Tech Specialists</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="Intellectual Property & Trade Secrets">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="practice-card" data-practice="whitecollar" data-gsap="fade-up">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="shield-alert"></i>
+              </div>
+              <h3 class="practice-name">White-Collar & Government Investigations</h3>
+              <p class="practice-desc">DOJ, SEC, and CFTC enforcement defense led by former federal prosecutors with extensive grand jury experience.</p>
+              <div class="practice-stats">
+                <span><strong>Former DOJ</strong> Counsel</span>
+                <span class="bullet">•</span>
+                <span>Crisis Management</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="White-Collar & Government Investigations">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="practice-card" data-practice="employment" data-gsap="fade-up" data-delay="0.1">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="user-check"></i>
+              </div>
+              <h3 class="practice-name">Executive Compensation & Whistleblower</h3>
+              <p class="practice-desc">Securing eight-figure severance packages, Dodd-Frank whistleblower claims, and restrictive covenant defenses.</p>
+              <div class="practice-stats">
+                <span><strong>$75M+</strong> Recoveries</span>
+                <span class="bullet">•</span>
+                <span>C-Suite Confidential</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="Executive Compensation & Whistleblower">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="practice-card" data-practice="realestate" data-gsap="fade-up" data-delay="0.2">
+            <div class="practice-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="practice-overlay"></div>
+            <div class="practice-content">
+              <div class="practice-icon-box">
+                <i data-lucide="building"></i>
+              </div>
+              <h3 class="practice-name">Commercial Real Estate & Land Use</h3>
+              <p class="practice-desc">Resolving high-stakes real estate development battles, mezzanine debt workouts, and multi-parcel acquisition litigation.</p>
+              <div class="practice-stats">
+                <span><strong>$1.2B</strong> Assets Protected</span>
+                <span class="bullet">•</span>
+                <span>Zoning & Title</span>
+              </div>
+              <button class="practice-cta flex-align gap-1" data-action="explore-practice" data-title="Commercial Real Estate & Land Use">
+                <span>View Case Precedents</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notable Verdicts & Settlements (Filterable Proof of Success) -->
+    <section class="section bg-elevated" id="results">
+      <div class="container">
+        <div class="flex-between section-header-split">
+          <div>
+            <span class="section-tag">Proven Track Record</span>
+            <h2 class="section-title">Landmark Verdicts & Settlements</h2>
+            <p class="section-subtitle">
+              Insurance companies and opposing corporate counsel know our trial readiness. When they refuse to offer true value, we proceed to verdict.
+            </p>
+          </div>
+          <div class="filter-tab-group" id="settlementFilter">
+            <button class="filter-btn active" data-filter="all">All Matters</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="injury">Catastrophic</button>
+            <button class="filter-btn" data-filter="ip">IP / Tech</button>
+          </div>
+        </div>
+
+        <div class="settlements-grid" id="settlementsGrid">
+          <!-- Settlement 1 -->
+          <div class="settlement-card" data-category="commercial" data-gsap="fade-up">
+            <div class="settlement-amount">$64,500,000</div>
+            <div class="settlement-badge">Jury Verdict</div>
+            <h4 class="settlement-title">Energy Consortium Breach of Joint Operating Agreement</h4>
+            <p class="settlement-desc">Unanimous federal jury award in Southern District of New York for intentional freeze-out of minority working interest partner.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: U.S. District Court, SDNY</span>
+              <span class="lead-lawyer">Lead: Marcus Sterling, Esq.</span>
+            </div>
+          </div>
+
+          <!-- Settlement 2 -->
+          <div class="settlement-card" data-category="injury" data-gsap="fade-up" data-delay="0.1">
+            <div class="settlement-amount">$38,200,000</div>
+            <div class="settlement-badge">Pre-Trial Settlement</div>
+            <h4 class="settlement-title">Commercial Trucking Fleet Catastrophic Collision</h4>
+            <p class="settlement-desc">Confidential global settlement secured against an international logistics carrier following mechanical maintenance fraud discoveries.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: California Superior Court</span>
+              <span class="lead-lawyer">Lead: Elena Vance, Esq.</span>
+            </div>
+          </div>
+
+          <!-- Settlement 3 -->
+          <div class="settlement-card" data-category="ip" data-gsap="fade-up" data-delay="0.2">
+            <div class="settlement-amount">$27,800,000</div>
+            <div class="settlement-badge">Arbitration Award</div>
+            <h4 class="settlement-title">Proprietary FinTech Algorithm Misappropriation</h4>
+            <p class="settlement-desc">Defeated international software firm attempting to deploy ex-employee trade secret code in high-frequency trading platform.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: AAA Complex Commercial</span>
+              <span class="lead-lawyer">Lead: Sophia Kensington, Esq.</span>
+            </div>
+          </div>
+
+          <!-- Settlement 4 -->
+          <div class="settlement-card" data-category="injury" data-gsap="fade-up">
+            <div class="settlement-amount">$19,400,000</div>
+            <div class="settlement-badge">Trial Verdict</div>
+            <h4 class="settlement-title">Industrial Refinery Crane Failure & Traumatic Brain Injury</h4>
+            <p class="settlement-desc">Secured lifetime medical trust and punitive damages against crane manufacturer for defective hydraulic sensor design.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: Texas District Court</span>
+              <span class="lead-lawyer">Lead: David Thorne, Esq.</span>
+            </div>
+          </div>
+
+          <!-- Settlement 5 -->
+          <div class="settlement-card" data-category="commercial" data-gsap="fade-up" data-delay="0.1">
+            <div class="settlement-amount">$15,600,000</div>
+            <div class="settlement-badge">Mediated Settlement</div>
+            <h4 class="settlement-title">Private Equity Managing Partner Fiduciary Breach</h4>
+            <p class="settlement-desc">Full recovery of diverted management fee funds and restoration of carried interest equity stakes for institutional LP group.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: Delaware Chancery Court</span>
+              <span class="lead-lawyer">Lead: Marcus Sterling, Esq.</span>
+            </div>
+          </div>
+
+          <!-- Settlement 6 -->
+          <div class="settlement-card" data-category="ip" data-gsap="fade-up" data-delay="0.2">
+            <div class="settlement-amount">$12,900,000</div>
+            <div class="settlement-badge">Consent Decree & Royalties</div>
+            <h4 class="settlement-title">Medical Device Biosensor Patent Infringement</h4>
+            <p class="settlement-desc">Overturned patent examiner invalidity challenges and secured running 6.5% royalty stream for biomedical startup founders.</p>
+            <div class="settlement-meta">
+              <span>Jurisdiction: U.S. Federal Circuit</span>
+              <span class="lead-lawyer">Lead: Sophia Kensington, Esq.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-cta text-center mt-8">
+          <p class="text-muted mb-4">Past results do not guarantee similar outcomes. Each case depends on its specific facts and legal merits.</p>
+          <a href="#evaluator" class="btn btn-primary">
+            <span>Request Analysis for Your Claim</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Senior Partners & Trial Counsel -->
+    <section class="section" id="attorneys">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trial Leadership</span>
+          <h2 class="section-title">The Partners You Want in Your Corner</h2>
+          <p class="section-subtitle">
+            Our attorneys have tried over 150 jury cases to verdict, authored leading treatises, and clerked for federal appellate judges.
+          </p>
+        </div>
+
+        <div class="attorney-grid">
+          <!-- Attorney 1 -->
+          <div class="attorney-card" data-gsap="fade-up">
+            <div class="attorney-image-wrap">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85" alt="Marcus Sterling" class="attorney-img">
+              <div class="attorney-badge">Senior Founding Partner</div>
+            </div>
+            <div class="attorney-info">
+              <h3 class="attorney-name">Marcus Sterling, Esq.</h3>
+              <span class="attorney-title">Chair, Complex Commercial & Appellate Litigation</span>
+              <p class="attorney-bio">Former Assistant U.S. Attorney with 28 years of courtroom combat. Recognized by Chambers USA Band 1 for high-stakes business disputes.</p>
+              <div class="attorney-credentials">
+                <span><i data-lucide="graduation-cap" class="icon-xs"></i> Harvard Law School (J.D., magna cum laude)</span>
+                <span><i data-lucide="scale" class="icon-xs"></i> Admitted: NY, DC, U.S. Supreme Court</span>
+              </div>
+              <div class="attorney-actions">
+                <button class="btn btn-outline btn-sm full-width" data-action="consult-attorney" data-lawyer="Marcus Sterling, Esq.">
+                  <i data-lucide="calendar" class="icon-xs"></i> Direct Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attorney 2 -->
+          <div class="attorney-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="attorney-image-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=85" alt="Elena Vance" class="attorney-img">
+              <div class="attorney-badge">Managing Partner</div>
+            </div>
+            <div class="attorney-info">
+              <h3 class="attorney-name">Elena Vance, Esq.</h3>
+              <span class="attorney-title">Chair, Catastrophic Injury & Product Liability</span>
+              <p class="attorney-bio">Fierce advocate for injury victims who has secured over $250M in lifetime care trusts. Member of Inner Circle of Advocates.</p>
+              <div class="attorney-credentials">
+                <span><i data-lucide="graduation-cap" class="icon-xs"></i> Columbia Law School (J.D.)</span>
+                <span><i data-lucide="scale" class="icon-xs"></i> Admitted: CA, NY, 9th Circuit</span>
+              </div>
+              <div class="attorney-actions">
+                <button class="btn btn-outline btn-sm full-width" data-action="consult-attorney" data-lawyer="Elena Vance, Esq.">
+                  <i data-lucide="calendar" class="icon-xs"></i> Direct Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attorney 3 -->
+          <div class="attorney-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="attorney-image-wrap">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=85" alt="David Thorne" class="attorney-img">
+              <div class="attorney-badge">Trial Partner</div>
+            </div>
+            <div class="attorney-info">
+              <h3 class="attorney-name">David Thorne, Esq.</h3>
+              <span class="attorney-title">Chair, White-Collar & Regulatory Enforcement</span>
+              <p class="attorney-bio">Former federal prosecutor specializing in grand jury subpoenas, SEC enforcement, and defense of institutional executives.</p>
+              <div class="attorney-credentials">
+                <span><i data-lucide="graduation-cap" class="icon-xs"></i> Yale Law School (J.D.)</span>
+                <span><i data-lucide="scale" class="icon-xs"></i> Admitted: NY, IL, 2nd Circuit</span>
+              </div>
+              <div class="attorney-actions">
+                <button class="btn btn-outline btn-sm full-width" data-action="consult-attorney" data-lawyer="David Thorne, Esq.">
+                  <i data-lucide="calendar" class="icon-xs"></i> Direct Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attorney 4 -->
+          <div class="attorney-card" data-gsap="fade-up" data-delay="0.3">
+            <div class="attorney-image-wrap">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=85" alt="Sophia Kensington" class="attorney-img">
+              <div class="attorney-badge">Senior Partner</div>
+            </div>
+            <div class="attorney-info">
+              <h3 class="attorney-name">Sophia Kensington, Esq.</h3>
+              <span class="attorney-title">Chair, Intellectual Property & Tech Disputes</span>
+              <p class="attorney-bio">Registered USPTO patent attorney with deep background in machine learning and algorithmic patents. Champion in ITC Section 337 trials.</p>
+              <div class="attorney-credentials">
+                <span><i data-lucide="graduation-cap" class="icon-xs"></i> Stanford Law School (J.D.) & MIT (B.S. EECS)</span>
+                <span><i data-lucide="scale" class="icon-xs"></i> Admitted: CA, USPTO, Fed. Cir.</span>
+              </div>
+              <div class="attorney-actions">
+                <button class="btn btn-outline btn-sm full-width" data-action="consult-attorney" data-lawyer="Sophia Kensington, Esq.">
+                  <i data-lucide="calendar" class="icon-xs"></i> Direct Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonials & Case Studies -->
+    <section class="section bg-elevated" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Client Voices</span>
+          <h2 class="section-title">Tested in the Crucible of Litigation</h2>
+          <p class="section-subtitle">Read firsthand accounts from enterprise leaders, founders, and families we have championed.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" data-gsap="fade-up">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "When our co-founder tried to misappropriate our core technology into a competing venture, Marcus Sterling and his team moved like lightning. They secured an emergency injunction within 72 hours and ultimately recovered a $27M settlement."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AL</div>
+              <div>
+                <strong>Arthur Lindqvist</strong>
+                <small>CEO & Founder, Helios Quantum Systems</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-gsap="fade-up" data-delay="0.1">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Following an industrial explosion that forever changed my life, other firms were intimidated by the defense conglomerate's army of lawyers. Elena Vance fought for my family for 28 months until they yielded a $19.4M verdict. They treated us like family."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RG</div>
+              <div>
+                <strong>Robert Garcia</strong>
+                <small>Client, Traumatic Workplace Injury</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-gsap="fade-up" data-delay="0.2">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Facing a baseless DOJ grand jury investigation, David Thorne was surgical. He demonstrated our compliance protocols, engaged the prosecutors head-on, and secured a full closure of the matter without a single charge filed."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">VK</div>
+              <div>
+                <strong>Victoria Kowalski</strong>
+                <small>General Counsel, Apex Healthcare Capital</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="section" id="faq">
+      <div class="container container-sm">
+        <div class="section-header text-center">
+          <span class="section-tag">Essential Answers</span>
+          <h2 class="section-title">Frequently Asked Legal Questions</h2>
+          <p class="section-subtitle">Transparency from your very first interaction.</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item active">
+            <button class="accordion-header" aria-expanded="true">
+              <span>How does your fee structure work? Do I pay upfront?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>For catastrophic injury, wrongful death, and select commercial contingency matters, we operate on a strictly contingency-fee basis: you pay zero legal fees and zero litigation expenses unless we secure a monetary recovery for you. For corporate defense, IP disputes, and advisory engagements, we provide transparent structured retainers, blended rates, or fixed milestone fees.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>What happens after I submit a case evaluation form?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Your submission is immediately checked against our internal conflict database to guarantee zero conflict of interest. Within 2 business hours, a senior partner in the relevant practice group reviews your facts and contacts you directly by phone or secure email to discuss actionable next steps.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>How do you determine whether to settle or take a case to trial?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>We prepare every single case from day one as if it is guaranteed to go to a jury verdict. This trial-ready posture gives our clients maximum leverage at the settlement table. If the opposing side offers full fair value, you decide whether to accept. If they do not, we have our exhibits, witnesses, and jury strategies primed for trial.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Are communications through this website confidential?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-body">
+              <p>Yes. All communications submitted through our secure case evaluation portals are protected under attorney-client privilege guidelines as prospective client inquiries, even before a formal representation agreement is signed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Impact Call-to-Action -->
+    <section class="cta-banner">
+      <div class="container text-center">
+        <h2 class="cta-title">Do Not Allow Time to Weaken Your Legal Position.</h2>
+        <p class="cta-subtitle">Statutes of limitations strictly limit the timeframe in which you can enforce your rights or protect your assets. Speak directly with a trial partner today.</p>
+        <div class="cta-buttons flex-align justify-center gap-4">
+          <a href="#evaluator" class="btn btn-primary btn-lg">
+            <span>Free Confidential Case Review</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+          <a href="tel:18005550199" class="btn btn-glass btn-lg">
+            <i data-lucide="phone-call" class="icon-gold"></i>
+            <span>Call 24/7: (800) 555-0199</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-wide">
+          <div class="brand-logo mb-3">
+            <div class="logo-mark">V&S</div>
+            <div class="logo-text">
+              <span class="brand-name">VANGUARD & STERLING</span>
+              <span class="brand-sub">COUNSELORS AT LAW</span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            Relentless courtroom advocates and trusted corporate counsel. Championing high-stakes plaintiffs and defending enterprise leaders across North America.
+          </p>
+          <div class="footer-contact-info mt-3">
+            <div><i data-lucide="phone" class="icon-xs icon-gold"></i> Direct Line: (800) 555-0199</div>
+            <div><i data-lucide="mail" class="icon-xs icon-gold"></i> intake@vanguardsterlinglaw.com</div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Practice Areas</h4>
+          <ul class="footer-links">
+            <li><a href="#practice-areas">Commercial Litigation</a></li>
+            <li><a href="#practice-areas">Catastrophic Injury</a></li>
+            <li><a href="#practice-areas">IP & Patent Trials</a></li>
+            <li><a href="#practice-areas">White-Collar Defense</a></li>
+            <li><a href="#practice-areas">Executive Severance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Office Locations</h4>
+          <ul class="footer-links">
+            <li><strong>New York:</strong> 375 Park Avenue, 42nd Fl</li>
+            <li><strong>San Francisco:</strong> 555 California St, Ste 3800</li>
+            <li><strong>London (Affiliate):</strong> 100 Bishopsgate, EC2N</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Disclaimers</h4>
+          <p class="disclaimer-text">
+            Attorney Advertising. Prior results do not guarantee a similar outcome. The information on this website is for general informational purposes only and does not constitute formal legal advice.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between text-xs">
+        <div>&copy; 2026 Vanguard & Sterling LLP. All Rights Reserved.</div>
+        <div class="footer-legal-links flex-align gap-4">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Representation</a>
+          <a href="#">Bar Compliance Notice</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Direct Partner Consultation Booking -->
+  <dialog class="custom-dialog" id="consultationDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="btnCloseConsultation" aria-label="Close dialog">&times;</button>
+      
+      <div class="dialog-header">
+        <span class="section-tag">Direct Scheduling</span>
+        <h3 class="dialog-title">Schedule a Strategic Legal Consultation</h3>
+        <p class="dialog-desc">Select your primary practice area and preferred conference window.</p>
+      </div>
+
+      <form id="consultationForm">
+        <input type="hidden" id="preferredLawyerInput" value="">
+        
+        <div class="form-group mb-3">
+          <label class="form-label">Requested Senior Partner</label>
+          <input type="text" id="displayLawyer" class="form-control" value="First Available Senior Partner" readonly>
+        </div>
+
+        <div class="form-grid-2 mb-3">
+          <div class="form-group">
+            <label class="form-label">Your Name *</label>
+            <input type="text" class="form-control" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-control" placeholder="(555) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-control" placeholder="jane@company.com" required>
+        </div>
+
+        <div class="form-grid-2 mb-4">
+          <div class="form-group">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="consultDate" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Consultation Format</label>
+            <select class="form-control">
+              <option value="video">Secure Video Conference</option>
+              <option value="phone">Private Phone Call</option>
+              <option value="office-ny">In-Person (New York Office)</option>
+              <option value="office-sf">In-Person (San Francisco Office)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width btn-lg">
+          <i data-lucide="check-circle" class="icon-sm"></i>
+          <span>Confirm Strategic Consultation</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Slide-Over Drawer: Practice Area Precedent Details -->
+  <aside class="practice-drawer" id="practiceDrawer">
+    <div class="drawer-header flex-between">
+      <h3 class="drawer-title" id="drawerTitle">Practice Area Precedents</h3>
+      <button class="btn-close" id="btnCloseDrawer">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerBody">
+      <!-- Injected via JavaScript based on clicked practice area -->
+    </div>
+  </aside>
+
+  <!-- Sticky Quick Action Bar (Mobile & Desktop) -->
+  <div class="floating-cta-bar">
+    <div class="floating-inner flex-between">
+      <div class="floating-left flex-align gap-2">
+        <span class="live-pulse"></span>
+        <span class="floating-text"><strong>Case Triage Active:</strong> 2 Senior Partners On Call</span>
+      </div>
+      <div class="floating-right flex-align gap-3">
+        <a href="tel:18005550199" class="btn btn-sm btn-outline">
+          <i data-lucide="phone" class="icon-xs"></i> (800) 555-0199
+        </a>
+        <a href="#evaluator" class="btn btn-sm btn-primary">
+          <span>Free Evaluation</span>
+          <i data-lucide="arrow-right" class="icon-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
