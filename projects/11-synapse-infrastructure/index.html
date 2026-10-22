@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNAPSE INFRASTRUCTURE — Enterprise Datacenter Systems, 42U Racks & Mission-Critical Networks</title>
+  <meta name="description" content="Turnkey enterprise IT infrastructure engineering: 42U rack configurator, 400G spine-leaf networking, hardware procurement, high-density AI nodes, enterprise SAN/NAS, and 24/7 managed NOC dispatch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. NAVIGATION HEADER
+       ========================================================================= -->
+  <header class="site-header" id="mainNav">
+    <div class="header-inner">
+      <a href="#hero" class="brand-logo" aria-label="Synapse Infrastructure Home">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="28" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="2" y="13" width="28" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="2" y="23" width="28" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
+          <circle cx="7" cy="6" r="1.5" fill="#00e5ff"/>
+          <circle cx="12" cy="6" r="1.5" fill="#00e5ff"/>
+          <circle cx="7" cy="16" r="1.5" fill="#10b981"/>
+          <circle cx="12" cy="16" r="1.5" fill="#10b981"/>
+          <circle cx="7" cy="26" r="1.5" fill="#00e5ff"/>
+          <circle cx="12" cy="26" r="1.5" fill="#00e5ff"/>
+          <path d="M22 6h4M22 16h4M22 26h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">SYNAPSE <span class="highlight">//</span> INFRA</span>
+        <span class="brand-tagline">Enterprise Systems</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#network" class="nav-link">Network Fabric</a></li>
+          <li><a href="#rackConfigurator" class="nav-link">42U Rack Builder</a></li>
+          <li><a href="#storageSizer" class="nav-link">Storage Sizer</a></li>
+          <li><a href="#catalog" class="nav-link">Hardware Supply</a></li>
+          <li><a href="#services" class="nav-link">Engineering</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="currency-select-wrap">
+          <select id="currencySelector" class="currency-select" aria-label="Currency Selector">
+            <option value="USD">USD ($)</option>
+            <option value="MAD">MAD (د.م.)</option>
+            <option value="EUR">EUR (€)</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn-bom-trigger" id="btnOpenBomDrawer" aria-label="Open Project Bill of Materials">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Project BOM</span>
+          <span class="bom-badge" id="bomCountBadge">0</span>
+        </button>
+
+        <button type="button" class="btn-noc-header" id="btnOpenNocModal" aria-label="24/7 NOC Emergency Dispatch">
+          <span class="pulse-dot"></span>
+          <span>24/7 NOC</span>
+        </button>
+
+        <button type="button" class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO TELEMETRY SECTION
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-background-art"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-status-dot online"></span>
+          <span>TIER-4 DATACENTER ARCHITECTURE // HARDWARE & INTEGRATION</span>
+        </div>
+        <h1 class="hero-title">
+          Mission-Critical Systems. <span class="text-gradient">Engineered Without Single Points of Failure.</span>
+        </h1>
+        <p class="hero-description">
+          Synapse provides end-to-end IT infrastructure capability: from direct procurement of enterprise servers, switches, and high-density SAN/NAS storage, to precision 42U rack engineering, EVPN-VXLAN campus fabrics, and 24/7 managed NOC operations with guaranteed 15-minute dispatch.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#rackConfigurator" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+            <span>Launch 42U Rack Configurator</span>
+          </a>
+          <button type="button" class="btn-secondary" id="btnHeroNoc">
+            <span class="pulse-dot"></span>
+            <span>24/7 NOC Critical Dispatch</span>
+          </button>
+        </div>
+
+        <div class="hero-metrics-grid">
+          <div class="metric-card">
+            <span class="metric-val">128.4 Gbps</span>
+            <span class="metric-label">Core Throughput</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">&lt; 0.15 ms</span>
+            <span class="metric-label">Inter-Rack Latency</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val">99.999%</span>
+            <span class="metric-label">High-Availability SLA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-Time Telemetry HUD Preview -->
+      <aside class="hero-telemetry-hud" aria-label="Datacenter Live Telemetry">
+        <div class="hud-header">
+          <span class="hud-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Active Fabric Telemetry
+          </span>
+          <span class="hud-live-tag">● REALTIME SYNC</span>
+        </div>
+        <div class="hud-stats-row">
+          <div class="hud-stat-box">
+            <div class="hud-stat-num">400 GbE</div>
+            <div class="hud-stat-desc">Spine-Leaf Backbone</div>
+          </div>
+          <div class="hud-stat-box">
+            <div class="hud-stat-num">2.4M IOPS</div>
+            <div class="hud-stat-desc">NVMe Storage Bandwidth</div>
+          </div>
+        </div>
+        <div class="hud-terminal-preview">
+          <div class="line"><span class="cyan">[BGP]</span> AS65001 Peering Established: 2/2 Up (0 flap)</div>
+          <div class="line"><span class="green">[EVPN]</span> VXLAN VNI 10200 route-reflector sync complete</div>
+          <div class="line"><span class="cyan">[STORAGE]</span> NVMe-oF RoCE v2 path A/B redundant 100Gbps</div>
+          <div class="line"><span class="green">[STATUS]</span> Zero packet drops across 16 fabric links</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. INTERACTIVE CANVAS NETWORK PACKET FLOW & FAILOVER VISUALIZER
+       ========================================================================= -->
+  <section class="section-wrapper" id="network">
+    <div class="section-head">
+      <span class="section-tag">High-Availability Visualizer</span>
+      <h2 class="section-title">Zero-Trust Network Fabric & Real-Time Failover</h2>
+      <p class="section-sub">
+        Simulate multi-tier enterprise network traffic flowing across dual Tier-1 transit links, redundant Next-Gen Firewalls, 400G spine-leaf switches, virtualization hosts, and NVMe-oF SAN storage. Click any switch node to simulate an instant failover.
+      </p>
+    </div>
+
+    <div class="network-canvas-card">
+      <div class="network-controls-bar">
+        <div class="scenario-buttons-group">
+          <button type="button" class="btn-scenario active" id="btnNetNormal">Normal 100GbE Flow</button>
+          <button type="button" class="btn-scenario" id="btnNetFailover">Simulate Node Failure (Auto-Failover)</button>
+          <button type="button" class="btn-scenario" id="btnNetDdos">DDoS Scrubbing Stress Test</button>
+        </div>
+        <div class="status-live-banner" id="netStatusBanner">
+          <span class="badge-status-dot online"></span> Fabric Healthy: 100GbE Spine-Leaf Active (0 Dropped Packets)
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="networkCanvas" width="1200" height="580"></canvas>
+      </div>
+
+      <div class="network-telemetry-hud">
+        <div class="net-hud-item">
+          <span class="net-hud-val" id="hudThroughput">124.6 Gbps</span>
+          <span class="net-hud-label">Fabric Throughput</span>
+        </div>
+        <div class="net-hud-item">
+          <span class="net-hud-val" id="hudPacketRate">18.2 Mpps</span>
+          <span class="net-hud-label">Packet Processing Rate</span>
+        </div>
+        <div class="net-hud-item">
+          <span class="net-hud-val" id="hudLatency">0.14 ms</span>
+          <span class="net-hud-label">Core RTT Latency</span>
+        </div>
+        <div class="net-hud-item">
+          <span class="net-hud-val" id="hudActiveLinks">16 / 16</span>
+          <span class="net-hud-label">Active Uplink Meshes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. 42U SERVER RACK CONFIGURATOR & TELEMETRY SIMULATOR
+       ========================================================================= -->
+  <section class="section-wrapper" id="rackConfigurator">
+    <div class="section-head">
+      <span class="section-tag">Interactive Engineering</span>
+      <h2 class="section-title">42U Datacenter Server Rack Configurator</h2>
+      <p class="section-sub">
+        Assemble custom enterprise racks with 1U-precision hardware placement. Monitor real-time power draw (Watts & Amps), thermal dissipation (BTU/hr), static floor weight, and capex bill of materials.
+      </p>
+    </div>
+
+    <div class="rack-configurator-grid">
+      <!-- Left: Component Palette -->
+      <aside class="rack-palette-panel">
+        <h3 class="panel-title">Hardware Palette</h3>
+        <p class="panel-desc">Select a module below, then click any empty slot in the 42U chassis to mount it.</p>
+        <div class="palette-list" id="rackPaletteList">
+          <!-- Populated dynamically by RackBuilder -->
+        </div>
+      </aside>
+
+      <!-- Center: 42U Rack Chassis Viewport -->
+      <main class="rack-viewport-panel">
+        <div class="rack-chassis-header">
+          <span class="rack-chassis-title">Standard 42U EIA-310-E Enclosure</span>
+          <div class="rack-preset-buttons">
+            <button type="button" class="btn-preset" id="presetEnterprise">Enterprise vSphere</button>
+            <button type="button" class="btn-preset" id="presetAi">8-GPU AI Cluster</button>
+            <button type="button" class="btn-preset" id="presetClear">Empty Rack</button>
+          </div>
+        </div>
+
+        <div class="rack-slots-container" id="rackSlotsContainer">
+          <!-- Rendered dynamically from 42U down to 1U -->
+        </div>
+      </main>
+
+      <!-- Right: Real-Time Telemetry & Capex Panel -->
+      <aside class="rack-telemetry-panel">
+        <div class="rack-occupancy-card">
+          <div class="occupancy-header">
+            <span>Rack Space Utilization</span>
+            <span id="rackOccupiedPercent">0% Full</span>
+          </div>
+          <div class="occupancy-bar-track">
+            <div class="occupancy-bar-fill" id="rackOccupancyBar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="telemetry-specs-list">
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Occupied Units</span>
+            <span class="telemetry-row-val" id="rackOccupiedU">0 / 42U</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Power Draw (W)</span>
+            <span class="telemetry-row-val" id="rackTotalWatts">0 W</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Amperage @ 208V</span>
+            <span class="telemetry-row-val" id="rackAmps">0.0 A</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Thermal Output</span>
+            <span class="telemetry-row-val" id="rackTotalBtu">0 BTU/hr</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Required Airflow</span>
+            <span class="telemetry-row-val" id="rackRequiredCfm">0 CFM</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Total Static Weight</span>
+            <span class="telemetry-row-val" id="rackTotalWeight">120.0 kg</span>
+          </div>
+        </div>
+
+        <div class="rack-capex-card">
+          <span class="capex-label">Estimated Hardware Capex</span>
+          <div class="capex-val" id="rackTotalCapex">$0</div>
+          <span style="font-size: 0.6875rem; color: #94a3b8;">Includes enterprise hardware + factory testing</span>
+        </div>
+
+        <div class="rack-action-buttons">
+          <button type="button" class="btn-primary" id="btnAddRackToBom">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            <span>Add Configured Rack to Project BOM</span>
+          </button>
+          <button type="button" class="btn-secondary" id="btnExportRackBom">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Export Manifest (CSV)</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. ENTERPRISE STORAGE (NAS/SAN) IOPS & CAPACITY SIZER
+       ========================================================================= -->
+  <section class="section-wrapper" id="storageSizer">
+    <div class="section-head">
+      <span class="section-tag">Array Architecture</span>
+      <h2 class="section-title">Enterprise Storage (NAS/SAN) IOPS & Capacity Sizer</h2>
+      <p class="section-sub">
+        Calculate usable storage capacity, RAID parity overhead, write penalties, and maximum IOPS throughput based on drive counts, flash media, and inline deduplication ratios.
+      </p>
+    </div>
+
+    <div class="storage-sizer-card">
+      <div class="sizer-inputs-column">
+        <div class="form-group">
+          <label class="form-label" for="storageDriveCount">
+            <span>Drive Bay Count</span>
+          </label>
+          <div class="storage-preset-bar">
+            <button type="button" class="btn-storage-preset" data-drives="12">12 Bays</button>
+            <button type="button" class="btn-storage-preset active" data-drives="24">24 Bays</button>
+            <button type="button" class="btn-storage-preset" data-drives="48">48 Bays</button>
+            <button type="button" class="btn-storage-preset" data-drives="96">96 Bays</button>
+          </div>
+          <input type="number" id="storageDriveCount" class="form-input" min="6" max="192" value="24" step="2">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="storageDriveType">Drive Technology & Capacity</label>
+          <select id="storageDriveType" class="form-select">
+            <option value="nvme-3.84">3.84TB All-Flash NVMe Gen4 U.3 (100k IOPS/drive)</option>
+            <option value="nvme-7.68" selected>7.68TB All-Flash NVMe Gen4 U.3 (125k IOPS/drive)</option>
+            <option value="nvme-15.36">15.36TB High-Density Enterprise NVMe (140k IOPS/drive)</option>
+            <option value="sas-hdd-22">22TB Enterprise 7.2K SAS 12G HDD (Nearline / Backup)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="storageRaidType">Storage Topology & Protection</label>
+          <select id="storageRaidType" class="form-select">
+            <option value="raid6" selected>RAID 6 (Dual Distributed Parity — High Availability)</option>
+            <option value="raid10">RAID 10 (Striped Mirrors — Max Random IOPS & Performance)</option>
+            <option value="raidz2">ZFS RAID-Z2 (Self-Healing Checksums & Copy-On-Write)</option>
+            <option value="raid60">RAID 60 (Dual Distributed Parity across Sub-Arrays)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>Inline Deduplication & Compression Ratio</span>
+            <span id="storageDedupeVal" style="color: var(--cyan-primary); font-family: var(--font-mono);">1.8x</span>
+          </div>
+          <input type="range" id="storageDedupeRatio" class="form-range" min="1.0" max="3.5" step="0.1" value="1.8">
+          <span style="font-size: 0.6875rem; color: #64748b;">1.0x (Raw Media) | 1.8x (Databases / VMDKs) | 3.0x+ (VDI / Dev Environments)</span>
+        </div>
+      </div>
+
+      <div class="sizer-results-column">
+        <h3 class="results-heading">Calculated Storage Telemetry</h3>
+
+        <div class="capacity-callout-grid">
+          <div class="cap-callout-box">
+            <div class="cap-callout-num" id="storageRawCap">184.3 TB</div>
+            <div class="cap-callout-label">Raw Physical</div>
+          </div>
+          <div class="cap-callout-box">
+            <div class="cap-callout-num" id="storageUsableCap">168.9 TB</div>
+            <div class="cap-callout-label">Usable RAID</div>
+          </div>
+          <div class="cap-callout-box">
+            <div class="cap-callout-num" id="storageEffectiveCap" style="color: var(--emerald-status);">304.1 TB</div>
+            <div class="cap-callout-label">Effective (Dedupe)</div>
+          </div>
+        </div>
+
+        <div class="telemetry-specs-list" style="margin-top: var(--space-sm);">
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Random Read Performance</span>
+            <span class="telemetry-row-val" id="storageReadIOPS" style="color: var(--cyan-primary);">2,550,000 IOPS</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Random Write Performance</span>
+            <span class="telemetry-row-val" id="storageWriteIOPS">224,000 IOPS</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Sustained Sequential Throughput</span>
+            <span class="telemetry-row-val" id="storageThroughput">35.2 GB/s</span>
+          </div>
+          <div class="telemetry-row">
+            <span class="telemetry-row-label">Hardware Fault Tolerance</span>
+            <span class="telemetry-row-val" id="storageFaultTolerance">Any 2 simultaneous drive failures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. HARDWARE STORE CATALOG WITH CONTAINER QUERIES
+       ========================================================================= -->
+  <section class="section-wrapper" id="catalog">
+    <div class="section-head">
+      <span class="section-tag">Direct Material Supply</span>
+      <h2 class="section-title">Enterprise Hardware Store & Procurement</h2>
+      <p class="section-sub">
+        Official tier-1 distribution partner for Dell PowerEdge, Supermicro AI, Arista Networks, Fortinet, TrueNAS Enterprise, Synology, and APC Schneider Electric. Factory-certified with rapid dispatch.
+      </p>
+    </div>
+
+    <div class="catalog-tabs-bar" role="tablist">
+      <button type="button" class="filter-tab-btn active" data-filter="all" role="tab">All Hardware</button>
+      <button type="button" class="filter-tab-btn" data-filter="servers" role="tab">Compute &amp; AI Servers</button>
+      <button type="button" class="filter-tab-btn" data-filter="networking" role="tab">Spine-Leaf &amp; Firewalls</button>
+      <button type="button" class="filter-tab-btn" data-filter="storage" role="tab">Enterprise SAN &amp; NAS</button>
+      <button type="button" class="filter-tab-btn" data-filter="power" role="tab">Smart UPS &amp; PDUs</button>
+      <button type="button" class="filter-tab-btn" data-filter="cabling" role="tab">Fiber &amp; Cat6A Cabling</button>
+    </div>
+
+    <div class="catalog-products-grid" id="catalogProductsGrid">
+      <!-- Populated dynamically by SynapseApp -->
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. TURNKEY ENGINEERING SERVICES
+       ========================================================================= -->
+  <section class="section-wrapper" id="services">
+    <div class="section-head">
+      <span class="section-tag">On-Site Execution</span>
+      <h2 class="section-title">Turnkey Datacenter & Campus Engineering</h2>
+      <p class="section-sub">
+        Beyond material delivery, our certified field engineers design, rack, cable, cluster, and secure your systems with zero downtime and strict compliance standards.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+        </div>
+        <h3 class="service-title">Hyperconverged &amp; Virtualization</h3>
+        <p class="service-text">
+          VMware vSphere 8 / ESXi enterprise clusters, Proxmox VE 8 High-Availability Ceph clusters, and Nutanix Cloud Platform architectures with live vMotion and automatic failover.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="service-title">Zero-Trust &amp; EVPN-VXLAN Fabrics</h3>
+        <p class="service-text">
+          Carrier-grade multi-tenant spine-leaf campus and datacenter fabrics with BGP-EVPN overlay, 802.1X network access control, and microsegmented perimeter security.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+        </div>
+        <h3 class="service-title">White-Glove Structured Cabling</h3>
+        <p class="service-text">
+          Certified ISO/IEC 11801 and TIA-568-D compliant Cat6A shielded and OM4/OM5 fiber installations. Precision velcro dressing, laser loss testing, and full Fluke certification reports.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 class="service-title">Immutable Backup &amp; Disaster Recovery</h3>
+        <p class="service-text">
+          Air-gapped Linux hardened repositories, Veeam Cloud Connect, automated ZFS replication, and 15-minute RPO / 1-hour RTO disaster recovery automation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. TOP-LAYER DIALOGS: BOM DRAWER & 24/7 NOC MODAL
+       ========================================================================= -->
+  <!-- Project BOM Drawer -->
+  <dialog id="bomDrawer" aria-labelledby="bomDrawerTitle">
+    <div class="drawer-header">
+      <h2 class="drawer-title" id="bomDrawerTitle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+        Project Bill of Materials
+      </h2>
+      <button type="button" class="btn-close-dialog" id="btnCloseBomDrawer" aria-label="Close BOM Drawer">&times;</button>
+    </div>
+
+    <div class="bom-items-list" id="bomItemsList">
+      <!-- Populated dynamically -->
+    </div>
+
+    <div class="bom-options-box">
+      <span style="font-size: 0.6875rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">Turnkey Engineering &amp; SLA Add-Ons</span>
+      <label class="bom-checkbox-row">
+        <span><input type="checkbox" id="bomOptDeploy" checked> On-Site White-Glove Rack Integration</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+$3,500</span>
+      </label>
+      <label class="bom-checkbox-row">
+        <span><input type="checkbox" id="bomOptCabling" checked> Precision Fiber &amp; Cat6A Dressing + Fluke Certification</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+$1,800</span>
+      </label>
+      <label class="bom-checkbox-row">
+        <span><input type="checkbox" id="bomOptSla"> 3-Year 24/7 Managed NOC &amp; 4-Hour On-Site Hardware Replacement</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+18% Capex</span>
+      </label>
+    </div>
+
+    <div class="bom-totals-card">
+      <div class="bom-total-row">
+        <span>Hardware Capex Subtotal</span>
+        <span id="bomHardwareSubtotal">$0</span>
+      </div>
+      <div class="bom-total-row">
+        <span>Engineering &amp; SLA Services</span>
+        <span id="bomLaborSubtotal">$0</span>
+      </div>
+      <div class="bom-total-row grand">
+        <span>Grand Total (Excl. Tax)</span>
+        <span id="bomGrandTotal">$0</span>
+      </div>
+    </div>
+
+    <form id="bomRfqForm" style="display: flex; flex-direction: column; gap: var(--space-xs);">
+      <input type="text" class="form-input" placeholder="Organization / Company Name" required>
+      <input type="email" class="form-input" placeholder="Procurement Officer Work Email" required>
+      <input type="tel" class="form-input" placeholder="Direct Phone / Mobile" required>
+      <button type="submit" class="btn-primary" style="margin-top: 8px;">
+        <span>Request Official Stamped BOM Quote (PDF)</span>
+      </button>
+    </form>
+  </dialog>
+
+  <!-- 24/7 Emergency NOC Modal -->
+  <dialog id="nocModal" aria-labelledby="nocModalTitle">
+    <div class="drawer-header" style="border-bottom-color: rgba(244, 63, 94, 0.3);">
+      <h2 class="drawer-title" id="nocModalTitle" style="color: #fb7185;">
+        <span class="pulse-dot"></span>
+        24/7 Mission-Critical NOC Dispatch
+      </h2>
+      <button type="button" class="btn-close-dialog" id="btnCloseNocModal" aria-label="Close NOC Modal">&times;</button>
+    </div>
+
+    <div style="background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: var(--radius-md); padding: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--text-xs); color: #fecdd3;">
+      <strong>Guaranteed 15-Minute Critical Triage SLA:</strong> Dedicated tier-3 network and systems engineers on duty 24/7/365 with immediate hardware spare part dispatch.
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); background: #03060a; border-radius: var(--radius-sm); margin-bottom: var(--space-md); font-family: var(--font-mono); font-size: var(--text-xs);">
+      <span>Average Active SLA Engineer Response:</span>
+      <span id="nocSlaTimer" style="color: var(--rose-alert); font-weight: 800; font-size: 0.9375rem;">15:00</span>
+    </div>
+
+    <form id="nocTicketForm" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+      <div class="form-group">
+        <label class="form-label" for="nocPriority">Incident Severity Tier</label>
+        <select id="nocPriority" class="form-select" required>
+          <option value="p1">P1 Critical Outage (Complete Production / Fabric Down - 15m SLA)</option>
+          <option value="p2">P2 Degraded (Loss of Redundancy / Single PSU/Spine Failed - 2h SLA)</option>
+          <option value="p3">P3 Maintenance &amp; Routine Part Replacement (4h SLA)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nocFacility">Datacenter / Campus Facility</label>
+        <select id="nocFacility" class="form-select" required>
+          <option value="dc-casablanca">Casablanca Technopark / Nearshore Data Center (Morocco)</option>
+          <option value="dc-tangermed">Tanger Med Port &amp; Industrial Free Zone Hub (Morocco)</option>
+          <option value="dc-ny4">Equinix NY4 Secaucus (United States)</option>
+          <option value="dc-lon">Telehouse North Two London (United Kingdom)</option>
+          <option value="dc-fra">Interxion Frankfurt FRA4 (Germany)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nocServiceContract">Service Agreement / Contract ID</label>
+        <input type="text" id="nocServiceContract" class="form-input" placeholder="e.g. SYN-SLA-98214" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nocSymptoms">Failure Symptoms / Incident Brief</label>
+        <textarea id="nocSymptoms" class="form-input" rows="3" placeholder="Describe failing switch, amber drive lights, kernel panic, or link flap..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="background: #f43f5e; box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); margin-top: 4px;">
+        <span class="pulse-dot" style="background: #ffffff; box-shadow: 0 0 6px #fff;"></span>
+        <span>Dispatch On-Call Engineer &amp; Spares</span>
+      </button>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       9. FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a href="#hero" class="brand-logo" style="margin-bottom: var(--space-md); display: inline-flex;">
+          <span class="brand-name">SYNAPSE <span class="highlight">//</span> INFRASTRUCTURE</span>
+        </a>
+        <p style="font-size: var(--text-sm); color: var(--text-secondary); max-width: 320px; line-height: 1.6;">
+          Enterprise IT infrastructure procurement, precision datacenter engineering, 42U rack integration, and 24/7/365 managed network operations.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Hardware Verticals</h4>
+        <ul class="footer-links-list">
+          <li><a href="#catalog">Rackmount Servers (1U-4U)</a></li>
+          <li><a href="#catalog">AI / GPU Cluster SuperServers</a></li>
+          <li><a href="#catalog">100G / 400G Spine-Leaf Switches</a></li>
+          <li><a href="#catalog">Next-Gen FortiGate Firewalls</a></li>
+          <li><a href="#catalog">All-Flash NVMe SAN / NAS</a></li>
+          <li><a href="#catalog">Lithium-Ion Double-Conversion UPS</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Engineering Tools</h4>
+        <ul class="footer-links-list">
+          <li><a href="#rackConfigurator">42U Server Rack Builder</a></li>
+          <li><a href="#network">Network Packet Flow Canvas</a></li>
+          <li><a href="#storageSizer">Storage IOPS &amp; Capacity Sizer</a></li>
+          <li><a href="#hero" id="footerOpenBom">Project BOM Manifest</a></li>
+          <li><a href="#hero" id="footerOpenNoc">24/7 Emergency NOC Hotline</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Regional Facilities</h4>
+        <ul class="footer-links-list">
+          <li><span>Casablanca Nearshore (MA)</span></li>
+          <li><span>Tanger Med Industrial Hub (MA)</span></li>
+          <li><span>Frankfurt Am Main (DE)</span></li>
+          <li><span>London Docklands (UK)</span></li>
+          <li><span>New York Metro (US)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Synapse Infrastructure SARL. All rights reserved. ISO 27001 Certified.</span>
+      <span>Enterprise IT Material Supply • Structured Cabling • Managed NOC</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/network-canvas.js"></script>
+  <script src="js/rack-builder.js"></script>
+  <script src="js/storage-calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
