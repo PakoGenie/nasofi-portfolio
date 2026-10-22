@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect width="200" height="60" rx="8" fill="#0D1A30" stroke="#1E293B" stroke-width="1"/>
+  <!-- Green bar characteristic of BMCI / BNP Paribas -->
+  <rect x="14" y="16" width="28" height="28" rx="4" fill="#00965E"/>
+  <!-- 4 white stars / motion dots -->
+  <circle cx="21" cy="30" r="2.5" fill="#FFFFFF"/>
+  <circle cx="28" cy="25" r="2.5" fill="#FFFFFF"/>
+  <circle cx="28" cy="35" r="2.5" fill="#FFFFFF"/>
+  <circle cx="35" cy="30" r="2.5" fill="#FFFFFF"/>
+  <text x="50" y="33" font-family="'Outfit', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" letter-spacing="0.5">BMCI</text>
+  <text x="51" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="7.5" fill="#94A3B8" letter-spacing="0.5">GROUPE BNP PARIBAS</text>
+  <rect x="148" y="18" width="40" height="15" rx="3" fill="#00965E" fill-opacity="0.2"/>
+  <text x="152" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="7" fill="#34D399">PARTENAIRE</text>
+</svg>

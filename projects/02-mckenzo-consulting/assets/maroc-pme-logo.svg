@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect width="200" height="60" rx="8" fill="#0D1A30" stroke="#1E293B" stroke-width="1"/>
+  <!-- Maroc PME hexagon icon -->
+  <polygon points="28,18 39,24 39,36 28,42 17,36 17,24" fill="#0284C7" fill-opacity="0.25" stroke="#38BDF8" stroke-width="1.5"/>
+  <path d="M24 30 L32 30 M28 26 L28 34" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+  <text x="48" y="31" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" letter-spacing="0.3">MAROC PME</text>
+  <text x="48" y="43" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="7.5" fill="#38BDF8">ASSISTANCE 80% - 90%</text>
+</svg>

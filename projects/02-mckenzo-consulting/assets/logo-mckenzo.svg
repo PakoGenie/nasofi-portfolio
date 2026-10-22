@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <linearGradient id="mEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="mGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  <!-- Monogram Hexagon Badge -->
+  <polygon points="40,8 68,24 68,56 40,72 12,56 12,24" fill="#0B1528" stroke="url(#mEmerald)" stroke-width="2.5" />
+  <path d="M26,52 L26,28 L35,42 L45,28 L45,52" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="56" cy="24" r="4.5" fill="url(#mGold)" />
+  
+  <!-- Text -->
+  <text x="82" y="38" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" fill="#F8FAFC" letter-spacing="-0.5">McKenzo <tspan fill="#34D399">&amp; Co.</tspan></text>
+  <text x="83" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="9" fill="#94A3B8" letter-spacing="1.8">BUREAU D'ÉTUDES GÉNÉRALES &amp; STRATÉGIE</text>
+</svg>

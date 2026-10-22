@@ -3,92 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>McKenzo & Co. | Conseil en Stratégie, Ingénierie & Études d'Impact Environnemental</title>
-  <meta name="description" content="Cabinet de conseil en stratégie, management et bureau d'études générales et d'impact sur l'environnement. Notre engagement, votre réussite.">
-  
-  <!-- Canonical & Domain Target -->
-  <link rel="canonical" href="https://mcknzo.co">
+  <title>McKenzo & Co. | Bureau d'Études Générales, Ingénierie & Stratégie Industrielle au Maroc</title>
+  <meta name="description" content="Cabinet McKenzo & Co SARL — Bureau d'études générales agréé (Capital 100 000 MAD). Direction M. SALHI Anass. Primes Charte TPME 30%, PACT'Transmission 90%, Tanger Med et dossiers bancables Tamwilcom.">
+  <link rel="canonical" href="https://www.mckenzo.co">
 
-  <!-- Performance & Fonts -->
+  <!-- Performance & High-Quality Typography (Latin & Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Vector Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <!-- GSAP 3 & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
-  <!-- Lenis Smooth Scroll -->
+
+  <!-- Lenis Smooth Momentum Scroll -->
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
-  <!-- Modern Web Design System -->
+  <!-- Modern Web Design System Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Ambient Atmospheric Backdrops -->
   <div class="ambient-glow glow-emerald" aria-hidden="true"></div>
   <div class="ambient-glow glow-navy" aria-hidden="true"></div>
+  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
 
   <!-- Top Institutional Bar -->
   <div class="top-bar">
     <div class="container flex-between text-xs">
       <div class="flex-align gap-3">
         <span class="slogan-badge">
-          <i data-lucide="compass" class="icon-xs" aria-hidden="true"></i>
-          <span>Notre engagement, votre réussite.</span>
+          <i data-lucide="compass" class="icon-xs text-gold" aria-hidden="true"></i>
+          <span data-i18n="top_slogan">De l'idée au financement, de l'usine à la transmission : un seul partenaire.</span>
         </span>
         <span class="divider">|</span>
-        <span class="text-muted hide-mobile">Bureau d'études générales & d'impact sur l'environnement agréé</span>
+        <span class="text-muted hide-mobile" data-i18n="top_badge">Bureau d'études générales agréé • Capital 100 000 MAD</span>
       </div>
+
       <div class="flex-align gap-4">
-        <div class="lang-selector flex-align gap-1" role="group" aria-label="Choix de langue">
+        <!-- Trilingual Language Switcher (FR | العربية | EN) -->
+        <div class="lang-selector" role="group" aria-label="Choix de langue / Language selector">
           <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
-          <span class="text-muted" aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang="ar" aria-pressed="false">العربية</button>
           <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
+
         <span class="divider">|</span>
-        <a href="mailto:contact@mcknzo.co" class="top-contact-link flex-align gap-1">
-          <i data-lucide="mail" class="icon-xs" aria-hidden="true"></i>
-          <span>contact@mcknzo.co</span>
+        <a href="tel:+212808598465" class="top-contact-link flex-align gap-1">
+          <i data-lucide="phone" class="icon-xs text-emerald" aria-hidden="true"></i>
+          <span class="font-mono">+212 808 598 465</span>
+        </a>
+        <span class="divider">|</span>
+        <a href="mailto:contact@mckenzo.ma" class="top-contact-link flex-align gap-1 hide-mobile">
+          <i data-lucide="mail" class="icon-xs text-emerald" aria-hidden="true"></i>
+          <span>contact@mckenzo.ma</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Site Header -->
+  <!-- Site Sticky Header -->
   <header class="site-header" id="header">
     <div class="container flex-between">
       <a href="#" class="brand-logo" aria-label="McKenzo & Co. Accueil">
-        <div class="brand-mark">
-          <span class="mark-letter">M</span>
-          <div class="mark-leaf" aria-hidden="true"></div>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">McKenzo & Co.</span>
-          <span class="brand-tagline">STRATÉGIE • INGÉNIERIE • ENVIRONNEMENT</span>
-        </div>
+        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." class="brand-logo-img">
       </a>
 
+      <!-- Desktop Navigation -->
       <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#cabinet" class="nav-link">Le Cabinet</a>
-        <a href="#expertises" class="nav-link">Pôles d'Expertise</a>
-        <a href="#diagnostic" class="nav-link">Diagnostic ESG & EIE</a>
-        <a href="#references" class="nav-link">Projets Phares</a>
-        <a href="#methodologie" class="nav-link">Normes & SFI</a>
-        <a href="#bureaux" class="nav-link">Implantations</a>
+        <a href="#cabinet" class="nav-link" data-i18n="nav_cabinet">Le Cabinet</a>
+        <a href="#offres" class="nav-link" data-i18n="nav_flagships">4 Offres Phares</a>
+        <a href="#poles" class="nav-link" data-i18n="nav_poles">5 Pôles d'Expertise</a>
+        <a href="#parcours" class="nav-link" data-i18n="nav_lifecycle">Parcours A-Z</a>
+        <a href="#tangermed" class="nav-link" data-i18n="nav_tangermed">Tanger Med</a>
+        <a href="#simulateur" class="nav-link" data-i18n="nav_simulator">Simulateur d'Aides</a>
+        <a href="#accreditations" class="nav-link" data-i18n="nav_credentials">Accréditations</a>
       </nav>
 
+      <!-- Action Buttons & Mobile Responsive Switcher -->
       <div class="nav-actions flex-align gap-3">
-        <button class="btn btn-outline-emerald" id="btnOpenRFP" aria-haspopup="dialog">
-          <i data-lucide="file-check" class="icon-sm" aria-hidden="true"></i>
-          <span>Déposer un TDR</span>
+        <!-- Compact Header Language Switcher (Visible on Mobile & Tablet) -->
+        <div class="lang-selector header-lang-selector" role="group" aria-label="Choix de langue rapide">
+          <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" data-lang="ar" aria-pressed="false">العربية</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="btn btn-outline-gold btn-sm" data-action="open-booking" aria-haspopup="dialog">
+          <i data-lucide="phone-call" class="icon-xs text-gold" aria-hidden="true"></i>
+          <span data-i18n="nav_call_btn">Appel 15 Min Gratuit</span>
         </button>
-        <a href="#diagnostic" class="btn btn-emerald">
-          <span>Diagnostic Projet</span>
-          <i data-lucide="arrow-right" class="icon-sm" aria-hidden="true"></i>
+        <a href="#simulateur" class="btn btn-emerald btn-sm hide-mobile">
+          <i data-lucide="calculator" class="icon-xs" aria-hidden="true"></i>
+          <span data-i18n="nav_sim_btn">Calculer mes Primes</span>
         </a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
           <i data-lucide="menu" aria-hidden="true"></i>
@@ -101,22 +111,33 @@
   <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
     <div class="mobile-drawer-header flex-between">
       <div class="brand-logo">
-        <div class="brand-mark"><span class="mark-letter">M</span></div>
-        <span class="brand-name">McKenzo & Co.</span>
+        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." style="height: 38px;">
       </div>
-      <button class="btn-close" id="btnCloseMobileDrawer" aria-label="Fermer le menu">&times;</button>
+      <button class="btn-ghost" id="btnCloseMobileDrawer" aria-label="Fermer le menu">&times;</button>
     </div>
+
+    <!-- Mobile Drawer Language Selector -->
+    <div class="mobile-drawer-lang flex-between mt-3 mb-2">
+      <span class="text-xs text-muted" data-i18n="top_lang_label">Langue / اللغة :</span>
+      <div class="lang-selector" role="group" aria-label="Choix de langue mobile">
+        <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" data-lang="ar" aria-pressed="false">العربية</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
     <div class="mobile-drawer-links">
-      <a href="#cabinet" class="mobile-nav-link">Le Cabinet</a>
-      <a href="#expertises" class="mobile-nav-link">Pôles d'Expertise</a>
-      <a href="#diagnostic" class="mobile-nav-link">Diagnostic ESG & EIE</a>
-      <a href="#references" class="mobile-nav-link">Projets Phares</a>
-      <a href="#methodologie" class="mobile-nav-link">Normes & SFI</a>
-      <a href="#bureaux" class="mobile-nav-link">Bureaux Maroc & Sénégal</a>
+      <a href="#cabinet" class="mobile-nav-link" data-i18n="nav_cabinet">Le Cabinet</a>
+      <a href="#offres" class="mobile-nav-link" data-i18n="nav_flagships">4 Offres Phares</a>
+      <a href="#poles" class="mobile-nav-link" data-i18n="nav_poles">5 Pôles d'Expertise</a>
+      <a href="#parcours" class="mobile-nav-link" data-i18n="nav_lifecycle">Parcours A-Z</a>
+      <a href="#tangermed" class="mobile-nav-link" data-i18n="nav_tangermed">Tanger Med</a>
+      <a href="#simulateur" class="mobile-nav-link" data-i18n="nav_simulator">Simulateur d'Aides</a>
+      <a href="#accreditations" class="mobile-nav-link" data-i18n="nav_credentials">Accréditations</a>
     </div>
     <div class="mobile-drawer-footer">
-      <button class="btn btn-emerald full-width mb-3" id="btnMobileAudit">Déposer un Terme de Référence</button>
-      <a href="mailto:contact@mcknzo.co" class="btn btn-outline-emerald full-width text-center">contact@mcknzo.co</a>
+      <button class="btn btn-gold full-width mb-2" data-action="open-booking" data-i18n="nav_call_btn">Appel 15 Min Gratuit</button>
+      <a href="tel:+212808598465" class="btn btn-outline-emerald full-width text-center font-mono">+212 808 598 465</a>
     </div>
   </aside>
 
@@ -125,690 +146,1030 @@
     <section class="hero-section" id="hero">
       <div class="hero-bg-media" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
-      
+
       <div class="container hero-content">
-        <div class="hero-badge" data-gsap="fade-up">
+        <div class="hero-badge">
           <i data-lucide="shield-check" class="icon-emerald" aria-hidden="true"></i>
-          <span>Bureau d'Études Générales Agréé & Conseil Stratégique International</span>
+          <span data-i18n="hero_badge">Bureau d'Études Générales Agréé — Direction M. SALHI Anass</span>
         </div>
 
-        <h1 class="hero-title" data-gsap="fade-up" data-delay="0.1">
-          Façonner des Projets Durables, <br>
-          <span class="emerald-gradient-text">Piloter l'Excellence Stratégique.</span>
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_1">L'Ingénierie Financière, Industrielle & Stratégique</span><br>
+          <span class="emerald-gradient-text" data-i18n="hero_title_2">au Service de l'Investisseur au Maroc.</span>
         </h1>
 
-        <p class="hero-subtitle" data-gsap="fade-up" data-delay="0.2">
-          Cabinet panafricain de référence alliant conseil en stratégie d'entreprise, bureau d'études techniques et évaluations d'impact environnemental et social (EIES) conformes aux standards SFI / Banque Mondiale.
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Du montage de subventions (Charte TPME jusqu'à 30%, Maroc PME) aux études de faisabilité bancables signées par nos ingénieurs, de l'implantation à Tanger Med à l'évaluation certifiée avec nos experts judiciaires.
         </p>
 
-        <div class="hero-cta-group flex-align gap-4" data-gsap="fade-up" data-delay="0.3">
-          <a href="#diagnostic" class="btn btn-emerald btn-lg">
-            <span>Lancer le Diagnostic Interactif</span>
-            <i data-lucide="sparkles" class="icon-sm" aria-hidden="true"></i>
+        <div class="hero-cta-group">
+          <button class="btn btn-gold btn-lg" data-action="open-booking">
+            <i data-lucide="phone-call" class="icon-sm" aria-hidden="true"></i>
+            <span data-i18n="hero_cta_booking">Réserver un Diagnostic 15 Min (Gratuit)</span>
+          </button>
+          <a href="#simulateur" class="btn btn-emerald btn-lg">
+            <i data-lucide="calculator" class="icon-sm" aria-hidden="true"></i>
+            <span data-i18n="hero_cta_simulator">Simulateur d'Aides à l'Investissement</span>
           </a>
-          <a href="#expertises" class="btn btn-glass btn-lg">
-            <i data-lucide="layers" class="icon-sm" aria-hidden="true"></i>
-            <span>Découvrir Nos 4 Pôles</span>
+          <a href="#tangermed" class="btn btn-glass btn-lg">
+            <i data-lucide="anchor" class="icon-sm text-gold" aria-hidden="true"></i>
+            <span data-i18n="hero_cta_tanger">Découvrir l'Offre Tanger Med</span>
           </a>
         </div>
 
-        <!-- Institutional Metrics Ribbon with Animated Counters -->
-        <div class="hero-stats-ribbon" data-gsap="fade-up" data-delay="0.4">
+        <!-- Institutional Metrics Ribbon -->
+        <div class="hero-stats-ribbon">
           <div class="ribbon-card">
-            <div class="ribbon-number"><span class="counter" data-target="150">0</span>+</div>
-            <div class="ribbon-label">Projets Stratégiques Menés</div>
-            <p class="ribbon-sub">Énergie, mines, ports, BTP & agro-industrie</p>
+            <div class="ribbon-number"><span data-i18n="stat_capital_val">100 000</span> <small class="text-xs" data-i18n="stat_capital_unit">MAD</small></div>
+            <div class="ribbon-label" data-i18n="stat_capital_label">Capital Social Enregistré</div>
+            <p class="ribbon-sub" data-i18n="stat_capital_sub">SARL agréée bureau d'études</p>
           </div>
+
           <div class="ribbon-card">
-            <div class="ribbon-number"><span class="counter" data-target="100">0</span>%</div>
-            <div class="ribbon-label">Conformité SFI & ISO 14001</div>
-            <p class="ribbon-sub">Directives environnementales internationales</p>
+            <div class="ribbon-number gold"><span data-i18n="stat_subsidy_val">30%</span> <small class="text-xs" data-i18n="stat_subsidy_unit">Capex</small></div>
+            <div class="ribbon-label" data-i18n="stat_subsidy_label">Prime Charte TPME</div>
+            <p class="ribbon-sub" data-i18n="stat_subsidy_sub">Projets de 1 à 50 MDH</p>
           </div>
+
           <div class="ribbon-card">
-            <div class="ribbon-number"><span class="counter" data-target="1.8" data-decimal="1">0</span> Md€</div>
-            <div class="ribbon-label">Valeur d'Actifs Analysés</div>
-            <p class="ribbon-sub">Études de faisabilité & schémas directeurs</p>
+            <div class="ribbon-number"><span data-i18n="stat_transmission_val">90%</span> <small class="text-xs" data-i18n="stat_transmission_unit">Financé</small></div>
+            <div class="ribbon-label" data-i18n="stat_transmission_label">PACT'Transmission</div>
+            <p class="ribbon-sub" data-i18n="stat_transmission_sub">Maroc PME (Plafond 1 MDH)</p>
           </div>
+
           <div class="ribbon-card">
-            <div class="ribbon-number">Maroc • Sénégal</div>
-            <div class="ribbon-label">Ancrage Régional Fort</div>
-            <p class="ribbon-sub">Béni Mellal, Casablanca & Dakar</p>
+            <div class="ribbon-number gold" data-i18n="stat_partner_val">Cour d'Appel</div>
+            <div class="ribbon-label" data-i18n="stat_partner_label">Cabinet Cherkaoui</div>
+            <p class="ribbon-sub" data-i18n="stat_partner_sub">Expert judiciaire assermenté</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Le Cabinet / Identity -->
-    <section class="section bg-surface" id="cabinet">
-      <div class="container">
-        <div class="grid-2-col items-center gap-8">
-          <div class="cabinet-text" data-gsap="fade-up">
-            <span class="section-tag">Notre Mission</span>
-            <h2 class="section-title">L'Alliance Unique de la Vision C-Level et de la Rigueur d'Ingénierie</h2>
-            <p class="paragraph mb-4">
-              Chez <strong>McKenzo & Co.</strong>, nous comblons le fossé traditionnel entre les cabinets de stratégie abstraits et les bureaux d'études purement techniques. Nous apportons une réponse globale aux investisseurs et aux gouvernements :
-            </p>
-            <p class="paragraph mb-6">
-              De l'audit d'impact environnemental (EIES) requis pour débloquer les financements multilatéraux, à la modélisation hydraulique de pointe, jusqu'à la réorganisation managériale d'opérateurs industriels, notre exigence garantit la viabilité totale de vos actifs.
-            </p>
-
-            <div class="values-grid">
-              <div class="value-item">
-                <div class="value-icon"><i data-lucide="check-circle" class="icon-emerald" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Agréments & Conformité Institutionnelle</strong>
-                  <p>Habilité pour les études d'impact environnemental réglementaires selon les législations nationales et internationales.</p>
-                </div>
-              </div>
-              <div class="value-item">
-                <div class="value-icon"><i data-lucide="cpu" class="icon-emerald" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Modélisation Technique & Outils Avancés</strong>
-                  <p>Simulation acoustique, SIG cartographique de précision, bilans carbone et modélisation des écoulements fluides.</p>
-                </div>
-              </div>
-              <div class="value-item">
-                <div class="value-icon"><i data-lucide="globe-2" class="icon-emerald" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Impact Territorial & Acceptabilité Sociale</strong>
-                  <p>Gestion des enquêtes publiques, concertation des populations locales et élaboration des plans de réinstallation (PAR).</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cabinet-visual" data-gsap="fade-up" data-delay="0.2">
-            <div class="image-stack">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Siège et salle de conseil stratégique McKenzo" class="img-main" loading="lazy">
-              <div class="image-accent-card">
-                <div class="accent-icon"><i data-lucide="award" aria-hidden="true"></i></div>
-                <div>
-                  <strong class="text-white block font-heading">Cabinet Panafricain Agréé</strong>
-                  <small class="text-emerald">Excellence technique & engagement terrain</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4 Pôles d'Expertise (Container Queries Enabled) -->
-    <section class="section" id="expertises">
+    <!-- 4 Flagship Subsidized Offers Section -->
+    <section class="section bg-surface" id="offres">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Pôles d'Excellence</span>
-          <h2 class="section-title">Une Offre Intégrée pour Projets à Haute Valeur Ajoutée</h2>
-          <p class="section-subtitle">
-            Chaque pôle est piloté par des experts seniors cumulant plus de 15 ans d'expérience opérationnelle sur le continent africain.
+          <span class="section-tag tag-gold" data-i18n="flagship_tag">Offres Phares Subventionnées</span>
+          <h2 class="section-title" data-i18n="flagship_title">4 Dispositifs Stratégiques pour Financer & Accélérer Vos Projets</h2>
+          <p class="section-subtitle" data-i18n="flagship_sub">
+            McKenzo & Co. package, certifie et dépose vos dossiers auprès des guichets uniques CRI, Maroc PME et Tamwilcom avec un engagement de résultat.
           </p>
         </div>
 
-        <div class="practice-cards-grid">
-          <!-- Pôle 1 -->
-          <article class="practice-box" data-gsap="fade-up">
-            <div class="practice-header">
-              <div class="icon-bubble"><i data-lucide="trending-up" aria-hidden="true"></i></div>
-              <span class="p-num">01</span>
+        <div class="flagship-grid">
+          <!-- Flagship 1: Charte TPME -->
+          <article class="flagship-card featured">
+            <div class="flagship-badge badge-gold" data-i18n="flag_1_badge">Charte TPME</div>
+            <div class="flagship-icon-box icon-gold">
+              <i data-lucide="landmark" class="icon-md" aria-hidden="true"></i>
             </div>
-            <h3 class="practice-box-title">Conseil en Stratégie & Management</h3>
-            <p class="practice-box-desc">
-              Accompagnement des directions générales dans la définition de trajectoires de croissance durable, la refonte des organisations et l'optimisation des performances opérationnelles.
+            <h3 class="flagship-title" data-i18n="flag_1_title">Primes à l'Investissement Nouvelle Charte</h3>
+            <div class="flagship-metric-pill gold">
+              <span data-i18n="flag_1_metric">Jusqu'à 30%</span>
+              <small data-i18n="flag_1_metric_sub">de subvention directe sur Capex</small>
+            </div>
+            <p class="flagship-desc" data-i18n="flag_1_desc">
+              Prise en charge intégrale du montage technico-financier et dépôt au Guichet Unique des CRI pour des projets de 1 à 50 MDH. Primes territoriales, d'emploi et de transition verte.
             </p>
-            <ul class="practice-list">
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Schémas directeurs & plans stratégiques</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Restructuration & conduite du changement</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Partenariats Public-Privé (PPP) & Due Diligence</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Tableaux de bord de pilotage exécutif</li>
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f1">Étude technico-économique signée par ingénieur</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f2">Business plan bancable sur 5 à 7 ans</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f3">Suivi d'instruction jusqu'à conventionnement</span></li>
             </ul>
-            <button class="btn-text-link" data-action="explore-practice" data-pillar="strat">
-              <span>Consulter le cahier des charges type</span>
-              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            <button class="btn btn-outline-gold full-width" data-action="open-booking">
+              <span data-i18n="flag_cta">Tester mon éligibilité</span>
+              <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
             </button>
           </article>
 
-          <!-- Pôle 2: Featured -->
-          <article class="practice-box featured" data-gsap="fade-up" data-delay="0.1">
-            <div class="practice-badge">Pôle Majeur Agréé</div>
-            <div class="practice-header">
-              <div class="icon-bubble icon-emerald-bg"><i data-lucide="leaf" aria-hidden="true"></i></div>
-              <span class="p-num">02</span>
+          <!-- Flagship 2: PACT'Transmission -->
+          <article class="flagship-card">
+            <div class="flagship-badge" data-i18n="flag_2_badge">Cession & Reprise</div>
+            <div class="flagship-icon-box">
+              <i data-lucide="scale" class="icon-md" aria-hidden="true"></i>
             </div>
-            <h3 class="practice-box-title">Études d'Impact Environnemental & RSE</h3>
-            <p class="practice-box-desc">
-              Réalisation certifiée des Études d'Impact Environnemental et Social (EIES), plans de gestion (PGES), bilans carbone et mise en conformité avec les standards de la Banque Mondiale.
+            <h3 class="flagship-title" data-i18n="flag_2_title">Transmission d'Entreprise — PACT'Transmission</h3>
+            <div class="flagship-metric-pill">
+              <span data-i18n="flag_2_metric">90% Pris en charge</span>
+              <small data-i18n="flag_2_metric_sub">par Maroc PME (Plafond 1 MDH)</small>
+            </div>
+            <p class="flagship-desc" data-i18n="flag_2_desc">
+              Diagnostic de transmissibilité, valorisation financière multicritères avec le Cabinet Cherkaoui assermenté, et recherche de repreneurs/investisseurs.
             </p>
-            <ul class="practice-list">
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> EIE réglementaires & audits EIES SFI</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Normes de Performance SFI 1 à 8</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Bilan Carbone & Stratégies Décarbonation</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Plans d'Engagement des Parties Prenantes</li>
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_2_f1">Évaluation financière certifiée (DCF, comparables)</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_2_f2">Dossier de subvention Maroc PME à 90%</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_2_f3">Accompagnement négociation et closing</span></li>
             </ul>
-            <button class="btn-text-link" data-action="explore-practice" data-pillar="env">
-              <span>Consulter le cahier des charges type</span>
-              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            <button class="btn btn-outline-emerald full-width" data-action="open-booking">
+              <span data-i18n="flag_cta">Tester mon éligibilité</span>
+              <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
             </button>
           </article>
 
-          <!-- Pôle 3 -->
-          <article class="practice-box" data-gsap="fade-up" data-delay="0.2">
-            <div class="practice-header">
-              <div class="icon-bubble"><i data-lucide="hard-hat" aria-hidden="true"></i></div>
-              <span class="p-num">03</span>
+          <!-- Flagship 3: Maroc PME Assistance -->
+          <article class="flagship-card">
+            <div class="flagship-badge" data-i18n="flag_3_badge">Conseil Financé</div>
+            <div class="flagship-icon-box">
+              <i data-lucide="award" class="icon-md" aria-hidden="true"></i>
             </div>
-            <h3 class="practice-box-title">Bureau d'Études Générales & Ingénierie</h3>
-            <p class="practice-box-desc">
-              Conception technique d'infrastructures, modélisation hydraulique, dimensionnement VRD et calculs de structures industrielles et d'énergies renouvelables.
+            <h3 class="flagship-title" data-i18n="flag_3_title">Assistance Technique & Qualité Maroc PME</h3>
+            <div class="flagship-metric-pill">
+              <span data-i18n="flag_3_metric">80% à 90%</span>
+              <small data-i18n="flag_3_metric_sub">de subvention sur honoraires</small>
+            </div>
+            <p class="flagship-desc" data-i18n="flag_3_desc">
+              Missions d'audit opérationnel, restructuration industrielle, préparation aux certifications ISO 9001 / 22000 / ONSSA et transformation digitale.
             </p>
-            <ul class="practice-list">
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Avant-projets sommaires & détaillés (APS / APD)</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Schémas directeurs d'eau potable & STEP</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Infrastructures solaires et parcs éoliens</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Dossiers de consultation (DCE) & métrés</li>
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_3_f1">80% subventionné pour PME, 90% pour TPE</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_3_f2">Optimisation des flux et supply chain</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_3_f3">Feuille de route industrie du futur</span></li>
             </ul>
-            <button class="btn-text-link" data-action="explore-practice" data-pillar="ing">
-              <span>Consulter le cahier des charges type</span>
-              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            <button class="btn btn-outline-emerald full-width" data-action="open-booking">
+              <span data-i18n="flag_cta">Tester mon éligibilité</span>
+              <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
             </button>
           </article>
 
-          <!-- Pôle 4 -->
-          <article class="practice-box" data-gsap="fade-up" data-delay="0.3">
-            <div class="practice-header">
-              <div class="icon-bubble"><i data-lucide="check-square" aria-hidden="true"></i></div>
-              <span class="p-num">04</span>
+          <!-- Flagship 4: CBAM Carbone Export -->
+          <article class="flagship-card">
+            <div class="flagship-badge" data-i18n="flag_4_badge">Export Europe</div>
+            <div class="flagship-icon-box">
+              <i data-lucide="leaf" class="icon-md" aria-hidden="true"></i>
             </div>
-            <h3 class="practice-box-title">Assistance à Maîtrise d'Ouvrage (AMO)</h3>
-            <p class="practice-box-desc">
-              Supervision indépendante garantissant aux maîtres d'ouvrage publics et privés le strict respect des budgets, des plannings prévisionnels et de la sécurité des chantiers.
+            <h3 class="flagship-title" data-i18n="flag_4_title">Diagnostic Carbone CBAM / MACF</h3>
+            <div class="flagship-metric-pill">
+              <span data-i18n="flag_4_metric">80% à 90%</span>
+              <small data-i18n="flag_4_metric_sub">financé via appui vert</small>
+            </div>
+            <p class="flagship-desc" data-i18n="flag_4_desc">
+              Audit d'émissions GES, calcul de l'empreinte carbone produit selon les normes européennes MACF et plan d'action de décarbonation pour exportateurs vers l'UE.
             </p>
-            <ul class="practice-list">
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Direction de programme & PMO dédié</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Contrôle qualité & conformité technique</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Surveillance environnementale de chantier (SEC)</li>
-              <li><i data-lucide="chevron-right" class="icon-xs icon-emerald" aria-hidden="true"></i> Assistance aux opérations de réception</li>
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_4_f1">Bilan carbone Scope 1, 2 et 3</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_4_f2">Conformité réglementaire européenne CBAM</span></li>
+              <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_4_f3">Dossiers d'efficacité énergétique et solaire</span></li>
             </ul>
-            <button class="btn-text-link" data-action="explore-practice" data-pillar="amo">
-              <span>Consulter le cahier des charges type</span>
-              <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
+            <button class="btn btn-outline-emerald full-width" data-action="open-booking">
+              <span data-i18n="flag_cta">Tester mon éligibilité</span>
+              <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
             </button>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Tool: Diagnostic ESG & Faisabilité de Projet -->
-    <section class="section diagnostic-section" id="diagnostic">
+    <!-- Interactive Tool #1: Subsidies Simulator -->
+    <section class="section" id="simulateur">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Outil Décisionnel Propriétaire</span>
-          <h2 class="section-title">Diagnostic d'Impact & Cadrage Réglementaire</h2>
-          <p class="section-subtitle">
-            Configurez les paramètres de votre investissement pour calculer instantanément les exigences réglementaires et estimer le plan d'études approprié.
+          <span class="section-tag" data-i18n="sim_tag">Simulateur Interactif Officiel</span>
+          <h2 class="section-title" data-i18n="sim_title">Estimez Vos Primes & Subventions Non Remboursables</h2>
+          <p class="section-subtitle" data-i18n="sim_sub">
+            Configurez les paramètres de votre entreprise et découvrez instantanément le volume d'aides de l'État mobilisables (Charte TPME, Maroc PME, Tamwilcom).
           </p>
         </div>
 
-        <div class="diag-card" id="diagApp">
-          <!-- Stepper Navigation -->
-          <div class="diag-stepper flex-between">
-            <div class="diag-step-node active" data-step="1">
-              <span class="node-num">1</span>
-              <span class="node-title">Typologie & Secteur</span>
-            </div>
-            <div class="diag-bar" id="diagBar1"></div>
-            <div class="diag-step-node" data-step="2">
-              <span class="node-num">2</span>
-              <span class="node-title">Maturité & Échelle</span>
-            </div>
-            <div class="diag-bar" id="diagBar2"></div>
-            <div class="diag-step-node" data-step="3">
-              <span class="node-num">3</span>
-              <span class="node-title">Feuille de Route</span>
-            </div>
-          </div>
-
-          <!-- Step 1: Industry Sector -->
-          <div class="diag-panel active" id="diagStep1">
-            <h3 class="diag-q">1. Quel est le secteur d'activité de votre projet ?</h3>
-            <div class="diag-options-grid">
-              <label class="diag-option">
-                <input type="radio" name="diagSector" value="Énergies Renouvelables" checked>
-                <div class="diag-opt-box">
-                  <i data-lucide="sun-medium" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Énergies Renouvelables & Climat</h4>
-                  <p>Parcs solaires photovoltaïques, éoliens, hydrogène vert, lignes d'évacuation HTA/HTB.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagSector" value="Industrie & Mines">
-                <div class="diag-opt-box">
-                  <i data-lucide="factory" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Industrie Lourde, Mines & Chimie</h4>
-                  <p>Exploitations minières, carrières, usines métallurgiques, cimenteries, plateformes chimiques.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagSector" value="Infrastructures & BTP">
-                <div class="diag-opt-box">
-                  <i data-lucide="building-2" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Infrastructures, Ports & Transports</h4>
-                  <p>Zones logistiques, ports, autoroutes, parcs industriels intégrés, grands ensembles urbains.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagSector" value="Agro-industrie & Eau">
-                <div class="diag-opt-box">
-                  <i data-lucide="droplet" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Agro-industrie & Ressources en Eau</h4>
-                  <p>Stations d'épuration (STEP), dessalement, périmètres irrigués, unités agro-alimentaires.</p>
-                </div>
-              </label>
-            </div>
-
-            <div class="diag-nav-footer flex-between">
-              <span class="text-xs text-muted">Étape 1 sur 3 • Cadrage préliminaire confidentiel</span>
-              <button class="btn btn-emerald" id="btnDiagNext1">
-                <span>Passer au Stade du Projet</span>
-                <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Step 2: Project Maturity & Scale -->
-          <div class="diag-panel" id="diagStep2">
-            <h3 class="diag-q">2. À quel stade d'avancement se situe votre projet ?</h3>
-            <div class="diag-options-grid">
-              <label class="diag-option">
-                <input type="radio" name="diagStage" value="Préfaisabilité & Choix de Site" checked>
-                <div class="diag-opt-box">
-                  <i data-lucide="compass" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Préfaisabilité & Choix de Site</h4>
-                  <p>Identification des contraintes environnementales, faune/flore et opportunité foncière.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagStage" value="Dossier d'Autorisation EIE">
-                <div class="diag-opt-box">
-                  <i data-lucide="file-text" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Autorisation Réglementaire (EIES)</h4>
-                  <p>Obligation de déposer une étude d'impact pour commission nationale d'évaluation.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagStage" value="Audit Bailleurs SFI / Banque Mondiale">
-                <div class="diag-opt-box">
-                  <i data-lucide="coins" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Financement Multilatéral (SFI / BAD)</h4>
-                  <p>Exigence de conformité aux Normes de Performance IFC et Principes de l'Équateur.</p>
-                </div>
-              </label>
-
-              <label class="diag-option">
-                <input type="radio" name="diagStage" value="Phase Chantier & AMO">
-                <div class="diag-opt-box">
-                  <i data-lucide="hard-hat" class="diag-icon" aria-hidden="true"></i>
-                  <h4>Phase Chantier & AMO</h4>
-                  <p>Mise en œuvre du PGES-Chantier, surveillance environnementale et réception technique.</p>
-                </div>
-              </label>
-            </div>
-
-            <div class="diag-nav-footer flex-between">
-              <button class="btn btn-ghost" id="btnDiagBack2">
-                <i data-lucide="arrow-left" class="icon-xs" aria-hidden="true"></i>
-                <span>Retour</span>
-              </button>
-              <button class="btn btn-emerald" id="btnDiagNext2">
-                <span>Passer aux Coordonnées du Rapport</span>
-                <i data-lucide="arrow-right" class="icon-xs" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Step 3: Contact & Report Dispatch -->
-          <div class="diag-panel" id="diagStep3">
-            <h3 class="diag-q">3. Restitution de Votre Note de Cadrage Stratégique</h3>
-            
-            <form id="diagForm">
-              <div class="form-grid-2 mb-3">
-                <div class="form-group">
-                  <label class="form-label" for="diagName">Nom & Titre de l'Interlocuteur *</label>
-                  <input type="text" id="diagName" class="form-input" placeholder="ex: Ousmane Diop, Directeur de Projet" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="diagCompany">Entité / Maître d'Ouvrage *</label>
-                  <input type="text" id="diagCompany" class="form-input" placeholder="ex: Société d'Énergie Solaire SA" required>
-                </div>
-              </div>
-
-              <div class="form-grid-2 mb-3">
-                <div class="form-group">
-                  <label class="form-label" for="diagEmail">Courriel Professionnel *</label>
-                  <input type="email" id="diagEmail" class="form-input" placeholder="o.diop@societe.com" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="diagPhone">Téléphone Direct *</label>
-                  <input type="tel" id="diagPhone" class="form-input" placeholder="+212 600 00 00 00 / +221 77 000 00 00" required>
-                </div>
-              </div>
-
-              <div class="form-group mb-4">
-                <label class="form-label" for="diagNotes">Détails Spécifiques (Zone d'implantation, superficie, délais)</label>
-                <textarea id="diagNotes" rows="2" class="form-input" placeholder="ex: Projet de 80 MW à proximité d'une zone agricole..."></textarea>
-              </div>
-
-              <div class="diag-nav-footer flex-between">
-                <button type="button" class="btn btn-ghost" id="btnDiagBack3">
-                  <i data-lucide="arrow-left" class="icon-xs" aria-hidden="true"></i>
-                  <span>Retour</span>
-                </button>
-                <button type="submit" class="btn btn-emerald btn-lg">
-                  <i data-lucide="file-text" class="icon-xs" aria-hidden="true"></i>
-                  <span>Générer Ma Note de Cadrage Confidentielle</span>
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Step 4: Success Output Card -->
-          <div class="diag-panel" id="diagStepSuccess">
-            <div class="diag-success-box text-center">
-              <div class="success-seal">
-                <i data-lucide="check" class="icon-lg text-emerald" aria-hidden="true"></i>
-              </div>
-              <h3 class="success-heading">Note de Cadrage Établie avec Succès</h3>
-              <p class="success-text">
-                Votre dossier porte la référence officielle <strong class="text-emerald font-mono" id="diagRefCode">MKZ-2026-4891</strong>. Un associé principal de McKenzo & Co. a été assigné pour analyser l'éligibilité et préparer le Terme de Référence (TDR).
-              </p>
-
-              <div class="roadmap-summary">
-                <div class="roadmap-item">
-                  <span class="label">Pôle Technique Mobilisé :</span>
-                  <span class="val text-emerald font-bold" id="summaryPillar">Études d'Impact Environnemental et Social (EIES)</span>
-                </div>
-                <div class="roadmap-item">
-                  <span class="label">Norme de Référence Recommandée :</span>
-                  <span class="val">Standards SFI / Banque Mondiale + Réglementation Nationale</span>
-                </div>
-                <div class="roadmap-item">
-                  <span class="label">Délai Estimatif d'Instruction :</span>
-                  <span class="val">4 à 6 semaines (enquête d'utilité publique comprise)</span>
-                </div>
-                <div class="roadmap-item">
-                  <span class="label">Bureaux Compétents :</span>
-                  <span class="val text-white">Casablanca / Béni Mellal & Dakar : <a href="mailto:contact@mcknzo.co" class="text-emerald">contact@mcknzo.co</a></span>
-                </div>
-              </div>
-
-              <button class="btn btn-outline-emerald mt-4" id="btnResetDiag">
-                <span>Effectuer un Autre Diagnostic</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- References & Projets Phares -->
-    <section class="section bg-surface" id="references">
-      <div class="container">
-        <div class="flex-between section-header-split">
-          <div>
-            <span class="section-tag">Retours d'Expérience</span>
-            <h2 class="section-title">Références Notables & Projets Phares</h2>
-            <p class="section-subtitle">
-              Des interventions menées pour le compte d'investisseurs institutionnels, d'agences étatiques et de consortiums bancaires.
-            </p>
-          </div>
-          <div class="ref-filter-group" id="refFilters" role="tablist">
-            <button class="ref-filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous les Projets</button>
-            <button class="ref-filter-btn" data-filter="environnement" role="tab" aria-selected="false">Environnement & EIE</button>
-            <button class="ref-filter-btn" data-filter="ingenierie" role="tab" aria-selected="false">Ingénierie & VRD</button>
-            <button class="ref-filter-btn" data-filter="strategie" role="tab" aria-selected="false">Stratégie & AMO</button>
-          </div>
-        </div>
-
-        <div class="references-grid" id="refGrid">
-          <!-- Ref 1 -->
-          <article class="ref-card" data-category="environnement" data-gsap="fade-up">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Énergies Renouvelables</span>
-              <h3 class="ref-title">EIES pour un Parc Éolien de 150 MW</h3>
-              <p class="ref-desc">
-                Réalisation de l'EIES intégrale : modélisation acoustique, couloirs migratoires avifaune et plan d'engagement des populations riveraines conforme aux normes SFI.
-              </p>
-              <div class="ref-meta">
-                <span><strong>Résultat :</strong> Acceptabilité sans réserve et validation bailleurs</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ref 2 -->
-          <article class="ref-card" data-category="ingenierie" data-gsap="fade-up" data-delay="0.1">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Ingénierie & Eau</span>
-              <h3 class="ref-title">Schéma Directeur VRD & Hydraulique sur 280 Hectares</h3>
-              <p class="ref-desc">
-                Dimensionnement complet des réseaux d'eaux industrielles, bassins d'orage et station d'épuration pour une zone d'activité économique intégrée.
-              </p>
-              <div class="ref-meta">
-                <span><strong>Livrable :</strong> Dossier APD, DCE d'exécution et cahier des charges</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ref 3 -->
-          <article class="ref-card" data-category="strategie" data-gsap="fade-up" data-delay="0.2">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Stratégie & AMO</span>
-              <h3 class="ref-title">AMO & Décarbonation d'un Groupe Agro-Exportateur</h3>
-              <p class="ref-desc">
-                Restructuration des flux logistiques, audit d'empreinte carbone et mise en conformité ESG pour l'accès aux mécanismes d'ajustement carbone européens.
-              </p>
-              <div class="ref-meta">
-                <span><strong>Gain :</strong> -22% d'émissions et labellisation ESG internationale</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ref 4 -->
-          <article class="ref-card" data-category="environnement" data-gsap="fade-up">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Mines & Carrières</span>
-              <h3 class="ref-title">Plan de Réhabilitation Écologique de Complexe Minier</h3>
-              <p class="ref-desc">
-                Plan de fermeture progressive, revégétalisation par espèces endémiques et réseau de surveillance piézométrique conforme ISO 14001.
-              </p>
-              <div class="ref-meta">
-                <span><strong>Standard :</strong> Principes de l'Équateur & ISO 14001</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ref 5 -->
-          <article class="ref-card" data-category="ingenierie" data-gsap="fade-up" data-delay="0.1">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Énergie Solaire</span>
-              <h3 class="ref-title">Étude Technique & EIE Centrale Solaire de 50 MWc</h3>
-              <p class="ref-desc">
-                Modélisation thermique, calculs d'injection sur poste source et plan de gestion environnementale de chantier (PGES-C) pour consortium international.
-              </p>
-              <div class="ref-meta">
-                <span><strong>Impact :</strong> Centrale raccordée au réseau national</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Ref 6 -->
-          <article class="ref-card" data-category="strategie" data-gsap="fade-up" data-delay="0.2">
-            <div class="ref-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="ref-body">
-              <span class="ref-tag">Partenariat Public-Privé</span>
-              <h3 class="ref-title">Structuration PPP d'un Pôle Logistique Régional</h3>
-              <p class="ref-desc">
-                Modélisation financière du contrat de concession, étude socio-économique et structuration de la gouvernance mixte public-privé (65 M€ d'investissement).
-              </p>
-              <div class="ref-meta">
-                <span><strong>Bénéficiaire :</strong> Agence étatique & opérateur concessionnaire</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Standards & Méthodologie -->
-    <section class="section" id="methodologie">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Rigueur Méthodologique</span>
-          <h2 class="section-title">Nos Standards & Référentiels d'Intervention</h2>
-          <p class="section-subtitle">
-            Une conformité irréprochable avec les normes des bailleurs multilatéraux pour sécuriser les investissements devant la SFI, la BAD, la BEI et la Banque Mondiale.
-          </p>
-        </div>
-
-        <div class="standards-grid">
-          <div class="standard-card" data-gsap="fade-up">
-            <div class="standard-icon"><i data-lucide="shield" aria-hidden="true"></i></div>
-            <h4>Normes de Performance SFI / IFC</h4>
-            <p>Application stricte des 8 normes de performance environnementale et sociale de la Société Financière Internationale.</p>
-          </div>
-
-          <div class="standard-card" data-gsap="fade-up" data-delay="0.1">
-            <div class="standard-icon"><i data-lucide="check-check" aria-hidden="true"></i></div>
-            <h4>Conformité ISO 14001 & ISO 9001</h4>
-            <p>Processus certifiés de management de la qualité et de maîtrise des impacts environnementaux sur chaque phase de mission.</p>
-          </div>
-
-          <div class="standard-card" data-gsap="fade-up" data-delay="0.2">
-            <div class="standard-icon"><i data-lucide="globe" aria-hidden="true"></i></div>
-            <h4>Principes de l'Équateur</h4>
-            <p>Méthodologie standardisée pour l'évaluation et la gestion des risques sociaux et environnementaux dans le financement de projet.</p>
-          </div>
-
-          <div class="standard-card" data-gsap="fade-up" data-delay="0.3">
-            <div class="standard-icon"><i data-lucide="scale" aria-hidden="true"></i></div>
-            <h4>Législations Nationales (MA & SN)</h4>
-            <p>Maîtrise exhaustive des lois environnementales marocaines (Loi 12-03 & 49-17) et sénégalaises (Code de l'Environnement).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Panafrican Presence & Bureaux -->
-    <section class="section bg-surface" id="bureaux">
-      <div class="container">
-        <div class="contact-card-wrapper">
-          <div class="contact-info-col">
-            <span class="section-tag">Ancrage Panafricain</span>
-            <h2 class="section-title">Nos Bureaux d'Études au Maroc & au Sénégal</h2>
-            <p class="paragraph mb-6">
-              Nos directeurs d'études et experts résidents vous accueillent pour examiner vos Termes de Référence ou convenir d'un atelier de cadrage technique.
-            </p>
-
-            <div class="offices-list">
-              <!-- Office Maroc -->
-              <div class="office-box">
-                <div class="office-flag" aria-hidden="true">🇲🇦</div>
-                <div>
-                  <h4 class="office-city">Béni Mellal & Casablanca, Maroc</h4>
-                  <p class="office-addr">
-                    <strong>Béni Mellal :</strong> 343 bd Mohamed V, 1er étage (23040)<br>
-                    <strong>Casablanca :</strong> Représentation Casablanca Finance City
-                  </p>
-                  <a href="tel:+212523480000" class="office-phone">
-                    <i data-lucide="phone" class="icon-xs icon-emerald" aria-hidden="true"></i>
-                    <span>+212 (0) 523 48 00 00</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Office Sénégal -->
-              <div class="office-box">
-                <div class="office-flag" aria-hidden="true">🇸🇳</div>
-                <div>
-                  <h4 class="office-city">Dakar, Sénégal (Hub Afrique de l'Ouest)</h4>
-                  <p class="office-addr">
-                    <strong>Dakar :</strong> Immeuble Seydou Nourou Tall, Point E<br>
-                    Couverture Sénégal, Côte d'Ivoire, Guinée & Mali
-                  </p>
-                  <a href="tel:+221338250000" class="office-phone">
-                    <i data-lucide="phone" class="icon-xs icon-emerald" aria-hidden="true"></i>
-                    <span>+221 33 825 00 00</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="direct-email-box mt-4">
-              <i data-lucide="mail" class="icon-emerald" aria-hidden="true"></i>
+        <div class="simulator-wrapper">
+          <div class="sim-grid">
+            <!-- Controls Column -->
+            <div class="sim-controls-col">
+              <!-- Slider: Investment Capex -->
               <div>
-                <strong>Secrétariat Général & Appels d'Offres :</strong>
-                <a href="mailto:contact@mcknzo.co" class="text-white hover-underline block font-mono">contact@mcknzo.co</a>
-                <span class="text-xs text-muted">Accusé de réception sous 24h ouvrées</span>
+                <div class="sim-group-label">
+                  <span data-i18n="sim_inv_label">Montant Total de l'Investissement (Capex) :</span>
+                  <span class="sim-slider-val" id="simSliderVal">15 MDH</span>
+                </div>
+                <input type="range" min="1" max="100" value="15" step="1" class="sim-range" id="simInvestSlider" aria-label="Montant investissement en millions de dirhams">
+                <div class="sim-ticks">
+                  <span data-i18n="sim_tick_1">1 MDH (Seuil TPME)</span>
+                  <span data-i18n="sim_tick_2">25 MDH</span>
+                  <span data-i18n="sim_tick_3">50 MDH (Plafond TPME)</span>
+                  <span data-i18n="sim_tick_4">100 MDH</span>
+                </div>
+              </div>
+
+              <!-- Company Size -->
+              <div>
+                <div class="sim-group-label">
+                  <span data-i18n="sim_size_label">Catégorie de l'Entreprise :</span>
+                </div>
+                <div class="sim-pill-group">
+                  <label class="sim-pill">
+                    <input type="radio" name="simSize" value="tpe">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_tpe">TPE (&lt; 10 MDH CA)</strong>
+                      <small data-i18n="sim_tpe_sub">Subvention max 90%</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simSize" value="pme" checked>
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_pme">PME (10 à 200 MDH CA)</strong>
+                      <small data-i18n="sim_pme_sub">Subvention max 80%</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simSize" value="ge">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_ge">Grande Entreprise (&gt; 200 MDH)</strong>
+                      <small data-i18n="sim_ge_sub">Charte Grands Projets</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Territory Location -->
+              <div>
+                <div class="sim-group-label">
+                  <span data-i18n="sim_zone_label">Zone d'Implantation Territoriale :</span>
+                </div>
+                <div class="sim-pill-group">
+                  <label class="sim-pill" style="flex: 1 1 48%;">
+                    <input type="radio" name="simZone" value="zone_a" checked>
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_zone_a">Territoire Catégorie A (Prioritaire)</strong>
+                      <small data-i18n="sim_zone_a_sub">Béni Mellal, Kénitra, Tanger Med, etc. (+10% prime)</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill" style="flex: 1 1 48%;">
+                    <input type="radio" name="simZone" value="zone_b">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_zone_b">Territoire Catégorie B (Standard)</strong>
+                      <small data-i18n="sim_zone_b_sub">Casablanca, Rabat (taux standard)</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Operation Strategic Type -->
+              <div>
+                <div class="sim-group-label">
+                  <span data-i18n="sim_type_label">Type d'Opération Stratégique :</span>
+                </div>
+                <div class="sim-pill-group">
+                  <label class="sim-pill">
+                    <input type="radio" name="simType" value="new" checked>
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_type_new">Nouvelle Unité Industrielle</strong>
+                      <small data-i18n="sim_type_new_sub">Création complète d'usine</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simType" value="mod">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_type_mod">Extension & Modernisation</strong>
+                      <small data-i18n="sim_type_mod_sub">Nouveaux équipements</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simType" value="trans">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_type_trans">Transmission / Reprise (PACT')</strong>
+                      <small data-i18n="sim_type_trans_sub">Cession d'entreprise</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simType" value="green">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_type_green">Décarbonation & Audit CBAM</strong>
+                      <small data-i18n="sim_type_green_sub">Transition verte</small>
+                    </div>
+                  </label>
+                  <label class="sim-pill">
+                    <input type="radio" name="simType" value="mre">
+                    <div class="sim-pill-box">
+                      <strong data-i18n="sim_type_mre">Investisseur MRE (MDM Invest)</strong>
+                      <small data-i18n="sim_type_mre_sub">Marocains du Monde +10%</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Results Card -->
+            <div class="sim-results-card">
+              <div class="sim-results-header">
+                <div class="sim-grand-total-label" data-i18n="sim_res_total_label">Total des Primes & Subventions Estimées</div>
+                <div class="sim-grand-total" id="simGrandTotal">4 500 000 MAD</div>
+              </div>
+
+              <div class="sim-breakdown-list">
+                <div class="sim-breakdown-item">
+                  <span class="sim-item-title">
+                    <i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i>
+                    <span data-i18n="sim_res_charte">Prime Charte de l'Investissement (CRI) :</span>
+                  </span>
+                  <span class="sim-item-value" id="simResCharte">3 750 000 MAD (25%)</span>
+                </div>
+
+                <div class="sim-breakdown-item">
+                  <span class="sim-item-title">
+                    <i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i>
+                    <span data-i18n="sim_res_pme">Assistance Technique Maroc PME :</span>
+                  </span>
+                  <span class="sim-item-value" id="simResPME">800 000 MAD</span>
+                </div>
+
+                <div class="sim-breakdown-item" id="simRowPact" style="display: none;">
+                  <span class="sim-item-title">
+                    <i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i>
+                    <span data-i18n="sim_res_pact">Subvention PACT'Transmission :</span>
+                  </span>
+                  <span class="sim-item-value gold" id="simResPact">900 000 MAD</span>
+                </div>
+
+                <div class="sim-breakdown-item" id="simRowMre" style="display: none;">
+                  <span class="sim-item-title">
+                    <i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i>
+                    <span data-i18n="sim_res_mre">Prime Non Remboursable MDM Invest :</span>
+                  </span>
+                  <span class="sim-item-value gold" id="simResMre">1 500 000 MAD</span>
+                </div>
+
+                <div class="sim-breakdown-item">
+                  <span class="sim-item-title">
+                    <i data-lucide="shield" class="icon-xs text-gold" aria-hidden="true"></i>
+                    <span data-i18n="sim_res_tamwil">Couverture Garantie Tamwilcom :</span>
+                  </span>
+                  <span class="sim-item-value gold" id="simResTamwil">60% (Damane Istitmar)</span>
+                </div>
+              </div>
+
+              <p class="sim-note" data-i18n="sim_res_note">
+                * Estimations fournies selon les critères officiels de la Nouvelle Charte de l'Investissement et les circulaires Maroc PME en vigueur. Validation définitive sous réserve d'audit d'éligibilité par McKenzo & Co.
+              </p>
+
+              <button class="btn btn-gold btn-lg full-width" data-action="open-booking">
+                <i data-lucide="calendar" class="icon-sm" aria-hidden="true"></i>
+                <span data-i18n="sim_btn_dossier">Réserver l'Appel 15 Min pour Valider Mon Dossier</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 5 Core Service Poles Section -->
+    <section class="section bg-surface" id="poles">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag" data-i18n="poles_tag">Nos Pôles d'Excellence</span>
+          <h2 class="section-title" data-i18n="poles_title">5 Pôles d'Expertise Pluridisciplinaire</h2>
+          <p class="section-subtitle" data-i18n="poles_sub">
+            Une équipe de haut niveau réunissant ingénieurs industriels, experts judiciaires assermentés, analystes financiers et spécialistes de l'IA appliquée.
+          </p>
+        </div>
+
+        <div class="poles-grid">
+          <!-- Pole 1: Financing & Studies -->
+          <article class="pole-card">
+            <div class="pole-img-wrapper">
+              <img src="assets/business-plan-finance.jpg" alt="Ingénierie de financement McKenzo" class="pole-img" loading="lazy">
+              <span class="pole-badge-top" data-i18n="p1_badge">Ingénierie Financière</span>
+            </div>
+            <div class="pole-body">
+              <span class="pole-num" data-i18n="p1_num">PÔLE 01</span>
+              <h3 class="pole-title" data-i18n="p1_title">Financement & Études de Projets Bancables</h3>
+              <p class="pole-desc" data-i18n="p1_desc">
+                Montage complet de dossiers de financement pour banques et organismes publics. Nos études technico-économiques sont signées par des ingénieurs industriels garantissant le déblocage des fonds.
+              </p>
+              <ul class="pole-checklist">
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f1">Business plans 5 à 7 ans conformes comités de crédit</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f2">Dossiers de garantie Tamwilcom (Damane Istitmar / Express)</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f3">Guichet Unique CRI (Charte TPME 30%), GO Siyaha, FDA</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f4">Offre MRE : MDM Invest 10% non remboursable & MDM Tamwil</span></li>
+              </ul>
+              <div class="pole-footer">
+                <button class="btn-text-link" data-action="open-booking">
+                  <span data-i18n="p1_cta">Étudier mon dossier de financement</span>
+                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pole 2: Sworn Judicial Valuation & M&A -->
+          <article class="pole-card partner-highlight">
+            <div class="pole-img-wrapper">
+              <img src="assets/expert-cherkaoui.jpg" alt="Expertise judiciaire Ahmed Cherkaoui" class="pole-img" loading="lazy">
+              <span class="pole-badge-top gold" data-i18n="p2_badge">Alliance Judiciaire</span>
+            </div>
+            <div class="pole-body">
+              <span class="pole-num text-gold" data-i18n="p2_num">PÔLE 02</span>
+              <h3 class="pole-title" data-i18n="p2_title">Expertise, Évaluation & Transmission</h3>
+              <p class="pole-desc" data-i18n="p2_desc">
+                En partenariat officiel avec le Cabinet d'expertise Ahmed Cherkaoui (expert judiciaire assermenté près la Cour d'appel). Conventions bancaires actives avec BMCI, CFG Bank et Bank Al Youssr.
+              </p>
+              <ul class="pole-checklist">
+                <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f1">Évaluation immobilière, foncière et valeur de garantie</span></li>
+                <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f2">Valorisation de fonds de commerce et parts (DCF, comparables)</span></li>
+                <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f3">PACT'Transmission : diagnostic et cession pris en charge à 90%</span></li>
+                <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f4">Dépôt de brevets et marques OMPIC (subventionné à 80%)</span></li>
+              </ul>
+              <div class="pole-footer">
+                <button class="btn-text-link text-gold" data-action="open-legal">
+                  <span data-i18n="p2_cta">Voir la convention Cabinet Cherkaoui</span>
+                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pole 3: Territorial Development -->
+          <article class="pole-card">
+            <div class="pole-img-wrapper">
+              <img src="assets/agri-food-plant.jpg" alt="Développement territorial INDH" class="pole-img" loading="lazy">
+              <span class="pole-badge-top" data-i18n="p3_badge">Territoire & Impact</span>
+            </div>
+            <div class="pole-body">
+              <span class="pole-num" data-i18n="p3_num">PÔLE 03</span>
+              <h3 class="pole-title" data-i18n="p3_title">Développement Territorial & Suivi-Évaluation</h3>
+              <p class="pole-desc" data-i18n="p3_desc">
+                Études d'impact socio-économique, enquêtes de terrain rigoureuses et accompagnement des politiques publiques et bailleurs internationaux (UE, BAD, Banque Mondiale).
+              </p>
+              <ul class="pole-checklist">
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f1">Évaluation et diagnostic de programmes INDH</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f2">Enquêtes quantitatives et qualitatives sur le terrain</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f3">Structuration et mise à niveau des coopératives et GIE</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f4">Plans de développement communal et régional (PDR / PAC)</span></li>
+              </ul>
+              <div class="pole-footer">
+                <button class="btn-text-link" data-action="open-booking">
+                  <span data-i18n="p3_cta">Consulter nos méthodologies d'évaluation</span>
+                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pole 4: Industrial Performance -->
+          <article class="pole-card">
+            <div class="pole-img-wrapper">
+              <img src="assets/factory-layout.jpg" alt="Performance industrielle Lean" class="pole-img" loading="lazy">
+              <span class="pole-badge-top" data-i18n="p4_badge">Industrie 4.0</span>
+            </div>
+            <div class="pole-body">
+              <span class="pole-num" data-i18n="p4_num">PÔLE 04</span>
+              <h3 class="pole-title" data-i18n="p4_title">Performance Industrielle & Transition Écologique</h3>
+              <p class="pole-desc" data-i18n="p4_desc">
+                Aménagement d'ateliers, optimisation des flux de fabrication, supply chain lean et préparation aux exigences de décarbonation internationales.
+              </p>
+              <ul class="pole-checklist">
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f1">Layout d'usine, postes de travail et ergonomie</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f2">Préparation aux certifications : ISO 9001, 22000, ONSSA, HACCP</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f3">Diagnostic carbone CBAM / MACF pour exportateurs vers l'UE</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f4">Assistance à Maîtrise d'Ouvrage (AMO) technique et délais</span></li>
+              </ul>
+              <div class="pole-footer">
+                <button class="btn-text-link" data-action="open-booking">
+                  <span data-i18n="p4_cta">Demander un audit usine</span>
+                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pole 5: Applied AI & Digital -->
+          <article class="pole-card">
+            <div class="pole-img-wrapper">
+              <img src="assets/data-ai-industry.jpg" alt="Data et IA appliquée industrie" class="pole-img" loading="lazy">
+              <span class="pole-badge-top" data-i18n="p5_badge">Digital & IA</span>
+            </div>
+            <div class="pole-body">
+              <span class="pole-num" data-i18n="p5_num">PÔLE 05</span>
+              <h3 class="pole-title" data-i18n="p5_title">Data, IA Appliquée & Digitalisation Industrielle</h3>
+              <p class="pole-desc" data-i18n="p5_desc">
+                Conception de tableaux de bord décisionnels et déploiement d'algorithmes prédictifs pour optimiser la rentabilité opérationnelle des PME et TPME.
+              </p>
+              <ul class="pole-checklist">
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f1">Tableaux de bord BI exécutifs (Power BI / solutions sur-mesure)</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f2">IA de prévision de la demande, scoring client et stocks</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f3">Automatisation des processus administratifs et comptables</span></li>
+                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f4">Feuilles de route de transformation digitale subventionnées</span></li>
+              </ul>
+              <div class="pole-footer">
+                <button class="btn-text-link" data-action="open-booking">
+                  <span data-i18n="p5_cta">Explorer les cas d'usage IA</span>
+                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrated Investor Pathway: "L'investisseur industriel, de A à Z" -->
+    <section class="section" id="parcours">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag tag-gold" data-i18n="life_tag">Offre Intégrée Exclusive</span>
+          <h2 class="section-title" data-i18n="life_title">L'Investisseur Industriel de A à Z : 7 Phases Clés</h2>
+          <p class="section-subtitle" data-i18n="life_sub">
+            Un accompagnement de bout en bout où McKenzo sécurise chaque étape réglementaire, financière, technique et opérationnelle de votre projet.
+          </p>
+        </div>
+
+        <div class="lifecycle-wrapper">
+          <!-- Step Navigation Tabs -->
+          <div class="lifecycle-nav" id="lifecycleNav" role="tablist">
+            <!-- Dynamically populated by app.js -->
+          </div>
+
+          <!-- Active Phase Inspection Card -->
+          <div class="phase-detail-panel">
+            <div class="phase-detail-content">
+              <h3 id="phaseDetailTitle">Phase 0 : Foncier & Choix du Site</h3>
+              <p class="phase-lead" id="phaseDetailLead">
+                Due diligence foncière, vérification cadastrale ANCFCC, note d'urbanisme et comparaison stratégique : Zone Franche d'Exportation (Tanger Med, TFZ, TAC, Kénitra) vs Zone Industrielle Classique.
+              </p>
+
+              <div class="phase-deliverables">
+                <h4 data-i18n="life_deliv_title">Livrables Contractuels Clés :</h4>
+                <ul class="phase-deliv-list" id="phaseDeliverablesList">
+                  <!-- Dynamically populated -->
+                </ul>
+              </div>
+
+              <div class="flex-align gap-4">
+                <button class="btn btn-gold" data-action="open-booking">
+                  <i data-lucide="phone" class="icon-xs" aria-hidden="true"></i>
+                  <span data-i18n="life_cta_plan">Planifier cette phase avec nos ingénieurs</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="phase-media-box">
+              <img src="assets/tanger-med.jpg" alt="Phase illustrative" class="phase-media-img" id="phaseMediaImg">
+              <div class="phase-media-meta">
+                <div class="phase-meta-row">
+                  <span class="phase-meta-label" data-i18n="life_meta_partner">Interlocuteurs Clés :</span>
+                  <span class="phase-meta-val" id="phaseMetaPartner">CRI & ANCFCC</span>
+                </div>
+                <div class="phase-meta-row">
+                  <span class="phase-meta-label" data-i18n="life_meta_grant">Dispositif Mobilisable :</span>
+                  <span class="phase-meta-val text-emerald" id="phaseMetaGrant">Guichet Unique Foncier</span>
+                </div>
+                <div class="phase-meta-row">
+                  <span class="phase-meta-label" data-i18n="life_meta_engagement">Engagement McKenzo :</span>
+                  <span class="phase-meta-val text-gold" id="phaseMetaEngagement" data-i18n="life_meta_engagement_val">Dossier conforme et sécurisé</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tanger Med & Free Zones Comparison Section -->
+    <section class="section bg-surface" id="tangermed">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag" data-i18n="tanger_tag">Plateforme Logistique Mondiale</span>
+          <h2 class="section-title" data-i18n="tanger_title">Implantation en Zone Franche : Tanger Med vs Zone Classique</h2>
+          <p class="section-subtitle" data-i18n="tanger_sub">
+            1er port de Méditerranée et d'Afrique, Tanger Med offre des avantages fiscaux et logistiques déterminants. McKenzo & Co. guide votre installation et vos demandes de licences.
+          </p>
+        </div>
+
+        <div class="tanger-wrapper">
+          <div class="tanger-hero-banner">
+            <img src="assets/tanger-med.jpg" alt="Port de Tanger Med hub industriel" class="tanger-banner-img" loading="lazy">
+            <div class="tanger-banner-overlay">
+              <div class="tanger-banner-content">
+                <h3 data-i18n="tanger_banner_h">Tanger Med & Zones Franches d'Exportation</h3>
+                <p data-i18n="tanger_banner_p">Hub d'excellence pour l'automobile, l'aéronautique, le textile et la logistique internationale.</p>
               </div>
             </div>
           </div>
 
-          <div class="contact-form-col">
-            <h3 class="form-title">Solliciter Notre Direction des Études</h3>
-            <p class="form-subtitle">Transmettez vos termes de référence ou planifiez une séance de cadrage préliminaire.</p>
-
-            <form id="contactForm">
-              <div class="form-group mb-3">
-                <label class="form-label" for="contactType">Type de Prestation Souhaitée *</label>
-                <select class="form-input" id="contactType">
-                  <option value="Étude d'Impact Environnemental et Social (EIES)">Étude d'Impact Environnemental et Social (EIES)</option>
-                  <option value="Bureau d'Études VRD & Ingénierie">Bureau d'Études VRD & Ingénierie</option>
-                  <option value="Conseil en Stratégie & Management">Conseil en Stratégie & Management</option>
-                  <option value="Assistance à Maîtrise d'Ouvrage (AMO)">Assistance à Maîtrise d'Ouvrage (AMO)</option>
-                  <option value="Réponse à Appel d'Offres TDR">Réponse à Appel d'Offres TDR</option>
-                </select>
-              </div>
-
-              <div class="form-grid-2 mb-3">
-                <div class="form-group">
-                  <label class="form-label" for="cName">Votre Nom Complet *</label>
-                  <input type="text" id="cName" class="form-input" placeholder="M. / Mme Nom" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="cOrg">Entreprise ou Ministère *</label>
-                  <input type="text" id="cOrg" class="form-input" placeholder="Organisation" required>
+          <div class="tanger-body">
+            <!-- Interactive Export Revenue Slider -->
+            <div class="tanger-calc-bar">
+              <div class="flex-align gap-3">
+                <i data-lucide="trending-up" class="icon-md text-emerald" aria-hidden="true"></i>
+                <div>
+                  <strong class="text-white block" data-i18n="tanger_calc_title">Votre Chiffre d'Affaires Export Prévisionnel :</strong>
+                  <small class="text-muted" data-i18n="tanger_calc_sub">Ajustez pour simuler l'économie fiscale sur l'Impôt sur les Sociétés (IS) :</small>
                 </div>
               </div>
 
-              <div class="form-grid-2 mb-3">
-                <div class="form-group">
-                  <label class="form-label" for="cEmail">Courriel Professionnel *</label>
-                  <input type="email" id="cEmail" class="form-input" placeholder="nom@organisation.com" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="cPhone">Téléphone Direct</label>
-                  <input type="tel" id="cPhone" class="form-input" placeholder="+212 / +221 ...">
-                </div>
+              <div class="flex-align gap-4" style="flex-grow: 1; max-width: 480px;">
+                <input type="range" min="5" max="150" value="25" step="5" class="sim-range" id="tangerExportSlider" aria-label="CA export en MDH">
+                <span class="font-mono text-emerald font-bold" id="tangerExportVal">25 MDH</span>
               </div>
 
-              <div class="form-group mb-4">
-                <label class="form-label" for="cDetails">Présentation Sommaire du Projet</label>
-                <textarea id="cDetails" rows="3" class="form-input" placeholder="Zone géographique, calendrier souhaité, puissance ou superficie..."></textarea>
+              <div class="text-end">
+                <span class="text-xs text-muted block uppercase tracking-wider" data-i18n="tanger_savings_label">Économie IS sur 5 ans :</span>
+                <span class="font-mono text-gold font-extrabold text-xl" id="tangerEstimatedSavings">4 687 500 MAD</span>
+              </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="tanger-table-responsive">
+              <table class="tanger-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="tanger_th_criteria">Critères Clés</th>
+                    <th class="col-freezone" data-i18n="tanger_th_free">Tanger Med & Zones Franches (TAC, TFZ)</th>
+                    <th data-i18n="tanger_th_classic">Zone Industrielle Classique</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong data-i18n="tanger_crit_1">Impôt sur les Sociétés (IS)</strong></td>
+                    <td class="col-freezone">
+                      <span class="tanger-badge-win" data-i18n="tanger_badge_win">Avantage Majeur</span>
+                      <div data-i18n="tanger_crit_1_free">0% pendant 5 ans, puis 15% à taux fixe</div>
+                    </td>
+                    <td data-i18n="tanger_crit_1_classic">20% à 35% selon barème standard</td>
+                  </tr>
+                  <tr>
+                    <td><strong data-i18n="tanger_crit_2">Droits de Douane & TVA</strong></td>
+                    <td class="col-freezone">
+                      <span class="tanger-badge-win" data-i18n="tanger_badge_exempt">100% Exonéré</span>
+                      <div data-i18n="tanger_crit_2_free">Exonération totale à 100% sur machines & intrants</div>
+                    </td>
+                    <td data-i18n="tanger_crit_2_classic">Droits de douane (2.5% à 40%) + 20% TVA</td>
+                  </tr>
+                  <tr>
+                    <td><strong data-i18n="tanger_crit_3">Taxe Professionnelle (TP)</strong></td>
+                    <td class="col-freezone">
+                      <span class="tanger-badge-win" data-i18n="tanger_badge_years">15 Ans</span>
+                      <div data-i18n="tanger_crit_3_free">Exonération pendant 15 années consécutives</div>
+                    </td>
+                    <td data-i18n="tanger_crit_3_classic">Exonération limitée à 5 ans</td>
+                  </tr>
+                  <tr>
+                    <td><strong data-i18n="tanger_crit_4">Délai Transit Portuaire vers l'UE</strong></td>
+                    <td class="col-freezone">
+                      <span class="tanger-badge-win" data-i18n="tanger_badge_direct">Liaison Directe</span>
+                      <div data-i18n="tanger_crit_4_free">24h à 48h direct vers les ports européens</div>
+                    </td>
+                    <td data-i18n="tanger_crit_4_classic">Rupture de charge et formalités intérieures</td>
+                  </tr>
+                  <tr>
+                    <td><strong data-i18n="tanger_crit_5">Guichet Unique Administratif</strong></td>
+                    <td class="col-freezone">
+                      <span class="tanger-badge-win" data-i18n="tanger_badge_express">TMSA Express</span>
+                      <div data-i18n="tanger_crit_5_free">Guichet Unique TMSA & CRI dédié</div>
+                    </td>
+                    <td data-i18n="tanger_crit_5_classic">Circuits administratifs multi-organismes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Flagship Tanger Med Projects Showcase -->
+            <div class="mt-10">
+              <div class="text-center mb-6">
+                <span class="section-tag tag-gold" data-i18n="tm_proj_tag">Références Industrielles</span>
+                <h3 class="text-xl font-bold text-white mb-2" data-i18n="tm_proj_title">Projets & Interventions de Référence — Tanger Med & Zones Franches</h3>
+                <p class="text-sm text-secondary max-w-700 mx-auto" data-i18n="tm_proj_sub">
+                  Exemples d'unités industrielles accompagnées par McKenzo & Co. dans les écosystèmes d'exportation les plus exigeants.
+                </p>
               </div>
 
-              <button type="submit" class="btn btn-emerald full-width btn-lg">
-                <i data-lucide="send" class="icon-sm" aria-hidden="true"></i>
-                <span>Transmettre la Demande Confidentielle</span>
+              <div class="tanger-projects-grid">
+                <!-- Case 1: Automotive -->
+                <article class="tanger-project-card">
+                  <div class="tanger-proj-badge" data-i18n="tm_p1_badge">Tanger Automotive City (TAC)</div>
+                  <h4 class="tanger-proj-title" data-i18n="tm_p1_title">Câblerie Automobile & Faisceaux Électriques</h4>
+                  <div class="tanger-proj-metric" data-i18n="tm_p1_capex">Capex : 42 MDH • Prime Charte : 12,6 MDH (30%)</div>
+                  <p class="tanger-proj-desc" data-i18n="tm_p1_desc">
+                    Montage de la subvention Charte TPME 30%, étude technico-économique d'aménagement Lean, et dossier de crédit bancaire BMCI avec garantie Tamwilcom Damane Istitmar.
+                  </p>
+                </article>
+
+                <!-- Case 2: Medhub Cold-Chain -->
+                <article class="tanger-project-card">
+                  <div class="tanger-proj-badge" data-i18n="tm_p2_badge">Zone Franche Logistique Medhub</div>
+                  <h4 class="tanger-proj-title" data-i18n="tm_p2_title">Plateforme Agro-alimentaire & Chaîne de Froid</h4>
+                  <div class="tanger-proj-metric" data-i18n="tm_p2_capex">Capex : 28,5 MDH • Exonération 100% TVA/Douane</div>
+                  <p class="tanger-proj-desc" data-i18n="tm_p2_desc">
+                    Agrément sanitaire ONSSA, certification HACCP/ISO 22000, calcul d'empreinte carbone CBAM pour l'export UE, et franchise douanière sur les équipements importés.
+                  </p>
+                </article>
+
+                <!-- Case 3: TFZ Plastics -->
+                <article class="tanger-project-card">
+                  <div class="tanger-proj-badge" data-i18n="tm_p3_badge">Tanger Free Zone (TFZ)</div>
+                  <h4 class="tanger-proj-title" data-i18n="tm_p3_title">Plasturgie Technique & Packaging Éco-conçu</h4>
+                  <div class="tanger-proj-metric" data-i18n="tm_p3_capex">Capex : 18 MDH • Appui Vert Maroc PME 90%</div>
+                  <p class="tanger-proj-desc" data-i18n="tm_p3_desc">
+                    Audit d'efficacité énergétique, intégration d'algorithmes d'IA prédictive pour la gestion des stocks de matière première, et subvention Maroc PME sur honoraires.
+                  </p>
+                </article>
+              </div>
+
+              <div class="tanger-notice-box mt-4 flex-align gap-3">
+                <i data-lucide="info" class="icon-sm text-gold flex-shrink" aria-hidden="true"></i>
+                <span class="text-xs text-muted" data-i18n="tm_notice">Galerie de chantiers en cours d'enrichissement photographique — Dossiers et réalisations accompagnés par McKenzo & Co SARL.</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex-between flex-wrap gap-4">
+              <div class="text-xs text-muted" data-i18n="tanger_note">
+                * McKenzo & Co. prend en charge la rédaction du business plan d'agrément en zone franche et l'interface avec Tanger Med Special Agency (TMSA).
+              </div>
+              <button class="btn btn-gold" data-action="open-booking">
+                <i data-lucide="compass" class="icon-xs" aria-hidden="true"></i>
+                <span data-i18n="tanger_cta_btn">Étudier mon projet d'implantation à Tanger Med</span>
               </button>
-            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cabinet Leadership, Accreditations & Bank Conventions Section -->
+    <section class="section" id="cabinet">
+      <div class="container">
+        <div class="section-header text-center" id="accreditations">
+          <span class="section-tag tag-gold" data-i18n="cred_tag">Direction & Garanties Juridiques</span>
+          <h2 class="section-title" data-i18n="cred_title">Une Équipe Expérimentée, des Accréditations Officielles</h2>
+          <p class="section-subtitle" data-i18n="cred_sub">
+            Transparence totale, rigueur scientifique et partenariats judiciaires et bancaires de premier plan.
+          </p>
+        </div>
+
+        <div class="cabinet-dossier-wrapper">
+          <div class="cabinet-grid">
+            <!-- Leadership & Guarantees -->
+            <div>
+              <div class="leadership-box">
+                <img src="assets/cabinet-salhi.jpg" alt="M. SALHI Anass et comité d'experts McKenzo" class="leadership-avatar" loading="lazy">
+                <div class="leadership-info">
+                  <h3 data-i18n="salhi_name">M. SALHI Anass</h3>
+                  <div class="leadership-role" data-i18n="salhi_role">Directeur Général & Ingénieur Industriel</div>
+                  <p class="leadership-desc" data-i18n="salhi_bio">
+                    Dirige McKenzo & Co. avec une vision résolument axée sur la bancabilité des projets industriels et l'accès effectif aux mécanismes de subventions marocains. Coordonne une équipe pluridisciplinaire d'ingénieurs et de financiers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="values-grid">
+                <div class="value-item flex-align gap-3 mb-3">
+                  <i data-lucide="shield-check" class="icon-sm text-emerald flex-shrink" aria-hidden="true"></i>
+                  <span class="text-sm" data-i18n="cred_guarantee_1">Zéro chiffre de complaisance : modélisations financières robustes défendues devant les comités de crédit.</span>
+                </div>
+                <div class="value-item flex-align gap-3 mb-3">
+                  <i data-lucide="check-circle" class="icon-sm text-emerald flex-shrink" aria-hidden="true"></i>
+                  <span class="text-sm" data-i18n="cred_guarantee_2">Dossiers complets dès le premier dépôt pour respecter les délais des guichets uniques CRI.</span>
+                </div>
+                <div class="value-item flex-align gap-3">
+                  <i data-lucide="lock" class="icon-sm text-gold flex-shrink" aria-hidden="true"></i>
+                  <span class="text-sm" data-i18n="cred_guarantee_3">Clause de confidentialité et secret des affaires rigoureusement protégés.</span>
+                </div>
+              </div>
+
+              <!-- Strategic Partner Badges Strip -->
+              <div class="accreditations-strip">
+                <div class="partner-badge-card">
+                  <img src="assets/cherkaoui-seal.svg" alt="Cabinet Ahmed Cherkaoui Assermenté" class="partner-badge-img">
+                  <div class="partner-badge-text">
+                    <strong data-i18n="cred_partner1_name">Cabinet Cherkaoui</strong>
+                    <small data-i18n="cred_partner1_desc">Expert judiciaire assermenté</small>
+                  </div>
+                </div>
+
+                <div class="partner-badge-card">
+                  <img src="assets/bmci-logo.svg" alt="Partenariat BMCI BNP Paribas" class="partner-badge-img">
+                  <div class="partner-badge-text">
+                    <strong data-i18n="cred_partner2_name">BMCI Groupe BNP Paribas</strong>
+                    <small data-i18n="cred_partner2_desc">Convention active PME</small>
+                  </div>
+                </div>
+
+                <div class="partner-badge-card">
+                  <img src="assets/tamwilcom-logo.svg" alt="Tamwilcom Garantie" class="partner-badge-img">
+                  <div class="partner-badge-text">
+                    <strong data-i18n="cred_partner3_name">Tamwilcom</strong>
+                    <small data-i18n="cred_partner3_desc">Garantie Damane Istitmar</small>
+                  </div>
+                </div>
+
+                <div class="partner-badge-card">
+                  <img src="assets/maroc-pme-logo.svg" alt="Maroc PME" class="partner-badge-img">
+                  <div class="partner-badge-text">
+                    <strong data-i18n="cred_partner4_name">Maroc PME</strong>
+                    <small data-i18n="cred_partner4_desc">Prise en charge 80-90%</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Official Legal Registry Card -->
+            <div class="legal-registry-card">
+              <h4>
+                <i data-lucide="file-check-2" class="icon-sm text-emerald" aria-hidden="true"></i>
+                <span data-i18n="legal_table_title">Fiche d'Identité Juridique Officielle</span>
+              </h4>
+
+              <table class="legal-table">
+                <tbody>
+                  <tr>
+                    <td data-i18n="legal_th_name">Dénomination Légale</td>
+                    <td><strong>McKenzo &amp; Co SARL</strong></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_status">Statut &amp; Objet</td>
+                    <td data-i18n="legal_val_status">Bureau d'études générales</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_capital">Capital Social</td>
+                    <td data-i18n="legal_val_capital">100 000 MAD (Entièrement libéré)</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_ice">Identifiant Commun (ICE)</td>
+                    <td class="font-mono">002788636000071</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_rc">Registre de Commerce (RC)</td>
+                    <td data-i18n="legal_val_rc">11429 (Béni Mellal)</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_if">Identifiant Fiscal (IF)</td>
+                    <td class="font-mono">50252513</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_patente">Numéro de Patente</td>
+                    <td class="font-mono">41302964</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_direction">Direction Générale</td>
+                    <td>M. SALHI Anass</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_headquarters">Siège Social</td>
+                    <td data-i18n="legal_val_headquarters">343 Bd Mohamed V, 1er ét, Bureau n°1, Béni Mellal (23040)</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="legal_th_reach">Couverture Nationale</td>
+                    <td data-i18n="legal_val_reach">Casablanca, Tanger Med, Rabat, Marrakech, Kénitra, Agadir</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button class="btn btn-outline-emerald full-width mt-4" data-action="open-legal">
+                <i data-lucide="shield" class="icon-xs" aria-hidden="true"></i>
+                <span data-i18n="legal_btn_dossier">Consulter le Dossier d'Accréditation Complet</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industrial Sectors Grid Section -->
+    <section class="section bg-surface" id="secteurs">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag" data-i18n="sec_tag">Écosystèmes Cibles</span>
+          <h2 class="section-title" data-i18n="sec_title">Secteurs Industriels Accompagnés au Maroc</h2>
+          <p class="section-subtitle" data-i18n="sec_sub">
+            Une expertise sectorielle pointue adaptée aux chaînes de valeur prioritaires du Royaume.
+          </p>
+        </div>
+
+        <div class="sectors-grid">
+          <!-- Sector 1 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="utensils" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_1_t">Agro-alimentaire & Valorisation</h4>
+            <p data-i18n="sec_1_p">Unités de transformation, conformité ONSSA, conservation frigorifique, certification HACCP et ISO 22000.</p>
+          </div>
+
+          <!-- Sector 2 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="package" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_2_t">Plasturgie & Packaging</h4>
+            <p data-i18n="sec_2_p">Emballage industriel, injection plastique, recyclage, optimisation énergétique et décarbonation.</p>
+          </div>
+
+          <!-- Sector 3 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="car" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_3_t">Automobile & Sous-traitance</h4>
+            <p data-i18n="sec_3_p">Écosystèmes Tanger Med, Tanger Automotive City et Atlantic Free Zone Kénitra. Lean manufacturing.</p>
+          </div>
+
+          <!-- Sector 4 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="shirt" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_4_t">Textile & Confection Technique</h4>
+            <p data-i18n="sec_4_p">Unités d'exportation vers l'Europe, traçabilité carbone CBAM, rationalisation des flux de coupe et couture.</p>
+          </div>
+
+          <!-- Sector 5 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="truck" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_5_t">Logistique & Entrepôts Frigorifiques</h4>
+            <p data-i18n="sec_5_p">Plateformes multimodales, zones sous douane, gestion des stocks par IA et schémas directeurs VRD.</p>
+          </div>
+
+          <!-- Sector 6 -->
+          <div class="sector-card">
+            <div class="sector-icon"><i data-lucide="building" aria-hidden="true"></i></div>
+            <h4 data-i18n="sec_6_t">Immobilier d'Entreprise & Tourisme</h4>
+            <p data-i18n="sec_6_p">Valorisation de parcs industriels, programmes hôteliers éligibles GO Siyaha, due diligence foncière.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free 15-Minute Diagnostic Call Booking Section -->
+    <section class="section" id="diagnostic">
+      <div class="container">
+        <div class="booking-section-wrapper">
+          <div class="booking-grid">
+            <!-- Left: Value Proposition -->
+            <div class="booking-info-col">
+              <span class="section-tag tag-gold" data-i18n="diag_tag">Diagnostic Gratuit & Sans Engagement</span>
+              <h3 data-i18n="diag_title">Un Appel de 15 Minutes pour Valider l'Éligibilité de Votre Projet</h3>
+              <p class="paragraph" data-i18n="diag_sub">
+                Échangez directement avec un associé sénior. En 15 minutes, nous évaluons vos plafonds de subventions (Charte TPME, PACT'Transmission) et la faisabilité bancaire de votre opération.
+              </p>
+
+              <div class="booking-benefits-list">
+                <div class="benefit-item">
+                  <div class="benefit-icon"><i data-lucide="calculator" class="icon-xs" aria-hidden="true"></i></div>
+                  <div class="benefit-text">
+                    <strong data-i18n="diag_b1_t">Diagnostic Chiffré Immédiat</strong>
+                    <p data-i18n="diag_b1_p">Calcul précis de la prime d'investissement (10% à 30%) et des aides Maroc PME mobilisables.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-item">
+                  <div class="benefit-icon"><i data-lucide="shield-check" class="icon-xs" aria-hidden="true"></i></div>
+                  <div class="benefit-text">
+                    <strong data-i18n="diag_b2_t">Audit de Bancabilité Tamwilcom</strong>
+                    <p data-i18n="diag_b2_p">Revue des garanties requises et sélection de la convention bancaire la plus favorable (BMCI, CFG, etc.).</p>
+                  </div>
+                </div>
+
+                <div class="benefit-item">
+                  <div class="benefit-icon"><i data-lucide="calendar" class="icon-xs" aria-hidden="true"></i></div>
+                  <div class="benefit-text">
+                    <strong data-i18n="diag_b3_t">Feuille de Route & Calendrier</strong>
+                    <p data-i18n="diag_b3_p">Planning des démarches auprès du CRI et des banques pour un déblocage sous 60 à 90 jours.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-align gap-4 mt-6">
+                <a href="tel:+212808598465" class="btn btn-outline-gold">
+                  <i data-lucide="phone" class="icon-xs text-gold" aria-hidden="true"></i>
+                  <span data-i18n="diag_btn_phone">Ligne Directe : +212 808 598 465</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Quick Booking Form -->
+            <div class="booking-form-box">
+              <form id="quickBookingForm">
+                <div class="form-group">
+                  <label class="form-label" for="qName" data-i18n="form_name">Votre Nom & Prénom *</label>
+                  <input type="text" id="qName" class="form-input" placeholder="ex: Karim Tazi" data-i18n-placeholder="ph_name" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="qComp" data-i18n="form_comp">Raison Sociale / Projet *</label>
+                  <input type="text" id="qComp" class="form-input" placeholder="ex: Atlas Packaging SA" data-i18n-placeholder="ph_comp" required>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="qPhone" data-i18n="form_phone">Numéro de Téléphone *</label>
+                    <input type="tel" id="qPhone" class="form-input font-mono" placeholder="+212 600 00 00 00" data-i18n-placeholder="ph_phone" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="qEmail" data-i18n="form_email">Courriel Professionnel *</label>
+                    <input type="email" id="qEmail" class="form-input" placeholder="direction@entreprise.ma" data-i18n-placeholder="ph_email" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="qObj" data-i18n="form_obj">Objectif Prioritaire *</label>
+                  <select id="qObj" class="form-select">
+                    <option value="charte" data-i18n="form_obj_1">Prime à l'investissement Charte TPME (jusqu'à 30%)</option>
+                    <option value="transmission" data-i18n="form_obj_2">Transmission d'entreprise PACT'Transmission (90% subventionné)</option>
+                    <option value="marocpme" data-i18n="form_obj_3">Assistance technique & ISO Maroc PME (80-90%)</option>
+                    <option value="cbam" data-i18n="form_obj_4">Audit Carbone CBAM / Export UE</option>
+                    <option value="tanger" data-i18n="form_obj_5">Implantation industrielle Tanger Med & Zones Franches</option>
+                    <option value="bank" data-i18n="form_obj_6">Montage de crédit bancaire garanti Tamwilcom</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-gold full-width btn-lg mt-2">
+                  <i data-lucide="check" class="icon-sm" aria-hidden="true"></i>
+                  <span data-i18n="form_btn">Réserver Mon Entretien Téléphonique Gratuit</span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -819,112 +1180,176 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col footer-col-wide">
-          <div class="brand-logo mb-3">
-            <div class="brand-mark"><span class="mark-letter">M</span></div>
-            <div class="brand-text">
-              <span class="brand-name">McKenzo & Co.</span>
-              <span class="brand-tagline">NOTRE ENGAGEMENT, VOTRE RÉUSSITE</span>
-            </div>
+        <!-- Col 1: Identity -->
+        <div class="footer-col">
+          <div class="brand-logo mb-2">
+            <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." style="height: 42px;">
           </div>
-          <p class="footer-desc">
-            Bureau d'études générales & d'impact sur l'environnement. Conseil en stratégie, management et ingénierie au service du développement durable et de l'accélération industrielle panafricaine.
+          <p class="footer-desc" data-i18n="footer_desc">
+            McKenzo & Co SARL — Bureau d'études générales agréé. Partenaire unique de l'investisseur industriel au Maroc, de l'idée au financement, de l'usine à la transmission.
           </p>
-          <div class="domain-notice mt-3">
-            <span class="text-xs text-muted">Nom de domaine officiel : </span>
-            <strong class="text-emerald font-mono">mcknzo.co</strong>
+          <div class="mt-4 text-xs text-muted">
+            <span class="block">ICE : 002788636000071 • RC : 11429</span>
+            <span class="block">IF : 50252513 • Patente : 41302964</span>
+            <span class="block text-emerald font-mono mt-1" data-i18n="footer_domain">Site officiel : www.mckenzo.co • contact@mckenzo.ma</span>
           </div>
         </div>
 
+        <!-- Col 2: Subsidies -->
         <div class="footer-col">
-          <h4 class="footer-h">Pôles d'Excellence</h4>
+          <h4 class="footer-h gold" data-i18n="footer_col1_title">Dispositifs & Aides</h4>
           <ul class="footer-links">
-            <li><a href="#expertises">Conseil en Stratégie</a></li>
-            <li><a href="#expertises">Études d'Impact EIES SFI</a></li>
-            <li><a href="#expertises">Ingénierie VRD & Eau</a></li>
-            <li><a href="#expertises">Assistance Maîtrise d'Ouvrage</a></li>
-            <li><a href="#expertises">Audits Décarbonation RSE</a></li>
+            <li><a href="#simulateur" data-i18n="footer_item_charte">Prime Charte TPME (jusqu'à 30%)</a></li>
+            <li><a href="#offres" data-i18n="footer_item_pact">PACT'Transmission (90% Maroc PME)</a></li>
+            <li><a href="#offres" data-i18n="footer_item_pme">Assistance Technique Maroc PME (80-90%)</a></li>
+            <li><a href="#offres" data-i18n="footer_item_cbam">Audit Carbone CBAM & Décarbonation</a></li>
+            <li><a href="#poles" data-i18n="footer_item_mre">MDM Invest 10% (Offre MRE)</a></li>
+            <li><a href="#poles" data-i18n="footer_item_tamwil">Garanties Crédit Tamwilcom</a></li>
           </ul>
         </div>
 
+        <!-- Col 3: Poles -->
         <div class="footer-col">
-          <h4 class="footer-h">Implantations</h4>
+          <h4 class="footer-h" data-i18n="footer_col2_title">Pôles Stratégiques</h4>
           <ul class="footer-links">
-            <li><strong>Maroc :</strong> 343 bd Med V, Béni Mellal</li>
-            <li><strong>Maroc :</strong> CFC Hub Casablanca</li>
-            <li><strong>Sénégal :</strong> Point E, Dakar</li>
-            <li><strong>Côte d'Ivoire :</strong> Représentation Abidjan</li>
+            <li><a href="#poles" data-i18n="footer_pole_fin">Ingénierie de Financement</a></li>
+            <li><a href="#poles" data-i18n="footer_pole_eval">Expertise & Évaluation Cherkaoui</a></li>
+            <li><a href="#poles" data-i18n="footer_pole_terr">Développement Territorial INDH</a></li>
+            <li><a href="#poles" data-i18n="footer_pole_ind">Performance Industrielle & Layout</a></li>
+            <li><a href="#poles" data-i18n="footer_pole_ai">Data & IA Appliquée à l'Industrie</a></li>
+            <li><a href="#tangermed" data-i18n="footer_pole_tanger">Implantation Tanger Med & TAC</a></li>
           </ul>
         </div>
 
+        <!-- Col 4: Reach & Contact -->
         <div class="footer-col">
-          <h4 class="footer-h">Certifications</h4>
-          <p class="footer-text-sm">
-            Agréé bureau d'études d'impact sur l'environnement. Missions conduites selon les directives de la Banque Mondiale, de la SFI et les Principes de l'Équateur.
-          </p>
+          <h4 class="footer-h" data-i18n="footer_col3_title">Siège & Couverture</h4>
+          <ul class="footer-links">
+            <li><strong data-i18n="footer_reach_hq">Siège :</strong> <span data-i18n="legal_val_headquarters">343 Bd Mohamed V, 1er ét, Béni Mellal</span></li>
+            <li><strong data-i18n="footer_reach_phone">Tél direct :</strong> <span class="font-mono">+212 808 598 465</span></li>
+            <li><strong data-i18n="footer_reach_email">Email officiel :</strong> <span>contact@mckenzo.ma</span></li>
+            <li><strong data-i18n="footer_reach_geo">Couverture :</strong> <span data-i18n="legal_val_reach">Casablanca, Tanger Med, Rabat, Marrakech, Kénitra, Agadir</span></li>
+          </ul>
+          <div class="mt-4">
+            <button class="btn btn-outline-gold btn-sm full-width" data-action="open-legal">
+              <i data-lucide="award" class="icon-xs" aria-hidden="true"></i>
+              <span data-i18n="footer_btn_accred">Accréditations Officielles</span>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="footer-bottom flex-between text-xs">
-        <div>&copy; 2026 McKenzo & Co. (mcknzo.co). Tous droits réservés.</div>
+        <div data-i18n="footer_legal_copy">&copy; 2026 McKenzo & Co SARL. Tous droits réservés. Bureau d'études générales agréé (Capital 100 000 MAD).</div>
         <div class="footer-legal flex-align gap-4">
-          <a href="#">Mentions Légales & Agréments</a>
-          <a href="#">Politique de Confidentialité</a>
-          <a href="#">Charte Déontologique</a>
-          <a href="#">Portail Clients</a>
+          <a href="#" data-action="open-legal" data-i18n="footer_link_legal">Mentions Légales & ICE</a>
+          <a href="#" data-action="open-legal" data-i18n="footer_link_conventions">Conventions Partenaires (BMCI)</a>
+          <a href="#simulateur" data-i18n="footer_link_sim">Simulateur Réglementaire</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Modal Dialog: Soumettre un TDR (Modern Top-Layer with @starting-style) -->
-  <dialog class="custom-dialog" id="rfpDialog">
+  <!-- Modal Dialog 1: Free 15-Minute Diagnostic Call Drawer -->
+  <dialog class="custom-dialog" id="bookingDialog">
     <div class="dialog-content">
-      <button class="dialog-close" id="btnCloseRFP" aria-label="Fermer la boîte de dialogue">&times;</button>
+      <button class="dialog-close" id="btnCloseBooking" aria-label="Fermer la boîte de dialogue">&times;</button>
       <div class="dialog-header">
-        <span class="section-tag">Dépôt de Cahier des Charges</span>
-        <h3 class="dialog-title">Soumettre un Terme de Référence (TDR)</h3>
-        <p class="dialog-desc">Transmettez vos documents d'appel d'offres en toute confidentialité.</p>
+        <span class="section-tag tag-gold" data-i18n="diag_tag">Diagnostic Gratuit & Sans Engagement</span>
+        <h3 class="dialog-title" data-i18n="modal_book_title">Réserver Votre Appel Diagnostic de 15 Min</h3>
+        <p class="dialog-desc" data-i18n="modal_book_desc">Échange direct avec M. SALHI Anass ou un directeur d'études sénior. Gratuit et sans engagement.</p>
       </div>
 
-      <form id="rfpForm">
-        <div class="form-grid-2 mb-3">
+      <form id="modalBookingForm">
+        <div class="form-group">
+          <label class="form-label" for="mName" data-i18n="form_name">Votre Nom & Prénom *</label>
+          <input type="text" id="mName" class="form-input" placeholder="ex: Karim Tazi" data-i18n-placeholder="ph_name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="mComp" data-i18n="form_comp">Raison Sociale / Entreprise *</label>
+          <input type="text" id="mComp" class="form-input" placeholder="Société ou Porteur de projet" data-i18n-placeholder="ph_comp" required>
+        </div>
+
+        <div class="form-grid-2">
           <div class="form-group">
-            <label class="form-label" for="rfpOrg">Entité Émettrice *</label>
-            <input type="text" id="rfpOrg" class="form-input" placeholder="Société / Organisme" required>
+            <label class="form-label" for="mPhone" data-i18n="form_phone">Téléphone Direct *</label>
+            <input type="tel" id="mPhone" class="form-input font-mono" placeholder="+212 600 00 00 00" data-i18n-placeholder="ph_phone" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="rfpTitle">Intitulé de la Mission *</label>
-            <input type="text" id="rfpTitle" class="form-input" placeholder="ex: EIES Centrale Éolienne" required>
+            <label class="form-label" for="mEmail" data-i18n="form_email">Courriel *</label>
+            <input type="email" id="mEmail" class="form-input" placeholder="contact@entreprise.ma" data-i18n-placeholder="ph_email" required>
           </div>
         </div>
 
-        <div class="form-grid-2 mb-3">
-          <div class="form-group">
-            <label class="form-label" for="rfpEmail">Courriel de Contact *</label>
-            <input type="email" id="rfpEmail" class="form-input" placeholder="contact@organisme.org" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="rfpPhone">Téléphone Direct</label>
-            <input type="tel" id="rfpPhone" class="form-input" placeholder="+212 / +221 ...">
-          </div>
+        <div class="form-group">
+          <label class="form-label" for="mObj" data-i18n="form_obj">Objet de la Consultation *</label>
+          <select id="mObj" class="form-select">
+            <option value="charte" data-i18n="form_obj_1">Prime Charte TPME 30%</option>
+            <option value="transmission" data-i18n="form_obj_2">Transmission PACT'Transmission 90%</option>
+            <option value="marocpme" data-i18n="form_obj_3">Assistance Technique Maroc PME</option>
+            <option value="cbam" data-i18n="form_obj_4">Diagnostic Carbone Export UE (CBAM)</option>
+            <option value="tanger" data-i18n="form_obj_5">Implantation Tanger Med & TAC</option>
+            <option value="bank" data-i18n="form_obj_6">Crédit bancaire & Tamwilcom</option>
+          </select>
         </div>
 
-        <div class="form-group mb-3">
-          <label class="form-label" for="rfpDeadline">Date Limite de Remise des Offres</label>
-          <input type="date" class="form-input" id="rfpDeadline">
-        </div>
-
-        <div class="form-group mb-4">
-          <label class="form-label" for="rfpDesc">Description Sommaire ou Lien vers la Plateforme</label>
-          <textarea id="rfpDesc" rows="3" class="form-input" placeholder="Collez l'URL de l'appel d'offres ou précisez les livrables attendus..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-emerald full-width btn-lg">
-          <i data-lucide="upload-cloud" class="icon-sm" aria-hidden="true"></i>
-          <span>Enregistrer le Dossier TDR</span>
+        <button type="submit" class="btn btn-gold full-width btn-lg mt-3">
+          <i data-lucide="check" class="icon-sm" aria-hidden="true"></i>
+          <span data-i18n="form_btn">Confirmer Mon Rendez-Vous Téléphonique</span>
         </button>
       </form>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 2: Official Accreditations & Partnerships Dossier -->
+  <dialog class="custom-dialog" id="legalDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="btnCloseLegal" aria-label="Fermer la boîte de dialogue">&times;</button>
+      <div class="dialog-header">
+        <span class="section-tag tag-gold" data-i18n="modal_cred_tag">Accréditations Institutionnelles</span>
+        <h3 class="dialog-title" data-i18n="modal_cred_title">Dossier d'Accréditations & Conventions Officielles</h3>
+        <p class="dialog-desc" data-i18n="modal_cred_desc">Identité juridique complète, convention judiciaire Ahmed Cherkaoui et conventions bancaires BMCI.</p>
+      </div>
+
+      <div class="legal-dossier-body">
+        <div class="mb-4">
+          <h4 class="text-white text-sm font-bold mb-2" data-i18n="modal_cred_sec1_title">1. Partenariat Judiciaire Assermenté</h4>
+          <p class="text-xs text-secondary leading-relaxed mb-2" data-i18n="modal_cred_sec1_desc">
+            Convention exclusive avec le Cabinet d'expertise Ahmed Cherkaoui, expert judiciaire assermenté près la Cour d'appel de Béni Mellal, spécialisé en évaluation immobilière, foncière et des fonds de commerce.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="text-white text-sm font-bold mb-2" data-i18n="modal_cred_sec2_title">2. Partenariats Bancaires Actifs</h4>
+          <p class="text-xs text-secondary leading-relaxed mb-2" data-i18n="modal_cred_sec2_desc">
+            Convention de partenariat actif avec la BMCI (Groupe BNP Paribas) pour l'ingénierie financière des TPME et l'octroi des crédits d'investissement. Conventions et relations de place avec CFG Bank et Bank Al Youssr.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="text-white text-sm font-bold mb-2" data-i18n="modal_cred_sec3_title">3. Enregistrements au Registre du Commerce</h4>
+          <table class="legal-table text-xs">
+            <tbody>
+              <tr><td data-i18n="legal_th_name">Raison Sociale</td><td><strong>McKenzo &amp; Co SARL</strong></td></tr>
+              <tr><td data-i18n="legal_th_status">Objet</td><td data-i18n="legal_val_status">Bureau d'études générales</td></tr>
+              <tr><td data-i18n="legal_th_capital">Capital</td><td data-i18n="legal_val_capital">100 000 MAD</td></tr>
+              <tr><td data-i18n="legal_th_ice">ICE</td><td class="font-mono">002788636000071</td></tr>
+              <tr><td data-i18n="legal_th_rc">RC</td><td data-i18n="legal_val_rc">11429 Béni Mellal</td></tr>
+              <tr><td data-i18n="legal_th_if">IF</td><td class="font-mono">50252513</td></tr>
+              <tr><td data-i18n="legal_th_patente">Patente</td><td class="font-mono">41302964</td></tr>
+              <tr><td data-i18n="legal_th_direction">Directeur</td><td>M. SALHI Anass</td></tr>
+              <tr><td data-i18n="legal_th_headquarters">Adresse</td><td data-i18n="legal_val_headquarters">343 Bd Mohamed V, 1er ét, Bureau n°1, Béni Mellal</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-emerald" id="btnConfirmCloseLegal">
+            <span data-i18n="modal_cred_btn_close">Fermer le Dossier</span>
+          </button>
+        </div>
+      </div>
     </div>
   </dialog>
 
