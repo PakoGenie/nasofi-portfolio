@@ -1,47 +1,48 @@
 /**
- * Synapse Infrastructure — Enterprise Storage (NAS/SAN) IOPS & Capacity Sizer
- * Simulates enterprise flash/SAS arrays, RAID/ZFS topologies, and data reduction ratios.
+ * SYNAPSE IT MAROC — Simulateur de Sauvegarde & Sécurité Anti-Ransomware PME
+ * Calcule simplement la capacité de stockage NAS nécessaire, le niveau de protection et le budget.
  */
 
 class StorageCalculator {
   constructor() {
-    this.driveCountInput = document.getElementById('storageDriveCount');
-    this.driveTypeSelect = document.getElementById('storageDriveType');
-    this.raidSelect = document.getElementById('storageRaidType');
-    this.dedupeSlider = document.getElementById('storageDedupeRatio');
-    this.dedupeValDisplay = document.getElementById('storageDedupeVal');
+    this.postesInput = document.getElementById('storageDriveCount');
+    this.dataTypeSelect = document.getElementById('storageDriveType');
+    this.protectionSelect = document.getElementById('storageRaidType');
+    this.retentionSlider = document.getElementById('storageDedupeRatio');
+    this.retentionValDisplay = document.getElementById('storageDedupeVal');
 
     this.bindEvents();
     this.calculate();
   }
 
   bindEvents() {
-    if (this.driveCountInput) {
-      this.driveCountInput.addEventListener('input', () => this.calculate());
+    if (this.postesInput) {
+      this.postesInput.addEventListener('input', () => this.calculate());
     }
-    if (this.driveTypeSelect) {
-      this.driveTypeSelect.addEventListener('change', () => this.calculate());
+    if (this.dataTypeSelect) {
+      this.dataTypeSelect.addEventListener('change', () => this.calculate());
     }
-    if (this.raidSelect) {
-      this.raidSelect.addEventListener('change', () => this.calculate());
+    if (this.protectionSelect) {
+      this.protectionSelect.addEventListener('change', () => this.calculate());
     }
-    if (this.dedupeSlider) {
-      this.dedupeSlider.addEventListener('input', () => {
-        if (this.dedupeValDisplay) {
-          this.dedupeValDisplay.textContent = `${parseFloat(this.dedupeSlider.value).toFixed(1)}x`;
+    if (this.retentionSlider) {
+      this.retentionSlider.addEventListener('input', () => {
+        if (this.retentionValDisplay) {
+          const v = parseInt(this.retentionSlider.value, 10);
+          this.retentionValDisplay.textContent = `${v} Jours d'historique`;
         }
         this.calculate();
       });
     }
 
-    // Quick drive count presets
+    // Quick employee presets
     document.querySelectorAll('.btn-storage-preset').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.btn-storage-preset').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const count = parseInt(btn.dataset.drives, 10);
-        if (this.driveCountInput) {
-          this.driveCountInput.value = count;
+        if (this.postesInput) {
+          this.postesInput.value = count;
           this.calculate();
         }
       });
@@ -49,100 +50,76 @@ class StorageCalculator {
   }
 
   calculate() {
-    const numDrives = parseInt(this.driveCountInput ? this.driveCountInput.value : 24, 10);
-    const driveType = this.driveTypeSelect ? this.driveTypeSelect.value : 'nvme-7.68';
-    const raidType = this.raidSelect ? this.raidSelect.value : 'raid6';
-    const dedupeRatio = parseFloat(this.dedupeSlider ? this.dedupeSlider.value : 1.8);
+    const nbPostes = parseInt(this.postesInput ? this.postesInput.value : 15, 10);
+    const dataType = this.dataTypeSelect ? this.dataTypeSelect.value : 'office';
+    const protectionLevel = this.protectionSelect ? this.protectionSelect.value : 'raid1';
+    const retentionDays = parseInt(this.retentionSlider ? this.retentionSlider.value : 30, 10);
 
-    // Drive specs
-    let driveCapacityTB = 7.68;
-    let driveReadIOPS = 120000;
-    let driveWriteIOPS = 65000;
-    let driveSpeedMB = 6800; // Gen4 NVMe sequential
-    let isNvme = true;
+    // Estimation du volume moyen de données par poste
+    let gbPerPoste = 80; // Bureautique standard (Word, Excel, Devis, Factures, Sage)
+    let typeDescription = 'Documents bureautiques & comptables légers';
 
-    if (driveType === 'nvme-3.84') {
-      driveCapacityTB = 3.84;
-      driveReadIOPS = 100000;
-      driveWriteIOPS = 55000;
-      driveSpeedMB = 6500;
-    } else if (driveType === 'nvme-7.68') {
-      driveCapacityTB = 7.68;
-      driveReadIOPS = 125000;
-      driveWriteIOPS = 70000;
-      driveSpeedMB = 7000;
-    } else if (driveType === 'nvme-15.36') {
-      driveCapacityTB = 15.36;
-      driveReadIOPS = 140000;
-      driveWriteIOPS = 80000;
-      driveSpeedMB = 7200;
-    } else if (driveType === 'sas-hdd-22') {
-      driveCapacityTB = 22.0;
-      driveReadIOPS = 450;
-      driveWriteIOPS = 400;
-      driveSpeedMB = 280;
-      isNvme = false;
+    if (dataType === 'office') {
+      gbPerPoste = 90;
+      typeDescription = 'Fichiers Word, Excel, PDF, Devis, Factures et bases Sage/ERP';
+    } else if (dataType === 'plans') {
+      gbPerPoste = 350;
+      typeDescription = 'Plans d\'architectes, fichiers AutoCAD, photos de chantiers et gros PDF';
+    } else if (dataType === 'medical') {
+      gbPerPoste = 220;
+      typeDescription = 'Dossiers patients, imageries médicales, fiches de consultation et ordonnances';
+    } else if (dataType === 'creative') {
+      gbPerPoste = 600;
+      typeDescription = 'Fichiers graphiques Photoshop/Illustrator, vidéos de communication et catalogues';
     }
 
-    // Raw capacity
-    const rawTB = numDrives * driveCapacityTB;
+    const volumeBrutTB = (nbPostes * gbPerPoste * (1 + (retentionDays / 90))) / 1000;
+    
+    // Déterminer la taille utile recommandée (ex: 4 To, 8 To, 16 To, 32 To)
+    let capaciteUtileTB = 4;
+    let nbDisques = 2;
+    let modeleNAS = 'NAS Synology 2 Baies (DS224+)';
+    let prixEstimeMAD = 8900;
 
-    // Usable capacity based on RAID topology
-    let usableDrives = numDrives;
-    let faultToleranceText = '2 Drives (Dual Parity)';
-    let writePenalty = 6; // RAID 6 write penalty
-
-    if (raidType === 'raid10') {
-      usableDrives = numDrives / 2;
-      faultToleranceText = '1 Drive per mirror pair (Up to 50% of array)';
-      writePenalty = 2;
-    } else if (raidType === 'raid6' || raidType === 'raidz2') {
-      usableDrives = Math.max(1, numDrives - 2);
-      faultToleranceText = 'Any 2 simultaneous drive failures';
-      writePenalty = 6;
-    } else if (raidType === 'raid60') {
-      // 2 parity drives per 12-drive set
-      const sets = Math.max(2, Math.floor(numDrives / 12));
-      usableDrives = Math.max(1, numDrives - (sets * 2));
-      faultToleranceText = '2 Drives per sub-array (Up to 4 drives total)';
-      writePenalty = 6;
-    }
-
-    const usableTB = usableDrives * driveCapacityTB;
-    const effectiveTB = usableTB * dedupeRatio;
-
-    // IOPS calculations
-    let totalReadIOPS = 0;
-    let totalWriteIOPS = 0;
-    let totalThroughputGB = 0;
-
-    if (isNvme) {
-      // Bus/Controller saturations
-      const controllerLimitIOPS = 2800000; // Dual 100GbE RoCE / NVMe-oF limit
-      const rawTotalRead = numDrives * driveReadIOPS;
-      totalReadIOPS = Math.min(controllerLimitIOPS, Math.round(rawTotalRead * 0.85));
-
-      const rawTotalWrite = (numDrives * driveWriteIOPS) / writePenalty;
-      totalWriteIOPS = Math.min(1800000, Math.round(rawTotalWrite * 0.8));
-
-      // 100GbE / PCIe Gen4 backbone limits throughput to ~48 GB/s
-      totalThroughputGB = Math.min(48.5, ((usableDrives * driveSpeedMB) / 1000) * 0.75);
+    if (volumeBrutTB <= 3.5) {
+      capaciteUtileTB = 4;
+      nbDisques = 2;
+      modeleNAS = 'NAS Synology 2 Baies (DS224+)';
+      prixEstimeMAD = 8900;
+    } else if (volumeBrutTB <= 7.5) {
+      capaciteUtileTB = 8;
+      nbDisques = 4;
+      modeleNAS = 'NAS Synology 4 Baies (DS923+)';
+      prixEstimeMAD = 14500;
+    } else if (volumeBrutTB <= 14) {
+      capaciteUtileTB = 16;
+      nbDisques = 4;
+      modeleNAS = 'NAS Synology 4 Baies Pro (DS1522+)';
+      prixEstimeMAD = 19800;
     } else {
-      // SAS HDD calculations
-      totalReadIOPS = Math.round(numDrives * driveReadIOPS * 0.9);
-      totalWriteIOPS = Math.round((numDrives * driveWriteIOPS) / writePenalty);
-      totalThroughputGB = Math.min(6.2, ((usableDrives * driveSpeedMB) / 1000) * 0.8);
+      capaciteUtileTB = 32;
+      nbDisques = 6;
+      modeleNAS = 'NAS Synology Rack Pro (RS1221+)';
+      prixEstimeMAD = 34000;
     }
 
-    // Format TB vs PB
-    const formatCap = (tb) => {
-      if (tb >= 1000) {
-        return `${(tb / 1000).toFixed(2)} PB`;
-      }
-      return `${tb.toFixed(1)} TB`;
-    };
+    let garantieSecurite = 'Protection standard : Disques en miroir RAID 1 (zéro perte si 1 disque casse)';
+    let repriseActivite = '< 30 minutes';
 
-    // Update DOM
+    if (protectionLevel === 'raid1') {
+      garantieSecurite = 'Double disque miroir : Vos données continuent d\'exister sur le 2ème disque si le 1er casse.';
+      repriseActivite = '< 30 minutes';
+    } else if (protectionLevel === 'anti-ransomware') {
+      garantieSecurite = 'Protection Anti-Ransomware : Instantanés immuables verrouillés. Les virus ne peuvent pas crypter vos sauvegardes.';
+      repriseActivite = '< 15 minutes';
+      prixEstimeMAD += 2500;
+    } else if (protectionLevel === 'cloud-hybrid') {
+      garantieSecurite = 'Protection Maximale 3-2-1 : Sauvegarde locale dans vos bureaux + Copie externe chiffrée sur le Cloud Marocain.';
+      repriseActivite = '< 10 minutes';
+      prixEstimeMAD += 4800;
+    }
+
+    // Mise à jour de l'affichage
     const rawEl = document.getElementById('storageRawCap');
     const usableEl = document.getElementById('storageUsableCap');
     const effEl = document.getElementById('storageEffectiveCap');
@@ -151,13 +128,13 @@ class StorageCalculator {
     const tpEl = document.getElementById('storageThroughput');
     const faultEl = document.getElementById('storageFaultTolerance');
 
-    if (rawEl) rawEl.textContent = formatCap(rawTB);
-    if (usableEl) usableEl.textContent = formatCap(usableTB);
-    if (effEl) effEl.textContent = formatCap(effectiveTB);
-    if (readIopsEl) readIopsEl.textContent = `${totalReadIOPS.toLocaleString()} IOPS`;
-    if (writeIopsEl) writeIopsEl.textContent = `${totalWriteIOPS.toLocaleString()} IOPS`;
-    if (tpEl) tpEl.textContent = `${totalThroughputGB.toFixed(1)} GB/s`;
-    if (faultEl) faultEl.textContent = faultToleranceText;
+    if (rawEl) rawEl.textContent = `${nbPostes} Collaborateurs`;
+    if (usableEl) usableEl.textContent = `${capaciteUtileTB} To Utiles`;
+    if (effEl) effEl.textContent = `${prixEstimeMAD.toLocaleString()} MAD HT`;
+    if (readIopsEl) readIopsEl.textContent = modeleNAS;
+    if (writeIopsEl) writeIopsEl.textContent = `${retentionDays} Jours de retour en arrière possible`;
+    if (tpEl) tpEl.textContent = repriseActivite;
+    if (faultEl) faultEl.textContent = garantieSecurite;
   }
 }
 

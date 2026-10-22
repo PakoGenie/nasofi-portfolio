@@ -69,7 +69,7 @@ server.listen(PORT, () => {
   console.log(`\n======================================================`);
   console.log(`🚀 Showcase Server running at http://localhost:${PORT}`);
   console.log(`🌐 MASTER PORTFOLIO HUB & DEVICE SIMULATOR: http://localhost:${PORT}/portfolio/`);
-  console.log(`🖥️  Website 11 - SYNAPSE INFRASTRUCTURE (Enterprise Datacenter Systems): http://localhost:${PORT}/projects/11-synapse-infrastructure/`);
+  console.log(`🖥️  Website 11 - SYNAPSE IT MAROC (Matériel, Serveurs & Baies PME): http://localhost:${PORT}/projects/11-synapse-infrastructure/`);
   console.log(`⚡ Website 10 - NEXUS PRIME (Multi-Asset Quant Trading Terminal): http://localhost:${PORT}/projects/10-nexus-terminal/`);
   console.log(`🏛️ Website 9 - ARCHIVIST (Architecture & Spatial Culture Journal): http://localhost:${PORT}/projects/09-archivist-journal/`);
   console.log(`💉 Website 8 - LUMINA DERMA-OS (Dermatology & Practice Intelligence): http://localhost:${PORT}/projects/08-lumina-dermatology/`);

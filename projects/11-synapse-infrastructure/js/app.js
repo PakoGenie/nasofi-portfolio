@@ -1,13 +1,14 @@
 /**
- * Synapse Infrastructure — Main Application Controller
- * Handles catalog filtering, dynamic BOM drawer, currency conversion, 24/7 NOC dispatch, and dialog events.
+ * SYNAPSE IT MAROC — Contrôleur Principal PME
+ * Gestion du catalogue matériel, panier devis (BOM), devis en Dirhams (MAD),
+ * assistance technique d'urgence et navigation.
  */
 
 class SynapseApp {
   constructor() {
-    this.currency = 'USD';
+    this.currency = 'MAD';
     this.currencyRate = 1.0;
-    this.currencySymbol = '$';
+    this.currencySymbol = 'MAD ';
     this.bomItems = [];
 
     this.initCatalog();
@@ -21,103 +22,92 @@ class SynapseApp {
   initCatalog() {
     this.catalogData = [
       {
-        id: 'cat-dell-r760',
-        name: 'Dell PowerEdge R760 2U Rackmount Server',
+        id: 'cat-dell-r350',
+        name: 'Serveur d\'Entreprise Dell PowerEdge R350 Rack',
         category: 'servers',
-        categoryLabel: 'Compute',
-        desc: 'Dual 4th/5th Gen Intel Xeon Scalable up to 64 cores/socket, 32 DDR5 DIMMs (8TB max), 24x NVMe U.2/U.3 bays, redundant 1400W Titanium PSUs.',
-        priceUsd: 14800,
-        leadTime: 'In Stock (Ships in 24h)',
+        categoryLabel: 'Serveurs & Gestion',
+        desc: 'Le serveur fiable par excellence pour héberger vos logiciels de gestion (Sage, Odoo, logiciels comptables, paie) et partager vos dossiers d\'équipe en toute sécurité.',
+        priceMad: 24500,
+        leadTime: 'En stock à Casablanca (Livré & Installé sous 48h)',
         img: 'assets/server-poweredge.jpg',
-        specs: ['2x Xeon Gold 6430', '256GB ECC DDR5', '8x 3.84TB NVMe Gen4', 'Dual 25GbE SFP28']
+        specs: ['Intel Xeon E-2336 6-Cœurs', '64 Go RAM ECC extensible', '4x Disques SAS 2.4 To en miroir RAID', 'Garantie 3 ans Dell ProSupport sur site']
       },
       {
-        id: 'cat-sm-hgx-h100',
-        name: 'Supermicro HGX H100 8-GPU AI Cluster SuperServer',
-        category: 'servers',
-        categoryLabel: 'AI / HPC',
-        desc: 'Turnkey high-density GPU computing for LLM fine-tuning and inference. 8x NVIDIA H100 SXM5 80GB with 3.2 Tbps NVLink interconnect.',
-        priceUsd: 89000,
-        leadTime: '3 Days Deployment',
-        img: 'assets/server-gpu-ai.jpg',
-        specs: ['8x NVIDIA H100 80GB SXM5', 'Dual AMD EPYC 9654 96-Core', '1.5TB DDR5', '8x 400G OSFP ConnectX-7']
-      },
-      {
-        id: 'cat-arista-7050x3',
-        name: 'Arista 7050X3 32-Port 100G Spine/Leaf Switch',
+        id: 'cat-cisco-switch-24',
+        name: 'Switch 24 Ports Gigabit PoE+ Cisco Business',
         category: 'networking',
-        categoryLabel: 'Networking',
-        desc: 'Wire-speed Layer 2/3 switching with 32x 100GbE QSFP28 ports, sub-800ns latency, dynamic buffer architecture, and EOS telemetry.',
-        priceUsd: 8400,
-        leadTime: 'In Stock',
+        categoryLabel: 'Réseau & Switchs',
+        desc: 'Relie tous les ordinateurs, imprimantes et téléphones de votre entreprise avec un débit Gigabit ultra-rapide. Alimente directement les bornes Wi-Fi et les caméras.',
+        priceMad: 12500,
+        leadTime: 'En stock',
         img: 'assets/switch-arista.jpg',
-        specs: ['32x 100GbE QSFP28', '6.4 Tbps Switching Capacity', 'Sub-800ns Port-to-Port', 'Dual Hot-Swap PSUs']
+        specs: ['24 Ports Gigabit 1000 Mbps', 'Alimentation PoE+ intégrée (370W)', 'Silencieux et basse consommation', 'Garantie à vie Cisco']
       },
       {
-        id: 'cat-fortigate-600f',
-        name: 'Fortinet FortiGate 600F Enterprise Next-Gen Firewall',
+        id: 'cat-fortigate-60f',
+        name: 'Pare-Feu & Routeur VPN Fortinet FortiGate 60F',
         category: 'networking',
-        categoryLabel: 'Security',
-        desc: 'Ultra-low latency hardware-accelerated SPU security processing with 140 Gbps firewall throughput, 11 Gbps Threat Protection, and Zero-Trust enforcement.',
-        priceUsd: 9200,
-        leadTime: 'In Stock',
+        categoryLabel: 'Sécurité & Télétravail',
+        desc: 'La sécurité informatique indispensable pour toute PME : bloque les attaques de pirates, filtre les sites dangereux et permet aux dirigeants de télétravailler en toute sécurité.',
+        priceMad: 9800,
+        leadTime: 'En stock',
         img: 'assets/firewall-fortinet.jpg',
-        specs: ['140 Gbps FW Throughput', '11 Gbps Threat Protection', '4x 25GE SFP28', 'Zero-Trust ZTNA Built-in']
+        specs: ['Télétravail VPN sécurisé inclus', 'Anti-Ransomware & Anti-Virus réseau', 'Priorité pour les réunions Teams/Zoom', 'Support technique réactif']
       },
       {
-        id: 'cat-truenas-san',
-        name: 'TrueNAS Enterprise Dual-Controller All-Flash NVMe SAN',
+        id: 'cat-synology-ds923',
+        name: 'Serveur NAS Synology 4 Baies (Sauvegarde Anti-Piratage)',
         category: 'storage',
-        categoryLabel: 'Storage / SAN',
-        desc: 'Active-Active dual controller high-availability SAN storage array with 24x NVMe U.3 bays, ZFS enterprise data integrity, and 1.2M random read IOPS.',
-        priceUsd: 26500,
-        leadTime: 'Pre-Configured',
+        categoryLabel: 'Sauvegarde & NAS',
+        desc: 'Sauvegarde automatiquement chaque soir tous les ordinateurs de votre entreprise. En cas de panne de PC ou de virus, retrouvez tous vos dossiers en 2 clics.',
+        priceMad: 14200,
+        leadTime: 'Pré-configuré prêt à l\'emploi',
         img: 'assets/storage-san-truenas.jpg',
-        specs: ['24x 7.68TB NVMe U.3 (184TB)', 'Dual Active-Active Controllers', '4x 100GbE NVMe-oF / RoCE', 'ZFS Self-Healing Scrub']
+        specs: ['4x Disques durs Western Digital Red Pro', 'Instantanés immuables anti-ransomware', 'Accès fichiers sécurisé à distance', 'Configuration clé en main incluse']
       },
       {
-        id: 'cat-synology-fs6400',
-        name: 'Synology FlashStation FS6400 24-Bay All-Flash NAS',
-        category: 'storage',
-        categoryLabel: 'Storage / NAS',
-        desc: 'Dual Intel Xeon Silver 8-core CPUs, expandable up to 72 drives, over 240,000 iSCSI 4K random write IOPS, and native Hyper Backup integration.',
-        priceUsd: 11200,
-        leadTime: 'In Stock',
-        img: 'assets/storage-nas-synology.jpg',
-        specs: ['Dual Xeon Silver 4110', '64GB ECC DDR4 (expandable 512GB)', '24x 2.5" SATA/SAS SSD bays', 'Dual 10GBASE-T Ports']
-      },
-      {
-        id: 'cat-apc-smartups-6k',
-        name: 'APC Smart-UPS On-Line 6000VA Lithium-Ion 3U',
-        category: 'power',
-        categoryLabel: 'Power / UPS',
-        desc: 'Zero transfer time double-conversion online UPS with long-life Lithium-ion battery technology, network management card, and unity power factor (6kW).',
-        priceUsd: 6900,
-        leadTime: 'In Stock',
-        img: 'assets/ups-apc.jpg',
-        specs: ['6000VA / 6000W Output', 'Lithium-Ion 8-10yr Battery', 'Zero Transfer Time Online', 'Switched Outlet Groups']
-      },
-      {
-        id: 'cat-fiber-trunk-om4',
-        name: 'MTP/MPO 24-Fiber OM4 Trunk & Ultra-Low Loss Patch Panels',
-        category: 'cabling',
-        categoryLabel: 'Structured Cabling',
-        desc: 'Precision pre-terminated factory-certified OM4 multimode MTP/LC breakout trunking with Panduit patch distribution panels and 0.15dB insertion loss.',
-        priceUsd: 840,
-        leadTime: 'Custom Lengths',
+        id: 'cat-unifi-wifi6-pack',
+        name: 'Pack 3 Bornes Wi-Fi Pro Plafonnier Ubiquiti UniFi 6',
+        category: 'networking',
+        categoryLabel: 'Wi-Fi Professionnel',
+        desc: 'Fini le Wi-Fi qui coupe quand vous changez de bureau ! Couverture sans fil puissante et continue dans tous vos locaux, salles de réunion et entrepôts.',
+        priceMad: 5800,
+        leadTime: 'En stock',
         img: 'assets/fiber-patch-panel.jpg',
-        specs: ['OM4 50/125um Laser-Optimized', 'MTP-24 to 12x LC Duplex Breakout', '0.15dB Max Insertion Loss', 'LSZH Low Smoke Zero Halogen']
+        specs: ['Technologie Wi-Fi 6 ultra-rapide', 'Réseau Invité sécurisé séparé', 'Plus de 150 smartphones & PC simultanés', 'Design discret au plafond']
       },
       {
-        id: 'cat-cat6a-shielded-pack',
-        name: 'Enterprise Cat6A F/UTP 10GbE Cabling & Management Spool',
+        id: 'cat-apc-smartups-1500',
+        name: 'Onduleur Parafoudre APC Smart-UPS 1500VA LCD',
+        category: 'power',
+        categoryLabel: 'Protection Électrique',
+        desc: 'Protège votre serveur et votre connexion contre les coupures d\'électricité et les variations de tension. Vos salariés continuent de travailler sans perdre leurs devis.',
+        priceMad: 8500,
+        leadTime: 'En stock',
+        img: 'assets/ups-apc.jpg',
+        specs: ['Autonomie 45 minutes sur coupure', 'Régulateur de tension automatique (AVR)', 'Écran LCD avec état de batterie', 'Prises protégées parafoudre']
+      },
+      {
+        id: 'cat-cablage-cat6-pack',
+        name: 'Pack Câblage Réseau Cat6 Cuivre & Prises Murales Pro',
         category: 'cabling',
-        categoryLabel: 'Structured Cabling',
-        desc: '500MHz verified 10GBASE-T solid copper shielded cabling bundles with custom colored strain-relief boots and 48-port angled patch panels.',
-        priceUsd: 520,
-        leadTime: 'In Stock',
+        categoryLabel: 'Câblage & Prises',
+        desc: 'Installation et tirage de câbles réseau Cat6 certifiés 1 Giga/s. Finition esthétique en goulottes, plastrons muraux et certification de chaque prise avec rapport Fluke.',
+        priceMad: 4200,
+        leadTime: 'Intervention sur site',
         img: 'assets/cabling-datacenter.jpg',
-        specs: ['Cat6A 10GBASE-T Certified', '500MHz Bandwidth Tested', 'Snagless Strain Relief Boots', 'Flame Retardant CMR/CMP']
+        specs: ['Câble 100% Cuivre Cat6 blindé', 'Prises RJ45 Legrand / Panduit', 'Repérage numéroté pour chaque bureau', 'Zéro câble qui traîne au sol']
+      },
+      {
+        id: 'cat-cameras-nvr-hikvision',
+        name: 'Kit 8 Caméras IP Haute Définition + Enregistreur NVR',
+        category: 'power',
+        categoryLabel: 'Sécurité des Locaux',
+        desc: 'Surveillez vos bureaux, caisses et entrepôts en direct sur votre smartphone (iPhone & Android). Vision nocturne nette et enregistrement automatique 30 jours.',
+        priceMad: 8900,
+        leadTime: 'En stock',
+        img: 'assets/noc-center.jpg',
+        specs: ['8 Caméras dôme/tube IP Full HD', 'Vision nocturne infrarouge 30m', 'Application smartphone gratuite', 'Enregistreur avec disque dur 4 To inclus']
       }
     ];
 
@@ -148,11 +138,11 @@ class SynapseApp {
           </ul>
           <div class="hardware-card-footer">
             <div class="price-stack">
-              <span class="price-label">Hardware Unit Price</span>
-              <span class="price-val">${this.formatPrice(item.priceUsd)}</span>
+              <span class="price-label">Prix Matériel Certifié</span>
+              <span class="price-val">${this.formatPrice(item.priceMad)}</span>
             </div>
             <button type="button" class="btn-primary btn-add-bom" data-id="${item.id}">
-              <span>Add to Project BOM</span>
+              <span>Ajouter au Devis</span>
             </button>
           </div>
         </div>
@@ -165,9 +155,9 @@ class SynapseApp {
         const item = this.catalogData.find(c => c.id === id);
         if (item) {
           this.addToBom(item, 1);
-          btn.textContent = '✓ Added to BOM';
+          btn.textContent = '✓ Ajouté au Devis';
           setTimeout(() => {
-            btn.innerHTML = '<span>Add to Project BOM</span>';
+            btn.innerHTML = '<span>Ajouter au Devis</span>';
           }, 1400);
         }
       });
@@ -187,12 +177,11 @@ class SynapseApp {
   }
 
   initPreloadBOM() {
-    // Start with core sample items
-    const srv = this.catalogData.find(c => c.id === 'cat-dell-r760');
-    const sw = this.catalogData.find(c => c.id === 'cat-arista-7050x3');
-    const fw = this.catalogData.find(c => c.id === 'cat-fortigate-600f');
+    const srv = this.catalogData.find(c => c.id === 'cat-dell-r350');
+    const sw = this.catalogData.find(c => c.id === 'cat-cisco-switch-24');
+    const fw = this.catalogData.find(c => c.id === 'cat-fortigate-60f');
 
-    if (srv) this.bomItems.push({ item: srv, quantity: 2 });
+    if (srv) this.bomItems.push({ item: srv, quantity: 1 });
     if (sw) this.bomItems.push({ item: sw, quantity: 1 });
     if (fw) this.bomItems.push({ item: fw, quantity: 1 });
 
@@ -208,8 +197,8 @@ class SynapseApp {
         item: {
           id: product.id || 'custom_' + Math.random().toString(36).substring(2, 7),
           name: product.name,
-          priceUsd: product.priceUsd,
-          category: product.category || 'Hardware'
+          priceMad: product.priceMad || 0,
+          category: product.category || 'Matériel'
         },
         quantity: qty
       });
@@ -252,8 +241,8 @@ class SynapseApp {
       if (this.bomItems.length === 0) {
         tableBody.innerHTML = `
           <div class="empty-bom-state">
-            <p>Your Project BOM is currently empty.</p>
-            <span>Select hardware from the catalog or 42U Rack Configurator above.</span>
+            <p>Votre devis est actuellement vide.</p>
+            <span>Sélectionnez du matériel dans le catalogue ou utilisez le configurateur de baie ci-dessus.</span>
           </div>
         `;
       } else {
@@ -261,7 +250,7 @@ class SynapseApp {
           <div class="bom-line-item">
             <div class="bom-line-info">
               <span class="bom-line-title">${entry.item.name}</span>
-              <span class="bom-line-rate">${this.formatPrice(entry.item.priceUsd)} each</span>
+              <span class="bom-line-rate">${this.formatPrice(entry.item.priceMad)} l'unité</span>
             </div>
             <div class="bom-line-qty">
               <button type="button" class="btn-qty-minus" data-id="${entry.item.id}">-</button>
@@ -269,9 +258,9 @@ class SynapseApp {
               <button type="button" class="btn-qty-plus" data-id="${entry.item.id}">+</button>
             </div>
             <div class="bom-line-subtotal">
-              ${this.formatPrice(entry.item.priceUsd * entry.quantity)}
+              ${this.formatPrice(entry.item.priceMad * entry.quantity)}
             </div>
-            <button type="button" class="btn-remove-line" data-id="${entry.item.id}" title="Remove item">&times;</button>
+            <button type="button" class="btn-remove-line" data-id="${entry.item.id}" title="Retirer">&times;</button>
           </div>
         `).join('');
 
@@ -287,18 +276,17 @@ class SynapseApp {
       }
     }
 
-    // Calculations
-    const hardwareSubtotal = this.bomItems.reduce((acc, curr) => acc + (curr.item.priceUsd * curr.quantity), 0);
+    const hardwareSubtotal = this.bomItems.reduce((acc, curr) => acc + (curr.item.priceMad * curr.quantity), 0);
     
-    // Labor add-ons
+    // Services optionnels d'installation
     const optDeploy = document.getElementById('bomOptDeploy');
     const optCabling = document.getElementById('bomOptCabling');
     const optSla = document.getElementById('bomOptSla');
 
     let laborTotal = 0;
-    if (optDeploy && optDeploy.checked) laborTotal += 3500;
+    if (optDeploy && optDeploy.checked) laborTotal += 2500;
     if (optCabling && optCabling.checked) laborTotal += 1800;
-    if (optSla && optSla.checked) laborTotal += Math.round(hardwareSubtotal * 0.18);
+    if (optSla && optSla.checked) laborTotal += Math.round(hardwareSubtotal * 0.15);
 
     const grandTotal = hardwareSubtotal + laborTotal;
 
@@ -323,13 +311,11 @@ class SynapseApp {
       btnClose.addEventListener('click', () => dialog.close());
     }
 
-    // Labor checkboxes change
     ['bomOptDeploy', 'bomOptCabling', 'bomOptSla'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.addEventListener('change', () => this.updateBomUI());
     });
 
-    // Close when clicking outside modal backdrop
     if (dialog) {
       dialog.addEventListener('click', (e) => {
         const rect = dialog.getBoundingClientRect();
@@ -337,19 +323,16 @@ class SynapseApp {
           rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
           rect.left <= e.clientX && e.clientX <= rect.left + rect.width
         );
-        if (!isInDialog) {
-          dialog.close();
-        }
+        if (!isInDialog) dialog.close();
       });
     }
 
-    // RFQ Submit
     const rfqForm = document.getElementById('bomRfqForm');
     if (rfqForm) {
       rfqForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const refNumber = 'SYN-BOM-' + Math.floor(100000 + Math.random() * 900000);
-        alert(`BOM RFQ Submitted Successfully!\n\nReference: ${refNumber}\nAn Enterprise Infrastructure Solutions Architect will deliver your official stamped quote and SLA proposal within 2 hours.`);
+        const refNumber = 'DEV-SYN-' + Math.floor(10000 + Math.random() * 90000);
+        alert(`Votre demande de devis est enregistrée avec succès !\n\nRéférence : ${refNumber}\nUn technicien conseil vous contacte sous 2 heures ouvrées pour convenir d'une visite technique gratuite dans vos locaux.`);
         if (dialog) dialog.close();
       });
     }
@@ -371,7 +354,6 @@ class SynapseApp {
     const openNoc = () => {
       if (dialog && typeof dialog.showModal === 'function') {
         dialog.showModal();
-        this.startNocTimer();
       }
     };
 
@@ -386,9 +368,7 @@ class SynapseApp {
           rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
           rect.left <= e.clientX && e.clientX <= rect.left + rect.width
         );
-        if (!isInDialog) {
-          dialog.close();
-        }
+        if (!isInDialog) dialog.close();
       });
     }
 
@@ -396,27 +376,10 @@ class SynapseApp {
     if (nocForm) {
       nocForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const ticketId = 'INC-' + Math.floor(1000000 + Math.random() * 9000000);
-        alert(`CRITICAL TICKET DISPATCHED: ${ticketId}\n\nGuaranteed SLA Triage Active: An on-call Tier-3 Network/Systems Engineer has been paged. Hardware sparing courier on standby.`);
+        alert(`Demande d'intervention urgente reçue !\n\nNotre équipe technique de permanence a été notifiée immédiatement. Un technicien vous rappelle dans les 10 minutes.`);
         if (dialog) dialog.close();
       });
     }
-  }
-
-  startNocTimer() {
-    const timerEl = document.getElementById('nocSlaTimer');
-    if (!timerEl) return;
-
-    let seconds = 15 * 60; // 15:00
-    if (this.nocInterval) clearInterval(this.nocInterval);
-
-    this.nocInterval = setInterval(() => {
-      seconds--;
-      if (seconds < 0) seconds = 0;
-      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
-      const s = (seconds % 60).toString().padStart(2, '0');
-      timerEl.textContent = `${m}:${s}`;
-    }, 1000);
   }
 
   initCurrencySwitcher() {
@@ -427,15 +390,15 @@ class SynapseApp {
       const val = select.value;
       this.currency = val;
 
-      if (val === 'USD') {
+      if (val === 'MAD') {
         this.currencyRate = 1.0;
-        this.currencySymbol = '$';
-      } else if (val === 'MAD') {
-        this.currencyRate = 10.15; // 1 USD = 10.15 MAD
         this.currencySymbol = 'MAD ';
       } else if (val === 'EUR') {
-        this.currencyRate = 0.92; // 1 USD = 0.92 EUR
+        this.currencyRate = 0.092; // 1 MAD = 0.092 EUR
         this.currencySymbol = '€';
+      } else if (val === 'USD') {
+        this.currencyRate = 0.098; // 1 MAD = 0.098 USD
+        this.currencySymbol = '$';
       }
 
       this.renderCatalog(document.querySelector('.filter-tab-btn.active')?.dataset.filter || 'all');
@@ -446,11 +409,11 @@ class SynapseApp {
     });
   }
 
-  formatPrice(usdAmount) {
-    const converted = Math.round(usdAmount * this.currencyRate);
+  formatPrice(madAmount) {
     if (this.currency === 'MAD') {
-      return `${converted.toLocaleString()} MAD`;
+      return `${Math.round(madAmount).toLocaleString()} MAD HT`;
     }
+    const converted = Math.round(madAmount * this.currencyRate);
     return `${this.currencySymbol}${converted.toLocaleString()}`;
   }
 
@@ -464,7 +427,6 @@ class SynapseApp {
       }
     });
 
-    // Mobile nav toggle
     const toggle = document.getElementById('mobileNavToggle');
     const menu = document.getElementById('navLinks');
     if (toggle && menu) {
@@ -478,7 +440,7 @@ class SynapseApp {
   }
 }
 
-// Bootstrap once DOM is ready
+// Bootstrap
 document.addEventListener('DOMContentLoaded', () => {
   window.SynapseApp = new SynapseApp();
 

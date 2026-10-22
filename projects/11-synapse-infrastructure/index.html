@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SYNAPSE INFRASTRUCTURE — Enterprise Datacenter Systems, 42U Racks & Mission-Critical Networks</title>
-  <meta name="description" content="Turnkey enterprise IT infrastructure engineering: 42U rack configurator, 400G spine-leaf networking, hardware procurement, high-density AI nodes, enterprise SAN/NAS, and 24/7 managed NOC dispatch.">
+  <title>SYNAPSE IT MAROC — Infrastructure Informatique, Matériel, Serveurs &amp; Réseaux pour PME au Maroc</title>
+  <meta name="description" content="Vente de matériel certifié, installation de serveurs, câblage réseau propre, Wi-Fi professionnel, sauvegarde automatique anti-ransomware et maintenance sur site pour les PME au Maroc.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
        ========================================================================= -->
   <header class="site-header" id="mainNav">
     <div class="header-inner">
-      <a href="#hero" class="brand-logo" aria-label="Synapse Infrastructure Home">
+      <a href="#hero" class="brand-logo" aria-label="Synapse IT Maroc Accueil">
         <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="3" width="28" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
           <rect x="2" y="13" width="28" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -30,41 +30,41 @@
           <circle cx="12" cy="26" r="1.5" fill="#00e5ff"/>
           <path d="M22 6h4M22 16h4M22 26h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span class="brand-name">SYNAPSE <span class="highlight">//</span> INFRA</span>
-        <span class="brand-tagline">Enterprise Systems</span>
+        <span class="brand-name">SYNAPSE <span class="highlight">//</span> IT MAROC</span>
+        <span class="brand-tagline">Solutions Informatiques PME</span>
       </a>
 
-      <nav aria-label="Main Navigation">
+      <nav aria-label="Navigation Principale">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#network" class="nav-link">Network Fabric</a></li>
-          <li><a href="#rackConfigurator" class="nav-link">42U Rack Builder</a></li>
-          <li><a href="#storageSizer" class="nav-link">Storage Sizer</a></li>
-          <li><a href="#catalog" class="nav-link">Hardware Supply</a></li>
-          <li><a href="#services" class="nav-link">Engineering</a></li>
+          <li><a href="#network" class="nav-link">Réseau &amp; Wi-Fi</a></li>
+          <li><a href="#rackConfigurator" class="nav-link">Configurateur Baie</a></li>
+          <li><a href="#storageSizer" class="nav-link">Sauvegarde &amp; Sécurité</a></li>
+          <li><a href="#catalog" class="nav-link">Matériel PME</a></li>
+          <li><a href="#services" class="nav-link">Maintenance &amp; Support</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
         <div class="currency-select-wrap">
-          <select id="currencySelector" class="currency-select" aria-label="Currency Selector">
-            <option value="USD">USD ($)</option>
-            <option value="MAD">MAD (د.م.)</option>
+          <select id="currencySelector" class="currency-select" aria-label="Devise">
+            <option value="MAD" selected>MAD (د.م.)</option>
             <option value="EUR">EUR (€)</option>
+            <option value="USD">USD ($)</option>
           </select>
         </div>
 
-        <button type="button" class="btn-bom-trigger" id="btnOpenBomDrawer" aria-label="Open Project Bill of Materials">
+        <button type="button" class="btn-bom-trigger" id="btnOpenBomDrawer" aria-label="Ouvrir mon Devis PME">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span>Project BOM</span>
+          <span>Mon Devis PME</span>
           <span class="bom-badge" id="bomCountBadge">0</span>
         </button>
 
-        <button type="button" class="btn-noc-header" id="btnOpenNocModal" aria-label="24/7 NOC Emergency Dispatch">
+        <button type="button" class="btn-noc-header" id="btnOpenNocModal" aria-label="Assistance Urgente &amp; Dépannage PME">
           <span class="pulse-dot"></span>
-          <span>24/7 NOC</span>
+          <span>Dépannage Urgent</span>
         </button>
 
-        <button type="button" class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+        <button type="button" class="mobile-toggle" id="mobileNavToggle" aria-label="Menu Mobile">
           <span></span>
           <span></span>
           <span></span>
@@ -74,7 +74,7 @@
   </header>
 
   <!-- =========================================================================
-       2. HERO TELEMETRY SECTION
+       2. HERO SECTION PME MAROC
        ========================================================================= -->
   <section class="hero-section" id="hero">
     <div class="hero-background-art"></div>
@@ -82,155 +82,156 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-status-dot online"></span>
-          <span>TIER-4 DATACENTER ARCHITECTURE // HARDWARE & INTEGRATION</span>
+          <span>CASABLANCA • RABAT • TANGER • MARRAKECH // INFOGÉRANCE &amp; RÉSEAUX PME</span>
         </div>
         <h1 class="hero-title">
-          Mission-Critical Systems. <span class="text-gradient">Engineered Without Single Points of Failure.</span>
+          L'Informatique de votre Entreprise. <span class="text-gradient">Simple, Sécurisée, Clé en Main.</span>
         </h1>
         <p class="hero-description">
-          Synapse provides end-to-end IT infrastructure capability: from direct procurement of enterprise servers, switches, and high-density SAN/NAS storage, to precision 42U rack engineering, EVPN-VXLAN campus fabrics, and 24/7 managed NOC operations with guaranteed 15-minute dispatch.
+          Synapse accompagne les PME et entreprises marocaines : vente de matériel informatique certifié, installation de serveurs de gestion (Sage, ERP, Odoo), câblage réseau soigné en baie, Wi-Fi ultra-rapide, sauvegarde automatique anti-piratage et dépannage sur site sous 2 heures.
         </p>
 
         <div class="hero-cta-group">
           <a href="#rackConfigurator" class="btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
-            <span>Launch 42U Rack Configurator</span>
+            <span>Configurer ma Baie Informatique (12U / 24U)</span>
           </a>
           <button type="button" class="btn-secondary" id="btnHeroNoc">
             <span class="pulse-dot"></span>
-            <span>24/7 NOC Critical Dispatch</span>
+            <span>Demander une Visite Technique Gratuite</span>
           </button>
         </div>
 
         <div class="hero-metrics-grid">
           <div class="metric-card">
-            <span class="metric-val">128.4 Gbps</span>
-            <span class="metric-label">Core Throughput</span>
+            <span class="metric-val">Zéro Coupure</span>
+            <span class="metric-label">Secours 4G/5G Automatique</span>
           </div>
           <div class="metric-card">
-            <span class="metric-val">&lt; 0.15 ms</span>
-            <span class="metric-label">Inter-Rack Latency</span>
+            <span class="metric-val">100% Protégé</span>
+            <span class="metric-label">Sauvegardes Anti-Ransomware</span>
           </div>
           <div class="metric-card">
-            <span class="metric-val">99.999%</span>
-            <span class="metric-label">High-Availability SLA</span>
+            <span class="metric-val">&lt; 2 Heures</span>
+            <span class="metric-label">Intervention Sur Site au Maroc</span>
           </div>
         </div>
       </div>
 
       <!-- Real-Time Telemetry HUD Preview -->
-      <aside class="hero-telemetry-hud" aria-label="Datacenter Live Telemetry">
+      <aside class="hero-telemetry-hud" aria-label="État de votre réseau d'entreprise">
         <div class="hud-header">
           <span class="hud-title">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Active Fabric Telemetry
+            Tableau de Bord Bureau PME
           </span>
-          <span class="hud-live-tag">● REALTIME SYNC</span>
+          <span class="hud-live-tag">● EN SERVICE</span>
         </div>
         <div class="hud-stats-row">
           <div class="hud-stat-box">
-            <div class="hud-stat-num">400 GbE</div>
-            <div class="hud-stat-desc">Spine-Leaf Backbone</div>
+            <div class="hud-stat-num">28 Postes</div>
+            <div class="hud-stat-desc">Collaborateurs Connectés</div>
           </div>
           <div class="hud-stat-box">
-            <div class="hud-stat-num">2.4M IOPS</div>
-            <div class="hud-stat-desc">NVMe Storage Bandwidth</div>
+            <div class="hud-stat-num">100% OK</div>
+            <div class="hud-stat-desc">Sauvegarde Sage du Jour</div>
           </div>
         </div>
         <div class="hud-terminal-preview">
-          <div class="line"><span class="cyan">[BGP]</span> AS65001 Peering Established: 2/2 Up (0 flap)</div>
-          <div class="line"><span class="green">[EVPN]</span> VXLAN VNI 10200 route-reflector sync complete</div>
-          <div class="line"><span class="cyan">[STORAGE]</span> NVMe-oF RoCE v2 path A/B redundant 100Gbps</div>
-          <div class="line"><span class="green">[STATUS]</span> Zero packet drops across 16 fabric links</div>
+          <div class="line"><span class="cyan">[CONNEXION]</span> Fibre Optique active (Débit stable 200 Mbps)</div>
+          <div class="line"><span class="green">[SÉCURITÉ]</span> Pare-feu Fortinet : 0 virus, toutes les attaques bloquées</div>
+          <div class="line"><span class="cyan">[SAGE / ERP]</span> Serveur Dell opérationnel (Accès instantané aux dossiers)</div>
+          <div class="line"><span class="green">[ONDULEUR]</span> Protection électrique APC prête (45 min d'autonomie)</div>
         </div>
       </aside>
     </div>
   </section>
 
   <!-- =========================================================================
-       3. INTERACTIVE CANVAS NETWORK PACKET FLOW & FAILOVER VISUALIZER
+       3. INTERACTIVE CANVAS NETWORK VISUALIZER PME
        ========================================================================= -->
   <section class="section-wrapper" id="network">
     <div class="section-head">
-      <span class="section-tag">High-Availability Visualizer</span>
-      <h2 class="section-title">Zero-Trust Network Fabric & Real-Time Failover</h2>
+      <span class="section-tag">Continuité d'Activité PME</span>
+      <h2 class="section-title">Comment votre Entreprise Reste Connectée Sans Coupure</h2>
       <p class="section-sub">
-        Simulate multi-tier enterprise network traffic flowing across dual Tier-1 transit links, redundant Next-Gen Firewalls, 400G spine-leaf switches, virtualization hosts, and NVMe-oF SAN storage. Click any switch node to simulate an instant failover.
+        Fini les journées perdues à cause d'une coupure internet ou d'un réseau qui rame. Visualisez en direct comment notre installation protège vos bureaux, vos postes comptables, vos dossiers Sage et vos visioconférences.
       </p>
     </div>
 
     <div class="network-canvas-card">
       <div class="network-controls-bar">
         <div class="scenario-buttons-group">
-          <button type="button" class="btn-scenario active" id="btnNetNormal">Normal 100GbE Flow</button>
-          <button type="button" class="btn-scenario" id="btnNetFailover">Simulate Node Failure (Auto-Failover)</button>
-          <button type="button" class="btn-scenario" id="btnNetDdos">DDoS Scrubbing Stress Test</button>
+          <button type="button" class="btn-scenario active" id="btnNetNormal">Journée Normale (Vitesse Optimale)</button>
+          <button type="button" class="btn-scenario" id="btnNetFailover">Simuler Coupure Fibre (Secours 4G)</button>
+          <button type="button" class="btn-scenario" id="btnNetSecurity">Simuler Tentative d'Attaque Bloquée</button>
         </div>
         <div class="status-live-banner" id="netStatusBanner">
-          <span class="badge-status-dot online"></span> Fabric Healthy: 100GbE Spine-Leaf Active (0 Dropped Packets)
+          <span class="badge-status-dot online"></span> Réseau en ordre : Ligne Fibre principale active. Vitesse optimale et télétravail sécurisé.
         </div>
       </div>
 
       <div class="canvas-container">
-        <canvas id="networkCanvas" width="1200" height="580"></canvas>
+        <canvas id="networkCanvas" width="1200" height="520"></canvas>
       </div>
 
       <div class="network-telemetry-hud">
         <div class="net-hud-item">
-          <span class="net-hud-val" id="hudThroughput">124.6 Gbps</span>
-          <span class="net-hud-label">Fabric Throughput</span>
+          <span class="net-hud-val" id="hudThroughput">185 Mbps</span>
+          <span class="net-hud-label">Vitesse Internet Bureaux</span>
         </div>
         <div class="net-hud-item">
-          <span class="net-hud-val" id="hudPacketRate">18.2 Mpps</span>
-          <span class="net-hud-label">Packet Processing Rate</span>
+          <span class="net-hud-val" id="hudPacketRate">100% Opérationnel</span>
+          <span class="net-hud-label">Continuité des Services</span>
         </div>
         <div class="net-hud-item">
-          <span class="net-hud-val" id="hudLatency">0.14 ms</span>
-          <span class="net-hud-label">Core RTT Latency</span>
+          <span class="net-hud-val" id="hudLatency">Zéro Coupure</span>
+          <span class="net-hud-label">Bascule de Secours</span>
         </div>
         <div class="net-hud-item">
-          <span class="net-hud-val" id="hudActiveLinks">16 / 16</span>
-          <span class="net-hud-label">Active Uplink Meshes</span>
+          <span class="net-hud-val" id="hudActiveLinks">Tous les postes connectés</span>
+          <span class="net-hud-label">État du Réseau</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       4. 42U SERVER RACK CONFIGURATOR & TELEMETRY SIMULATOR
+       4. CONFIGURATEUR DE BAIE INFORMATIQUE PME (12U, 24U, 42U)
        ========================================================================= -->
   <section class="section-wrapper" id="rackConfigurator">
     <div class="section-head">
-      <span class="section-tag">Interactive Engineering</span>
-      <h2 class="section-title">42U Datacenter Server Rack Configurator</h2>
+      <span class="section-tag">Outil Interactif PME</span>
+      <h2 class="section-title">Configurateur de Baie Informatique PME</h2>
       <p class="section-sub">
-        Assemble custom enterprise racks with 1U-precision hardware placement. Monitor real-time power draw (Watts & Amps), thermal dissipation (BTU/hr), static floor weight, and capex bill of materials.
+        Fini les fils emmêlés sous les bureaux et les switchs qui chauffent par terre ! Choisissez la taille de baie adaptée à votre structure (12U pour petite agence, 24U pour PME de 30 personnes, 42U pour grande entreprise). Obtenez immédiatement un devis transparent en Dirhams (MAD).
       </p>
     </div>
 
     <div class="rack-configurator-grid">
       <!-- Left: Component Palette -->
       <aside class="rack-palette-panel">
-        <h3 class="panel-title">Hardware Palette</h3>
-        <p class="panel-desc">Select a module below, then click any empty slot in the 42U chassis to mount it.</p>
+        <h3 class="panel-title">Équipements Recommandés</h3>
+        <p class="panel-desc">Sélectionnez un équipement certifié, puis cliquez sur un emplacement libre pour l'ajouter à votre baie.</p>
         <div class="palette-list" id="rackPaletteList">
           <!-- Populated dynamically by RackBuilder -->
         </div>
       </aside>
 
-      <!-- Center: 42U Rack Chassis Viewport -->
+      <!-- Center: 24U/42U Rack Chassis Viewport -->
       <main class="rack-viewport-panel">
         <div class="rack-chassis-header">
-          <span class="rack-chassis-title">Standard 42U EIA-310-E Enclosure</span>
+          <span class="rack-chassis-title">Baie Informatique Sécurisée Fermée à Clé</span>
           <div class="rack-preset-buttons">
-            <button type="button" class="btn-preset" id="presetEnterprise">Enterprise vSphere</button>
-            <button type="button" class="btn-preset" id="presetAi">8-GPU AI Cluster</button>
-            <button type="button" class="btn-preset" id="presetClear">Empty Rack</button>
+            <button type="button" class="btn-preset" id="presetTpe">Pack TPE (12U)</button>
+            <button type="button" class="btn-preset" id="presetPme">Pack PME Standard (24U)</button>
+            <button type="button" class="btn-preset" id="presetGrandePme">Grande PME / Usine (42U)</button>
+            <button type="button" class="btn-preset" id="presetClear">Vider la baie</button>
           </div>
         </div>
 
         <div class="rack-slots-container" id="rackSlotsContainer">
-          <!-- Rendered dynamically from 42U down to 1U -->
+          <!-- Rendered dynamically from top U down to 1U -->
         </div>
       </main>
 
@@ -238,8 +239,8 @@
       <aside class="rack-telemetry-panel">
         <div class="rack-occupancy-card">
           <div class="occupancy-header">
-            <span>Rack Space Utilization</span>
-            <span id="rackOccupiedPercent">0% Full</span>
+            <span>Remplissage de la Baie</span>
+            <span id="rackOccupiedPercent">0% Rempli</span>
           </div>
           <div class="occupancy-bar-track">
             <div class="occupancy-bar-fill" id="rackOccupancyBar" style="width: 0%;"></div>
@@ -248,45 +249,41 @@
 
         <div class="telemetry-specs-list">
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Occupied Units</span>
-            <span class="telemetry-row-val" id="rackOccupiedU">0 / 42U</span>
+            <span class="telemetry-row-label">Emplacements occupés</span>
+            <span class="telemetry-row-val" id="rackOccupiedU">0 / 24U</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Power Draw (W)</span>
-            <span class="telemetry-row-val" id="rackTotalWatts">0 W</span>
+            <span class="telemetry-row-label">Capacité recommandée</span>
+            <span class="telemetry-row-val" id="rackPostesRecommandes">15 à 45 collaborateurs</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Amperage @ 208V</span>
-            <span class="telemetry-row-val" id="rackAmps">0.0 A</span>
+            <span class="telemetry-row-label">Autonomie coupure courant</span>
+            <span class="telemetry-row-val" id="rackAutonomieSecours" style="color: var(--emerald-status);">~45 min d'autonomie</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Thermal Output</span>
-            <span class="telemetry-row-val" id="rackTotalBtu">0 BTU/hr</span>
+            <span class="telemetry-row-label">Consommation électrique</span>
+            <span class="telemetry-row-val" id="rackTotalWatts">480 W (Économe)</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Required Airflow</span>
-            <span class="telemetry-row-val" id="rackRequiredCfm">0 CFM</span>
-          </div>
-          <div class="telemetry-row">
-            <span class="telemetry-row-label">Total Static Weight</span>
-            <span class="telemetry-row-val" id="rackTotalWeight">120.0 kg</span>
+            <span class="telemetry-row-label">Garantie &amp; Remplacement</span>
+            <span class="telemetry-row-val" style="color: var(--cyan-primary);">3 Ans Sur Site au Maroc</span>
           </div>
         </div>
 
         <div class="rack-capex-card">
-          <span class="capex-label">Estimated Hardware Capex</span>
-          <div class="capex-val" id="rackTotalCapex">$0</div>
-          <span style="font-size: 0.6875rem; color: #94a3b8;">Includes enterprise hardware + factory testing</span>
+          <span class="capex-label">Estimation Matériel Clé en Main</span>
+          <div class="capex-val" id="rackTotalCapex">0 MAD HT</div>
+          <span style="font-size: 0.6875rem; color: #94a3b8;">Matériel certifié constructeur neuf garanti 3 ans</span>
         </div>
 
         <div class="rack-action-buttons">
           <button type="button" class="btn-primary" id="btnAddRackToBom">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-            <span>Add Configured Rack to Project BOM</span>
+            <span>Ajouter cette Baie à mon Devis PME</span>
           </button>
           <button type="button" class="btn-secondary" id="btnExportRackBom">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Export Manifest (CSV)</span>
+            <span>Télécharger le Devis en CSV / Excel</span>
           </button>
         </div>
       </aside>
@@ -294,14 +291,14 @@
   </section>
 
   <!-- =========================================================================
-       5. ENTERPRISE STORAGE (NAS/SAN) IOPS & CAPACITY SIZER
+       5. SIMULATEUR DE SAUVEGARDE & SÉCURITÉ ANTI-RANSOMWARE PME
        ========================================================================= -->
   <section class="section-wrapper" id="storageSizer">
     <div class="section-head">
-      <span class="section-tag">Array Architecture</span>
-      <h2 class="section-title">Enterprise Storage (NAS/SAN) IOPS & Capacity Sizer</h2>
+      <span class="section-tag">Sécurité des Données d'Entreprise</span>
+      <h2 class="section-title">Simulateur de Sauvegarde Automatique &amp; Anti-Piratage</h2>
       <p class="section-sub">
-        Calculate usable storage capacity, RAID parity overhead, write penalties, and maximum IOPS throughput based on drive counts, flash media, and inline deduplication ratios.
+        Que se passe-t-il si un salarié clique sur un faux mail et qu'un virus bloque tous vos ordinateurs ? Découvrez en 3 clics comment notre solution de sauvegarde Synology protège vos données comptables Sage et vos documents sans que vous n'ayez rien à faire.
       </p>
     </div>
 
@@ -309,81 +306,80 @@
       <div class="sizer-inputs-column">
         <div class="form-group">
           <label class="form-label" for="storageDriveCount">
-            <span>Drive Bay Count</span>
+            <span>Nombre de collaborateurs dans votre entreprise</span>
           </label>
           <div class="storage-preset-bar">
-            <button type="button" class="btn-storage-preset" data-drives="12">12 Bays</button>
-            <button type="button" class="btn-storage-preset active" data-drives="24">24 Bays</button>
-            <button type="button" class="btn-storage-preset" data-drives="48">48 Bays</button>
-            <button type="button" class="btn-storage-preset" data-drives="96">96 Bays</button>
+            <button type="button" class="btn-storage-preset" data-drives="5">5 Postes</button>
+            <button type="button" class="btn-storage-preset active" data-drives="15">15 Postes</button>
+            <button type="button" class="btn-storage-preset" data-drives="35">35 Postes</button>
+            <button type="button" class="btn-storage-preset" data-drives="70">70+ Postes</button>
           </div>
-          <input type="number" id="storageDriveCount" class="form-input" min="6" max="192" value="24" step="2">
+          <input type="number" id="storageDriveCount" class="form-input" min="3" max="150" value="15" step="1">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="storageDriveType">Drive Technology & Capacity</label>
+          <label class="form-label" for="storageDriveType">Vos Fichiers de Travail Quotidiens</label>
           <select id="storageDriveType" class="form-select">
-            <option value="nvme-3.84">3.84TB All-Flash NVMe Gen4 U.3 (100k IOPS/drive)</option>
-            <option value="nvme-7.68" selected>7.68TB All-Flash NVMe Gen4 U.3 (125k IOPS/drive)</option>
-            <option value="nvme-15.36">15.36TB High-Density Enterprise NVMe (140k IOPS/drive)</option>
-            <option value="sas-hdd-22">22TB Enterprise 7.2K SAS 12G HDD (Nearline / Backup)</option>
+            <option value="office" selected>Comptabilité Sage, Devis, Factures, Fichiers Word/Excel et PDF</option>
+            <option value="plans">Cabinet d'Architecture / BTP : Plans AutoCAD, Photos chantiers et gros PDF</option>
+            <option value="medical">Clinique / Cabinet Médical : Dossiers patients, imageries et ordonnances</option>
+            <option value="creative">Agence de Communication : Fichiers Photoshop, Illustrator et vidéos</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="storageRaidType">Storage Topology & Protection</label>
+          <label class="form-label" for="storageRaidType">Niveau de Protection Souhaité</label>
           <select id="storageRaidType" class="form-select">
-            <option value="raid6" selected>RAID 6 (Dual Distributed Parity — High Availability)</option>
-            <option value="raid10">RAID 10 (Striped Mirrors — Max Random IOPS & Performance)</option>
-            <option value="raidz2">ZFS RAID-Z2 (Self-Healing Checksums & Copy-On-Write)</option>
-            <option value="raid60">RAID 60 (Dual Distributed Parity across Sub-Arrays)</option>
+            <option value="raid1">Protection Essentielle : Disques Miroir (Zéro perte si 1 disque tombe en panne)</option>
+            <option value="anti-ransomware" selected>Protection Anti-Ransomware : Fichiers verrouillés immuables (Impossible à pirater)</option>
+            <option value="cloud-hybrid">Protection Maximale 3-2-1 : Baie Bureau + Copie chiffrée externe sur Cloud Marocain</option>
           </select>
         </div>
 
         <div class="form-group">
           <div class="form-label">
-            <span>Inline Deduplication & Compression Ratio</span>
-            <span id="storageDedupeVal" style="color: var(--cyan-primary); font-family: var(--font-mono);">1.8x</span>
+            <span>Historique de récupération souhaité</span>
+            <span id="storageDedupeVal" style="color: var(--cyan-primary); font-family: var(--font-mono);">30 Jours d'historique</span>
           </div>
-          <input type="range" id="storageDedupeRatio" class="form-range" min="1.0" max="3.5" step="0.1" value="1.8">
-          <span style="font-size: 0.6875rem; color: #64748b;">1.0x (Raw Media) | 1.8x (Databases / VMDKs) | 3.0x+ (VDI / Dev Environments)</span>
+          <input type="range" id="storageDedupeRatio" class="form-range" min="7" max="90" step="1" value="30">
+          <span style="font-size: 0.6875rem; color: #64748b;">Permet de récupérer un fichier supprimé par erreur par un collaborateur il y a 7, 30 ou 90 jours.</span>
         </div>
       </div>
 
       <div class="sizer-results-column">
-        <h3 class="results-heading">Calculated Storage Telemetry</h3>
+        <h3 class="results-heading">Recommandation Technique Adaptée à votre PME</h3>
 
         <div class="capacity-callout-grid">
           <div class="cap-callout-box">
-            <div class="cap-callout-num" id="storageRawCap">184.3 TB</div>
-            <div class="cap-callout-label">Raw Physical</div>
+            <div class="cap-callout-num" id="storageRawCap">15 Collaborateurs</div>
+            <div class="cap-callout-label">Taille Entreprise</div>
           </div>
           <div class="cap-callout-box">
-            <div class="cap-callout-num" id="storageUsableCap">168.9 TB</div>
-            <div class="cap-callout-label">Usable RAID</div>
+            <div class="cap-callout-num" id="storageUsableCap">8 To Utiles</div>
+            <div class="cap-callout-label">Stockage Conseillé</div>
           </div>
           <div class="cap-callout-box">
-            <div class="cap-callout-num" id="storageEffectiveCap" style="color: var(--emerald-status);">304.1 TB</div>
-            <div class="cap-callout-label">Effective (Dedupe)</div>
+            <div class="cap-callout-num" id="storageEffectiveCap" style="color: var(--emerald-status);">17,000 MAD HT</div>
+            <div class="cap-callout-label">Budget Matériel</div>
           </div>
         </div>
 
         <div class="telemetry-specs-list" style="margin-top: var(--space-sm);">
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Random Read Performance</span>
-            <span class="telemetry-row-val" id="storageReadIOPS" style="color: var(--cyan-primary);">2,550,000 IOPS</span>
+            <span class="telemetry-row-label">Modèle de Serveur NAS</span>
+            <span class="telemetry-row-val" id="storageReadIOPS" style="color: var(--cyan-primary);">NAS Synology 4 Baies (DS923+)</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Random Write Performance</span>
-            <span class="telemetry-row-val" id="storageWriteIOPS">224,000 IOPS</span>
+            <span class="telemetry-row-label">Historique Versionning</span>
+            <span class="telemetry-row-val" id="storageWriteIOPS">30 Jours de retour en arrière possible</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Sustained Sequential Throughput</span>
-            <span class="telemetry-row-val" id="storageThroughput">35.2 GB/s</span>
+            <span class="telemetry-row-label">Temps de Redémarrage en cas de Panne</span>
+            <span class="telemetry-row-val" id="storageThroughput">&lt; 15 minutes</span>
           </div>
           <div class="telemetry-row">
-            <span class="telemetry-row-label">Hardware Fault Tolerance</span>
-            <span class="telemetry-row-val" id="storageFaultTolerance">Any 2 simultaneous drive failures</span>
+            <span class="telemetry-row-label">Garantie Anti-Piratage</span>
+            <span class="telemetry-row-val" id="storageFaultTolerance">Protection Anti-Ransomware active</span>
           </div>
         </div>
       </div>
@@ -391,24 +387,24 @@
   </section>
 
   <!-- =========================================================================
-       6. HARDWARE STORE CATALOG WITH CONTAINER QUERIES
+       6. CATALOGUE MATÉRIEL INFORMATIQUE PME (MAGASIN)
        ========================================================================= -->
   <section class="section-wrapper" id="catalog">
     <div class="section-head">
-      <span class="section-tag">Direct Material Supply</span>
-      <h2 class="section-title">Enterprise Hardware Store & Procurement</h2>
+      <span class="section-tag">Matériel Certifié Neuf</span>
+      <h2 class="section-title">Magasin &amp; Fourniture de Matériel Informatique PME</h2>
       <p class="section-sub">
-        Official tier-1 distribution partner for Dell PowerEdge, Supermicro AI, Arista Networks, Fortinet, TrueNAS Enterprise, Synology, and APC Schneider Electric. Factory-certified with rapid dispatch.
+        Distributeur certifié Dell Technologies, Cisco, Fortinet, Synology, Ubiquiti UniFi, APC Schneider Electric et Hikvision au Maroc. Tout notre matériel est livré neuf dans son emballage avec garantie constructeur sur site.
       </p>
     </div>
 
     <div class="catalog-tabs-bar" role="tablist">
-      <button type="button" class="filter-tab-btn active" data-filter="all" role="tab">All Hardware</button>
-      <button type="button" class="filter-tab-btn" data-filter="servers" role="tab">Compute &amp; AI Servers</button>
-      <button type="button" class="filter-tab-btn" data-filter="networking" role="tab">Spine-Leaf &amp; Firewalls</button>
-      <button type="button" class="filter-tab-btn" data-filter="storage" role="tab">Enterprise SAN &amp; NAS</button>
-      <button type="button" class="filter-tab-btn" data-filter="power" role="tab">Smart UPS &amp; PDUs</button>
-      <button type="button" class="filter-tab-btn" data-filter="cabling" role="tab">Fiber &amp; Cat6A Cabling</button>
+      <button type="button" class="filter-tab-btn active" data-filter="all" role="tab">Tout le Matériel</button>
+      <button type="button" class="filter-tab-btn" data-filter="servers" role="tab">Serveurs de Gestion (Sage/ERP)</button>
+      <button type="button" class="filter-tab-btn" data-filter="networking" role="tab">Switchs &amp; Pare-Feu VPN</button>
+      <button type="button" class="filter-tab-btn" data-filter="storage" role="tab">NAS &amp; Sauvegarde</button>
+      <button type="button" class="filter-tab-btn" data-filter="power" role="tab">Onduleurs &amp; Caméras</button>
+      <button type="button" class="filter-tab-btn" data-filter="cabling" role="tab">Câblage &amp; Baies</button>
     </div>
 
     <div class="catalog-products-grid" id="catalogProductsGrid">
@@ -417,45 +413,38 @@
   </section>
 
   <!-- =========================================================================
-       7. TURNKEY ENGINEERING SERVICES
+       7. CONTRATS D'INFOGÉRANCE & SERVICES PME
        ========================================================================= -->
   <section class="section-wrapper" id="services">
     <div class="section-head">
-      <span class="section-tag">On-Site Execution</span>
-      <h2 class="section-title">Turnkey Datacenter & Campus Engineering</h2>
+      <span class="section-tag">Accompagnement &amp; Tranquillité d'Esprit</span>
+      <h2 class="section-title">Nos Formules d'Infogérance &amp; Maintenance PME</h2>
       <p class="section-sub">
-        Beyond material delivery, our certified field engineers design, rack, cable, cluster, and secure your systems with zero downtime and strict compliance standards.
+        Ne payez plus un salaire complet d'informaticien à plein temps. Confiez votre informatique à une équipe d'ingénieurs et techniciens certifiés qui surveillent vos serveurs, vos sauvegardes et dépannent vos équipes sans limite.
       </p>
     </div>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon-box">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3 class="service-title">Hyperconverged &amp; Virtualization</h3>
+        <h3 class="service-title">Pack Essentiel TPE</h3>
         <p class="service-text">
-          VMware vSphere 8 / ESXi enterprise clusters, Proxmox VE 8 High-Availability Ceph clusters, and Nutanix Cloud Platform architectures with live vMotion and automatic failover.
+          <strong>1,900 MAD / mois</strong><br>
+          Idéal pour les structures de 5 à 12 postes. Assistance téléphonique et prise en main à distance illimitée, surveillance quotidienne des sauvegardes et protection antivirus managée.
         </p>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon-box">
+      <div class="service-card" style="border-color: rgba(0, 229, 255, 0.4); background: rgba(0, 229, 255, 0.04);">
+        <div class="service-icon-box" style="background: rgba(0, 229, 255, 0.2);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        <h3 class="service-title">Zero-Trust &amp; EVPN-VXLAN Fabrics</h3>
+        <span style="font-size: 0.6875rem; font-weight: 700; color: var(--cyan-primary); text-transform: uppercase;">Le Plus Choisi par les PME</span>
+        <h3 class="service-title">Pack Sérénité PME</h3>
         <p class="service-text">
-          Carrier-grade multi-tenant spine-leaf campus and datacenter fabrics with BGP-EVPN overlay, 802.1X network access control, and microsegmented perimeter security.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon-box">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
-        </div>
-        <h3 class="service-title">White-Glove Structured Cabling</h3>
-        <p class="service-text">
-          Certified ISO/IEC 11801 and TIA-568-D compliant Cat6A shielded and OM4/OM5 fiber installations. Precision velcro dressing, laser loss testing, and full Fluke certification reports.
+          <strong>3,800 MAD / mois</strong><br>
+          Pour les PME de 15 à 40 postes. Assistance illimitée + 1 visite mensuelle préventive sur site + déplacement d'urgence sous 2 heures + gestion complète du serveur Sage, du Wi-Fi et de la baie.
         </p>
       </div>
 
@@ -463,25 +452,37 @@
         <div class="service-icon-box">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3 class="service-title">Immutable Backup &amp; Disaster Recovery</h3>
+        <h3 class="service-title">Pack Entreprise &amp; Usine</h3>
         <p class="service-text">
-          Air-gapped Linux hardened repositories, Veeam Cloud Connect, automated ZFS replication, and 15-minute RPO / 1-hour RTO disaster recovery automation.
+          <strong>6,500 MAD / mois</strong><br>
+          Pour les entreprises de 40 à 120 postes, cliniques et usines. Technicien dédié, maintenance 24h/24 des serveurs et réseaux, sauvegardes cloud externes incluses et remplacement immédiat du matériel en panne.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 class="service-title">Audit &amp; Visite Technique Gratuite</h3>
+        <p class="service-text">
+          <strong>0 MAD (Offert sans engagement)</strong><br>
+          Un ingénieur se déplace dans vos locaux à Casablanca, Rabat, Tanger ou Marrakech pour vérifier votre câblage, tester vos sauvegardes et vous conseiller les améliorations prioritaires.
         </p>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       8. TOP-LAYER DIALOGS: BOM DRAWER & 24/7 NOC MODAL
+       8. TOP-LAYER DIALOGS: PANIER DEVIS & DÉPANNAGE URGENT PME
        ========================================================================= -->
-  <!-- Project BOM Drawer -->
+  <!-- Panier Devis PME -->
   <dialog id="bomDrawer" aria-labelledby="bomDrawerTitle">
     <div class="drawer-header">
       <h2 class="drawer-title" id="bomDrawerTitle">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-        Project Bill of Materials
+        Mon Devis Matériel Informatique PME
       </h2>
-      <button type="button" class="btn-close-dialog" id="btnCloseBomDrawer" aria-label="Close BOM Drawer">&times;</button>
+      <button type="button" class="btn-close-dialog" id="btnCloseBomDrawer" aria-label="Fermer le devis">&times;</button>
     </div>
 
     <div class="bom-items-list" id="bomItemsList">
@@ -489,155 +490,160 @@
     </div>
 
     <div class="bom-options-box">
-      <span style="font-size: 0.6875rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">Turnkey Engineering &amp; SLA Add-Ons</span>
+      <span style="font-size: 0.6875rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">Services d'Installation &amp; Paramétrage sur Site</span>
       <label class="bom-checkbox-row">
-        <span><input type="checkbox" id="bomOptDeploy" checked> On-Site White-Glove Rack Integration</span>
-        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+$3,500</span>
+        <span><input type="checkbox" id="bomOptDeploy" checked> Installation clé en main dans vos locaux &amp; configuration complète</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+2,500 MAD</span>
       </label>
       <label class="bom-checkbox-row">
-        <span><input type="checkbox" id="bomOptCabling" checked> Precision Fiber &amp; Cat6A Dressing + Fluke Certification</span>
-        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+$1,800</span>
+        <span><input type="checkbox" id="bomOptCabling" checked> Rangement soigné de la baie, brassage Cat6 &amp; repérage des câbles</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+1,800 MAD</span>
       </label>
       <label class="bom-checkbox-row">
-        <span><input type="checkbox" id="bomOptSla"> 3-Year 24/7 Managed NOC &amp; 4-Hour On-Site Hardware Replacement</span>
-        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+18% Capex</span>
+        <span><input type="checkbox" id="bomOptSla"> 1 An d'Infogérance &amp; Dépannage PME prioritaire inclus</span>
+        <span style="font-family: var(--font-mono); color: var(--emerald-status);">+15% du Matériel</span>
       </label>
     </div>
 
     <div class="bom-totals-card">
       <div class="bom-total-row">
-        <span>Hardware Capex Subtotal</span>
-        <span id="bomHardwareSubtotal">$0</span>
+        <span>Sous-Total Matériel Garanti 3 Ans</span>
+        <span id="bomHardwareSubtotal">0 MAD HT</span>
       </div>
       <div class="bom-total-row">
-        <span>Engineering &amp; SLA Services</span>
-        <span id="bomLaborSubtotal">$0</span>
+        <span>Services d'Installation &amp; Paramétrage</span>
+        <span id="bomLaborSubtotal">0 MAD HT</span>
       </div>
       <div class="bom-total-row grand">
-        <span>Grand Total (Excl. Tax)</span>
-        <span id="bomGrandTotal">$0</span>
+        <span>Total Estimatif (Hors Taxes)</span>
+        <span id="bomGrandTotal">0 MAD HT</span>
       </div>
     </div>
 
     <form id="bomRfqForm" style="display: flex; flex-direction: column; gap: var(--space-xs);">
-      <input type="text" class="form-input" placeholder="Organization / Company Name" required>
-      <input type="email" class="form-input" placeholder="Procurement Officer Work Email" required>
-      <input type="tel" class="form-input" placeholder="Direct Phone / Mobile" required>
+      <input type="text" class="form-input" placeholder="Nom de votre Société / Entreprise" required>
+      <input type="text" class="form-input" placeholder="Ville (ex : Casablanca, Rabat, Tanger...)" required>
+      <input type="email" class="form-input" placeholder="Email professionnel pour recevoir le devis" required>
+      <input type="tel" class="form-input" placeholder="Numéro de téléphone / WhatsApp" required>
       <button type="submit" class="btn-primary" style="margin-top: 8px;">
-        <span>Request Official Stamped BOM Quote (PDF)</span>
+        <span>Recevoir mon Devis Officiel PDF &amp; Visite Gratuite</span>
       </button>
     </form>
   </dialog>
 
-  <!-- 24/7 Emergency NOC Modal -->
+  <!-- Modal Assistance & Dépannage Urgent PME -->
   <dialog id="nocModal" aria-labelledby="nocModalTitle">
     <div class="drawer-header" style="border-bottom-color: rgba(244, 63, 94, 0.3);">
       <h2 class="drawer-title" id="nocModalTitle" style="color: #fb7185;">
         <span class="pulse-dot"></span>
-        24/7 Mission-Critical NOC Dispatch
+        Assistance Technique &amp; Dépannage Urgent PME
       </h2>
-      <button type="button" class="btn-close-dialog" id="btnCloseNocModal" aria-label="Close NOC Modal">&times;</button>
+      <button type="button" class="btn-close-dialog" id="btnCloseNocModal" aria-label="Fermer le formulaire">&times;</button>
     </div>
 
     <div style="background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: var(--radius-md); padding: var(--space-sm); margin-bottom: var(--space-md); font-size: var(--text-xs); color: #fecdd3;">
-      <strong>Guaranteed 15-Minute Critical Triage SLA:</strong> Dedicated tier-3 network and systems engineers on duty 24/7/365 with immediate hardware spare part dispatch.
+      <strong>Panne bloquante ? Serveur Sage inaccessible ? Coupure réseau totale ?</strong><br>
+      Notre équipe de permanence technique intervient rapidement dans vos locaux à Casablanca, Rabat, Tanger, Marrakech et environs.
     </div>
 
     <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); background: #03060a; border-radius: var(--radius-sm); margin-bottom: var(--space-md); font-family: var(--font-mono); font-size: var(--text-xs);">
-      <span>Average Active SLA Engineer Response:</span>
-      <span id="nocSlaTimer" style="color: var(--rose-alert); font-weight: 800; font-size: 0.9375rem;">15:00</span>
+      <span>Délai de rappel par notre technicien de garde :</span>
+      <span style="color: var(--rose-alert); font-weight: 800; font-size: 0.9375rem;">Moins de 10 minutes</span>
     </div>
 
     <form id="nocTicketForm" style="display: flex; flex-direction: column; gap: var(--space-sm);">
       <div class="form-group">
-        <label class="form-label" for="nocPriority">Incident Severity Tier</label>
+        <label class="form-label" for="nocPriority">Nature de l'Urgence</label>
         <select id="nocPriority" class="form-select" required>
-          <option value="p1">P1 Critical Outage (Complete Production / Fabric Down - 15m SLA)</option>
-          <option value="p2">P2 Degraded (Loss of Redundancy / Single PSU/Spine Failed - 2h SLA)</option>
-          <option value="p3">P3 Maintenance &amp; Routine Part Replacement (4h SLA)</option>
+          <option value="p1">Serveur bloqué / Données inaccessibles (Urgence Maximale)</option>
+          <option value="p2">Coupure Internet / Wi-Fi dans tous les bureaux</option>
+          <option value="p3">Suspicion de virus / Ransomware / Mail frauduleux</option>
+          <option value="p4">Demande d'audit ou réaménagement de baie informatique</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="nocFacility">Datacenter / Campus Facility</label>
+        <label class="form-label" for="nocFacility">Votre Ville / Zone d'Activité</label>
         <select id="nocFacility" class="form-select" required>
-          <option value="dc-casablanca">Casablanca Technopark / Nearshore Data Center (Morocco)</option>
-          <option value="dc-tangermed">Tanger Med Port &amp; Industrial Free Zone Hub (Morocco)</option>
-          <option value="dc-ny4">Equinix NY4 Secaucus (United States)</option>
-          <option value="dc-lon">Telehouse North Two London (United Kingdom)</option>
-          <option value="dc-fra">Interxion Frankfurt FRA4 (Germany)</option>
+          <option value="casa-sidimaarouf">Casablanca — Sidi Maârouf / Casanearshore</option>
+          <option value="casa-cfc">Casablanca — CFC / Maarif / Boulevard d'Anfa</option>
+          <option value="casa-ainsebaa">Casablanca — Ain Sebaâ / Bernoussi / Mohammedia</option>
+          <option value="rabat-agdal">Rabat — Agdal / Hay Riad / Technopolis</option>
+          <option value="tanger-med">Tanger — Tanger Med / Tanger Free Zone (TFZ)</option>
+          <option value="marrakech-centre">Marrakech — Guéliz / Zone Industrielle Sidi Ghanem</option>
+          <option value="kenitra-afz">Kénitra — Atlantic Free Zone</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="nocServiceContract">Service Agreement / Contract ID</label>
-        <input type="text" id="nocServiceContract" class="form-input" placeholder="e.g. SYN-SLA-98214" required>
+        <label class="form-label" for="nocCompany">Nom de votre Entreprise</label>
+        <input type="text" id="nocCompany" class="form-input" placeholder="ex : Cabinet Fiduciaire Atlas / SARL ABC" required>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="nocSymptoms">Failure Symptoms / Incident Brief</label>
-        <textarea id="nocSymptoms" class="form-input" rows="3" placeholder="Describe failing switch, amber drive lights, kernel panic, or link flap..." required></textarea>
+        <label class="form-label" for="nocPhone">Numéro de Téléphone Direct / WhatsApp</label>
+        <input type="tel" id="nocPhone" class="form-input" placeholder="06 XX XX XX XX / 05 22 XX XX XX" required>
       </div>
 
       <button type="submit" class="btn-primary" style="background: #f43f5e; box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); margin-top: 4px;">
         <span class="pulse-dot" style="background: #ffffff; box-shadow: 0 0 6px #fff;"></span>
-        <span>Dispatch On-Call Engineer &amp; Spares</span>
+        <span>Demander un Rappel Technique Immédiat</span>
       </button>
     </form>
   </dialog>
 
   <!-- =========================================================================
-       9. FOOTER
+       9. FOOTER PME MAROC
        ========================================================================= -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
         <a href="#hero" class="brand-logo" style="margin-bottom: var(--space-md); display: inline-flex;">
-          <span class="brand-name">SYNAPSE <span class="highlight">//</span> INFRASTRUCTURE</span>
+          <span class="brand-name">SYNAPSE <span class="highlight">//</span> IT MAROC</span>
         </a>
         <p style="font-size: var(--text-sm); color: var(--text-secondary); max-width: 320px; line-height: 1.6;">
-          Enterprise IT infrastructure procurement, precision datacenter engineering, 42U rack integration, and 24/7/365 managed network operations.
+          Société marocaine d'intégration et d'infogérance informatique pour les PME. Vente de matériel, installation de serveurs, câblage de baies et contrats de maintenance sur site.
         </p>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Hardware Verticals</h4>
+        <h4 class="footer-col-title">Matériel Informatique</h4>
         <ul class="footer-links-list">
-          <li><a href="#catalog">Rackmount Servers (1U-4U)</a></li>
-          <li><a href="#catalog">AI / GPU Cluster SuperServers</a></li>
-          <li><a href="#catalog">100G / 400G Spine-Leaf Switches</a></li>
-          <li><a href="#catalog">Next-Gen FortiGate Firewalls</a></li>
-          <li><a href="#catalog">All-Flash NVMe SAN / NAS</a></li>
-          <li><a href="#catalog">Lithium-Ion Double-Conversion UPS</a></li>
+          <li><a href="#catalog">Serveurs Dell PowerEdge</a></li>
+          <li><a href="#catalog">Switchs Réseau Cisco &amp; UniFi</a></li>
+          <li><a href="#catalog">Pare-Feu VPN Fortinet</a></li>
+          <li><a href="#catalog">Serveurs NAS Synology</a></li>
+          <li><a href="#catalog">Bornes Wi-Fi Haute Portée</a></li>
+          <li><a href="#catalog">Onduleurs APC Parafoudre</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Engineering Tools</h4>
+        <h4 class="footer-col-title">Outils &amp; Devis</h4>
         <ul class="footer-links-list">
-          <li><a href="#rackConfigurator">42U Server Rack Builder</a></li>
-          <li><a href="#network">Network Packet Flow Canvas</a></li>
-          <li><a href="#storageSizer">Storage IOPS &amp; Capacity Sizer</a></li>
-          <li><a href="#hero" id="footerOpenBom">Project BOM Manifest</a></li>
-          <li><a href="#hero" id="footerOpenNoc">24/7 Emergency NOC Hotline</a></li>
+          <li><a href="#rackConfigurator">Configurateur Baie 12U/24U</a></li>
+          <li><a href="#network">Continuité Réseau &amp; Secours 4G</a></li>
+          <li><a href="#storageSizer">Sauvegarde Anti-Ransomware</a></li>
+          <li><a href="#hero" id="footerOpenBom">Demande de Devis en Ligne</a></li>
+          <li><a href="#hero" id="footerOpenNoc">Visite Technique Gratuite</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Regional Facilities</h4>
+        <h4 class="footer-col-title">Zones d'Intervention</h4>
         <ul class="footer-links-list">
-          <li><span>Casablanca Nearshore (MA)</span></li>
-          <li><span>Tanger Med Industrial Hub (MA)</span></li>
-          <li><span>Frankfurt Am Main (DE)</span></li>
-          <li><span>London Docklands (UK)</span></li>
-          <li><span>New York Metro (US)</span></li>
+          <li><span>Casablanca (Casanearshore, CFC, Ain Sebaâ)</span></li>
+          <li><span>Rabat (Hay Riad, Agdal, Technopolis)</span></li>
+          <li><span>Tanger &amp; Tanger Med (TFZ / TAC)</span></li>
+          <li><span>Kénitra, Marrakech, Fès &amp; Agadir</span></li>
+          <li><strong style="color: var(--cyan-primary);">Tél : +212 522 98 44 20</strong></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Synapse Infrastructure SARL. All rights reserved. ISO 27001 Certified.</span>
-      <span>Enterprise IT Material Supply • Structured Cabling • Managed NOC</span>
+      <span>&copy; 2026 Synapse IT Maroc SARL. Tous droits réservés. Registre du Commerce Casablanca.</span>
+      <span>Matériel Certifié • Installation Sur Site • Dépannage Réactif PME</span>
     </div>
   </footer>
 

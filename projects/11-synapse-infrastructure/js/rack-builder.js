@@ -1,163 +1,139 @@
 /**
- * Synapse Infrastructure — 42U Server Rack Configurator Engine
- * Precision 1U-slot hardware placement, power/thermal/weight analytics, and BOM export.
+ * SYNAPSE IT MAROC — Configurateur de Baie Informatique PME (12U, 24U, 42U)
+ * Conçu pour les PME marocaines : bureaux, usines, cabinets médicaux, fiduciaires et commerces.
+ * Prix en Dirhams Marocains (MAD), calculs de consommation, postes couverts et autonomie électrique.
  */
 
 class RackBuilder {
   constructor() {
-    this.totalU = 42;
-    this.slots = new Array(this.totalU).fill(null); // slots[0] is 1U (bottom), slots[41] is 42U (top)
+    this.totalU = 24; // Default to 24U (standard PME floor rack)
+    this.slots = new Array(this.totalU).fill(null);
+
+    // Matériel informatique adapté aux réalités des PME marocaines
     this.catalog = [
       {
-        id: 'sw-arista-100g',
-        name: 'Arista 7050X3 100G Switch',
-        category: 'Network',
+        id: 'sw-cisco-poe-24',
+        name: 'Switch 24 Ports Gigabit PoE+ Cisco Business',
+        category: 'Réseau',
         uSize: 1,
-        powerWatts: 280,
-        btu: 955,
-        weightKg: 8.5,
-        priceUsd: 8400,
+        powerWatts: 180,
+        btu: 614,
+        weightKg: 3.8,
+        priceMad: 12500,
         color: '#0284c7',
-        badge: '100GbE QSFP28',
-        ports: '32x 100GbE QSFP28 / Dual AC PSU'
+        badge: '24 Ports PoE+',
+        ports: 'Alimente téléphones IP, caméras et bornes Wi-Fi sans prise murale'
       },
       {
-        id: 'fw-fortigate-600f',
-        name: 'Fortinet FortiGate 600F Firewall',
-        category: 'Security',
+        id: 'fw-fortigate-60f',
+        name: 'Pare-Feu & Routeur VPN Fortinet FortiGate 60F',
+        category: 'Sécurité & VPN',
         uSize: 1,
-        powerWatts: 210,
-        btu: 716,
-        weightKg: 7.2,
-        priceUsd: 9200,
-        color: '#dc2626',
-        badge: '140 Gbps FW',
-        ports: '4x 25GE SFP28, 4x 10GE SFP+, 18x GE'
-      },
-      {
-        id: 'pp-fiber-om4',
-        name: '24-Port OM4 Fiber Patch Panel',
-        category: 'Cabling',
-        uSize: 1,
-        powerWatts: 0,
-        btu: 0,
+        powerWatts: 45,
+        btu: 153,
         weightKg: 2.1,
-        priceUsd: 480,
-        color: '#0d9488',
-        badge: 'Ultra Low Loss',
-        ports: '24x LC Duplex OM4 multimode'
+        priceMad: 9800,
+        color: '#dc2626',
+        badge: 'Télétravail Sécurisé',
+        ports: 'VPN sécurisé pour les dirigeants, blocage des virus et filtrage web'
       },
       {
-        id: 'pp-cat6a-shielded',
-        name: '24-Port Cat6A Shielded Patch Panel',
-        category: 'Cabling',
+        id: 'srv-dell-poweredge',
+        name: 'Serveur de Gestion Dell PowerEdge R350 (Sage / ERP / Fichiers)',
+        category: 'Serveur',
         uSize: 1,
-        powerWatts: 0,
-        btu: 0,
-        weightKg: 2.8,
-        priceUsd: 360,
-        color: '#475569',
-        badge: '10GBASE-T',
-        ports: '24x RJ45 Cat6A Shielded 500MHz'
-      },
-      {
-        id: 'srv-dell-r760',
-        name: 'Dell PowerEdge R760 2U Host',
-        category: 'Compute',
-        uSize: 2,
-        powerWatts: 750,
-        btu: 2559,
-        weightKg: 24.5,
-        priceUsd: 14800,
+        powerWatts: 250,
+        btu: 853,
+        weightKg: 13.5,
+        priceMad: 24500,
         color: '#2563eb',
-        badge: 'Dual Xeon / 512GB',
-        ports: '2x Intel Xeon Platinum 8468, 512GB DDR5, 8x NVMe'
+        badge: 'Disques Miroir RAID',
+        ports: 'Intel Xeon, 64 Go RAM, 4x disques SAS en miroir anti-panne'
       },
       {
-        id: 'srv-ai-hgx-h100',
-        name: 'Supermicro HGX H100 8-GPU AI Node',
-        category: 'AI / HPC',
-        uSize: 4,
-        powerWatts: 2800,
-        btu: 9553,
-        weightKg: 48.0,
-        priceUsd: 89000,
-        color: '#7c3aed',
-        badge: '8x SXM5 H100',
-        ports: '8x NVIDIA H100 80GB, Dual EPYC 9654, 1.5TB DDR5'
-      },
-      {
-        id: 'san-truenas-ha',
-        name: 'TrueNAS Dual-Controller NVMe SAN',
-        category: 'Storage',
-        uSize: 2,
-        powerWatts: 620,
-        btu: 2115,
-        weightKg: 28.0,
-        priceUsd: 26500,
+        id: 'nas-synology-pme',
+        name: 'Serveur NAS Synology 4 Baies (Sauvegarde Automatique)',
+        category: 'Sauvegarde & Stockage',
+        uSize: 1,
+        powerWatts: 60,
+        btu: 204,
+        weightKg: 4.8,
+        priceMad: 14200,
         color: '#d97706',
-        badge: '1.2M IOPS HA',
-        ports: '24x 7.68TB NVMe U.3, Dual Active-Active Active Controllers'
+        badge: 'Anti-Ransomware',
+        ports: 'Sauvegarde chaque soir tous les PC de vos employés. Données cryptées sécurisées'
       },
       {
-        id: 'nas-synology-ha',
-        name: 'Synology Enterprise 24-Bay NAS',
-        category: 'Storage',
-        uSize: 4,
-        powerWatts: 450,
-        btu: 1535,
-        weightKg: 32.0,
-        priceUsd: 11200,
-        color: '#b45309',
-        badge: '24-Bay SAS/SATA',
-        ports: '24x 18TB Enterprise SAS HDD, 10GbE SFP+'
-      },
-      {
-        id: 'ups-apc-6000va',
-        name: 'APC Smart-UPS On-Line 6000VA',
-        category: 'Power',
-        uSize: 3,
-        powerWatts: 120, // Internal loss during normal online operation
-        btu: 410,
-        weightKg: 54.0,
-        priceUsd: 6900,
+        id: 'ups-apc-smart-pme',
+        name: 'Onduleur APC Smart-UPS 1500VA (Protection Électrique)',
+        category: 'Protection Électrique',
+        uSize: 2,
+        powerWatts: 80,
+        btu: 270,
+        weightKg: 26.0,
+        priceMad: 8500,
         color: '#15803d',
-        badge: 'Li-Ion 6kVA',
-        ports: 'Hardwire 208/230V + L6-20R / L6-30R Outlets'
+        badge: 'Autonomie 45 min',
+        ports: 'Protège vos serveurs des coupures de courant et des surtensions Lydec/Amendis'
       },
       {
-        id: 'mgmt-cable-duct',
-        name: '1U Cable Management Duct',
-        category: 'Accessory',
+        id: 'pp-brassage-cat6',
+        name: 'Panneau de Brassage Cat6 24 Ports RJ45',
+        category: 'Câblage',
         uSize: 1,
         powerWatts: 0,
         btu: 0,
-        weightKg: 1.5,
-        priceUsd: 120,
+        weightKg: 1.6,
+        priceMad: 1450,
+        color: '#475569',
+        badge: 'Câblage Organisé',
+        ports: 'Repérage clair de chaque prise réseau du bureau'
+      },
+      {
+        id: 'nvr-cameras-hikvision',
+        name: 'Enregistreur Vidéosurveillance NVR IP 8 Caméras HD',
+        category: 'Sécurité Locaux',
+        uSize: 1,
+        powerWatts: 50,
+        btu: 170,
+        weightKg: 3.2,
+        priceMad: 8900,
+        color: '#9333ea',
+        badge: 'Vision Smartphone',
+        ports: 'Enregistrement 30 jours et visionnage en direct depuis votre téléphone'
+      },
+      {
+        id: 'passe-cable-organiseur',
+        name: 'Passe-Câbles Horizontal avec Balai Antipoussière',
+        category: 'Accessoire Baie',
+        uSize: 1,
+        powerWatts: 0,
+        btu: 0,
+        weightKg: 0.9,
+        priceMad: 450,
         color: '#334155',
-        badge: 'High-Density Finger',
-        ports: 'Toolless horizontal pass-through'
-      },
-      {
-        id: 'blanking-panel-1u',
-        name: '1U Toolless Blanking Panel',
-        category: 'Accessory',
-        uSize: 1,
-        powerWatts: 0,
-        btu: 0,
-        weightKg: 0.4,
-        priceUsd: 35,
-        color: '#1e293b',
-        badge: 'Airflow Optimization',
-        ports: 'Prevents hot/cold aisle bypass'
+        badge: 'Finition Pro',
+        ports: 'Fini les câbles emmêlés : baie propre et fermée à clé'
       }
     ];
 
     this.selectedItem = this.catalog[0];
     this.rackContainer = document.getElementById('rackSlotsContainer');
     this.initCatalogUI();
-    this.loadPreset('enterprise');
+    this.loadPreset('pme-standard');
     this.bindEvents();
+  }
+
+  setRackSize(totalU) {
+    this.totalU = totalU;
+    this.slots = new Array(this.totalU).fill(null);
+    if (totalU === 12) {
+      this.loadPreset('tpe-compact');
+    } else if (totalU === 24) {
+      this.loadPreset('pme-standard');
+    } else {
+      this.loadPreset('grande-pme');
+    }
   }
 
   initCatalogUI() {
@@ -171,9 +147,8 @@ class RackBuilder {
           <span class="palette-name">${item.name}</span>
         </div>
         <div class="palette-meta">
-          <span>${item.powerWatts > 0 ? item.powerWatts + 'W' : 'Passive'}</span>
-          <span>${item.weightKg} kg</span>
-          <span class="palette-price">$${item.priceUsd.toLocaleString()}</span>
+          <span>${item.badge}</span>
+          <span class="palette-price">${item.priceMad.toLocaleString()} MAD</span>
         </div>
       </div>
     `).join('');
@@ -191,48 +166,46 @@ class RackBuilder {
   loadPreset(presetType) {
     this.slots.fill(null);
 
-    if (presetType === 'enterprise') {
-      // 42U: Arista 100G Switch
-      this.placeItem(42, 'sw-arista-100g');
-      // 41U: Fortinet Firewall
-      this.placeItem(41, 'fw-fortigate-600f');
-      // 40U: Cable duct
-      this.placeItem(40, 'mgmt-cable-duct');
-      // 39U: Fiber Patch Panel
-      this.placeItem(39, 'pp-fiber-om4');
-      // 38U: Cat6A Patch Panel
-      this.placeItem(38, 'pp-cat6a-shielded');
-      // 36U (2U): Dell R760 Host 1 (occupies 36 and 35)
-      this.placeItem(36, 'srv-dell-r760');
-      // 34U (2U): Dell R760 Host 2 (occupies 34 and 33)
-      this.placeItem(34, 'srv-dell-r760');
-      // 32U (2U): Dell R760 Host 3 (occupies 32 and 31)
-      this.placeItem(32, 'srv-dell-r760');
-      // 28U (2U): TrueNAS NVMe SAN (occupies 28 and 27)
-      this.placeItem(28, 'san-truenas-ha');
-      // 24U (4U): Synology NAS (occupies 24, 23, 22, 21)
-      this.placeItem(24, 'nas-synology-ha');
-      // 1U (3U): APC Smart-UPS at bottom (occupies 3, 2, 1)
-      this.placeItem(3, 'ups-apc-6000va');
-    } else if (presetType === 'ai') {
-      // 42U: 100G Arista Switch
-      this.placeItem(42, 'sw-arista-100g');
-      // 41U: Fortinet Firewall
-      this.placeItem(41, 'fw-fortigate-600f');
-      // 40U: Fiber Patch Panel
-      this.placeItem(40, 'pp-fiber-om4');
-      // 36U (4U): Supermicro HGX H100 GPU Cluster
-      this.placeItem(36, 'srv-ai-hgx-h100');
-      // 30U (4U): Supermicro HGX H100 GPU Cluster 2
-      this.placeItem(30, 'srv-ai-hgx-h100');
-      // 24U (2U): TrueNAS NVMe SAN Ultra-High Throughput
-      this.placeItem(24, 'san-truenas-ha');
-      // 20U (2U): Dell R760 Head Node
-      this.placeItem(20, 'srv-dell-r760');
-      // 3U: Dual APC 6000VA UPS
-      this.placeItem(3, 'ups-apc-6000va');
+    if (presetType === 'tpe-compact') {
+      // Coffret Mural 12U pour petite structure (5 à 15 postes)
+      this.totalU = 12;
+      this.slots = new Array(12).fill(null);
+      this.placeItem(12, 'fw-fortigate-60f');
+      this.placeItem(11, 'sw-cisco-poe-24');
+      this.placeItem(10, 'pp-brassage-cat6');
+      this.placeItem(9, 'passe-cable-organiseur');
+      this.placeItem(8, 'nas-synology-pme');
+      this.placeItem(2, 'ups-apc-smart-pme'); // 2U onduleur at bottom
+    } else if (presetType === 'pme-standard') {
+      // Baie d'étage 24U PME (15 à 50 postes avec serveur de gestion)
+      this.totalU = 24;
+      this.slots = new Array(24).fill(null);
+      this.placeItem(24, 'fw-fortigate-60f');
+      this.placeItem(23, 'sw-cisco-poe-24');
+      this.placeItem(22, 'pp-brassage-cat6');
+      this.placeItem(21, 'passe-cable-organiseur');
+      this.placeItem(19, 'srv-dell-poweredge');
+      this.placeItem(17, 'nas-synology-pme');
+      this.placeItem(15, 'nvr-cameras-hikvision');
+      this.placeItem(2, 'ups-apc-smart-pme');
+    } else if (presetType === 'grande-pme') {
+      // Baie 42U Entreprise / Usine / Clinique (50 à 150 postes)
+      this.totalU = 42;
+      this.slots = new Array(42).fill(null);
+      this.placeItem(42, 'fw-fortigate-60f');
+      this.placeItem(41, 'sw-cisco-poe-24');
+      this.placeItem(40, 'sw-cisco-poe-24');
+      this.placeItem(39, 'pp-brassage-cat6');
+      this.placeItem(38, 'pp-brassage-cat6');
+      this.placeItem(37, 'passe-cable-organiseur');
+      this.placeItem(35, 'srv-dell-poweredge');
+      this.placeItem(34, 'srv-dell-poweredge'); // 2ème serveur redondant
+      this.placeItem(32, 'nas-synology-pme');
+      this.placeItem(30, 'nvr-cameras-hikvision');
+      this.placeItem(4, 'ups-apc-smart-pme');
+      this.placeItem(2, 'ups-apc-smart-pme');
     } else if (presetType === 'clear') {
-      // Empty rack
+      this.slots.fill(null);
     }
 
     this.render();
@@ -240,7 +213,7 @@ class RackBuilder {
   }
 
   canPlaceItem(topSlotU, item) {
-    const topIdx = topSlotU - 1; // 0-based index
+    const topIdx = topSlotU - 1;
     const bottomIdx = topIdx - item.uSize + 1;
     if (bottomIdx < 0 || topIdx >= this.totalU) return false;
 
@@ -285,7 +258,6 @@ class RackBuilder {
     if (!this.rackContainer) return;
 
     let html = '';
-    // Render from 42U (top) down to 1U (bottom)
     let idx = this.totalU - 1;
 
     while (idx >= 0) {
@@ -293,19 +265,17 @@ class RackBuilder {
       const slot = this.slots[idx];
 
       if (slot === null) {
-        // Empty slot
         html += `
           <div class="rack-slot empty" data-u="${uNumber}">
             <span class="slot-number">${uNumber}U</span>
             <div class="slot-content">
-              <span class="slot-placeholder">Empty (Click to mount ${this.selectedItem ? this.selectedItem.name : 'hardware'})</span>
+              <span class="slot-placeholder">Emplacement libre (Cliquez pour ajouter ${this.selectedItem ? this.selectedItem.name : 'un équipement'})</span>
             </div>
-            <button type="button" class="btn-slot-mount" title="Mount item">+</button>
+            <button type="button" class="btn-slot-mount" title="Ajouter à cet emplacement">+</button>
           </div>
         `;
         idx--;
       } else {
-        // Occupied slot - determine total height in U
         const uSize = slot.uSize;
         const instId = slot.instanceId;
 
@@ -319,14 +289,12 @@ class RackBuilder {
               </div>
               <div class="hardware-meta">
                 <span class="hardware-badge" style="background: ${slot.color}33; color: ${slot.color}; border: 1px solid ${slot.color}66;">${slot.badge}</span>
-                <span class="hardware-power">${slot.powerWatts}W</span>
-                <button type="button" class="btn-remove-slot" data-inst="${instId}" title="Remove from rack">&times;</button>
+                <span class="hardware-power">${slot.priceMad.toLocaleString()} MAD</span>
+                <button type="button" class="btn-remove-slot" data-inst="${instId}" title="Retirer de la baie">&times;</button>
               </div>
             </div>
           </div>
         `;
-
-        // Skip the lower spanned slots
         idx -= uSize;
       }
     }
@@ -336,9 +304,8 @@ class RackBuilder {
   }
 
   bindSlotActions() {
-    // Mount on empty slot click
     this.rackContainer.querySelectorAll('.rack-slot.empty').forEach(el => {
-      el.addEventListener('click', (e) => {
+      el.addEventListener('click', () => {
         const uNumber = parseInt(el.dataset.u, 10);
         if (this.selectedItem) {
           const success = this.placeItem(uNumber, this.selectedItem.id);
@@ -346,13 +313,12 @@ class RackBuilder {
             this.render();
             this.updateTelemetry();
           } else {
-            alert(`Not enough contiguous space for a ${this.selectedItem.uSize}U item starting at slot ${uNumber}U.`);
+            alert(`Espace insuffisant pour cet équipement de ${this.selectedItem.uSize}U à l'emplacement ${uNumber}U.`);
           }
         }
       });
     });
 
-    // Remove buttons
     this.rackContainer.querySelectorAll('.btn-remove-slot').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -363,28 +329,19 @@ class RackBuilder {
   }
 
   bindEvents() {
-    // Preset buttons
-    const btnEnterprise = document.getElementById('presetEnterprise');
-    const btnAi = document.getElementById('presetAi');
+    const btnTpe = document.getElementById('presetTpe');
+    const btnPme = document.getElementById('presetPme');
+    const btnGrande = document.getElementById('presetGrandePme');
     const btnClear = document.getElementById('presetClear');
 
-    if (btnEnterprise) {
-      btnEnterprise.addEventListener('click', () => this.loadPreset('enterprise'));
-    }
-    if (btnAi) {
-      btnAi.addEventListener('click', () => this.loadPreset('ai'));
-    }
-    if (btnClear) {
-      btnClear.addEventListener('click', () => this.loadPreset('clear'));
-    }
+    if (btnTpe) btnTpe.addEventListener('click', () => this.loadPreset('tpe-compact'));
+    if (btnPme) btnPme.addEventListener('click', () => this.loadPreset('pme-standard'));
+    if (btnGrande) btnGrande.addEventListener('click', () => this.loadPreset('grande-pme'));
+    if (btnClear) btnClear.addEventListener('click', () => this.loadPreset('clear'));
 
-    // Export BOM
     const btnExport = document.getElementById('btnExportRackBom');
-    if (btnExport) {
-      btnExport.addEventListener('click', () => this.exportBomCsv());
-    }
+    if (btnExport) btnExport.addEventListener('click', () => this.exportBomCsv());
 
-    // Add Rack to Project BOM
     const btnAddAll = document.getElementById('btnAddRackToBom');
     if (btnAddAll) {
       btnAddAll.addEventListener('click', () => {
@@ -417,7 +374,6 @@ class RackBuilder {
   updateTelemetry() {
     let occupiedU = 0;
     let totalWatts = 0;
-    let totalBtu = 0;
     let totalWeight = 0;
     let totalCapex = 0;
 
@@ -427,75 +383,76 @@ class RackBuilder {
         occupiedU++;
         if (slot.isHead) {
           totalWatts += slot.powerWatts;
-          totalBtu += slot.btu;
           totalWeight += slot.weightKg;
-          totalCapex += slot.priceUsd;
+          totalCapex += slot.priceMad;
         }
       }
     }
 
-    // Include rack frame baseline weight (120kg for 42U reinforced steel chassis)
-    const staticWeight = 120 + totalWeight;
-    const amps208V = (totalWatts / 208).toFixed(1);
-    const requiredCfm = Math.round(totalBtu / 3.16); // Rule of thumb: CFM = BTU / (1.08 * 30F delta)
+    // Estimate employee capacity based on mounted switches and servers
+    let recommendedPostes = '5 à 15 postes';
+    if (this.totalU === 12) {
+      recommendedPostes = '5 à 15 collaborateurs';
+    } else if (this.totalU === 24) {
+      recommendedPostes = '15 à 45 collaborateurs';
+    } else {
+      recommendedPostes = '50 à 150 collaborateurs';
+    }
+
+    // Autonomy calculation: APC Smart-UPS battery capacity
+    const upsCount = this.getUniqueHardwareList().filter(i => i.id === 'ups-apc-smart-pme').reduce((a, c) => a + c.count, 0);
+    let autonomieMin = 0;
+    if (upsCount > 0) {
+      // 1000VA battery ~ 30-45 mins for typical PME load of 300W
+      const load = Math.max(100, totalWatts);
+      autonomieMin = Math.round((upsCount * 12000) / load);
+      if (autonomieMin > 120) autonomieMin = 120;
+    }
+
+    const pct = Math.round((occupiedU / this.totalU) * 100);
 
     // Update UI elements
     const uCountEl = document.getElementById('rackOccupiedU');
     const uPercentEl = document.getElementById('rackOccupiedPercent');
     const uBarEl = document.getElementById('rackOccupancyBar');
     const wattsEl = document.getElementById('rackTotalWatts');
-    const ampsEl = document.getElementById('rackAmps');
-    const btuEl = document.getElementById('rackTotalBtu');
-    const cfmEl = document.getElementById('rackRequiredCfm');
-    const weightEl = document.getElementById('rackTotalWeight');
+    const postesEl = document.getElementById('rackPostesRecommandes');
+    const autoEl = document.getElementById('rackAutonomieSecours');
     const capexEl = document.getElementById('rackTotalCapex');
 
-    const pct = Math.round((occupiedU / this.totalU) * 100);
-
-    if (uCountEl) uCountEl.textContent = `${occupiedU} / 42U`;
-    if (uPercentEl) uPercentEl.textContent = `${pct}% Full`;
+    if (uCountEl) uCountEl.textContent = `${occupiedU} / ${this.totalU}U occupés`;
+    if (uPercentEl) uPercentEl.textContent = `${pct}% Rempli`;
     if (uBarEl) uBarEl.style.width = `${pct}%`;
-    if (wattsEl) wattsEl.textContent = `${totalWatts.toLocaleString()} W`;
-    if (ampsEl) ampsEl.textContent = `${amps208V} A @ 208V`;
-    if (btuEl) btuEl.textContent = `${totalBtu.toLocaleString()} BTU/hr`;
-    if (cfmEl) cfmEl.textContent = `${requiredCfm.toLocaleString()} CFM`;
-    if (weightEl) {
-      weightEl.textContent = `${staticWeight.toFixed(1)} kg`;
-      if (staticWeight > 1000) {
-        weightEl.style.color = '#ef4444';
-      } else {
-        weightEl.style.color = 'inherit';
-      }
-    }
+    if (wattsEl) wattsEl.textContent = `${totalWatts} W (Très économique)`;
+    if (postesEl) postesEl.textContent = recommendedPostes;
+    if (autoEl) autoEl.textContent = upsCount > 0 ? `~${autonomieMin} min d'autonomie sans coupure` : 'Aucun onduleur (Risque de coupure)';
     if (capexEl) {
-      const rate = window.SynapseApp ? window.SynapseApp.currencyRate : 1;
-      const sym = window.SynapseApp ? window.SynapseApp.currencySymbol : '$';
-      capexEl.textContent = `${sym}${Math.round(totalCapex * rate).toLocaleString()}`;
+      capexEl.textContent = `${totalCapex.toLocaleString()} MAD HT`;
     }
   }
 
   exportBomCsv() {
     const list = this.getUniqueHardwareList();
     if (list.length === 0) {
-      alert('Your 42U rack is currently empty. Mount hardware components first!');
+      alert('Votre baie est actuellement vide. Choisissez un pack ou ajoutez du matériel.');
       return;
     }
 
-    let csv = 'Part Number / Name,Category,Form Factor,Quantity,Unit Power (W),Total Weight (kg),Unit Price (USD),Subtotal (USD)\n';
+    let csv = 'Désignation Matériel,Catégorie,Format (U),Quantité,Garantie,Prix Unitaire (MAD HT),Total (MAD HT)\n';
     let totalSum = 0;
 
     list.forEach(item => {
-      const sub = item.priceUsd * item.count;
+      const sub = item.priceMad * item.count;
       totalSum += sub;
-      csv += `"${item.name}","${item.category}","${item.uSize}U",${item.count},${item.powerWatts},${(item.weightKg * item.count).toFixed(1)},${item.priceUsd},${sub}\n`;
+      csv += `"${item.name}","${item.category}","${item.uSize}U",${item.count},"3 Ans Sur Site",${item.priceMad},${sub}\n`;
     });
-    csv += `\n"TOTAL HARDWARE CAPEX","","","",,"",,${totalSum}\n`;
+    csv += `\n"TOTAL ESTIMATIF MATÉRIEL","","","",,"",${totalSum}\n`;
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Synapse_42U_Rack_BOM_${new Date().toISOString().slice(0, 10)}.csv`;
+    a.download = `Devis_Baie_Informatique_PME_${new Date().toISOString().slice(0, 10)}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
