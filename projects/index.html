@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Projects Hub — Software, Automations, Open Source &amp; Design | NASOFI</title>
+  <meta name="description" content="Comprehensive portfolio of engineering deliverables: web platforms, automated business workflows, open-source code utilities, and corporate design brochures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio/css/style.css">
+  <style>
+    .hub-hero {
+      padding-top: 110px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    .hub-kicker {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: #00e5ff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 999px;
+      padding: 4px 14px;
+    }
+    .hub-h1 {
+      font-size: clamp(2.2rem, 1.8rem + 2vw, 3.6rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .hub-dek {
+      font-size: 1.0625rem;
+      color: #94a3b8;
+      max-width: 720px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+    .top-nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(6, 9, 15, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 24px;
+    }
+    .nav-brand {
+      font-family: var(--font-mono, monospace);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-brand .accent { color: #00e5ff; }
+    .nav-links-menu {
+      display: none;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.8125rem;
+    }
+    @media (min-width: 820px) {
+      .nav-links-menu { display: flex; }
+    }
+    .nav-links-menu a {
+      color: #94a3b8;
+      transition: color 0.2s ease;
+    }
+    .nav-links-menu a:hover {
+      color: #00e5ff;
+    }
+    .category-section-heading {
+      margin-top: 50px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+    .cat-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cat-badge {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.6875rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #00e5ff;
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 999px;
+      padding: 2px 8px;
+    }
+    .deliverable-card {
+      background: #0b111a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .deliverable-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 229, 255, 0.35);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    }
+    .deliverable-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: #020408;
+      overflow: hidden;
+    }
+    .deliverable-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .deliverable-card:hover .deliverable-media img {
+      transform: scale(1.04);
+    }
+    .deliverable-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(6, 9, 15, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.6875rem;
+      font-family: var(--font-mono, monospace);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .deliverable-tag.tag-web { color: #00e5ff; }
+    .deliverable-tag.tag-auto { color: #10b981; }
+    .deliverable-tag.tag-open { color: #f59e0b; }
+    .deliverable-tag.tag-design { color: #ec4899; }
+
+    .deliverable-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .deliverable-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .deliverable-desc {
+      font-size: 0.8125rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .deliverable-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.6875rem;
+    }
+    .d-pill {
+      background: #101926;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 2px 8px;
+      color: #cbd5e1;
+    }
+    .deliverable-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: auto;
+    }
+    .btn-action-primary {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #00e5ff;
+      color: #06090f;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      padding: 9px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-action-primary:hover {
+      background: #4deeff;
+      transform: translateY(-1px);
+    }
+    .btn-action-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-family: var(--font-mono, monospace);
+      padding: 9px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-action-outline:hover {
+      border-color: #00e5ff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body style="background-color: #06090f; color: #f8fafc; min-height: 100vh;">
+
+  <!-- Fixed Header -->
+  <header class="top-nav-bar">
+    <a href="/portfolio/" class="nav-brand">
+      <span>NASOFI</span>
+      <span class="accent">//</span>
+      <span>PROJECTS HUB</span>
+    </a>
+
+    <nav class="nav-links-menu" aria-label="Sections">
+      <a href="#section-websites">Websites (11)</a>
+      <a href="#section-automations">Automations &amp; Workflows</a>
+      <a href="#section-opensource">Open Source Code</a>
+      <a href="#section-designs">Designs &amp; Brochures</a>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="/portfolio/" class="btn-action-outline" style="border-color: rgba(0, 229, 255, 0.4); color: #00e5ff;">
+        <span>📱 Open Simulator</span>
+      </a>
+      <a href="/websites/" class="btn-action-outline">
+        <span>Websites Gallery →</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1360px; margin-inline: auto; padding-inline: 20px;">
+    <!-- Hero Header -->
+    <section class="hub-hero">
+      <span class="hub-kicker">◆ Multi-Disciplinary Engineering &amp; Creative Portfolio</span>
+      <h1 class="hub-h1">Web Platforms, Automations, <br><span style="background: linear-gradient(135deg, #fff 30%, #00e5ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Open-Source Code &amp; Design Dossiers</span></h1>
+      <p class="hub-dek">
+        A single unified showcase of client deliverables: complete production web applications, automated business workflows, open-source physics engines, and corporate design brochures.
+      </p>
+    </section>
+
+    <!-- Filter Category Tabs -->
+    <div class="project-filter-tabs flex-align justify-center gap-2 mb-8" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 50px;">
+      <button class="filter-chip active" data-filter="all">All Projects (16)</button>
+      <button class="filter-chip" data-filter="websites">Websites &amp; Platforms (11)</button>
+      <button class="filter-chip" data-filter="automations">Automations &amp; Workflows (2)</button>
+      <button class="filter-chip" data-filter="opensource">Open Source &amp; Code (1)</button>
+      <button class="filter-chip" data-filter="designs">Designs &amp; Brochures (2)</button>
+    </div>
+
+    <!-- SECTION 1: WEBSITES & WEB PLATFORMS -->
+    <section id="section-websites">
+      <div class="category-section-heading">
+        <h2 class="cat-title">
+          <span>Websites &amp; Bespoke Digital Platforms</span>
+          <span class="cat-badge">11 Production Builds</span>
+        </h2>
+        <a href="/websites/" style="font-family: var(--font-mono, monospace); font-size: 0.8125rem; color: #00e5ff; text-decoration: none;">View Websites-Only Gallery →</a>
+      </div>
+
+      <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 60px;">
+
+        <!-- 11: SYNAPSE IT MAROC -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/11-synapse-infrastructure/assets/hero-datacenter.jpg" alt="SYNAPSE IT MAROC">
+            <span class="deliverable-tag tag-web">Website // IT Infrastructure</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">SYNAPSE IT MAROC — Infrastructure &amp; Baies PME</h3>
+            <p class="deliverable-desc">
+              Turnkey IT infrastructure partner for Moroccan businesses. Interactive 12U/24U server rack builder with power &amp; MAD pricing calculator, 4G failover canvas visualizer, anti-ransomware backup sizer, and on-site support.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">42U Rack Configurator</span>
+              <span class="d-pill">Canvas Failover Flow</span>
+              <span class="d-pill">Dirhams MAD Engine</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/11-synapse-infrastructure/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 08: Lumina Derma-OS -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/08-lumina-dermatology/assets/clinic-interior.jpg" alt="Lumina Derma-OS">
+            <span class="deliverable-tag tag-web">Website // Medical SaaS</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">LUMINA DERMA-OS — Clinic Intelligence Suite</h3>
+            <p class="deliverable-desc">
+              Dermatology &amp; aesthetic clinic intelligence. Interactive facial vector injection mapping, automated WhatsApp follow-ups, HTML5 digital consent pad, and 90-day retention recall table.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">WhatsApp Sequences</span>
+              <span class="d-pill">Vector Facial Map</span>
+              <span class="d-pill">Before/After Split</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/08-lumina-dermatology/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02: McKenzo & Co. -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/02-mckenzo-consulting/assets/hero-business.jpg" alt="McKenzo & Co.">
+            <span class="deliverable-tag tag-web">Website // Strategy Consulting</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">McKenzo &amp; Co. — Pan-African Strategy</h3>
+            <p class="deliverable-desc">
+              Trilingual (French / Arabic RTL / English) strategy consulting firm. Tanger Med vs Classic zone export tax comparison, Charte TPME 30% simulator, and judicial valuation dossier.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">FR / AR / EN Trilingual</span>
+              <span class="d-pill">Tanger Med Tax Tool</span>
+              <span class="d-pill">RTL Engine</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/02-mckenzo-consulting/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03: Maison ASOFI -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/03-asofi-terroir/assets/hero-olive-grove.jpg" alt="Maison ASOFI">
+            <span class="deliverable-tag tag-web">Website // Terroir Export</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Maison ASOFI — Moroccan Terroir &amp; Huile d'Olive</h3>
+            <p class="deliverable-desc">
+              Moroccan extra virgin olive oil and Atlas gourmet export (Est. 1994). B2B 20ft/40ft freight volume container simulator, batch laboratory technical specs, and organic certificate drawer.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Container Sizer</span>
+              <span class="d-pill">Lab Certificates</span>
+              <span class="d-pill">Export Cart</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/03-asofi-terroir/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 01: Vanguard & Sterling -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/01-lexicon-law/assets/hero-architecture.jpg" alt="Vanguard & Sterling">
+            <span class="deliverable-tag tag-web">Website // Trial Law</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Vanguard &amp; Sterling — Corporate Trial Law</h3>
+            <p class="deliverable-desc">
+              High-stakes trial practice and white-collar defense. 3-step dynamic intake wizard, precedent filterable database, slide-over case drawer, and WCAG AAA compliance.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Intake Wizard</span>
+              <span class="d-pill">Precedent Filter</span>
+              <span class="d-pill">Case Drawer</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/01-lexicon-law/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10: NEXUS PRIME -->
+        <article class="deliverable-card" data-category="websites">
+          <div class="deliverable-media">
+            <img src="/projects/10-nexus-terminal/assets/hardware-vault.jpg" alt="NEXUS PRIME">
+            <span class="deliverable-tag tag-web">Website // FinTech Terminal</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">NEXUS PRIME — Multi-Asset Trading Terminal</h3>
+            <p class="deliverable-desc">
+              Sub-millisecond institutional execution terminal. Real-time HTML5 canvas candlestick charting with moving averages, live DOM order book with depth bars, and portfolio margin risk telemetry.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Canvas Candlesticks</span>
+              <span class="d-pill">Order Book DOM</span>
+              <span class="d-pill">Margin Engine</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/10-nexus-terminal/" target="_blank" class="btn-action-primary">Launch Website ↗</a>
+              <a href="/portfolio/#simulator" class="btn-action-outline">📱 Simulator</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: AUTOMATIONS & WORKFLOWS -->
+    <section id="section-automations">
+      <div class="category-section-heading">
+        <h2 class="cat-title">
+          <span>Automations &amp; Business Workflows</span>
+          <span class="cat-badge" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">2 Automated Systems</span>
+        </h2>
+      </div>
+
+      <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin-bottom: 60px;">
+
+        <!-- Automation 1: WhatsApp Clinic Automation -->
+        <article class="deliverable-card" data-category="automations">
+          <div class="deliverable-media">
+            <img src="/projects/08-lumina-dermatology/assets/equipment-laser.jpg" alt="WhatsApp Clinic Automation">
+            <span class="deliverable-tag tag-auto">Automation // WhatsApp &amp; CRM</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Automated Clinic Follow-Up &amp; WhatsApp Bot Engine</h3>
+            <p class="deliverable-desc">
+              End-to-end automated post-procedure messaging sequence for aesthetic clinics. Triggers structured WhatsApp follow-ups at 24h (ice packs / swelling), Day 7 (skin healing verification), and Day 90 (maintenance recall). Includes Cherry 0% APR financing calculator integration.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">WhatsApp Cloud API</span>
+              <span class="d-pill">Automated Sequences</span>
+              <span class="d-pill">CRM Webhooks</span>
+              <span class="d-pill">90-Day Retention</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/08-lumina-dermatology/#whatsapp-preview" target="_blank" class="btn-action-primary" style="background: #10b981; color: #fff;">Test WhatsApp Simulator ⚡</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Automation 2: Tanger Med Export & Freight Sizer -->
+        <article class="deliverable-card" data-category="automations">
+          <div class="deliverable-media">
+            <img src="/projects/03-asofi-terroir/assets/harvest-baskets.jpg" alt="Freight & Customs Automation">
+            <span class="deliverable-tag tag-auto">Workflow // Logistics &amp; Customs</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Tanger Med Automated Freight &amp; Tax Calculation Engine</h3>
+            <p class="deliverable-desc">
+              Algorithmic container packing and customs duty simulator for Moroccan exporters. Calculates exact pallet density across 20ft (11 EUR-pallets) and 40ft (24 EUR-pallets) maritime containers with live Port Tanger Med customs clearance exemptions.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Customs Tariff API</span>
+              <span class="d-pill">Pallet Optimization</span>
+              <span class="d-pill">Incoterms CIF/FOB</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/03-asofi-terroir/#containerSizer" target="_blank" class="btn-action-primary" style="background: #10b981; color: #fff;">Test Freight Calculator ⚡</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: OPEN SOURCE & CODE UTILITIES -->
+    <section id="section-opensource">
+      <div class="category-section-heading">
+        <h2 class="cat-title">
+          <span>Open Source Files &amp; Code Utilities</span>
+          <span class="cat-badge" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">Reusable Modules</span>
+        </h2>
+      </div>
+
+      <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin-bottom: 60px;">
+
+        <!-- Open Source 1: Canvas Physics Engines -->
+        <article class="deliverable-card" data-category="opensource">
+          <div class="deliverable-media">
+            <img src="/projects/10-nexus-terminal/assets/hardware-vault.jpg" alt="HTML5 Canvas Physics Engines">
+            <span class="deliverable-tag tag-open">Open Source // JavaScript Canvas</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Zero-Dependency 120fps HTML5 Canvas Physics Engines</h3>
+            <p class="deliverable-desc">
+              Collection of vanilla ES6+ canvas simulation engines designed for high-performance creative web interfaces without heavy external libraries. Includes real-time candlestick charts with exponential moving averages, fluid golden crema extraction streams, and audio frequency waveform visualizers.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Vanilla ES6+</span>
+              <span class="d-pill">Zero Dependencies</span>
+              <span class="d-pill">120fps Compositor</span>
+              <span class="d-pill">Interactive Physics</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/10-nexus-terminal/" target="_blank" class="btn-action-primary" style="background: #f59e0b; color: #06090f;">Inspect Canvas Engine 💻</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: DESIGNS & CORPORATE BROCHURES -->
+    <section id="section-designs">
+      <div class="category-section-heading">
+        <h2 class="cat-title">
+          <span>Designs, Print &amp; Corporate Brochures</span>
+          <span class="cat-badge" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.3);">2 Identity Systems</span>
+        </h2>
+      </div>
+
+      <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin-bottom: 80px;">
+
+        <!-- Design 1: McKenzo Corporate Brochure & Legal Dossier -->
+        <article class="deliverable-card" data-category="designs">
+          <div class="deliverable-media">
+            <img src="/projects/02-mckenzo-consulting/assets/hero-business.jpg" alt="McKenzo Corporate Brochure">
+            <span class="deliverable-tag tag-design">Design // Editorial Brochure</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">McKenzo &amp; Co. — Trilingual Corporate Editorial Dossier</h3>
+            <p class="deliverable-desc">
+              High-end editorial brochure and corporate investment prospectus in French and Arabic. Features authentic editorial typography, Tanger Med Special Economic Zone comparative charts, and judicial company valuation layouts.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Print Brochure Layout</span>
+              <span class="d-pill">Bilingual FR / AR</span>
+              <span class="d-pill">Editorial Typography</span>
+              <span class="d-pill">Data Visualizations</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/02-mckenzo-consulting/#expertise" target="_blank" class="btn-action-primary" style="background: #ec4899; color: #fff;">Inspect Brochure Layout 📄</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Design 2: Maison ASOFI Packaging & Brand Identity -->
+        <article class="deliverable-card" data-category="designs">
+          <div class="deliverable-media">
+            <img src="/projects/03-asofi-terroir/assets/bottles-olive-oil.jpg" alt="Maison ASOFI Brand Identity">
+            <span class="deliverable-tag tag-design">Design // Packaging &amp; Brand</span>
+          </div>
+          <div class="deliverable-body">
+            <h3 class="deliverable-title">Maison ASOFI — Luxury Gourmet Terroir Identity System</h3>
+            <p class="deliverable-desc">
+              Comprehensive brand packaging and visual identity system for Moroccan organic extra virgin olive oil export. Dark glass bottle label typography, gold foil stamping guidelines, laboratory certificate sheets, and wooden gift crate packaging design.
+            </p>
+            <div class="deliverable-pills">
+              <span class="d-pill">Packaging Design</span>
+              <span class="d-pill">Foil Stamping Specs</span>
+              <span class="d-pill">Export Labeling</span>
+              <span class="d-pill">Brand Guide</span>
+            </div>
+            <div class="deliverable-footer">
+              <a href="/projects/03-asofi-terroir/#terroir" target="_blank" class="btn-action-primary" style="background: #ec4899; color: #fff;">Inspect Brand Design 📄</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: #030508; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-block: 40px; text-align: center; font-size: 0.8125rem; color: #64748b; font-family: var(--font-mono, monospace);">
+    <div style="margin-bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+      <a href="/portfolio/" style="color: #00e5ff; text-decoration: none;">📱 Live Device Simulator</a>
+      <a href="/websites/" style="color: #cbd5e1; text-decoration: none;">🖥️ Websites Gallery</a>
+      <a href="/projects/11-synapse-infrastructure/" style="color: #cbd5e1; text-decoration: none;">⚡ Synapse IT Maroc</a>
+      <a href="/projects/08-lumina-dermatology/" style="color: #cbd5e1; text-decoration: none;">💉 Lumina Derma-OS</a>
+    </div>
+    <span>&copy; 2026 NASOFI. All Rights Reserved. Hosted on Google Firebase Global Edge.</span>
+  </footer>
+
+  <script>
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.deliverable-card');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const filter = chip.getAttribute('data-filter') || 'all';
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
