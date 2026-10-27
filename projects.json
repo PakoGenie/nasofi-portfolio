@@ -1,0 +1,179 @@
+[
+  {
+    "id": "11-synapse-infrastructure",
+    "number": 11,
+    "title": "Synapse IT Maroc",
+    "category": "infrastructure",
+    "type": "Web Application",
+    "tagline": "Solutions d'infrastructure IT, câblage certifié, baies serveurs et infogérance pour PME au Maroc",
+    "targetAudience": "PME & TPE Maroc (Cliniques, Fiduciaires, Cabinets, Industrie)",
+    "tags": ["IT Infrastructure", "Server Racks", "Anti-Ransomware", "Sage ERP", "Support 24/7", "Casablanca"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/11-synapse-infrastructure/",
+    "features": [
+      "Configurateur interactif de baies serveurs 12U/24U/42U avec calcul des prix en MAD HT",
+      "Calculateur de stockage 3-2-1 anti-ransomware adapté aux bases Sage & comptabilité",
+      "Canvas interactif simulant le basculement 4G / Dual-WAN en temps réel",
+      "SLA d'intervention physique d'urgence sous 2 heures (Casablanca & Rabat)"
+    ]
+  },
+  {
+    "id": "01-nexora-estate",
+    "number": 1,
+    "title": "Nexora Real Estate",
+    "category": "real-estate",
+    "type": "Web Application",
+    "tagline": "Portail immobilier de prestige pour penthouses et villas exclusives",
+    "targetAudience": "Investisseurs haut de gamme et acheteurs internationaux",
+    "tags": ["Real Estate", "Luxury", "Dynamic Filtering", "Interactive Maps", "Mortgage Sizer"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/01-nexora-estate/",
+    "features": [
+      "Filtrage dynamique instantané par budget, superficie et localisation",
+      "Simulateur de crédit immobilier interactif",
+      "Galerie responsive avec lightbox haute définition"
+    ]
+  },
+  {
+    "id": "02-lumina-creative",
+    "number": 2,
+    "title": "Lumina Creative Studio",
+    "category": "design-agency",
+    "type": "Web Application",
+    "tagline": "Agence de design visuel, direction artistique et identités numériques",
+    "targetAudience": "Startups et marques premium recherchant une identité forte",
+    "tags": ["Creative Studio", "Dark Mode", "Smooth Motion", "Typography"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/02-lumina-creative/",
+    "features": [
+      "Typographie fluide et transitions cinématiques",
+      "Études de cas modulaires avec visionneuse de livrables",
+      "Formulaire de brief créatif interactif"
+    ]
+  },
+  {
+    "id": "03-apex-fitness",
+    "number": 3,
+    "title": "Apex Fitness Hub",
+    "category": "fitness",
+    "type": "Web Application",
+    "tagline": "Club de sport et coaching haute intensité avec gestion d'entraînements",
+    "targetAudience": "Passionnés de fitness, athlètes et abonnés exigeants",
+    "tags": ["Fitness", "Training", "Class Schedule", "Pricing Calculator"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/03-apex-fitness/",
+    "features": [
+      "Planning interactif hebdomadaire des cours avec filtres par discipline",
+      "Sélecteur d'abonnements avec options sans engagement",
+      "Fiches entraîneurs certifiés avec bio et spécialités"
+    ]
+  },
+  {
+    "id": "04-savoria-dining",
+    "number": 4,
+    "title": "Savoria Gourmet Dining",
+    "category": "restaurant",
+    "type": "Web Application",
+    "tagline": "Expérience gastronomique d'exception et réservation de table en direct",
+    "targetAudience": "Amateurs de gastronomie fine et dîners d'affaires",
+    "tags": ["Gastronomy", "Fine Dining", "Menu Filter", "Table Reservation"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/04-savoria-dining/",
+    "features": [
+      "Menu dégustation interactif avec tags allergènes et régimes",
+      "Module de réservation de table en temps réel avec sélection de créneau",
+      "Galerie immersive des créations culinaires du chef"
+    ]
+  },
+  {
+    "id": "05-horizon-travel",
+    "number": 5,
+    "title": "Horizon Expeditions",
+    "category": "travel",
+    "type": "Web Application",
+    "tagline": "Créateur d'itinéraires et expéditions de luxe sur mesure",
+    "targetAudience": "Voyageurs aventuriers et séjours exclusifs",
+    "tags": ["Travel", "Expeditions", "Itinerary Builder", "Interactive Cards"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/05-horizon-travel/",
+    "features": [
+      "Dépliants interactifs jour par jour pour chaque expédition",
+      "Calculateur de budget estimatif selon la saison et le groupe",
+      "Météo et meilleures périodes de voyage intégrées"
+    ]
+  },
+  {
+    "id": "06-pulse-saas",
+    "number": 6,
+    "title": "Pulse Analytics SaaS",
+    "category": "saas",
+    "type": "Web Application",
+    "tagline": "Plateforme d'analytique et métriques de productivité pour équipes B2B",
+    "targetAudience": "Entreprises technologiques et gestionnaires de flux",
+    "tags": ["SaaS", "Analytics", "Canvas Charts", "Billing Switcher"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/06-pulse-saas/",
+    "features": [
+      "Graphiques Canvas dynamiques sans dépendances externes",
+      "Sélecteur de facturation mensuelle / annuelle avec remise automatique",
+      "Tableau comparatif des fonctionnalités par palier"
+    ]
+  },
+  {
+    "id": "07-velvet-vogue",
+    "number": 7,
+    "title": "Velvet Vogue Boutique",
+    "category": "fashion",
+    "type": "Web Application",
+    "tagline": "Boutique en ligne haute couture et prêt-à-porter de luxe",
+    "targetAudience": "Clientèle haut de gamme et passionnés de mode contemporaine",
+    "tags": ["E-Commerce", "Fashion", "Interactive Cart", "Product Lightbox"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/07-velvet-vogue/",
+    "features": [
+      "Tiroir panier d'achat fluide avec mise à jour des totaux",
+      "Sélecteur dynamique de tailles et coloris",
+      "Filtre de collection par catégorie et disponibilité"
+    ]
+  },
+  {
+    "id": "08-zenith-dental",
+    "number": 8,
+    "title": "Zenith Dental Clinic",
+    "category": "healthcare",
+    "type": "Web Application",
+    "tagline": "Clinique dentaire esthétique et orthodontie moderne",
+    "targetAudience": "Patients en quête de soins dentaires esthétiques et implantologie",
+    "tags": ["Healthcare", "Dental", "Before After Slider", "Appointment Scheduler"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/08-zenith-dental/",
+    "features": [
+      "Curseur interactif avant / après pour visualiser les résultats esthétiques",
+      "Prise de rendez-vous guidée avec sélection du motif de consultation",
+      "Grille transparente des tarifs et honoraires conventionnés"
+    ]
+  },
+  {
+    "id": "09-nova-sound",
+    "number": 9,
+    "title": "Nova Sound Studios",
+    "category": "audio-production",
+    "type": "Web Application",
+    "tagline": "Studio de mastering analogique, mixage Dolby Atmos et podcasting",
+    "targetAudience": "Artistes, producteurs indépendants et podcasteurs professionnels",
+    "tags": ["Audio", "Web Audio API", "Waveform Visualizer", "Studio Gear"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/09-nova-sound/",
+    "features": [
+      "Visualiseur de spectre audio interactif via l'API Web Audio",
+      "Présentation détaillée du parc de matériel vintage et convertisseurs",
+      "Réservation de session d'enregistrement et devis de mastering en ligne"
+    ]
+  },
+  {
+    "id": "10-artisana-shop",
+    "number": 10,
+    "title": "Artisana Handcrafted",
+    "category": "heritage-craft",
+    "type": "Web Application",
+    "tagline": "Vitrine de l'artisanat marocain d'art : céramique, tapis et maroquinerie",
+    "targetAudience": "Collectionneurs, décorateurs et amateurs d'artisanat authentique",
+    "tags": ["Artisanat", "Moroccan Heritage", "Interactive Zoom", "Culture"],
+    "liveUrl": "https://portfolio.nasofi.com/projects/10-artisana-shop/",
+    "features": [
+      "Zoom interactif haute résolution sur les textures des matières",
+      "Récits des maîtres artisans et traçabilité des pièces uniques",
+      "Expédition internationale sécurisée et emballage éco-responsable"
+    ]
+  }
+]
