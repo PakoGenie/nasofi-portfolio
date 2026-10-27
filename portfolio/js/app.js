@@ -1,5 +1,5 @@
 /**
- * AUSTIN VANCE | Master Portfolio Hub & Interactive Device Simulator
+ * NABIL ASOFI / NASOFI | Master Portfolio Hub & Interactive Device Simulator
  * Client Engine: Responsive Viewport Modes, Iframe Controller, Category Filtering
  */
 
@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (chromeUrlText) {
-      chromeUrlText.textContent = `http://localhost:3000${url}`;
+      const origin = window.location.origin.includes('localhost') ? 'http://localhost:3000' : 'https://portfolio.nasofi.com';
+      chromeUrlText.textContent = `${origin}${url}`;
     }
 
     if (simExternalLink) {

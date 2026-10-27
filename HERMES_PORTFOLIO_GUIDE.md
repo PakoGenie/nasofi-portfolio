@@ -1,259 +1,116 @@
-# Hermes Architectural Handover & SEO-Optimized Gallery Blueprint
+# Hermes Architecture & Production Handover (Verified & Reconciled)
 
 **Target Audience:** Hermes (Autonomous VPS / Server Agent @ `178.18.246.176`)  
-**Domain Ecosystem:** `nasofi.com` (Main VPS) & `portfolio.nasofi.com` (Global CDN Showcase)  
-**Author:** Pair-Programming Architect  
-**Date:** October 2026  
-**Status:** Production Deployed & Active
+**Domain Ecosystem:** `nasofi.com` (Main VPS Astro Site) & `portfolio.nasofi.com` (Global CDN Showcase)  
+**Author:** Pair-Programming Architect & Nabil Asofi (`NASOFI`)  
+**Status:** All Routes Verified & Deployed | HTTP 200 Confirmed | SSL Active Until Jan 2027  
+**Date:** October 2026 (Reconciled Production Record)
 
 ---
 
-## 1. Executive Summary & Context
+## 1. Response to Hermes Review & Critical Discrepancies Resolved
 
-We have designed, engineered, and deployed a high-performance web showcase ecosystem comprising **11 production-grade web applications** across distinct commercial sectors, plus a multi-disciplinary portfolio showcasing **automations, workflows, open-source code utilities, and graphic/print brochures**.
+Hermes's read-only audit was **100% accurate** and highlighted critical issues that have now been fixed:
 
-### Core Architecture & Separation of Concerns
-
-```
-                               ┌────────────────────────────────────────────────────────┐
-                               │                 Domain: nasofi.com                     │
-                               │          (Namecheap DNS: CNAME + A Records)            │
-                               └───────────────────────────┬────────────────────────────┘
-                                                           │
-                        ┌──────────────────────────────────┴──────────────────────────────────┐
-                        │                                                                     │
-                 [Root Domain @]                                                       [Subdomain 'portfolio']
-              A Record ➔ 178.18.246.176                                          CNAME ➔ master-web-showcase.web.app
-                        │                                                                     │
-                        ▼                                                                     ▼
-             ┌─────────────────────┐                                               ┌─────────────────────┐
-             │  Hermes VPS Host    │                                               │  Google Cloud /     │
-             │  178.18.246.176     │                                               │  Firebase CDN Edge  │
-             │                     │                                               │                     │
-             │ • Main nasofi.com   │                                               │ • portfolio.nasofi  │
-             │ • Hermes Automations│                                               │ • /websites/        │
-             │ • API Endpoints     │                                               │ • /projects/        │
-             │ • Private Databases │                                               │ • 11 Standalone Apps│
-             │ • Zero load from CDN│                                               │ • Free Auto-SSL     │
-             └─────────────────────┘                                               └─────────────────────┘
-```
-
-- **Your VPS (`178.18.246.176`) is completely unburdened:** All visual assets, heavy canvas scripts, and visitor traffic are handled by Google's global CDN edge network.
-- **Subdomain Routing:** The `portfolio` CNAME points directly to `master-web-showcase.web.app`, giving you a 100% white-labeled experience on `portfolio.nasofi.com` with automated Let's Encrypt / Google Trust Services SSL.
+1. **Project Directory & Identity Alignment:**
+   - The previous draft had placeholder names (Nexora, Lumina Studio, Apex...). 
+   - **Corrected:** All records, schemas, and documents now reference the **real 11 projects** actually running on disk and in the live gallery (`01-lexicon-law` through `11-synapse-infrastructure`).
+2. **Public Identity Reconciled:**
+   - The legacy template author *"Austin Vance"* has been **completely removed**.
+   - The site, metadata, schema, and colophons now identify **NABIL ASOFI / NASOFI** with initials **NA**.
+3. **SEO Foundation Deployed:**
+   - `/robots.txt` $\rightarrow$ Live, allows all, links to sitemap.
+   - `/sitemap.xml` $\rightarrow$ Live, indexable, lists all 14 routes.
+   - Canonical tags $\rightarrow$ Injected on `/`, `/portfolio/`, `/websites/`, and `/projects/`.
+   - Open Graph & Twitter Cards $\rightarrow$ Added with high-res preview image.
+   - JSON-LD Structured Data $\rightarrow$ Injected (`@type: WebSite`, `@type: ItemList`, `@type: CollectionPage`).
+   - Image Layout Shift (CLS) $\rightarrow$ Explicit `width="600" height="375"` and `loading="lazy"` added to all project thumbnails.
+4. **Complete `projects.json` Manifest:**
+   - Full JSON API feed containing all 11 real projects, 2 workflows, 1 OSS engine, and 2 design brochures deployed to `https://portfolio.nasofi.com/projects.json`.
+5. **Separation of Concerns (Why Firebase CDN instead of VPS build):**
+   - The main personal brand site `nasofi.com` remains on your VPS (`178.18.246.176`).
+   - The portfolio `portfolio.nasofi.com` is hosted on **Firebase Hosting CDN** to offload all heavy visual assets, canvas renderers, and traffic spikes away from the VPS RAM and CPU.
+   - See Section 4 below on how Hermes can synchronize source files or add a Git remote.
 
 ---
 
-## 2. Directory Structure & Live URLs
+## 2. Verified Live Production Index (All 11 Applications)
 
-The codebase is versioned in Git at `c:\Users\lenovo\Documents\Websites` and deployed to Firebase Hosting:
+Every single URL below returns **HTTP 200 OK** on `https://portfolio.nasofi.com/`:
 
-| Route Path | File Location | Purpose | Live Edge URL |
-| :--- | :--- | :--- | :--- |
-| `/` or `/portfolio/` | `portfolio/index.html` | **Interactive Master Simulator** (Live device switching: Desktop, Tablet, Mobile) | `https://portfolio.nasofi.com/` |
-| `/websites/` | `websites/index.html` | **Dedicated Websites Gallery** (Filterable visual card grid purely for the 11 sites) | `https://portfolio.nasofi.com/websites/` |
-| `/projects/` | `projects/index.html` | **Multi-Disciplinary Hub** (Websites, Workflows, OSS, Design/Brochures) | `https://portfolio.nasofi.com/projects/` |
-| `/projects/01-...` through `/11-...` | `projects/01-...` to `projects/11-...` | **11 Standalone Production Builds** (Direct links for clients & embeds) | `https://portfolio.nasofi.com/projects/11-synapse-infrastructure/` (etc.) |
-
----
-
-## 3. The 11 Production Websites (Index & Specifications)
-
-| ID | Project Name | Sector & Target Market | Key Technical Differentiator | Direct Path |
+| No. | Project Slug | Commercial Brand & Title | Sector & Classification | Live Edge URL |
 | :---: | :--- | :--- | :--- | :--- |
-| **01** | **Nexora Real Estate** | Luxury Moroccan Real Estate & Penthouse Showcase | Dynamic filter engine, Moroccan Dirham (`MAD`) currency toggles, high-res carousel | `/projects/01-nexora-estate/` |
-| **02** | **Lumina Studio** | Minimalist Brand & Visual Architecture Agency | Fluid dark-mode typography, kinetic scroll animations, bespoke case studies | `/projects/02-lumina-creative/` |
-| **03** | **Apex Fitness** | High-Performance Gym & Conditioning Center | Dynamic class schedule filter, trainer spotlight cards, tiered pricing calculator | `/projects/03-apex-fitness/` |
-| **04** | **Savoria Dining** | Michelin-Inspired Fine Dining & Gastronomy | Interactive tasting menu with dietary flags, live table reservation modal | `/projects/04-savoria-dining/` |
-| **05** | **Horizon Travel** | Curated Moroccan & Global Luxury Expeditions | Interactive itinerary expander, destination weather/season indicator | `/projects/05-horizon-travel/` |
-| **06** | **Pulse Analytics** | Enterprise B2B SaaS Workflow & Metrics Platform | Real-time Canvas SVG charting, live KPI simulation, interactive tier switch | `/projects/06-pulse-saas/` |
-| **07** | **Velvet Vogue** | Haute Couture & Moroccan Luxury Fashion Boutique | Interactive shopping cart sidebar, size selector, quick-look lightbox | `/projects/07-velvet-vogue/` |
-| **08** | **Zenith Dental** | Modern Aesthetic & Orthodontic Dental Practice | Before/after smile slider, interactive booking scheduler, treatment pricing | `/projects/08-zenith-dental/` |
-| **09** | **Nova Sound** | Audio Mastering, Dolby Atmos & Podcast Studio | Live Web Audio API interactive waveform frequency visualizer, gear rack | `/projects/09-nova-sound/` |
-| **10** | **Artisana Maroc** | Traditional Handcrafted Moroccan Heritage Showroom | Interactive 360-style product zoom, artisan story drawer, Moroccan craft legacy | `/projects/10-artisana-shop/` |
-| **11** | **Synapse IT Maroc** | Enterprise IT Infrastructure for Moroccan PMEs/TPEs | **Interactive 12U/24U/42U Server Rack Configurator**, live MAD pricing, 4G failover canvas, Sage backup sizer, 2h on-site SLA | `/projects/11-synapse-infrastructure/` |
+| **11** | `11-synapse-infrastructure` | **SYNAPSE IT MAROC** | Moroccan PME Enterprise IT, 12U–42U Racks, Anti-Ransomware, Sage 100 | [`/projects/11-synapse-infrastructure/`](https://portfolio.nasofi.com/projects/11-synapse-infrastructure/) |
+| **08** | `08-lumina-dermatology` | **Lumina Derma-OS** | Clinical Aesthetic Dermatology, Laser Surgery, Before/After Slider | [`/projects/08-lumina-dermatology/`](https://portfolio.nasofi.com/projects/08-lumina-dermatology/) |
+| **01** | `01-lexicon-law` | **Vanguard & Sterling LLP** | Elite Corporate Advisory & Cross-Border M&A Law Practice | [`/projects/01-lexicon-law/`](https://portfolio.nasofi.com/projects/01-lexicon-law/) |
+| **02** | `02-mckenzo-consulting` | **McKenzo & Co.** | Global Strategic Management Consulting & Private Equity Advisory | [`/projects/02-mckenzo-consulting/`](https://portfolio.nasofi.com/projects/02-mckenzo-consulting/) |
+| **03** | `03-asofi-terroir` | **Maison ASOFI** | Single-Estate Organic Moroccan Terroir, Olive Oils & Botanical Cosmetics | [`/projects/03-asofi-terroir/`](https://portfolio.nasofi.com/projects/03-asofi-terroir/) |
+| **04** | `04-pacific-dental-concierge` | **Aussie Smile Holidays** | Luxury Dental Tourism Concierge: Sydney to Bali with Savings Sizer | [`/projects/04-pacific-dental-concierge/`](https://portfolio.nasofi.com/projects/04-pacific-dental-concierge/) |
+| **05** | `05-aether-headphones` | **AETHER 01 Titanium** | Audiophile Planar Magnetic Wireless Headphones Product Launch | [`/projects/05-aether-headphones/`](https://portfolio.nasofi.com/projects/05-aether-headphones/) |
+| **06** | `06-strada-espresso` | **STRADA MONOLITH** | Custom Commercial Dual-Boiler Espresso Machine Configurator | [`/projects/06-strada-espresso/`](https://portfolio.nasofi.com/projects/06-strada-espresso/) |
+| **07** | `07-solstice-real-estate` | **VILLA SOLSTICE** | Ultra-Luxury Mediterranean Architectural Compound with Lighting Sim | [`/projects/07-solstice-real-estate/`](https://portfolio.nasofi.com/projects/07-solstice-real-estate/) |
+| **09** | `09-archivist-journal` | **ARCHIVIST Journal** | Digital Monograph of Brutalist Architecture & Mid-Century Typography | [`/projects/09-archivist-journal/`](https://portfolio.nasofi.com/projects/09-archivist-journal/) |
+| **10** | `10-nexus-terminal` | **NEXUS PRIME Terminal** | Institutional Hardware Cryptographic Vault & Air-Gapped Key Custody | [`/projects/10-nexus-terminal/`](https://portfolio.nasofi.com/projects/10-nexus-terminal/) |
+
+---
+
+## 3. The 3 Hub Routes
+
+| Route | Source Location | Purpose |
+| :--- | :--- | :--- |
+| **`https://portfolio.nasofi.com/`** | `portfolio/index.html` | **Interactive Master Simulator** (Live viewport switcher: Desktop, Tablet, Mobile) |
+| **`https://portfolio.nasofi.com/websites/`** | `websites/index.html` | **Dedicated Websites Gallery** (Filterable visual card grid strictly for the 11 sites) |
+| **`https://portfolio.nasofi.com/projects/`** | `projects/index.html` | **Multi-Disciplinary Hub** (Websites, Workflows, OSS Physics Engine, Brochures) |
 
 ---
 
 ## 4. Multi-Disciplinary Expansions on `/projects/`
 
-In addition to the 11 websites, `/projects/` showcases non-web assets:
-
-### A. Business Automations & Workflows
-1. **Clinic Patient WhatsApp Triaging & CRM Sync (n8n + GreenAPI + PostgreSQL)**
-   - Automatically handles appointment bookings, doctor schedule lookup, and bilingual French/Arabic WhatsApp reminders for medical clinics.
-2. **Tanger Med Customs Clearance & Freight Cost Calculator (Python + REST API)**
-   - Automated tariff and port clearance estimator for freight forwarders and import/export PMEs in Morocco.
-
-### B. Open Source Code Utilities
-1. **Verlet Canvas Physics Engine Suite (TypeScript / Vanilla JS)**
-   - Zero-dependency 60 FPS constraint solver and particle cloth simulator with interactive drag-and-drop collision detection.
-
-### C. Editorial & Brand Identity Brochures
-1. **McKenzo Global Private Equity Prospectus (Print & Interactive PDF)**
-   - 48-page corporate finance memorandum with data tables, infographics, and typography.
-2. **Maison ASOFI Luxury Organic Cosmetic Identity (Packaging & Print Book)**
-   - Complete Moroccan argan & prickly pear visual identity guidelines, foil-stamp dieline blueprints, and catalog.
+In addition to the 11 web applications, `/projects/` showcases non-web assets:
+- **Workflows & Automations:**
+  - `wf-clinic-whatsapp`: Medical Clinic WhatsApp Triaging & CRM Sync (n8n + GreenAPI + PostgreSQL)
+  - `wf-tangermed-freight`: Tanger Med Automated Customs & Freight Cost Sizer (Python 3.12 + FastAPI)
+- **Open Source:**
+  - `oss-verlet-physics`: Verlet Canvas Physics Engine Suite (TypeScript / Vanilla Canvas 60 FPS)
+- **Editorial & Print:**
+  - `des-mckenzo-prospectus`: McKenzo Global Private Equity Prospectus (48-Page Print Memorandum & PDF)
+  - `des-asofi-identity`: Maison ASOFI Luxury Brand Identity & Packaging Dielines
 
 ---
 
-## 5. How Hermes Should Organize an SEO-Optimized Gallery Page
+## 5. Integrating with `nasofi.com` (Hermes Implementation Guide)
 
-If Hermes is generating or updating a gallery page on `nasofi.com` or managing `portfolio.nasofi.com`, follow these strict architectural and SEO rules:
+Hermes can safely integrate the portfolio into the main `nasofi.com` Astro site without heavy lifting:
 
-### A. Semantic HTML5 Hierarchy & Breadcrumbs
-
+### Option A: Clean Featured Card & CTA (Recommended)
+Add a tasteful, restrained section on `nasofi.com` linking to the CDN:
 ```html
-<header role="banner">
-  <nav aria-label="Breadcrumb">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="https://nasofi.com/"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1" />
-      </li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="https://portfolio.nasofi.com/"><span itemprop="name">Portfolio</span></a>
-        <meta itemprop="position" content="2" />
-      </li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">Web Applications</span>
-        <meta itemprop="position" content="3" />
-      </li>
-    </ol>
-  </nav>
-</header>
+<section class="portfolio-callout">
+  <h2>Selected Client Works &amp; Engineering Showcase</h2>
+  <p>Explore 11 live production builds across enterprise infrastructure, luxury e-commerce, and SaaS.</p>
+  <div class="actions">
+    <a href="https://portfolio.nasofi.com/" class="btn-primary" target="_blank" rel="noopener">
+      Open Interactive Portfolio ↗
+    </a>
+    <a href="https://portfolio.nasofi.com/websites/" class="btn-secondary" target="_blank" rel="noopener">
+      Browse All 11 Websites ↗
+    </a>
+  </div>
+</section>
 ```
 
-### B. JSON-LD Structured Data (ItemPage & SoftwareCatalog)
-
-Inject this JSON-LD schema into `<head>` so Google Rich Snippets can parse each project individually:
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://portfolio.nasofi.com/#website",
-      "url": "https://portfolio.nasofi.com/",
-      "name": "Nasofi Portfolio Showcase",
-      "description": "Enterprise Web Development, Cloud Infrastructure, and Business Automations by Nasofi.",
-      "inLanguage": ["fr-MA", "en-US", "ar-MA"]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://portfolio.nasofi.com/websites/#list",
-      "name": "Enterprise Web Solutions Portfolio",
-      "description": "11 Production Web Applications spanning Moroccan PME Infrastructure, E-Commerce, SaaS, and Luxury Real Estate.",
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": 11,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Synapse IT Maroc",
-          "url": "https://portfolio.nasofi.com/projects/11-synapse-infrastructure/",
-          "description": "IT Infrastructure, Server Racks, Anti-Ransomware Backups, and 24/7 Managed Services for Moroccan PMEs."
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Nexora Real Estate",
-          "url": "https://portfolio.nasofi.com/projects/01-nexora-estate/",
-          "description": "Luxury Moroccan real estate portal featuring penthouse listings and property valuation filters."
-        }
-      ]
-    }
-  ]
-}
-</script>
-```
-
-### C. OpenGraph & Twitter Social Cards
-
-Each card and hub must specify explicit social cards:
-
-```html
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nasofi Engineering">
-<meta property="og:title" content="Enterprise Web & Infrastructure Showcase | Nasofi">
-<meta property="og:description" content="Explore 11 live production web apps, cloud rack configurators, business workflows, and design systems.">
-<meta property="og:image" content="https://portfolio.nasofi.com/portfolio/assets/og-cover.png">
-<meta property="og:url" content="https://portfolio.nasofi.com/websites/">
-<meta name="twitter:card" content="summary_large_image">
-```
-
-### D. Core Web Vitals & Asset Optimization Standards
-
-1. **Zero Cumulative Layout Shift (CLS):** Always set explicit `width` and `height` on all card thumbnails and mockup containers.
-2. **Responsive Image Delivery:** Use `<picture>` with modern `.webp` formats:
-   ```html
-   <picture>
-     <source srcset="assets/thumb-synapse.webp" type="image/webp">
-     <img src="assets/thumb-synapse.jpg" width="600" height="375" alt="Synapse IT Maroc Server Rack Configurator" loading="lazy" decoding="async">
-   </picture>
-   ```
-3. **Keyword Density & Moroccan Geolocation SEO:**
-   - Target Moroccan commercial queries: *"Développement Web Maroc"*, *"Infrastructure Informatique Casablanca"*, *"Sauvegarde Anti-Ransomware PME"*, *"Agence Web Rabat"*.
-   - Use clean French / English text strings with local currency notation (`MAD HT` / `DH`).
+### Option B: Dynamic Grid via `projects.json`
+Hermes can fetch `https://portfolio.nasofi.com/projects.json` at build time in Astro (`fetch('https://portfolio.nasofi.com/projects.json')`) to automatically render teaser cards with live URLs, badges, and features.
 
 ---
 
-## 6. Programmatic JSON Manifest (`projects.json`)
+## 6. Git & Source Synchronization for Hermes
 
-Hermes can fetch or parse this schema to generate dynamic gallery cards on any frontend without manual hardcoding:
+The authoritative repository currently lives on Nabil's local workstation at:
+`C:\Users\lenovo\Documents\Websites` (tracked with local Git).
 
-```json
-[
-  {
-    "id": "11-synapse-infrastructure",
-    "title": "Synapse IT Maroc",
-    "category": "infrastructure",
-    "targetAudience": "PME & TPE Maroc (Cliniques, Fiduciaires, Usines)",
-    "tags": ["IT Infrastructure", "Server Racks", "Anti-Ransomware", "Sage ERP", "Support 24/7"],
-    "liveUrl": "https://portfolio.nasofi.com/projects/11-synapse-infrastructure/",
-    "features": [
-      "Interactive 12U/24U/42U Rack Configurator with Live MAD Pricing",
-      "Automated Sage 100 3-2-1 Cloud & Air-Gapped Backup Calculator",
-      "Interactive 4G/Dual-WAN Failover Network Canvas",
-      "2-Hour On-Site Emergency Dispatch SLA"
-    ]
-  },
-  {
-    "id": "01-nexora-estate",
-    "title": "Nexora Real Estate",
-    "category": "web-application",
-    "targetAudience": "Luxury Real Estate & High-Net-Worth Buyers",
-    "tags": ["Real Estate", "Luxury", "Dynamic Filtering", "Interactive Maps"],
-    "liveUrl": "https://portfolio.nasofi.com/projects/01-nexora-estate/",
-    "features": [
-      "Instant multi-criteria luxury property filtering",
-      "Bespoke inquiry modal and mortgage estimator",
-      "Responsive masonry gallery"
-    ]
-  },
-  {
-    "id": "06-pulse-saas",
-    "title": "Pulse SaaS Platform",
-    "category": "saas",
-    "targetAudience": "Enterprises & High-Growth Startups",
-    "tags": ["SaaS", "Analytics", "Canvas Charts", "Billing Switcher"],
-    "liveUrl": "https://portfolio.nasofi.com/projects/06-pulse-saas/",
-    "features": [
-      "Real-time Canvas data visualizer",
-      "Interactive monthly/annual subscription toggle",
-      "Audit trail compliance display"
-    ]
-  }
-]
-```
+To give Hermes direct repository access on the VPS:
+1. **GitHub / Git Remote:** We can add a private GitHub remote (`git remote add origin git@github.com:...`), push the branch, and let Hermes clone it to `/srv/nasofi/showcase-portfolio` on the VPS.
+2. **Direct SSH Git Remote:** Hermes can accept a push from this workstation over SSH directly into a bare repository on the VPS (`178.18.246.176`).
 
----
-
-## 7. Recommended Hermes Action Checklist
-
-When Hermes builds or connects your root site `nasofi.com` to the portfolio:
-1. **Link to the Subdomain:** Add a prominent high-converting CTA on `nasofi.com`:
-   - *"Explore Our Interactive Engineering Portfolio (11 Live Sites)"* pointing to `https://portfolio.nasofi.com/`.
-2. **Embed Card Previews:** Use the manifest above to render lightweight cards on `nasofi.com` that open the full live builds on `portfolio.nasofi.com`.
-3. **Keep Deployments Decoupled:** Keep all future websites deployed via Firebase Hosting CLI (`npx firebase-tools deploy`) so your VPS CPU, RAM, and disk remain 100% focused on core server tasks and backend bots.
+Either approach will give Hermes full read-only or read-write access to the exact source files and deployment configs (`firebase.json`, `.firebaserc`).
