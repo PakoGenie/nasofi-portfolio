@@ -17,6 +17,11 @@
         "source": "/",
         "destination": "/portfolio/",
         "type": 302
+      },
+      {
+        "source": "/projects",
+        "destination": "/websites/",
+        "type": 302
       }
     ],
     "headers": [

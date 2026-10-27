@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Web Works &amp; Client Showcase — NASOFI</title>
+  <meta name="description" content="Explore 11 complete, production-grade bespoke web applications and platforms engineered with modern HTML5, CSS design tokens, and vanilla JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio/css/style.css">
+  <style>
+    .gallery-hero {
+      padding-top: 100px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    .gallery-kicker {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: #00e5ff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .gallery-h1 {
+      font-size: clamp(2rem, 1.8rem + 1.8vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .gallery-dek {
+      font-size: 1rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+    .top-nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(6, 9, 15, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 24px;
+    }
+    .nav-brand {
+      font-family: var(--font-mono, monospace);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-brand .accent { color: #00e5ff; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-sim-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      border-radius: 8px;
+      color: #00e5ff;
+      font-size: 0.8125rem;
+      font-family: var(--font-mono, monospace);
+      padding: 6px 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-sim-link:hover {
+      background: rgba(0, 229, 255, 0.2);
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+    }
+    .card-footer-btns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: auto;
+    }
+    .btn-visit-primary {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #00e5ff;
+      color: #06090f;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-visit-primary:hover {
+      background: #4deeff;
+      transform: translateY(-1px);
+    }
+    .btn-sim-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-family: var(--font-mono, monospace);
+      padding: 8px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-sim-secondary:hover {
+      color: #fff;
+      border-color: #00e5ff;
+      background: rgba(0, 229, 255, 0.08);
+    }
+  </style>
+</head>
+<body style="background-color: #06090f; color: #f8fafc; min-height: 100vh;">
+
+  <!-- Fixed Header -->
+  <header class="top-nav-bar">
+    <a href="/portfolio/" class="nav-brand">
+      <span>NASOFI</span>
+      <span class="accent">//</span>
+      <span>WEB GALLERY</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/portfolio/" class="btn-sim-link">
+        <span>📱 Open Live Device Simulator</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1320px; margin-inline: auto; padding-inline: 20px;">
+    <!-- Hero Header -->
+    <section class="gallery-hero">
+      <span class="gallery-kicker">◆ Production Portfolio Catalog</span>
+      <h1 class="gallery-h1">Selected Websites &amp; Digital Experiences</h1>
+      <p class="gallery-dek">
+        A curated collection of 11 production-grade websites and web applications built from scratch. Click any project card below to launch the live standalone website, or test it inside the device simulator.
+      </p>
+    </section>
+
+    <!-- Filter Category Tabs -->
+    <div class="project-filter-tabs flex-align justify-center gap-2 mb-8" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px;">
+      <button class="filter-chip active" data-filter="all">All Websites (11)</button>
+      <button class="filter-chip" data-filter="infrastructure">IT &amp; Infrastructure (1)</button>
+      <button class="filter-chip" data-filter="healthcare">Clinical &amp; Health (2)</button>
+      <button class="filter-chip" data-filter="luxury">Luxury DTC &amp; Industrial (3)</button>
+      <button class="filter-chip" data-filter="fintech">FinTech &amp; Terminals (2)</button>
+      <button class="filter-chip" data-filter="editorial">Culture &amp; Architecture (3)</button>
+    </div>
+
+    <!-- 11 Projects Cards Grid -->
+    <div class="portfolio-cards-grid" id="portfolioCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-bottom: 80px;">
+
+      <!-- Card 11: SYNAPSE IT MAROC -->
+      <article class="project-card" data-category="infrastructure" data-project-id="11">
+        <div class="card-media">
+          <img src="/projects/11-synapse-infrastructure/assets/hero-datacenter.jpg" alt="SYNAPSE IT MAROC" class="card-thumb">
+          <span class="badge-num">11</span>
+          <span class="badge-tag">Réseaux &amp; Baies PME Maroc</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">SYNAPSE IT MAROC | Matériel, Serveurs &amp; Baies PME</h3>
+          <p class="card-desc text-xs text-muted">
+            Infrastructure informatique clé en main pour PME marocaines (Casablanca, Rabat, Tanger). Vente de matériel certifié (Dell, Cisco, Fortinet, Synology), configurateur interactif de baies (12U-24U-42U), simulateur de sauvegarde anti-ransomware, câblage propre et infogérance sur site.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Configurateur Baie PME</span>
+            <span class="tech-pill">Fibre &amp; Secours 4G</span>
+            <span class="tech-pill">Devis MAD Direct</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/11-synapse-infrastructure/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 08: Lumina Derma-OS -->
+      <article class="project-card" data-category="healthcare" data-project-id="08">
+        <div class="card-media">
+          <img src="/projects/08-lumina-dermatology/assets/clinic-interior.jpg" alt="Lumina Derma-OS" class="card-thumb">
+          <span class="badge-num">08</span>
+          <span class="badge-tag">Clinical Intelligence</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">LUMINA DERMA-OS | Clinical Intelligence Platform</h3>
+          <p class="card-desc text-xs text-muted">
+            SaaS suite for medical aesthetic practices. Interactive facial injection mapping, automated WhatsApp post-care sequences, interactive Before/After split comparison, digital consent e-signatures, and retention recall analytics.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">WhatsApp Engine</span>
+            <span class="tech-pill">Facial Vector Map</span>
+            <span class="tech-pill">Before/After Split</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/08-lumina-dermatology/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 01: Vanguard & Sterling -->
+      <article class="project-card" data-category="editorial" data-project-id="01">
+        <div class="card-media">
+          <img src="/projects/01-lexicon-law/assets/hero-architecture.jpg" alt="Vanguard & Sterling" class="card-thumb">
+          <span class="badge-num">01</span>
+          <span class="badge-tag">Corporate Trial Law</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">Vanguard &amp; Sterling | Elite Trial Practice</h3>
+          <p class="card-desc text-xs text-muted">
+            High-stakes trial practice and white-collar defense. 3-step dynamic intake wizard, precedent filterable database, slide-over case drawer, and WCAG AAA compliance.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Intake Wizard</span>
+            <span class="tech-pill">Precedent Filter</span>
+            <span class="tech-pill">Case Drawer</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/01-lexicon-law/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 02: McKenzo & Co. -->
+      <article class="project-card" data-category="editorial" data-project-id="02">
+        <div class="card-media">
+          <img src="/projects/02-mckenzo-consulting/assets/hero-business.jpg" alt="McKenzo & Co." class="card-thumb">
+          <span class="badge-num">02</span>
+          <span class="badge-tag">Pan-African Consulting</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">McKenzo &amp; Co. | Strategy &amp; Engineering</h3>
+          <p class="card-desc text-xs text-muted">
+            Full trilingual (French / Arabic RTL / English) strategy consulting firm. Tanger Med vs Classic zone export tax comparison, Charte TPME 30% simulator, and judicial valuation dossier.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">FR / AR / EN Trilingual</span>
+            <span class="tech-pill">Tanger Med Export</span>
+            <span class="tech-pill">RTL Engine</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/02-mckenzo-consulting/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 03: Maison ASOFI -->
+      <article class="project-card" data-category="luxury" data-project-id="03">
+        <div class="card-media">
+          <img src="/projects/03-asofi-terroir/assets/hero-olive-grove.jpg" alt="Maison ASOFI" class="card-thumb">
+          <span class="badge-num">03</span>
+          <span class="badge-tag">Moroccan Terroir</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">Maison ASOFI | Terroir &amp; Huile d'Olive</h3>
+          <p class="card-desc text-xs text-muted">
+            High-end Moroccan extra virgin olive oil and Atlas gourmet export. Interactive B2B 20ft/40ft freight container volume simulator, batch technical specs, and organic certificate drawer.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Container Sizer</span>
+            <span class="tech-pill">Lab Analysis</span>
+            <span class="tech-pill">Export Cart</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/03-asofi-terroir/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 04: Aussie Smile Holidays -->
+      <article class="project-card" data-category="healthcare" data-project-id="04">
+        <div class="card-media">
+          <img src="/projects/04-pacific-dental-concierge/assets/hero-dental-vacation.jpg" alt="Aussie Smile Holidays" class="card-thumb">
+          <span class="badge-num">04</span>
+          <span class="badge-tag">Dental Tourism</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">Aussie Smile Holidays | Dental Tourism Concierge</h3>
+          <p class="card-desc text-xs text-muted">
+            All-inclusive dental vacations for Australian patients. Interactive AUD savings calculator ($15k-$40k savings), 7-day all-inclusive flight/resort itinerary planner, and partner warranty.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">AUD Savings Calc</span>
+            <span class="tech-pill">Itinerary Builder</span>
+            <span class="tech-pill">Concierge Drawer</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/04-pacific-dental-concierge/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 05: AETHER 01 Titanium -->
+      <article class="project-card" data-category="luxury" data-project-id="05">
+        <div class="card-media">
+          <img src="/projects/05-aether-headphones/assets/headphone-black.jpg" alt="AETHER 01 Titanium" class="card-thumb">
+          <span class="badge-num">05</span>
+          <span class="badge-tag">Audiophile DTC</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">AETHER 01 | Planar Magnetic Headphones</h3>
+          <p class="card-desc text-xs text-muted">
+            Luxury audiophile hardware flagship. 3D cursor parallax tilt, 4-finish customizer, dynamic SVG parametric EQ acoustic curve morpher, and Web Audio synthesizer tone simulation.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Web Audio Synthesizer</span>
+            <span class="tech-pill">3D Tilt Physics</span>
+            <span class="tech-pill">Color Customizer</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/05-aether-headphones/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 06: STRADA MONOLITH -->
+      <article class="project-card" data-category="luxury" data-project-id="06">
+        <div class="card-media">
+          <img src="/projects/06-strada-espresso/assets/espresso-machine.jpg" alt="STRADA MONOLITH" class="card-thumb">
+          <span class="badge-num">06</span>
+          <span class="badge-tag">Artisanal Espresso</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">STRADA MONOLITH | Dual-Boiler Espresso</h3>
+          <p class="card-desc text-xs text-muted">
+            Commercial-grade dual-boiler espresso machine. Hyperframe HTML5 canvas golden crema fluid extraction stream, mechanical SVG rotary gauge physics with pump jitter, and 28s automated shot profiler.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Canvas Fluid Stream</span>
+            <span class="tech-pill">Rotary Gauge Physics</span>
+            <span class="tech-pill">Shot Profiler</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/06-strada-espresso/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 07: VILLA SOLSTICE -->
+      <article class="project-card" data-category="editorial" data-project-id="07">
+        <div class="card-media">
+          <img src="/projects/07-solstice-real-estate/assets/villa-exterior.jpg" alt="VILLA SOLSTICE" class="card-thumb">
+          <span class="badge-num">07</span>
+          <span class="badge-tag">Architectural Estate</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">VILLA SOLSTICE | Monolithic Cliffside Estate</h3>
+          <p class="card-desc text-xs text-muted">
+            Cap d'Antibes architectural trophy residence. Interactive 06:00-24:00 solar daylight-to-dusk crossfade simulation slider, 3-tier blueprint explorer with spatial pins, and mortgage calculator.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Daylight Crossfade</span>
+            <span class="tech-pill">Blueprint Explorer</span>
+            <span class="tech-pill">Mortgage Sizer</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/07-solstice-real-estate/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 09: ARCHIVIST -->
+      <article class="project-card" data-category="editorial" data-project-id="09">
+        <div class="card-media">
+          <img src="/projects/09-archivist-journal/assets/cover-monolith.jpg" alt="ARCHIVIST Journal" class="card-thumb">
+          <span class="badge-num">09</span>
+          <span class="badge-tag">Spatial Culture</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">ARCHIVIST | Journal of Spatial Culture</h3>
+          <p class="card-desc text-xs text-muted">
+            Avant-garde architectural publication. Real-time audio waveform canvas visualizer, top reading progress bar, 3-theme reading engine (Paper Cream / Dark / Sepia), and print order checkout modal.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Audio Waveform Canvas</span>
+            <span class="tech-pill">3-Theme Engine</span>
+            <span class="tech-pill">Reading Drawer</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/09-archivist-journal/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 10: NEXUS PRIME -->
+      <article class="project-card" data-category="fintech" data-project-id="10">
+        <div class="card-media">
+          <img src="/projects/10-nexus-terminal/assets/hardware-vault.jpg" alt="NEXUS PRIME Terminal" class="card-thumb">
+          <span class="badge-num">10</span>
+          <span class="badge-tag">FinTech &amp; Quant Terminal</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-white">NEXUS PRIME | Multi-Asset Trading Terminal</h3>
+          <p class="card-desc text-xs text-muted">
+            Sub-millisecond institutional execution terminal. Real-time HTML5 canvas candlestick charting with moving averages, live DOM order book with depth bars, and portfolio margin risk telemetry.
+          </p>
+          <div class="card-stack-pills flex-align gap-1 font-mono text-xs mb-4">
+            <span class="tech-pill">Canvas Candlesticks</span>
+            <span class="tech-pill">Order Book DOM</span>
+            <span class="tech-pill">Margin Risk Engine</span>
+          </div>
+          <div class="card-footer-btns">
+            <a href="/projects/10-nexus-terminal/" target="_blank" class="btn-visit-primary">
+              <span>Visit Website ↗</span>
+            </a>
+            <a href="/portfolio/#simulator" class="btn-sim-secondary">
+              <span>📱 Simulator</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer style="background: #030508; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-block: 40px; text-align: center; font-size: 0.8125rem; color: #64748b; font-family: var(--font-mono, monospace);">
+    <div style="margin-bottom: 12px;">
+      <a href="/portfolio/" style="color: #00e5ff; text-decoration: none; font-weight: 600;">← Back to Master Portfolio &amp; Device Simulator</a>
+    </div>
+    <span>&copy; 2026 NASOFI. All Rights Reserved. Hosted on Google Firebase Global Edge.</span>
+  </footer>
+
+  <script>
+    // Category Filtering
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.project-card');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const filter = chip.getAttribute('data-filter') || 'all';
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
