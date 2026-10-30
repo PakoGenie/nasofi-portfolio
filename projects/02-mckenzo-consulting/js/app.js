@@ -1445,6 +1445,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Initialize Core Interactive Engines
   initLanguageEngine();
+  initDossierSystem();
   initSubsidiesSimulator();
   initLifecycleExplorer();
   initTangerMedCalculator();
@@ -1535,6 +1536,31 @@ function setLanguage(lang) {
     en: "Language updated: International English."
   };
   showToast(msgs[lang]);
+}
+
+// --- DOSSIER NAVIGATION SYSTEM (PÔLES D'EXPERTISE) ---
+function initDossierSystem() {
+  const tabs = document.querySelectorAll('.dossier-tab-btn');
+  const panels = document.querySelectorAll('.dossier-panel');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = `dossier-${tab.dataset.tab}`;
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
 }
 
 // --- INTERACTIVE TOOL #1: SUBSIDIES SIMULATOR ENGINE ---
@@ -1683,6 +1709,23 @@ function updateSimulatorResults() {
       tamwilEl.textContent = `${rate} (Damane Istitmar)`;
     }
   }
+
+  // Dynamic Financing Ratio Bar Updates
+  const subsidyPercent = Math.min(Math.round((grandTotal / capexMAD) * 100), 40);
+  const bankPercent = 60; // Standard Tamwilcom-backed debt ratio
+  const equityPercent = Math.max(100 - subsidyPercent - bankPercent, 5);
+
+  const barSub = document.getElementById('simBarSubsidy');
+  const barBank = document.getElementById('simBarBank');
+  const barEq = document.getElementById('simBarEquity');
+  const legSub = document.getElementById('simLegSubsidy');
+  const legEq = document.getElementById('simLegEquity');
+
+  if (barSub) barSub.style.width = `${subsidyPercent}%`;
+  if (barBank) barBank.style.width = `${bankPercent}%`;
+  if (barEq) barEq.style.width = `${equityPercent}%`;
+  if (legSub) legSub.textContent = currentLang === 'ar' ? `منح ${subsidyPercent}%` : currentLang === 'en' ? `Grants ${subsidyPercent}%` : `Primes ${subsidyPercent}%`;
+  if (legEq) legEq.textContent = currentLang === 'ar' ? `تمويل ذاتي ${equityPercent}%` : currentLang === 'en' ? `Equity ${equityPercent}%` : `Apport ${equityPercent}%`;
 }
 
 // --- INTERACTIVE TOOL #2: TANGER MED VS CLASSIC ZONE COMPARISON ---

@@ -9,80 +9,81 @@
    1. Design Tokens (Tiered Hierarchy)
    -------------------------------------------------------------------------- */
 :root {
-  /* Tier 1: Literal Tokens */
-  --emerald-300: #6EE7B7;
-  --emerald-400: #34D399;
-  --emerald-500: #10B981;
-  --emerald-600: #059669;
-  --emerald-700: #047857;
+  /* Tier 1: Literal Tokens — Sovereign Industrial Editorial */
+  --ink-950: #040812;
+  --ink-900: #060B14;
+  --ink-850: #0B1220;
+  --ink-800: #101B2E;
+  --ink-750: #16243D;
 
-  --gold-300: #FDE68A;
-  --gold-400: #FCD34D;
-  --gold-500: #C59B27;
-  --gold-600: #B45309;
+  --limestone-50:  #FAF8F5;
+  --limestone-100: #F5F2EB;
+  --limestone-200: #E8E3D7;
+  --limestone-300: #CBD5E1;
+  --limestone-400: #94A3B8;
+  --limestone-500: #64748B;
 
-  --navy-950: #04070F;
-  --navy-900: #071328;
-  --navy-850: #0B1934;
-  --navy-800: #112246;
-  --navy-700: #1B315E;
+  --bullion-300: #FDE68A;
+  --bullion-400: #F2C94C;
+  --bullion-500: #D4AF37;
+  --bullion-600: #B8860B;
+  --bullion-700: #996515;
 
-  --slate-50:  #F8FAFC;
-  --slate-100: #F1F5F9;
-  --slate-200: #E2E8F0;
-  --slate-300: #CBD5E1;
-  --slate-400: #94A3B8;
-  --slate-500: #64748B;
+  --industrial-300: #6EE7B7;
+  --industrial-400: #34D399;
+  --industrial-500: #10B981;
+  --industrial-600: #059669;
+  --industrial-700: #047857;
 
   /* Tier 2: Semantic Tokens */
-  --bg-canvas: var(--navy-950);
-  --bg-primary: var(--navy-900);
-  --bg-surface: var(--navy-850);
-  --bg-surface-elevated: var(--navy-800);
-  --bg-glass: rgba(7, 19, 40, 0.88);
+  --bg-canvas: var(--ink-900);
+  --bg-primary: var(--ink-850);
+  --bg-surface: var(--ink-850);
+  --bg-surface-elevated: var(--ink-800);
+  --bg-glass: rgba(6, 11, 20, 0.92);
 
-  --color-accent: var(--emerald-500);
-  --color-accent-light: var(--emerald-400);
-  --color-accent-dark: var(--emerald-600);
-  --color-accent-glow: rgba(16, 185, 129, 0.28);
-  --gradient-accent: linear-gradient(135deg, var(--emerald-400) 0%, var(--emerald-500) 50%, var(--emerald-700) 100%);
+  --color-accent: var(--industrial-600);
+  --color-accent-light: var(--industrial-400);
+  --color-accent-dark: var(--industrial-700);
+  --color-accent-glow: rgba(5, 150, 105, 0.22);
+  --gradient-accent: linear-gradient(135deg, var(--industrial-400) 0%, var(--industrial-600) 60%, var(--industrial-700) 100%);
 
-  --color-gold: var(--gold-500);
-  --color-gold-light: var(--gold-400);
-  --gradient-gold: linear-gradient(135deg, var(--gold-400) 0%, var(--gold-500) 60%, var(--gold-600) 100%);
-  --shadow-gold-glow: 0 10px 30px rgba(197, 155, 39, 0.25);
+  --color-gold: var(--bullion-500);
+  --color-gold-light: var(--bullion-400);
+  --gradient-gold: linear-gradient(135deg, var(--bullion-400) 0%, var(--bullion-500) 60%, var(--bullion-600) 100%);
+  --shadow-gold-glow: 0 10px 30px rgba(212, 175, 55, 0.22);
 
-  --text-main: var(--slate-50);
-  --text-secondary: var(--slate-300);
-  --text-muted: var(--slate-400);
-  --text-accent: var(--emerald-400);
-  --text-gold: var(--gold-400);
+  --text-main: var(--limestone-100);
+  --text-secondary: var(--limestone-300);
+  --text-muted: var(--limestone-400);
+  --text-accent: var(--industrial-400);
+  --text-gold: var(--bullion-400);
 
   /* Tier 3: UI Tokens */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-card: rgba(255, 255, 255, 0.12);
-  --border-accent: rgba(16, 185, 129, 0.35);
-  --border-gold: rgba(197, 155, 39, 0.4);
+  --border-subtle: rgba(245, 242, 235, 0.08);
+  --border-card: rgba(245, 242, 235, 0.14);
+  --border-accent: rgba(5, 150, 105, 0.35);
+  --border-gold: rgba(212, 175, 55, 0.38);
 
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.75);
   --shadow-accent-glow: 0 10px 35px var(--color-accent-glow);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
-  --font-serif: 'Newsreader', serif;
+  --font-serif: 'Newsreader', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-arabic: 'Cairo', 'Tajawal', sans-serif;
 
   /* Layout & Transitions */
   --container-max: 1260px;
-  --radius-xs: 4px;
+  --radius-xs: 3px;
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 0.2s;
   --duration-normal: 0.35s;
@@ -164,38 +165,21 @@ button, input, select, textarea {
   outline-offset: 3px;
 }
 
-/* Ambient Backdrops */
+/* Ambient Sovereign Architectural Vignette & Ledger Lines */
 .ambient-glow {
+  display: none !important;
+}
+
+body::before {
+  content: '';
   position: fixed;
-  border-radius: 50%;
-  filter: blur(160px);
-  z-index: -1;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(245, 242, 235, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 242, 235, 0.02) 1px, transparent 1px);
+  background-size: 72px 72px;
   pointer-events: none;
-  opacity: 0.35;
-}
-
-.glow-emerald {
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
-  top: -120px;
-  right: -80px;
-}
-
-.glow-navy {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(11, 25, 52, 0.8) 0%, transparent 70%);
-  bottom: 10%;
-  left: -200px;
-}
-
-.glow-gold {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(197, 155, 39, 0.12) 0%, transparent 70%);
-  top: 40%;
-  right: 15%;
+  z-index: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -770,15 +754,16 @@ body.is-rtl .btn-text-link:hover {
 }
 
 /* --------------------------------------------------------------------------
-   7. 4 Flagship Subsidized Programs (Offres Phares)
+   7. 4 Flagship Subsidized Programs (Offres Phares) — Bento Ledger Architecture
    -------------------------------------------------------------------------- */
 .flagship-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.75rem;
 }
 
 .flagship-card {
+  grid-column: span 6;
   position: relative;
   background: var(--bg-surface);
   border: 1px solid var(--border-card);
@@ -792,6 +777,36 @@ body.is-rtl .btn-text-link:hover {
   overflow: hidden;
 }
 
+/* Master Bento Hero Card (Charte de l'Investissement 30%) */
+.flagship-card.bento-hero {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(16, 27, 46, 0.95) 0%, rgba(10, 16, 29, 0.98) 100%);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), var(--shadow-gold-glow);
+}
+
+.flagship-card.bento-third {
+  grid-column: span 4;
+}
+
+@media (max-width: 991px) {
+  .flagship-card.bento-hero {
+    grid-template-columns: 1fr;
+    grid-column: span 12;
+    gap: 1.5rem;
+  }
+  .flagship-card.bento-third {
+    grid-column: span 12;
+  }
+  .flagship-card {
+    grid-column: span 12;
+  }
+}
+
 .flagship-card::before {
   content: '';
   position: absolute;
@@ -803,20 +818,53 @@ body.is-rtl .btn-text-link:hover {
   opacity: 0.7;
 }
 
-.flagship-card.featured::before {
+.flagship-card.featured::before,
+.flagship-card.bento-hero::before {
   background: var(--gradient-gold);
   height: 5px;
 }
 
 .flagship-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--border-accent);
   box-shadow: var(--shadow-lg), var(--shadow-accent-glow);
 }
 
-.flagship-card.featured:hover {
+.flagship-card.featured:hover,
+.flagship-card.bento-hero:hover {
   border-color: var(--border-gold);
   box-shadow: var(--shadow-lg), var(--shadow-gold-glow);
+}
+
+/* Stamp Seal — Sovereign Document Badge */
+.stamp-seal {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.85rem 1.35rem;
+  border: 2px dashed var(--color-gold);
+  border-radius: var(--radius-sm);
+  color: var(--color-gold-light);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(212, 175, 55, 0.08);
+  transform: rotate(-2.5deg);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+  user-select: none;
+}
+
+.stamp-seal-inner {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 0.15rem;
+  letter-spacing: 0.08em;
 }
 
 .flagship-badge {
@@ -835,17 +883,17 @@ body.is-rtl .btn-text-link:hover {
 }
 
 .flagship-badge.badge-gold {
-  background: rgba(197, 155, 39, 0.18);
+  background: rgba(212, 175, 55, 0.18);
   color: var(--gold-400);
-  border-color: rgba(197, 155, 39, 0.4);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .flagship-icon-box {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(5, 150, 105, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -854,8 +902,8 @@ body.is-rtl .btn-text-link:hover {
 }
 
 .flagship-icon-box.icon-gold {
-  background: rgba(197, 155, 39, 0.15);
-  border-color: rgba(197, 155, 39, 0.35);
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.35);
   color: var(--gold-400);
 }
 
@@ -884,7 +932,7 @@ body.is-rtl .btn-text-link:hover {
 .flagship-metric-pill small {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--slate-300);
+  color: var(--limestone-300);
 }
 
 .flagship-desc {
@@ -912,6 +960,60 @@ body.is-rtl .btn-text-link:hover {
   align-items: center;
   gap: 0.5rem;
 }
+
+/* Financing Structure Bar */
+.financing-structure-bar {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: rgba(6, 11, 20, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.fs-bar-track {
+  display: flex;
+  height: 12px;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+  background: var(--ink-800);
+}
+
+.fs-bar-seg {
+  height: 100%;
+  transition: width 0.6s var(--ease-spring);
+}
+
+.fs-bar-seg.seg-subsidy { background: var(--color-gold); }
+.fs-bar-seg.seg-bank { background: var(--color-accent); }
+.fs-bar-seg.seg-equity { background: var(--limestone-400); }
+
+.fs-bar-legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  margin-top: 0.65rem;
+  color: var(--text-muted);
+}
+
+.fs-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.fs-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.fs-legend-dot.dot-subsidy { background: var(--color-gold); }
+.fs-legend-dot.dot-bank { background: var(--color-accent); }
+.fs-legend-dot.dot-equity { background: var(--limestone-400); }
 
 /* --------------------------------------------------------------------------
    8. Interactive Tool #1: Subsidies & Subsidy Simulator
@@ -1115,8 +1217,130 @@ body.is-rtl .btn-text-link:hover {
 }
 
 /* --------------------------------------------------------------------------
-   9. The 5 Core Service Poles (Pôles d'Expertise)
+   9. The 5 Core Service Poles (Pôles d'Expertise) — Tabbed Dossier Architecture
    -------------------------------------------------------------------------- */
+.dossier-system {
+  margin-top: 2rem;
+}
+
+.dossier-nav {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  scrollbar-width: thin;
+}
+
+.dossier-tab-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--duration-fast) var(--ease-spring);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dossier-tab-btn:hover {
+  color: #FFFFFF;
+  border-color: var(--border-card);
+  background: var(--bg-surface-elevated);
+}
+
+.dossier-tab-btn.active {
+  background: var(--color-accent);
+  color: #040812;
+  border-color: var(--color-accent-light);
+  box-shadow: 0 4px 18px var(--color-accent-glow);
+}
+
+.dossier-panel {
+  display: none;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  align-items: center;
+}
+
+.dossier-panel.active {
+  display: grid;
+  animation: dossierFadeIn 0.35s var(--ease-spring);
+}
+
+@keyframes dossierFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dossier-media-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-md);
+}
+
+.dossier-media-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-spring);
+}
+
+.dossier-panel:hover .dossier-media-img {
+  transform: scale(1.04);
+}
+
+.dossier-media-badge {
+  position: absolute;
+  top: 1rem;
+  inset-inline-start: 1rem;
+  background: rgba(6, 11, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent);
+  color: var(--color-accent-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.dossier-media-badge.gold {
+  border-color: var(--border-gold);
+  color: var(--gold-400);
+}
+
+@media (max-width: 991px) {
+  .dossier-panel {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 1.75rem;
+  }
+  .dossier-media-img {
+    height: 260px;
+  }
+}
+
 .poles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));

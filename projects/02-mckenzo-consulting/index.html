@@ -26,11 +26,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Ambient Atmospheric Backdrops -->
-  <div class="ambient-glow glow-emerald" aria-hidden="true"></div>
-  <div class="ambient-glow glow-navy" aria-hidden="true"></div>
-  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
-
   <!-- Top Institutional Bar -->
   <div class="top-bar">
     <div class="container flex-between text-xs">
@@ -68,8 +63,8 @@
   <!-- Site Sticky Header -->
   <header class="site-header" id="header">
     <div class="container flex-between">
-      <a href="#" class="brand-logo" aria-label="McKenzo & Co. Accueil">
-        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." class="brand-logo-img">
+      <a href="/" class="brand-logo" aria-label="McKenzo & Co. Accueil">
+        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." class="brand-logo-img" width="160" height="48">
       </a>
 
       <!-- Desktop Navigation -->
@@ -111,7 +106,7 @@
   <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
     <div class="mobile-drawer-header flex-between">
       <div class="brand-logo">
-        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." style="height: 38px;">
+        <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." width="128" height="38" style="height: 38px; width: auto;">
       </div>
       <button class="btn-ghost" id="btnCloseMobileDrawer" aria-label="Fermer le menu">&times;</button>
     </div>
@@ -154,7 +149,7 @@
         </div>
 
         <h1 class="hero-title">
-          <span data-i18n="hero_title_1">L'Ingénierie Financière, Industrielle & Stratégique</span><br>
+          <span class="hero-serif-lead" data-i18n="hero_title_1">L'Ingénierie Financière, Industrielle &amp; Stratégique</span><br>
           <span class="emerald-gradient-text" data-i18n="hero_title_2">au Service de l'Investisseur au Maroc.</span>
         </h1>
 
@@ -218,34 +213,64 @@
         </div>
 
         <div class="flagship-grid">
-          <!-- Flagship 1: Charte TPME -->
-          <article class="flagship-card featured">
-            <div class="flagship-badge badge-gold" data-i18n="flag_1_badge">Charte TPME</div>
-            <div class="flagship-icon-box icon-gold">
-              <i data-lucide="landmark" class="icon-md" aria-hidden="true"></i>
+          <!-- Flagship 1: Charte TPME — Bento Hero Card -->
+          <article class="flagship-card bento-hero featured">
+            <div>
+              <div class="flex-align gap-3 mb-3">
+                <span class="flagship-badge badge-gold" data-i18n="flag_1_badge" style="position:static;">Charte TPME 2026</span>
+                <span class="text-xs font-mono text-gold flex-align gap-1">
+                  <i data-lucide="shield-check" class="icon-xs" aria-hidden="true"></i>
+                  <span>Guichet Unique CRI &amp; Ministère de l'Investissement</span>
+                </span>
+              </div>
+              <h3 class="flagship-title text-xl mb-2" data-i18n="flag_1_title">Primes à l'Investissement Nouvelle Charte</h3>
+              <div class="flagship-metric-pill gold mb-3">
+                <span data-i18n="flag_1_metric">Jusqu'à 30%</span>
+                <small data-i18n="flag_1_metric_sub">de subvention directe non remboursable sur Capex</small>
+              </div>
+              <p class="flagship-desc" data-i18n="flag_1_desc">
+                Prise en charge intégrale du montage technico-financier et dépôt au Guichet Unique des CRI pour des projets de 1 à 50 MDH. Cumul des primes territoriales (10-15%), primes d'emploi (+10%) et transition verte (+5%).
+              </p>
+              <ul class="flagship-features">
+                <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f1">Étude technico-économique signée par ingénieur agréé</span></li>
+                <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f2">Business plan bancable sur 5 à 7 ans conforme comités BMCI / Tamwilcom</span></li>
+                <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f3">Suivi d'instruction jusqu'à conventionnement et déblocage effectif</span></li>
+              </ul>
             </div>
-            <h3 class="flagship-title" data-i18n="flag_1_title">Primes à l'Investissement Nouvelle Charte</h3>
-            <div class="flagship-metric-pill gold">
-              <span data-i18n="flag_1_metric">Jusqu'à 30%</span>
-              <small data-i18n="flag_1_metric_sub">de subvention directe sur Capex</small>
+
+            <!-- Bento Hero Side Voucher & Structure -->
+            <div class="bento-hero-side flex-column gap-3 text-center">
+              <div class="stamp-seal mb-3">
+                <span>AGRÉÉ PAR L'ÉTAT</span>
+                <strong class="stamp-seal-inner">CHARTE 2026 • 30%</strong>
+                <small class="text-xs font-mono">Dossier Éligible CRI</small>
+              </div>
+
+              <!-- Live Financing Breakdown -->
+              <div class="financing-structure-bar text-start full-width">
+                <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Structure de Financement Typique</div>
+                <div class="fs-bar-track">
+                  <div class="fs-bar-seg seg-subsidy" style="width: 30%;" title="30% Subvention directe État"></div>
+                  <div class="fs-bar-seg seg-bank" style="width: 60%;" title="60% Prêt bancaire garanti Tamwilcom"></div>
+                  <div class="fs-bar-seg seg-equity" style="width: 10%;" title="10% Fonds propres minimum"></div>
+                </div>
+                <div class="fs-bar-legend">
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-subsidy"></span> 30% Prime État</span>
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-bank"></span> 60% Crédit BMCI</span>
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-equity"></span> 10% Apport</span>
+                </div>
+              </div>
+
+              <a href="#simulateur" class="btn btn-gold full-width mt-2">
+                <i data-lucide="calculator" class="icon-xs" aria-hidden="true"></i>
+                <span data-i18n="flag_cta">Calculer Mes Primes en Direct</span>
+              </a>
             </div>
-            <p class="flagship-desc" data-i18n="flag_1_desc">
-              Prise en charge intégrale du montage technico-financier et dépôt au Guichet Unique des CRI pour des projets de 1 à 50 MDH. Primes territoriales, d'emploi et de transition verte.
-            </p>
-            <ul class="flagship-features">
-              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f1">Étude technico-économique signée par ingénieur</span></li>
-              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f2">Business plan bancable sur 5 à 7 ans</span></li>
-              <li><i data-lucide="check-circle" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="flag_1_f3">Suivi d'instruction jusqu'à conventionnement</span></li>
-            </ul>
-            <button class="btn btn-outline-gold full-width" data-action="open-booking">
-              <span data-i18n="flag_cta">Tester mon éligibilité</span>
-              <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-            </button>
           </article>
 
           <!-- Flagship 2: PACT'Transmission -->
-          <article class="flagship-card">
-            <div class="flagship-badge" data-i18n="flag_2_badge">Cession & Reprise</div>
+          <article class="flagship-card bento-third">
+            <div class="flagship-badge" data-i18n="flag_2_badge">Cession &amp; Reprise</div>
             <div class="flagship-icon-box">
               <i data-lucide="scale" class="icon-md" aria-hidden="true"></i>
             </div>
@@ -255,7 +280,7 @@
               <small data-i18n="flag_2_metric_sub">par Maroc PME (Plafond 1 MDH)</small>
             </div>
             <p class="flagship-desc" data-i18n="flag_2_desc">
-              Diagnostic de transmissibilité, valorisation financière multicritères avec le Cabinet Cherkaoui assermenté, et recherche de repreneurs/investisseurs.
+              Diagnostic de transmissibilité, valorisation financière multicritères avec le Cabinet Cherkaoui assermenté près la Cour d'appel, et recherche de repreneurs/investisseurs.
             </p>
             <ul class="flagship-features">
               <li><i data-lucide="check-circle" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="flag_2_f1">Évaluation financière certifiée (DCF, comparables)</span></li>
@@ -269,12 +294,12 @@
           </article>
 
           <!-- Flagship 3: Maroc PME Assistance -->
-          <article class="flagship-card">
+          <article class="flagship-card bento-third">
             <div class="flagship-badge" data-i18n="flag_3_badge">Conseil Financé</div>
             <div class="flagship-icon-box">
               <i data-lucide="award" class="icon-md" aria-hidden="true"></i>
             </div>
-            <h3 class="flagship-title" data-i18n="flag_3_title">Assistance Technique & Qualité Maroc PME</h3>
+            <h3 class="flagship-title" data-i18n="flag_3_title">Assistance Technique &amp; Qualité Maroc PME</h3>
             <div class="flagship-metric-pill">
               <span data-i18n="flag_3_metric">80% à 90%</span>
               <small data-i18n="flag_3_metric_sub">de subvention sur honoraires</small>
@@ -294,7 +319,7 @@
           </article>
 
           <!-- Flagship 4: CBAM Carbone Export -->
-          <article class="flagship-card">
+          <article class="flagship-card bento-third">
             <div class="flagship-badge" data-i18n="flag_4_badge">Export Europe</div>
             <div class="flagship-icon-box">
               <i data-lucide="leaf" class="icon-md" aria-hidden="true"></i>
@@ -451,8 +476,14 @@
 
             <!-- Live Results Card -->
             <div class="sim-results-card">
+              <div class="stamp-seal mb-3" style="align-self: center;">
+                <span>FICHE D'ÉLIGIBILITÉ OFFICIELLE</span>
+                <strong class="stamp-seal-inner">CHARTE TPME 2026</strong>
+                <small class="text-xs font-mono">Guichet Unique CRI</small>
+              </div>
+
               <div class="sim-results-header">
-                <div class="sim-grand-total-label" data-i18n="sim_res_total_label">Total des Primes & Subventions Estimées</div>
+                <div class="sim-grand-total-label" data-i18n="sim_res_total_label">Total des Primes &amp; Subventions Estimées</div>
                 <div class="sim-grand-total" id="simGrandTotal">4 500 000 MAD</div>
               </div>
 
@@ -498,8 +529,23 @@
                 </div>
               </div>
 
+              <!-- Dynamic Financing Ratio Bar -->
+              <div class="financing-structure-bar full-width mb-3">
+                <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">Architecture du Financement</div>
+                <div class="fs-bar-track">
+                  <div class="fs-bar-seg seg-subsidy" id="simBarSubsidy" style="width: 25%;" title="Primes directes"></div>
+                  <div class="fs-bar-seg seg-bank" id="simBarBank" style="width: 60%;" title="Crédit bancaire garanti Tamwilcom"></div>
+                  <div class="fs-bar-seg seg-equity" id="simBarEquity" style="width: 15%;" title="Fonds propres"></div>
+                </div>
+                <div class="fs-bar-legend">
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-subsidy"></span> <span id="simLegSubsidy">Primes 25%</span></span>
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-bank"></span> <span>Banque 60%</span></span>
+                  <span class="fs-legend-item"><span class="fs-legend-dot dot-equity"></span> <span id="simLegEquity">Apport 15%</span></span>
+                </div>
+              </div>
+
               <p class="sim-note" data-i18n="sim_res_note">
-                * Estimations fournies selon les critères officiels de la Nouvelle Charte de l'Investissement et les circulaires Maroc PME en vigueur. Validation définitive sous réserve d'audit d'éligibilité par McKenzo & Co.
+                * Estimations fournies selon les critères officiels de la Nouvelle Charte de l'Investissement et les circulaires Maroc PME en vigueur. Dossiers montés et signés par les ingénieurs et experts financiers de McKenzo &amp; Co.
               </p>
 
               <button class="btn btn-gold btn-lg full-width" data-action="open-booking">
@@ -523,139 +569,153 @@
           </p>
         </div>
 
-        <div class="poles-grid">
-          <!-- Pole 1: Financing & Studies -->
-          <article class="pole-card">
-            <div class="pole-img-wrapper">
-              <img src="assets/business-plan-finance.jpg" alt="Ingénierie de financement McKenzo" class="pole-img" loading="lazy">
-              <span class="pole-badge-top" data-i18n="p1_badge">Ingénierie Financière</span>
-            </div>
-            <div class="pole-body">
+        <!-- Dossier Navigation Tabs -->
+        <div class="dossier-nav" role="tablist" aria-label="Pôles d'expertise McKenzo">
+          <button class="dossier-tab-btn active" role="tab" aria-selected="true" data-tab="p1">
+            <span class="font-mono text-gold">01</span>
+            <span data-i18n="p1_badge">Ingénierie Financière</span>
+          </button>
+          <button class="dossier-tab-btn" role="tab" aria-selected="false" data-tab="p2">
+            <span class="font-mono text-gold">02</span>
+            <span data-i18n="p2_badge">Alliance Judiciaire</span>
+          </button>
+          <button class="dossier-tab-btn" role="tab" aria-selected="false" data-tab="p3">
+            <span class="font-mono text-gold">03</span>
+            <span data-i18n="p3_badge">Territoire &amp; Impact</span>
+          </button>
+          <button class="dossier-tab-btn" role="tab" aria-selected="false" data-tab="p4">
+            <span class="font-mono text-gold">04</span>
+            <span data-i18n="p4_badge">Industrie 4.0</span>
+          </button>
+          <button class="dossier-tab-btn" role="tab" aria-selected="false" data-tab="p5">
+            <span class="font-mono text-gold">05</span>
+            <span data-i18n="p5_badge">Digital &amp; IA</span>
+          </button>
+        </div>
+
+        <div class="dossier-panels-wrapper">
+          <!-- Panel 1: Financing & Studies -->
+          <article class="dossier-panel active" id="dossier-p1">
+            <div class="dossier-body">
               <span class="pole-num" data-i18n="p1_num">PÔLE 01</span>
-              <h3 class="pole-title" data-i18n="p1_title">Financement & Études de Projets Bancables</h3>
-              <p class="pole-desc" data-i18n="p1_desc">
-                Montage complet de dossiers de financement pour banques et organismes publics. Nos études technico-économiques sont signées par des ingénieurs industriels garantissant le déblocage des fonds.
+              <h3 class="pole-title text-xl mb-3" data-i18n="p1_title">Financement &amp; Études de Projets Bancables</h3>
+              <p class="pole-desc mb-4" data-i18n="p1_desc">
+                Montage complet de dossiers de financement pour banques et organismes publics. Nos études technico-économiques sont signées par des ingénieurs industriels garantissant le déblocage des fonds auprès des comités de crédit.
               </p>
-              <ul class="pole-checklist">
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f1">Business plans 5 à 7 ans conformes comités de crédit</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f2">Dossiers de garantie Tamwilcom (Damane Istitmar / Express)</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f3">Guichet Unique CRI (Charte TPME 30%), GO Siyaha, FDA</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p1_f4">Offre MRE : MDM Invest 10% non remboursable & MDM Tamwil</span></li>
+              <ul class="pole-checklist mb-4">
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p1_f1">Business plans 5 à 7 ans conformes comités de crédit</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p1_f2">Dossiers de garantie Tamwilcom (Damane Istitmar / Express)</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p1_f3">Guichet Unique CRI (Charte TPME 30%), GO Siyaha, FDA</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p1_f4">Offre MRE : MDM Invest 10% non remboursable &amp; MDM Tamwil</span></li>
               </ul>
-              <div class="pole-footer">
-                <button class="btn-text-link" data-action="open-booking">
-                  <span data-i18n="p1_cta">Étudier mon dossier de financement</span>
-                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-                </button>
-              </div>
+              <button class="btn btn-emerald" data-action="open-booking">
+                <span data-i18n="p1_cta">Étudier mon dossier de financement</span>
+                <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dossier-media-card">
+              <img src="assets/business-plan-finance.jpg" alt="Ingénierie de financement McKenzo" class="dossier-media-img" width="1000" height="712" loading="lazy">
+              <span class="dossier-media-badge" data-i18n="p1_badge">Ingénierie Financière</span>
             </div>
           </article>
 
-          <!-- Pole 2: Sworn Judicial Valuation & M&A -->
-          <article class="pole-card partner-highlight">
-            <div class="pole-img-wrapper">
-              <img src="assets/expert-cherkaoui.jpg" alt="Expertise judiciaire Ahmed Cherkaoui" class="pole-img" loading="lazy">
-              <span class="pole-badge-top gold" data-i18n="p2_badge">Alliance Judiciaire</span>
-            </div>
-            <div class="pole-body">
+          <!-- Panel 2: Sworn Judicial Valuation & M&A -->
+          <article class="dossier-panel" id="dossier-p2">
+            <div class="dossier-body">
               <span class="pole-num text-gold" data-i18n="p2_num">PÔLE 02</span>
-              <h3 class="pole-title" data-i18n="p2_title">Expertise, Évaluation & Transmission</h3>
-              <p class="pole-desc" data-i18n="p2_desc">
-                En partenariat officiel avec le Cabinet d'expertise Ahmed Cherkaoui (expert judiciaire assermenté près la Cour d'appel). Conventions bancaires actives avec BMCI, CFG Bank et Bank Al Youssr.
+              <h3 class="pole-title text-xl mb-3" data-i18n="p2_title">Expertise, Évaluation &amp; Transmission</h3>
+              <p class="pole-desc mb-4" data-i18n="p2_desc">
+                En partenariat officiel avec le Cabinet d'expertise Ahmed Cherkaoui (expert judiciaire assermenté près la Cour d'appel). Conventions bancaires actives avec BMCI, CFG Bank et Bank Al Youssr pour des valorisations incontestables.
               </p>
-              <ul class="pole-checklist">
+              <ul class="pole-checklist mb-4">
                 <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f1">Évaluation immobilière, foncière et valeur de garantie</span></li>
                 <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f2">Valorisation de fonds de commerce et parts (DCF, comparables)</span></li>
                 <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f3">PACT'Transmission : diagnostic et cession pris en charge à 90%</span></li>
                 <li><i data-lucide="check" class="icon-xs text-gold" aria-hidden="true"></i> <span data-i18n="p2_f4">Dépôt de brevets et marques OMPIC (subventionné à 80%)</span></li>
               </ul>
-              <div class="pole-footer">
-                <button class="btn-text-link text-gold" data-action="open-legal">
-                  <span data-i18n="p2_cta">Voir la convention Cabinet Cherkaoui</span>
-                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-                </button>
-              </div>
+              <button class="btn btn-outline-gold" data-action="open-legal">
+                <span data-i18n="p2_cta">Voir la convention Cabinet Cherkaoui</span>
+                <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dossier-media-card">
+              <img src="assets/expert-cherkaoui.jpg" alt="Expertise judiciaire Ahmed Cherkaoui" class="dossier-media-img" width="1000" height="563" loading="lazy">
+              <span class="dossier-media-badge gold" data-i18n="p2_badge">Alliance Judiciaire</span>
             </div>
           </article>
 
-          <!-- Pole 3: Territorial Development -->
-          <article class="pole-card">
-            <div class="pole-img-wrapper">
-              <img src="assets/agri-food-plant.jpg" alt="Développement territorial INDH" class="pole-img" loading="lazy">
-              <span class="pole-badge-top" data-i18n="p3_badge">Territoire & Impact</span>
-            </div>
-            <div class="pole-body">
+          <!-- Panel 3: Territorial Development -->
+          <article class="dossier-panel" id="dossier-p3">
+            <div class="dossier-body">
               <span class="pole-num" data-i18n="p3_num">PÔLE 03</span>
-              <h3 class="pole-title" data-i18n="p3_title">Développement Territorial & Suivi-Évaluation</h3>
-              <p class="pole-desc" data-i18n="p3_desc">
-                Études d'impact socio-économique, enquêtes de terrain rigoureuses et accompagnement des politiques publiques et bailleurs internationaux (UE, BAD, Banque Mondiale).
+              <h3 class="pole-title text-xl mb-3" data-i18n="p3_title">Développement Territorial &amp; Suivi-Évaluation</h3>
+              <p class="pole-desc mb-4" data-i18n="p3_desc">
+                Études d'impact socio-économique, enquêtes de terrain rigoureuses et accompagnement des politiques publiques et bailleurs internationaux (INDH, UE, BAD, Banque Mondiale).
               </p>
-              <ul class="pole-checklist">
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f1">Évaluation et diagnostic de programmes INDH</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f2">Enquêtes quantitatives et qualitatives sur le terrain</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f3">Structuration et mise à niveau des coopératives et GIE</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p3_f4">Plans de développement communal et régional (PDR / PAC)</span></li>
+              <ul class="pole-checklist mb-4">
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p3_f1">Évaluation et diagnostic de programmes INDH</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p3_f2">Enquêtes quantitatives et qualitatives sur le terrain</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p3_f3">Structuration et mise à niveau des coopératives et GIE</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p3_f4">Plans de développement communal et régional (PDR / PAC)</span></li>
               </ul>
-              <div class="pole-footer">
-                <button class="btn-text-link" data-action="open-booking">
-                  <span data-i18n="p3_cta">Consulter nos méthodologies d'évaluation</span>
-                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-                </button>
-              </div>
+              <button class="btn btn-outline-emerald" data-action="open-booking">
+                <span data-i18n="p3_cta">Consulter nos méthodologies d'évaluation</span>
+                <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dossier-media-card">
+              <img src="assets/agri-food-plant.jpg" alt="Développement territorial INDH" class="dossier-media-img" width="1000" height="665" loading="lazy">
+              <span class="dossier-media-badge" data-i18n="p3_badge">Territoire &amp; Impact</span>
             </div>
           </article>
 
-          <!-- Pole 4: Industrial Performance -->
-          <article class="pole-card">
-            <div class="pole-img-wrapper">
-              <img src="assets/factory-layout.jpg" alt="Performance industrielle Lean" class="pole-img" loading="lazy">
-              <span class="pole-badge-top" data-i18n="p4_badge">Industrie 4.0</span>
-            </div>
-            <div class="pole-body">
+          <!-- Panel 4: Industrial Performance -->
+          <article class="dossier-panel" id="dossier-p4">
+            <div class="dossier-body">
               <span class="pole-num" data-i18n="p4_num">PÔLE 04</span>
-              <h3 class="pole-title" data-i18n="p4_title">Performance Industrielle & Transition Écologique</h3>
-              <p class="pole-desc" data-i18n="p4_desc">
-                Aménagement d'ateliers, optimisation des flux de fabrication, supply chain lean et préparation aux exigences de décarbonation internationales.
+              <h3 class="pole-title text-xl mb-3" data-i18n="p4_title">Performance Industrielle &amp; Transition Écologique</h3>
+              <p class="pole-desc mb-4" data-i18n="p4_desc">
+                Aménagement d'ateliers, optimisation des flux de fabrication, supply chain lean et préparation aux exigences de décarbonation internationales (CBAM / MACF).
               </p>
-              <ul class="pole-checklist">
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f1">Layout d'usine, postes de travail et ergonomie</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f2">Préparation aux certifications : ISO 9001, 22000, ONSSA, HACCP</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f3">Diagnostic carbone CBAM / MACF pour exportateurs vers l'UE</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p4_f4">Assistance à Maîtrise d'Ouvrage (AMO) technique et délais</span></li>
+              <ul class="pole-checklist mb-4">
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p4_f1">Layout d'usine, postes de travail et ergonomie</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p4_f2">Préparation aux certifications : ISO 9001, 22000, ONSSA, HACCP</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p4_f3">Diagnostic carbone CBAM / MACF pour exportateurs vers l'UE</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p4_f4">Assistance à Maîtrise d'Ouvrage (AMO) technique et délais</span></li>
               </ul>
-              <div class="pole-footer">
-                <button class="btn-text-link" data-action="open-booking">
-                  <span data-i18n="p4_cta">Demander un audit usine</span>
-                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-                </button>
-              </div>
+              <button class="btn btn-outline-emerald" data-action="open-booking">
+                <span data-i18n="p4_cta">Demander un audit usine</span>
+                <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dossier-media-card">
+              <img src="assets/factory-layout.jpg" alt="Performance industrielle Lean" class="dossier-media-img" width="1000" height="667" loading="lazy">
+              <span class="dossier-media-badge" data-i18n="p4_badge">Industrie 4.0</span>
             </div>
           </article>
 
-          <!-- Pole 5: Applied AI & Digital -->
-          <article class="pole-card">
-            <div class="pole-img-wrapper">
-              <img src="assets/data-ai-industry.jpg" alt="Data et IA appliquée industrie" class="pole-img" loading="lazy">
-              <span class="pole-badge-top" data-i18n="p5_badge">Digital & IA</span>
-            </div>
-            <div class="pole-body">
+          <!-- Panel 5: Applied AI & Digital -->
+          <article class="dossier-panel" id="dossier-p5">
+            <div class="dossier-body">
               <span class="pole-num" data-i18n="p5_num">PÔLE 05</span>
-              <h3 class="pole-title" data-i18n="p5_title">Data, IA Appliquée & Digitalisation Industrielle</h3>
-              <p class="pole-desc" data-i18n="p5_desc">
-                Conception de tableaux de bord décisionnels et déploiement d'algorithmes prédictifs pour optimiser la rentabilité opérationnelle des PME et TPME.
+              <h3 class="pole-title text-xl mb-3" data-i18n="p5_title">Data, IA Appliquée &amp; Digitalisation Industrielle</h3>
+              <p class="pole-desc mb-4" data-i18n="p5_desc">
+                Conception de tableaux de bord décisionnels et déploiement d'algorithmes prédictifs pour optimiser la rentabilité opérationnelle des PME et TPME industrielles.
               </p>
-              <ul class="pole-checklist">
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f1">Tableaux de bord BI exécutifs (Power BI / solutions sur-mesure)</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f2">IA de prévision de la demande, scoring client et stocks</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f3">Automatisation des processus administratifs et comptables</span></li>
-                <li><i data-lucide="check" class="icon-xs" aria-hidden="true"></i> <span data-i18n="p5_f4">Feuilles de route de transformation digitale subventionnées</span></li>
+              <ul class="pole-checklist mb-4">
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p5_f1">Tableaux de bord BI exécutifs (Power BI / solutions sur-mesure)</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p5_f2">IA de prévision de la demande, scoring client et stocks</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p5_f3">Automatisation des processus administratifs et comptables</span></li>
+                <li><i data-lucide="check" class="icon-xs text-emerald" aria-hidden="true"></i> <span data-i18n="p5_f4">Feuilles de route de transformation digitale subventionnées</span></li>
               </ul>
-              <div class="pole-footer">
-                <button class="btn-text-link" data-action="open-booking">
-                  <span data-i18n="p5_cta">Explorer les cas d'usage IA</span>
-                  <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
-                </button>
-              </div>
+              <button class="btn btn-outline-emerald" data-action="open-booking">
+                <span data-i18n="p5_cta">Explorer les cas d'usage IA</span>
+                <i data-lucide="arrow-right" class="icon-xs icon-flip-rtl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dossier-media-card">
+              <img src="assets/data-ai-industry.jpg" alt="Data et IA appliquée industrie" class="dossier-media-img" width="1000" height="667" loading="lazy">
+              <span class="dossier-media-badge" data-i18n="p5_badge">Digital &amp; IA</span>
             </div>
           </article>
         </div>
@@ -703,7 +763,7 @@
             </div>
 
             <div class="phase-media-box">
-              <img src="assets/tanger-med.jpg" alt="Phase illustrative" class="phase-media-img" id="phaseMediaImg">
+              <img src="assets/tanger-med.jpg" alt="Phase illustrative" class="phase-media-img" id="phaseMediaImg" width="1200" height="800">
               <div class="phase-media-meta">
                 <div class="phase-meta-row">
                   <span class="phase-meta-label" data-i18n="life_meta_partner">Interlocuteurs Clés :</span>
@@ -737,7 +797,7 @@
 
         <div class="tanger-wrapper">
           <div class="tanger-hero-banner">
-            <img src="assets/tanger-med.jpg" alt="Port de Tanger Med hub industriel" class="tanger-banner-img" loading="lazy">
+            <img src="assets/tanger-med.jpg" alt="Port de Tanger Med hub industriel" class="tanger-banner-img" loading="lazy" width="1200" height="800">
             <div class="tanger-banner-overlay">
               <div class="tanger-banner-content">
                 <h3 data-i18n="tanger_banner_h">Tanger Med & Zones Franches d'Exportation</h3>
@@ -901,7 +961,7 @@
             <!-- Leadership & Guarantees -->
             <div>
               <div class="leadership-box">
-                <img src="assets/cabinet-salhi.jpg" alt="M. SALHI Anass et comité d'experts McKenzo" class="leadership-avatar" loading="lazy">
+                <img src="assets/cabinet-salhi.jpg" alt="M. SALHI Anass et comité d'experts McKenzo" class="leadership-avatar" loading="lazy" width="1000" height="562">
                 <div class="leadership-info">
                   <h3 data-i18n="salhi_name">M. SALHI Anass</h3>
                   <div class="leadership-role" data-i18n="salhi_role">Directeur Général & Ingénieur Industriel</div>
@@ -929,7 +989,7 @@
               <!-- Strategic Partner Badges Strip -->
               <div class="accreditations-strip">
                 <div class="partner-badge-card">
-                  <img src="assets/cherkaoui-seal.svg" alt="Cabinet Ahmed Cherkaoui Assermenté" class="partner-badge-img">
+                  <img src="assets/cherkaoui-seal.svg" alt="Cabinet Ahmed Cherkaoui Assermenté" class="partner-badge-img" width="160" height="47">
                   <div class="partner-badge-text">
                     <strong data-i18n="cred_partner1_name">Cabinet Cherkaoui</strong>
                     <small data-i18n="cred_partner1_desc">Expert judiciaire assermenté</small>
@@ -937,7 +997,7 @@
                 </div>
 
                 <div class="partner-badge-card">
-                  <img src="assets/bmci-logo.svg" alt="Partenariat BMCI BNP Paribas" class="partner-badge-img">
+                  <img src="assets/bmci-logo.svg" alt="Partenariat BMCI BNP Paribas" class="partner-badge-img" width="160" height="48">
                   <div class="partner-badge-text">
                     <strong data-i18n="cred_partner2_name">BMCI Groupe BNP Paribas</strong>
                     <small data-i18n="cred_partner2_desc">Convention active PME</small>
@@ -945,7 +1005,7 @@
                 </div>
 
                 <div class="partner-badge-card">
-                  <img src="assets/tamwilcom-logo.svg" alt="Tamwilcom Garantie" class="partner-badge-img">
+                  <img src="assets/tamwilcom-logo.svg" alt="Tamwilcom Garantie" class="partner-badge-img" width="160" height="48">
                   <div class="partner-badge-text">
                     <strong data-i18n="cred_partner3_name">Tamwilcom</strong>
                     <small data-i18n="cred_partner3_desc">Garantie Damane Istitmar</small>
@@ -953,7 +1013,7 @@
                 </div>
 
                 <div class="partner-badge-card">
-                  <img src="assets/maroc-pme-logo.svg" alt="Maroc PME" class="partner-badge-img">
+                  <img src="assets/maroc-pme-logo.svg" alt="Maroc PME" class="partner-badge-img" width="160" height="48">
                   <div class="partner-badge-text">
                     <strong data-i18n="cred_partner4_name">Maroc PME</strong>
                     <small data-i18n="cred_partner4_desc">Prise en charge 80-90%</small>
@@ -1183,7 +1243,7 @@
         <!-- Col 1: Identity -->
         <div class="footer-col">
           <div class="brand-logo mb-2">
-            <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." style="height: 42px;">
+            <img src="assets/logo-mckenzo.svg" alt="McKenzo & Co." width="168" height="42">
           </div>
           <p class="footer-desc" data-i18n="footer_desc">
             McKenzo & Co SARL — Bureau d'études générales agréé. Partenaire unique de l'investisseur industriel au Maroc, de l'idée au financement, de l'usine à la transmission.
